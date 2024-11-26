@@ -1,0 +1,711 @@
+% !TeX root =./x2.tex
+% !TeX program = pdfpLaTeX
+\chapter{注意など}
+\section{注意}
+このメモは随時追記, 修正する.
+必ずしも末尾に追記するとは限らない.
+
+講義で解説する順番と必ずしも一致しない.
+また, 講義で解説する内容をすべてここにまとめるわけでもなく,
+ここでまとめた内容をすべて講義で解説するわけでもない.
+
+忙しくなった場合には,
+このメモは,
+更新しない予定である.
+
+
+%% \section{Webworkについて}
+%% \url{https://webwork.sci.hokudai.ac.jp/webwork2/2024_Hokudai2_LA1_2/}
+%% %% の各ホームワークのキーワードは以下の通り:
+%% %% \begin{enumerate}
+%% %% \item
+%% %%   LAintro set01 matrices and vectors
+%% %%   \begin{itemize}
+%% %%   \item 行列に関する用語の定義(型, 成分, 行, 列, $=$)
+%% %%     (\cpageref{def:mat:type},\cpageref{def:mat:content,def:matrix:eq})
+%% %%   \item クロネッカー$\delta$ (\cpageref{def:ksdelta})
+%% %%   \item 単位行列 (\cpageref{def:mat:unit})
+%% %%   \item 零行列 (\cpageref{def:mat:zero})
+%% %%   \item 上半三角行列 (\cpageref{def:triangular})
+%% %%   \item 下半三角行列 (\cpageref{def:triangular})
+%% %%   \item 対角行列 (\cpageref{def:triangular})
+%% %%   \item スカラー行列 (\cpageref{def:mat:scalar})
+%% %%   \item 対称行列 (\cpageref{def:symmat})
+%% %%   \item 交代行列 (\cpageref{def:altmat})
+%% %%   \item 行列の転置 (\cpageref{def:op:transpose})
+%% %%   \end{itemize}
+%% %% \item
+%% %%   LAintro set02 sums and products
+%% %%   \begin{itemize}
+%% %%   \item 行列の和 (\cpageref{def:op:sum})
+%% %%   \item 行列の積 (\cpageref{def:op:prod})
+%% %%   \item 行列のスカラー倍 (\cpageref{def:op:scalar})
+%% %%   \item 正方行列の冪 (\cpageref{def:op:pow})
+%% %%   \item 対角行列の冪 (\cpageref{eg:diag:power})
+%% %%   \item 2次のケーリー--ハミルトンの定理 (\cpageref{thm:cht:2dim})
+%% %%   \end{itemize}
+%% %% \item
+%% %%   LAintro set03 determinants and inverse matrices of dimension 2
+%% %%   \begin{itemize}
+%% %%   \item (2次)行列式 (\cpageref{def:det:2})
+%% %%   \item 正則行列 (\cpageref{def:mat:reg})
+%% %%   \item 逆行列 (\cpageref{def:mat:reg})
+%% %%   \item 行列式と三角形の面積 (\cpageref{thm:det:geommeaning})
+%% %%   \item 逆行列を用いた連立方程式の解法 (\cpageref{ex:sle:regcase})
+%% %%   \item 逆行列と正則行列 (\cpageref{thm:det:reg})
+%% %%   \item 行列式が積を保存すること (\cpageref{thm:det:hom})
+%% %%   \end{itemize}
+%% %% \item
+%% %%   LAintro set04 systems of linear equations of dimension 2
+%% %%   \begin{itemize}
+%% %%   \item 行基本変形 (\cpageref{def:mat:fundtransformation})
+%% %%   \item 簡約行階段行列 (\cpageref{def:redechelonmat})
+%% %%   \item 階数 (\cpageref{def:rank})
+%% %%   \item 拡大係数行列 (\cpageref{def:eq:extededcoef})
+%% %%   \item 行基本変形と逆行列 (\cpageref{thm:fund:inverse})
+%% %%   \end{itemize}
+%% %% \item\label{item:webwork:3d-1}
+%% %%   LAintro set05 determinants and inverse matrices of dimension 3
+%% %%   \begin{itemize}
+%% %%   \item 3次の行列式. (\cpageref{def:det:generic})
+%% %%   \end{itemize}
+%% %% \item\label{item:webwork:3d-2}
+%% %%   LAintro set06 systems of linear equations of dimension 3
+%% %%   \begin{itemize}
+%% %%   \item 3元連立方程式のクラメールの公式による解法. (\cpageref{thm:cramer})
+%% %%   \end{itemize}  
+%% %% \item
+%% %%   LAintro set07 basis and inner products
+%% %%   \begin{itemize}
+%% %%   \item 一次独立 (\cpageref{def:linindep})
+%% %%   \item 基底 (\cpageref{def:basis})
+%% %%   \item 一次独立であることの言い換え (\cpageref{thm:linindep:det})
+%% %%   \item 内積 (\cpageref{def:innnerprod})
+%% %%   \item ベクトルのなす角と内積 (\cpageref{thm:innerprod:polar})
+%% %%   \item ノルム (\cpageref{def:norm})
+%% %%   \end{itemize}
+%% %% \item
+%% %%   LAintro set08 normality and orthogonality
+%% %%   \begin{itemize}
+%% %%   \item 正規直交基底 (\cpageref{def:orthonormal})
+%% %%   \item 直交射影と垂直成分 (\cpageref{def:projection})
+%% %%   \item (直線の表し方) (\cpageref{def:line})
+%% %%   \item 点から直線におろした垂線の長さ, 点と直線の距離 (\cpageref{prop:distance:point:line})
+%% %%   \item グラムシュミット直交化法 (\cpageref{thm:gramschmidt})
+%% %%   \end{itemize}
+%% %% \item
+%% %%   LAintro set09 linear transformations
+%% %%   \begin{itemize}
+%% %%   \item 斉次一次式 (\cpageref{def:homogepolynomial})
+%% %%   \item 一次変換 (\cpageref{def:lintransform})
+%% %%   \item 行列とベクトルの積(表現行列) (\cpageref{def:repmat})
+%% %%   \item 合成と積 (\cpageref{rem:comp:prod})
+%% %%   \item 鏡映 (\cpageref{ex:refl})
+%% %%   \item 回転 (\cpageref{ex:rotation})
+%% %%   \item 像, 核 (\cpageref{def:img,def:ker})
+%% %%   \item 全射, 単射 (\cpageref{def:suj,def:inj})
+%% %%   \end{itemize}
+%% %% \item
+%% %%   LAintro set10 characteristic polynomials and eigenvalues
+%% %%   \begin{itemize}
+%% %%   \item 特性多項式 (\cpageref{def:charpoly})
+%% %%   \item 固有値 (\cpageref{def:eigen})
+%% %%   \item 行列多項式 (\cpageref{def:mat:polynomial})
+%% %%   \end{itemize}
+%% %% \item
+%% %%   LAintro set11 diagonalizations
+%% %%   \begin{itemize}
+%% %%   \item 対角化可能性 (\cpageref{thm:diagonizablity})
+%% %%   \item 固有ベクトル (\cpageref{def:eigen,ex:diagonalization})
+%% %%   \item 対角化 (\cpageref{ex:diagonalization})
+%% %%   \item 冪 (\cpageref{ex:diagonalization})
+%% %%   \item 三項間漸化式への応用 (\cpageref{ex:diagonalization})
+%% %%   \end{itemize}
+%% %% \item
+%% %%   LAintro set12 diagonalizations of symmetric matrices
+%% %%   \begin{itemize}
+%% %%   \item 直交行列 (\cpageref{def:orthogonalmat})
+%% %%   \item 実対称行列の固有値, 固有ベクトル. (\cpageref{thm:symmat:eigen})
+%% %%   \item 実対称行列の直交行列による対角化. (\cpageref{thm:symmat:diag})
+%% %%   \end{itemize}
+%% %% \end{enumerate}
+
+
+
+
+
+\section{シラバス}
+シラバスに挙げた項目は以下の通り:
+\begin{enumerate}
+\item
+  ベクトル空間，
+\item 線形写像，
+\item 行列式，
+\item 固有値$\cdot$固有ベクトル,
+\item 行列の対角化
+\end{enumerate}
+
+\section{参考書}
+%% このノートの末尾に挙げた参考文献のうち,
+%% \cite{978-4-7806-0772-7}
+%% はシラバスに教科書として挙げたものである.
+%% \cite{978-4-7806-0164-0,978-4-535-78682-0}
+%% はシラバスに参考書として挙げたものである.
+
+%% \cite{978-4-535-78682-0}は大学の数学に関する講義全般について解説している本である.
+%% 講義を受ける上での注意や,
+%% 講義の前提となる集合や論理の知識についても解説がしてある.
+%% 本講義とは直接関係はないが,
+%% 図書館で借りるなどして一度最初の数章を読んでみることを勧める.
+
+\tableofcontents
+
+\chapter{線形代数以前の話}
+
+\section{講義で使われる見出し}
+講義に出てくる言明には大きく分けて二つあります:
+\begin{itemize}
+ \item 証明が必要ではないもの
+ \item 証明が必要なもの
+\end{itemize}
+また講義の板書では,
+言明に見出しをつけることがしばしばあります.
+以下では使われる見出しについて説明します.
+\subsection{証明が必要ではない言明}
+言葉の持つ意味を決めることが,
+`定義'です.
+つまり, ルールを決めるということです.
+ルールを設定するということですので,
+`定義'自身に証明は必要ではありません.
+
+数学書では定義される用語をイタリック/太文字/下線で
+書く習慣があります.
+重要だからという理由で強調されているわけではありません.
+
+Def/Definition/定義 などの見出しが使われます.
+
+\subsection{証明が必要な言明}
+証明をして真である確認する必要がある言明は,
+`命題'と呼ばれます.
+`主張' や `事実' と呼ぶこともあると思います.
+
+講義では, 
+気分や役割により次の様に分類することが多いと思います.
+これらのうち, どの見出しを使うかというのは, 
+かなり主観的です.
+\begin{description}
+\item[定理]
+重要なもの, まとめ的なもの など 比較的重いものに使われます.
+
+Thm/Theorem/定理  などの見出しを使います.
+
+\item[補題]
+他の命題を示すために使うものに使われます.
+
+Lem/Lemma/補題  などの見出しを使います.
+
+\item[系]
+他からすぐ示すことができるものに使われます.
+
+Cor/Corollary/系  などの見出しを使います.
+\item[その他の命題]
+
+Prop/Porposition/命題  などの見出しを使います.
+\end{description}
+
+\subsection{補足}
+また見出しとしては次のようなものも使こともあります:
+\begin{itemize}
+ \item 
+実例, 具体例 (`喩え'ではない) を述べる際に,
+例/Example/E.g.\   などの見出しを使います.
+\item
+補足的なことを述べる際に,
+注/Rem/Remark   などの見出しを使います.
+\end{itemize}
+
+\section{集合や論理について}
+
+集合や論理についての基本的なことについては,
+既知とします.
+もしそれらについて不安な人は,
+高校の教科書の該当箇所や,
+\cite{978-4-535-78682-0}
+を参考に復習をすること.
+
+
+以下の記号を用いる:
+\begin{itemize}
+\item 複素数全体のなす集合を$\CC$とおく.
+\item 実数全体のなす集合を$\RR$とおく.
+\item 有理数全体のなす集合を$\QQ$とおく.
+\item 整数全体のなす集合を$\ZZ$とおく.
+\item 非負整数全体のなす集合を$\NN$とおく.
+\end{itemize}
+つまり,
+`$x\in\CC$'は
+`$x$は複素数である'
+ということを意味する.
+
+演算と作用について.
+
+\section{体}
+$K$を集合とする.
+$K$に四則演算(加減乗除)が定まっているとき,
+$K$は
+\defit{体}\footnote{タイと読む.}
+\Defit{field}
+であるという.
+ただし,
+``四則演算が定まっている''
+とは, 次を満たしていることとする:
+\begin{enumerate}
+\item
+  $s,t\in K$に対し$s+t$という$K$の元が定まる.
+  (この演算を加法と呼ぶ.)
+  さらに, $0$という(特別な)元がある.
+
+  $a,b,c\in K$なら, 次が成り立つ:
+  \begin{enumerate}
+  \item
+    $(a+b)+c=a+(b+c)$.
+  \item
+    $a+b=b+a$.
+  \item
+    $0+a=a$.
+  \item
+    $x$に関する方程式
+    \begin{align*}
+      a+x=0
+    \end{align*}
+    が($K$の元の)解を持つ.
+  \end{enumerate}
+\item
+  このとき, $a+x=0$の解は,
+  $a$が定まればただ一つに定まるので,
+  この解を$-a$と書く.
+
+  $b+(-a)$を$b-a$と略記する。
+  (この演算を加法と呼ぶ.)
+
+\item
+  $s,t\in K$に対し$st$という$K$の元が定まる.
+  (この演算を乗法と呼ぶ.)
+  さらに, $1$という(特別な)元がある.
+
+  $a,b,c\in K$なら, 次が成り立つ:
+  \begin{enumerate}
+  \item
+    $(ab)c=a(bc)$.
+  \item
+    $ab=ba$.
+  \item
+    $1a=a$.
+  \item
+    $a\neq 0$ならば,
+    $x$に関する方程式
+    \begin{align*}
+      ax=1
+    \end{align*}
+    が($K$の元の)解を持つ.
+  \end{enumerate}
+
+\item
+  $a\neq 0$とする.
+  このとき, $ax=1$の解は,
+  $a$が定まればただ一つに定まるので,
+  この解を$a^{-1}$とか$\frac{1}{a}$と書く.
+
+  $b(\frac{1}{a})$を$\frac{b}{a}$と略記する。
+  (この演算を除法と呼ぶ.)
+
+\item
+  $a,b,c\in K$なら, 以下が成り立つ:
+  \begin{enumerate}
+  \item $a(b+c)=ab+ac$.
+  \item $0\neq 1$.
+  \end{enumerate}
+\end{enumerate}
+
+\begin{remark}
+  つまり体とは,
+  結合則, 分配則, 可換則などが成り立つ
+  四則演算が備わった数の集合のことである.
+\end{remark}
+
+
+\begin{example}
+  $\CC$は体である.
+\end{example}
+\begin{example}
+  $\RR$は体である.
+\end{example}
+\begin{example}
+  $\QQ$は体である.
+\end{example}
+\begin{remark}
+  証明は省略する.
+  以後これらは事実として使う.
+\end{remark}
+\begin{remark}
+  掛け算は$ab$または$a\cdot b$のように書き表す.
+  ($\times$は本原稿では別の意味で使うので,
+  掛け算の意味では用いない)
+\end{remark}
+
+
+\begin{example}
+  $2\in\ZZ$ではあるが$\frac{1}{2}\not\in \ZZ$である.
+  したがって$2x=1$は$\ZZ$の元の解を持たない.
+  $2\neq 0$であるが$2x=1$は$\ZZ$の元の解を持たないので,
+  $\ZZ$は体ではない.
+\end{example}
+
+%% 本講義では,
+%% 体$K$の元のことを数と呼ぶ.
+%% つまり,
+%% 数に対しては四則演算ができる.
+%% 特に断らない限り,
+%% 体としては何を考えても構わない.
+
+
+\sectionX{章末問題}
+\begin{quiz}
+  \solvelater{quiz:0:1}
+  $a$を実数とする.
+  $\sqrt{a^2}=a$は成り立つか答えよ.
+\end{quiz}
+
+
+\begin{quiz}
+    \solvelater{quiz:0:2}
+$|2-\sqrt{5}|$
+を絶対値を表す記号を使わずに書くとどうなるか答えよ.
+\end{quiz}
+
+\begin{quiz}
+    \solvelater{quiz:0:3}
+    $s,u$を実数とする.
+    $x$に関する方程式
+    $x^2-(s+u)x+su=0$
+    が実数解を持つことを示せ
+\end{quiz}
+
+
+\chapter{線形空間と線形写像}
+ここでは, 線形空間と線形写像を定義し,
+いくつかの例を挙げる.
+また, 線形空間が同型であるということを定義する.
+
+\section{線形空間の定義とその例}
+線形空間の定義と例を挙げる.
+
+\begin{definition}
+  $(\KK,+,\cdot,0,1)$を体とする.
+  $V$を集合とする.
+  $\pplus\colon V\times V \to V$を$V$上の二項演算とする.
+  $.\colon \KK\times V \to V$を$\KK$の$V$への作用とする.
+  $0_V \in V$とする.
+
+  以下の条件を満たすとき,
+  $(V,\pplus,.,0_V)$が$\KK$上のベクトル空間とか$\KK$-線形空間であるいう:
+  \begin{enumerate}
+  \item 
+    \begin{enumerate}
+    \item $u,w\implies  u\pplus w=w\pplus u$.
+    \item
+      \label{def:vecsp:item:sum:ass}
+      $v,w,u\in V \implies (v\pplus w)\pplus u=v\pplus (w\pplus u)$.
+    \item $w\in V \implies 0_V\pplus w=w$.
+    \item $w\in V\implies $ `$w\pplus x=0_V$を満たす$x\in V$が存在する'.
+    \end{enumerate}
+  \item
+    \begin{enumerate}
+    \item
+      \label{def:vecsp:item:prod:ass}
+      $a,b\in\KK, w\in V \implies a.(b.w)=(a\cdot b).w$
+    \item $w\in V \implies 1.w=w$.
+    \end{enumerate}
+  \item
+    \begin{enumerate}
+    \item $a\in \KK,u,w\in V \implies a.(u\pplus w)=(a.u)\pplus (a.w)$.
+    \item $a,b\in\KK, w\in V\implies (a+b).w=(a.w)\pplus (b.w)$.
+    \end{enumerate}
+  \end{enumerate}
+\end{definition}
+\begin{remark}
+  $(V,+,.,0_V)$が$\KK$-線形空間
+  であるとき,
+  $+$を加法, $.$をスカラー倍と呼ぶ.
+  また, $0_V$を$V$の零元とか零ベクトルと呼ぶ.
+  また, 
+  $(V,+,.,0_V)$が$\KK$-線形空間であることを,
+  $V$は加法$+$とスカラー倍$.$で$0_V$を零元とする$\KK$-線形空間であるということもある.
+  また, $+$, $.$, $0_V$が文脈上明らかなときには,
+  単に$V$を$\KK$-線形空間と呼ぶこともある.
+\end{remark}
+\begin{remark}
+  $(V,+,.,0_V)$が$\KK$上のベクトル空間
+  であるとき,
+  $V$の元をベクトルと呼ぶ.
+  また, 零元$0_V$のことを, 零ベクトルと呼ぶこともある.
+\end{remark}
+
+まず, ベクトル空間の例をいくつか挙げる.
+
+\begin{example}
+  $\KK$を体とし, $n\geq 1$とする.
+  このとき,
+  \begin{align*}
+    \KK^n
+    =\Set{\begin{pmatrix}a_1\\\vdots\\a_n\end{pmatrix}|a_1,\ldots,a_n\in \KK}
+  \end{align*}
+  とおく.
+  このとき, $a_i,b_i,c\in\KK$に対し,
+  \begin{align*}
+    \begin{pmatrix}a_1\\\vdots\\a_n\end{pmatrix}+\begin{pmatrix}b_1\\\vdots\\b_n\end{pmatrix}
+      &=\begin{pmatrix}a_1+b_1\\\vdots\\a_n+b_n\end{pmatrix},\\
+    c\begin{pmatrix}a_1\\\vdots\\a_n\end{pmatrix}
+    &=\begin{pmatrix}ca_1\\\vdots\\ca_n\end{pmatrix}
+    \intertext{とし,}
+    \zzero_n&=\begin{pmatrix}0\\\vdots\\a_n\end{pmatrix}
+  \end{align*}
+  とおくと,
+  $(\KK^n,+,.,\zzero_n$は$\KK$-線形空間.
+  これを$\KK$上の$n$次元数ベクトル空間と呼ぶ.
+\end{example}
+
+\begin{example}
+  $\KK$を体とし, $n,m\geq 1$とし,
+  $I=\Set{1,\ldots,m}$, $J=\Set{1,\ldots, n}$とする.
+  このとき,
+  \begin{align*}
+    \KK^{m \times n}
+    =\Set{(a_{i,j})_{i\in I,j\in J}|a_{i,j}\in \KK}
+  \end{align*}
+  とおく.
+  このとき, $a_{i,j},b_{i,j},c\in\KK$に対し,
+  \begin{align*}
+    (a_{i,j})_{i\in I,j\in J}
+    +(b_{i,j})_{i\in I,j\in J}
+      &=(a_{i,j}+b_{i,j})_{i\in I,j\in J},\\
+    c(a_{i,j})_{i\in I,j\in J}
+    &=(ca_{i,j})_{i\in I,j\in J}
+    \intertext{とし,}
+    O_{m,n}&=(0)_{i\in I,j\in J}
+  \end{align*}
+  とおくと,
+  $(\KK^{m \times n},+,.,O_{m,n})$は$\KK$-線形空間.
+\end{example}
+
+\begin{example}
+  $\NN$で添字付けられた数列$a_0, a_1,\ldots$を$(a_i)_{i\in \NN}$で表す.
+  $\KK$を体とする.
+  \begin{align*}
+    \KK^\NN = \Set{(a_i)_{i\in \NN}|a_i\in \KK}
+  \end{align*}
+  とおく.
+  次の和とスカラー倍で, $(0)_{i\in \NN}$を零元とする$\KK$-線形空間:
+  $c\in\KK$, $(a_i)_{i\in \NN},(b_i)_{i\in \NN}\in \KK^\NN$に対し,
+  \begin{align*}
+    (a_i)_{i\in \NN}+(b_i)_{i\in \NN} &= (a_i+b_i)_{i\in \NN},\\
+    c(a_i)_{i\in \NN} &= (ca_i)_{i\in \NN}.
+  \end{align*}
+\end{example}
+
+\begin{example}
+  $\KK$を体とする.
+  $X$を集合とする.
+  \begin{align*}
+    \KK^X = \Set{f\colon X \to \KK \text{; 写像.}}
+  \end{align*}
+  とする.
+  $c\in\KK$, $f,g\in \KK^X$に対し,
+  $f+g\in \KK^X$と$c.f\in\KK^X$を以下で定める:
+  $x\in X$に対し,
+  \begin{align*}
+    (f+g)(x) &= f(x)+g(x),\\
+    (c.f)(x) &= c(f(x)).
+  \end{align*}
+  また $\underline{0}\in\KK^X$を以下で定める:
+  $x\in X$に対し,
+  \begin{align*}
+    \underline{0}(x)=0.
+  \end{align*}
+  このとき, $(\KK^X,+,.,\underline{0})$は,
+  $\KK$-線形空間.
+\end{example}
+
+\begin{example}
+  $(\KK,+,\cdot,0)$を体とする.
+  体としての和と積で$\KK$-線形空間.
+  つまり, $(\KK,+,\cdot,0)$は, $\KK$-線形空間.
+\end{example}
+
+\begin{example}
+  $\CC=\Set{a+b\sqrt{-1}|a,b\in \RR}$は,
+  通常の和と積で$\CC$-線形空間.
+  また,
+  $\CC$は,
+  通常の和と積で$\RR$-線形空間でもある.
+\end{example}
+
+\begin{example}
+  \begin{align*}
+    V=\Set{a+b\sqrt{2}|a,b\in\QQ}
+  \end{align*}
+  とすると,
+  通常の和と積で$\QQ$-線形空間.
+\end{example}
+
+\begin{example}
+  $\zeta_n= e^{\frac{2\pi\sqrt{-1}}{n}}=\cos(\frac{2\pi}{n})+\sqrt{-1}\sin(\frac{2\pi}{n})$
+  とする.
+  \begin{align*}
+    V=\Set{\sum_{i=0}^{n}a_i\zeta_n^i|a_i\in\QQ}
+  \end{align*}
+  とすると,
+  通常の和と積で$\QQ$-線形空間.
+\end{example}
+
+\begin{example}
+  $\CC$は,
+  通常の和と積で$\RR$-線形空間.
+\end{example}
+
+
+
+表記方法などについてのいくつかコメントする.
+\begin{remark}
+\Cref{def:vecsp:item:sum:ass}
+があるので, $v+w+u$を, $(v+w)+u$と思っても,
+$v+(w+u)$と思っても差し支えない.
+そこで, $(v+w)+u$を$v+w+u$と略記する.
+\end{remark}
+\begin{remark}
+\Cref{def:vecsp:item:prod:ass}
+があるので, $abw$を, $a.(b.w)$と思っても,
+$(a\cdot b).w$と思っても差し支えない.
+そこで, $a.(b.w)$を$abw$と略記する.
+もっと一般に, $n\geq 1$, $a_1,\ldots, a_n\in\KK$, $w\in V$に対し,
+$a_1.(a_2.\ldots.(a_n.w)\cdots)$のことを
+$a_1\cdots a_n w$と略記する.
+\end{remark}
+\begin{remark}
+  $\KK$上のベクトル空間の定義において,
+  割り算は条件として現れない.
+  したがって,
+  これらの条件を, ある可換環に対して満たすものという概念を定義することができる.
+\end{remark}
+\begin{prop}
+  \label{lem:uniq:zero}
+  $(V,+,.,0_V)$を$\KK$-線形空間とする.
+  $o\in V$が, 次の条件を満たすとする:
+  \begin{align*}
+    w\in V \implies w+o=w.
+  \end{align*}
+  このとき, $o=0_V$.
+\end{prop}
+\begin{proof}
+  $0_V$の満たす条件から$0_V+o=o$.
+  一方, $o$の満たす条件から$0_V+o=0_V$.
+  よって, $0_V=0_V+o=o$.
+\end{proof}
+\begin{remark}
+  $u,w\in V$に対し, $u+w=w+u$であるので,
+  次の条件は同値である:
+  \begin{enumerate}
+  \item $w\in V \implies w+o=w$.
+  \item $w\in V \implies o+w=w$.
+  \end{enumerate}
+  したがって, \cref{lem:uniq:zero}から,
+  零ベクトルの条件を満たす元はただ一つしかないことがわかる.
+  何が$V$の零ベクトルであるかを明示しなくともよい場合は,
+  単に$(V,+,.)$を$\KK$-線形空間と呼ぶこともある.
+\end{remark}
+\begin{prop}
+  \label{prop:zeroveciszeroscalar}
+  $(V,+,.,0_V)$を$\KK$-線形空間とする.
+  このとき,
+  \begin{align*}
+    w\in V \implies 0.w=0_V. 
+  \end{align*}
+\end{prop}
+\begin{proof}
+  $x\in x$は
+  $0.w+x=0_V$を満たすとする.
+  このとき,
+  \begin{align*}
+    (0.w+0.w)+x&=(0+0).w+x=0.w+x=0_V\\
+    0.w+(0.w+x)&=0.w+0_V=0.w
+  \end{align*}
+  よって, $0.w=0_V$.  
+\end{proof}
+
+\begin{lemma}
+  \label{lem:uniq:inv}
+  $(V,+,.,0_V)$を$\KK$-線形空間とする.
+  $w\in V$とする.
+  $x,y\in V$が以下を満たすなら$x=y$:
+  \begin{align*}
+    w+x&=0_V\\
+    y+w&=0_V
+  \end{align*}
+\end{lemma}
+\begin{proof}
+  $x$の満たす条件から,
+  $y+(w+x)=y+0_V=y$.
+  $y$の満たす条件から,
+  $(y+w)+x=0_V+x=x$.
+  よって$x=y$.
+\end{proof}
+\begin{remark}
+  $u,w\in V$に対し, $u+w=w+u$であるので,
+  次の条件は同値である:
+  \begin{enumerate}
+  \item $w+x=0_V$.
+  \item $x+w=0_V$.
+  \end{enumerate}
+  したがって, \cref{lem:uniq:inv}から,
+  各$w\in V$に対し, $w+x=0_V$を満たす$x\in V$は
+  ただ一つしかないことがわかる.
+\end{remark}
+\begin{prop}
+  $(V,+,.,0_V)$を$\KK$-線形空間とする.
+  $w,x\in V$に対し,
+  以下は同値:
+  \begin{enumerate}
+  \item
+    \label{prop:inverse:-1:item:1}
+    $w+x=0_V$.
+  \item
+    \label{prop:inverse:-1:item:2}
+    $x=(-1).w$.    
+  \end{enumerate}
+\end{prop}
+\begin{proof}
+  \Cref{prop:zeroveciszeroscalar}より,
+  \begin{align}
+    w+(-1).w=(1-1).w=0.w=0_V.
+  \end{align}
+  したがって,
+  $w+x=0_V$を満たす
+  $x$は$(-1).w$に等しいことがわかる.
+\end{proof}
+
+\begin{remark}
+  $(-1).w$のことを$-w$と略記する.
+  また, $u+(-w)$のことを$u-w$と略記する.
+\end{remark}
+
+
+
+
+\section{線形写像の定義とその例}
+
+\sectionX{章末問題}
+\begin{quiz}
+  %\solvelater{quiz:1:1}
+\end{quiz}
+
+
