@@ -404,11 +404,11 @@ $|2-\sqrt{5}|$
   $(\KK,+,\cdot,0,1)$を体とする.
   $V$を集合とする.
   $\pplus\colon V\times V \to V$を$V$上の二項演算とする.
-  $.\colon \KK\times V \to V$を$\KK$の$V$への作用とする.
+  $\act \colon \KK\times V \to V$を$\KK$の$V$への作用とする.
   $0_V \in V$とする.
 
   以下の条件を満たすとき,
-  $(V,\pplus,.,0_V)$が$\KK$上のベクトル空間とか$\KK$-線形空間であるいう:
+  $(V,\pplus,\act ,0_V)$が$\KK$上のベクトル空間とか$\KK$-線形空間であるいう:
   \begin{enumerate}
   \item 
     \begin{enumerate}
@@ -423,29 +423,29 @@ $|2-\sqrt{5}|$
     \begin{enumerate}
     \item
       \label{def:vecsp:item:prod:ass}
-      $a,b\in\KK, w\in V \implies a.(b.w)=(a\cdot b).w$
-    \item $w\in V \implies 1.w=w$.
+      $a,b\in\KK, w\in V \implies a\act (b\act w)=(a\cdot b)\act w$
+    \item $w\in V \implies 1\act w=w$.
     \end{enumerate}
   \item
     \begin{enumerate}
-    \item $a\in \KK,u,w\in V \implies a.(u\pplus w)=(a.u)\pplus (a.w)$.
-    \item $a,b\in\KK, w\in V\implies (a+b).w=(a.w)\pplus (b.w)$.
+    \item $a\in \KK,u,w\in V \implies a\act (u\pplus w)=(a\act u)\pplus (a\act w)$.
+    \item $a,b\in\KK, w\in V\implies (a+b)\act w=(a\act w)\pplus (b\act w)$.
     \end{enumerate}
   \end{enumerate}
 \end{definition}
 \begin{remark}
-  $(V,+,.,0_V)$が$\KK$-線形空間
+  $(V,+,\act ,0_V)$が$\KK$-線形空間
   であるとき,
-  $+$を加法, $.$をスカラー倍と呼ぶ.
+  $+$を加法, $\act $をスカラー倍と呼ぶ.
   また, $0_V$を$V$の零元とか零ベクトルと呼ぶ.
   また, 
-  $(V,+,.,0_V)$が$\KK$-線形空間であることを,
-  $V$は加法$+$とスカラー倍$.$で$0_V$を零元とする$\KK$-線形空間であるということもある.
-  また, $+$, $.$, $0_V$が文脈上明らかなときには,
+  $(V,+,\act ,0_V)$が$\KK$-線形空間であることを,
+  $V$は加法$+$とスカラー倍$\act $で$0_V$を零元とする$\KK$-線形空間であるということもある.
+  また, $+$, $\act $, $0_V$が文脈上明らかなときには,
   単に$V$を$\KK$-線形空間と呼ぶこともある.
 \end{remark}
 \begin{remark}
-  $(V,+,.,0_V)$が$\KK$上のベクトル空間
+  $(V,+,\act ,0_V)$が$\KK$上のベクトル空間
   であるとき,
   $V$の元をベクトルと呼ぶ.
   また, 零元$0_V$のことを, 零ベクトルと呼ぶこともある.
@@ -471,7 +471,7 @@ $|2-\sqrt{5}|$
     \zzero_n&=\begin{pmatrix}0\\\vdots\\a_n\end{pmatrix}
   \end{align*}
   とおくと,
-  $(\KK^n,+,.,\zzero_n$は$\KK$-線形空間.
+  $(\KK^n,+,\act ,\zzero_n$は$\KK$-線形空間.
   これを$\KK$上の$n$次元数ベクトル空間と呼ぶ.
 \end{example}
 
@@ -495,11 +495,13 @@ $|2-\sqrt{5}|$
     O_{m,n}&=(0)_{i\in I,j\in J}
   \end{align*}
   とおくと,
-  $(\KK^{m \times n},+,.,O_{m,n})$は$\KK$-線形空間.
+  $(\KK^{m \times n},+,\act ,O_{m,n})$は$\KK$-線形空間.
 \end{example}
 
 \begin{example}
-  $\NN$で添字付けられた数列$a_0, a_1,\ldots$を$(a_i)_{i\in \NN}$で表す.
+  $\NN$で添字付けられた数列$a_0, a_1,\ldots$を
+  $(a_i)_{i\in \NN}$
+  で表す.
   $\KK$を体とする.
   \begin{align*}
     \KK^\NN = \Set{(a_i)_{i\in \NN}|a_i\in \KK}
@@ -521,18 +523,18 @@ $|2-\sqrt{5}|$
   \end{align*}
   とする.
   $c\in\KK$, $f,g\in \KK^X$に対し,
-  $f+g\in \KK^X$と$c.f\in\KK^X$を以下で定める:
+  $f+g\in \KK^X$と$c\act f\in\KK^X$を以下で定める:
   $x\in X$に対し,
   \begin{align*}
     (f+g)(x) &= f(x)+g(x),\\
-    (c.f)(x) &= c(f(x)).
+    (c\act f)(x) &= c(f(x)).
   \end{align*}
   また $\underline{0}\in\KK^X$を以下で定める:
   $x\in X$に対し,
   \begin{align*}
     \underline{0}(x)=0.
   \end{align*}
-  このとき, $(\KK^X,+,.,\underline{0})$は,
+  このとき, $(\KK^X,+,\act ,\underline{0})$は,
   $\KK$-線形空間.
 \end{example}
 
@@ -584,11 +586,11 @@ $v+(w+u)$と思っても差し支えない.
 \end{remark}
 \begin{remark}
 \Cref{def:vecsp:item:prod:ass}
-があるので, $abw$を, $a.(b.w)$と思っても,
-$(a\cdot b).w$と思っても差し支えない.
-そこで, $a.(b.w)$を$abw$と略記する.
+があるので, $abw$を, $a\act (b\act w)$と思っても,
+$(a\cdot b)\act w$と思っても差し支えない.
+そこで, $a\act (b\act w)$を$abw$と略記する.
 もっと一般に, $n\geq 1$, $a_1,\ldots, a_n\in\KK$, $w\in V$に対し,
-$a_1.(a_2.\ldots.(a_n.w)\cdots)$のことを
+$a_1\act (a_2\act \ldots\act (a_n\act w)\cdots)$のことを
 $a_1\cdots a_n w$と略記する.
 \end{remark}
 \begin{remark}
@@ -599,7 +601,7 @@ $a_1\cdots a_n w$と略記する.
 \end{remark}
 \begin{prop}
   \label{lem:uniq:zero}
-  $(V,+,.,0_V)$を$\KK$-線形空間とする.
+  $(V,+,\act ,0_V)$を$\KK$-線形空間とする.
   $o\in V$が, 次の条件を満たすとする:
   \begin{align*}
     w\in V \implies w+o=w.
@@ -621,30 +623,30 @@ $a_1\cdots a_n w$と略記する.
   したがって, \cref{lem:uniq:zero}から,
   零ベクトルの条件を満たす元はただ一つしかないことがわかる.
   何が$V$の零ベクトルであるかを明示しなくともよい場合は,
-  単に$(V,+,.)$を$\KK$-線形空間と呼ぶこともある.
+  単に$(V,+,\act )$を$\KK$-線形空間と呼ぶこともある.
 \end{remark}
 \begin{prop}
   \label{prop:zeroveciszeroscalar}
-  $(V,+,.,0_V)$を$\KK$-線形空間とする.
+  $(V,+,\act ,0_V)$を$\KK$-線形空間とする.
   このとき,
   \begin{align*}
-    w\in V \implies 0.w=0_V. 
+    w\in V \implies 0\act w=0_V. 
   \end{align*}
 \end{prop}
 \begin{proof}
   $x\in x$は
-  $0.w+x=0_V$を満たすとする.
+  $0\act w+x=0_V$を満たすとする.
   このとき,
   \begin{align*}
-    (0.w+0.w)+x&=(0+0).w+x=0.w+x=0_V\\
-    0.w+(0.w+x)&=0.w+0_V=0.w
+    (0\act w+0\act w)+x&=(0+0)\act w+x=0\act w+x=0_V\\
+    0\act w+(0\act w+x)&=0\act w+0_V=0\act w
   \end{align*}
-  よって, $0.w=0_V$.  
+  よって, $0\act w=0_V$.  
 \end{proof}
 
 \begin{lemma}
   \label{lem:uniq:inv}
-  $(V,+,.,0_V)$を$\KK$-線形空間とする.
+  $(V,+,\act ,0_V)$を$\KK$-線形空間とする.
   $w\in V$とする.
   $x,y\in V$が以下を満たすなら$x=y$:
   \begin{align*}
@@ -671,7 +673,7 @@ $a_1\cdots a_n w$と略記する.
   ただ一つしかないことがわかる.
 \end{remark}
 \begin{prop}
-  $(V,+,.,0_V)$を$\KK$-線形空間とする.
+  $(V,+,\act ,0_V)$を$\KK$-線形空間とする.
   $w,x\in V$に対し,
   以下は同値:
   \begin{enumerate}
@@ -680,21 +682,21 @@ $a_1\cdots a_n w$と略記する.
     $w+x=0_V$.
   \item
     \label{prop:inverse:-1:item:2}
-    $x=(-1).w$.    
+    $x=(-1)\act w$.    
   \end{enumerate}
 \end{prop}
 \begin{proof}
   \Cref{prop:zeroveciszeroscalar}より,
   \begin{align}
-    w+(-1).w=(1-1).w=0.w=0_V.
+    w+(-1)\act w=(1-1)\act w=0\act w=0_V.
   \end{align}
   したがって,
   $w+x=0_V$を満たす
-  $x$は$(-1).w$に等しいことがわかる.
+  $x$は$(-1)\act w$に等しいことがわかる.
 \end{proof}
 
 \begin{remark}
-  $(-1).w$のことを$-w$と略記する.
+  $(-1)\act w$のことを$-w$と略記する.
   また, $u+(-w)$のことを$u-w$と略記する.
 \end{remark}
 
@@ -702,6 +704,19 @@ $a_1\cdots a_n w$と略記する.
 
 
 \section{線形写像の定義とその例}
+\begin{definition}
+  $(V,+,\act)$, $(W,\pplus,\aact)$を$\KK$-線形空間とする.
+  $\varphi$を$V$から$W$への写像とする.
+  $\varphi$が以下の条件を満たすとき,
+  $\varphi$は線形であるという:
+  \begin{enumerate}
+    \item $v,u\in V\implies \varphi(v+u)=\varphi(v)\pplus\varphi(u)$.
+    \item $c\in \KK, u\in V\implies \varphi(c\act v)=c\aact\varphi(v)$.
+  \end{enumerate}
+\end{definition}
+
+線形写像の例をいくつか挙げる.
+
 
 \sectionX{章末問題}
 \begin{quiz}

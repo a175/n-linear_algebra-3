@@ -286,16 +286,6 @@
 \newcommand{\hconcat}[2]{\left(\begin{array}{c|c}#1& #2\end{array}\right)}
 \newcommand{\vconcat}[2]{\left(\begin{array}{c}#1\\\hline #2\end{array}\right)}
 
-%\newcommand{\pplus}{\mathbin{\maltese}}
-%\newcommand{\pplus}{\mathbin{\pmb{+}}}
-\newcommand{\pplus}{\mathbin{\boldsymbol{+}}}
-%\newcommand{\pplus}{\mathbin{\text{✚}}}
-%\usepackage{fontawesome5}
-%\newcommand{\pplus}{\mathbin{\faPlus}}
-%\usepackage{typicons}
-%\newcommand{\pplus}{\mathbin{\tiPlus}}
-%\usepackage{stix}
-%\newcommand{\pplus}{\mathbin{+}}
 
 % misc
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -308,10 +298,23 @@
 \DeclareSymbolFont{symbolsC}{U}{txsyc}{m}{n}
 \DeclareMathSymbol{\MYPerp}{\mathrel}{symbolsC}{121}
 \makeatother
+
 \newcommand{\indep}{\MYPerp}
 % independent 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% bold or maltese-like plus 
+\makeatletter
+\DeclareFontEncoding{LS1}{}{}
+\DeclareFontSubstitution{LS1}{stix}{m}{n}
+\DeclareSymbolFont{symbols2}{LS1}{stixfrak}{m}{n}
+\DeclareMathSymbol{\tplus}{\mathbin}{symbols2}{"EB}
+\makeatother
+\newcommand{\pplus}{\tplus}
+\newcommand{\aact}{\mathbin{{}_\circ}}
+\newcommand{\act}{\mathbin{\boldsymbol{.}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
