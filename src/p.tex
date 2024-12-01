@@ -233,6 +233,15 @@ Prop/Porposition/命題  などの見出しを使います.
 \cite{978-4-535-78682-0}
 を参考に復習をすること.
 
+基本的な概念:
+\begin{enumerate}
+  \item 集合 $\in$, $\subset$
+  \item 写像 $\circ$
+  \item 恒等写像$\id_V$.
+  \item 演算, 作用.
+  \item 行列の和, スカラー倍, 積, 転置.
+\end{enumerate}
+
 
 以下の記号を用いる:
 \begin{itemize}
@@ -370,25 +379,56 @@ $K$は
 
 
 \sectionX{章末問題}
+
 \begin{quiz}
-  \solvelater{quiz:0:1}
-  $a$を実数とする.
-  $\sqrt{a^2}=a$は成り立つか答えよ.
+  %\solvelater{quiz:0:1}
+  $\KK$を体とし, $V$を$\KK$を成分とする$(2,1)$行列の集合とする.
+  つまり,
+  \begin{align*}
+    V=\Set{\begin{pmatrix}a_1\\a_2\end{pmatrix}|a_1,a_2\in \KK}
+  \end{align*}
+  とする. 通常の和とスカラー倍を考える.  つまり,
+  \begin{align*}
+    a=\begin{pmatrix}a_1\\a_2\end{pmatrix}, & b=\begin{pmatrix}b_1\\b_2\end{pmatrix} \in V
+  \end{align*}
+  $\alpha\in\KK$に対し,
+  \begin{align*}
+    a+b&=\begin{pmatrix}a_1+b_1\\a_2+b_2\end{pmatrix}, & \alpha a=\begin{pmatrix}\alpha a_1\\\alpha a_2\end{pmatrix} \in V
+  \end{align*}
+  とする. また,
+  \begin{align*}
+  \zzero=
+  \begin{pmatrix}
+    0\\0
+  \end{pmatrix}
+  \end{align*}
+  とする.
+  このとき, $\alpha,\beta\in\KK$, $a,b,c\in V$に対し, 以下を示せ:
+  \begin{enumerate}
+    \item $a+b=b+a$.
+    \item $(a+b)+c=a+(b+c)$.
+    \item $a+\zzero=a$.
+    \item $a+(-1 a)=a$.
+    \item $(\alpha\beta)a=\alpha(\beta a)$.
+    \item $1a=a$.
+    \item $\alpha(a+b)=\alpha a+\alpha b$.
+    \item $(\alpha+\beta)a=\alpha a+\beta a$.
+  \end{enumerate}
 \end{quiz}
 
-
 \begin{quiz}
-    \solvelater{quiz:0:2}
-$|2-\sqrt{5}|$
-を絶対値を表す記号を使わずに書くとどうなるか答えよ.
-\end{quiz}
-
-\begin{quiz}
-    \solvelater{quiz:0:3}
-    $s,u$を実数とする.
-    $x$に関する方程式
-    $x^2-(s+u)x+su=0$
-    が実数解を持つことを示せ
+  %\solvelater{quiz:0:1}
+  $\KK$を体とし, $V$を$\KK$を成分とする$(2,1)$行列の集合とする.
+  $A$を$\KK$を成分とする$(2,2)$行列とし,
+  \begin{align*}
+    \shazo{\varphi}{V}{V}{x}{Ax}
+  \end{align*}
+  とする.
+  このとき, 以下を示せ:
+  \begin{enumerate}
+    \item $a,b\in V\implies \varphi(a+b)=\varphi(a)+\varphi(b)$.
+    \item $\alpha\in\KK a\in V\implies \varphi(\alpha a)=\alpha\varphi(a)$.
+  \end{enumerate}
 \end{quiz}
 
 
@@ -519,7 +559,7 @@ $|2-\sqrt{5}|$
   $\KK$を体とする.
   $X$を集合とする.
   \begin{align*}
-    \KK^X = \Set{f\colon X \to \KK \text{; 写像.}}
+    \KK^X = \Set{f\colon X \to \KK \text{; 写像}}
   \end{align*}
   とする.
   $c\in\KK$, $f,g\in \KK^X$に対し,
@@ -708,19 +748,366 @@ $a_1\cdots a_n w$と略記する.
   $(V,+,\act)$, $(W,\pplus,\aact)$を$\KK$-線形空間とする.
   $\varphi$を$V$から$W$への写像とする.
   $\varphi$が以下の条件を満たすとき,
-  $\varphi$は$\KK$-線形であるという:
+  $\varphi$は$(V,+,\act)$から$(W,\pplus,\aact)$への$\KK$-線形写像であるという:
   \begin{enumerate}
     \item $v,u\in V\implies \varphi(v+u)=\varphi(v)\pplus\varphi(u)$.
     \item $c\in \KK, u\in V\implies \varphi(c\act v)=c\aact\varphi(v)$.
   \end{enumerate}
 \end{definition}
 
-線形写像の例をいくつか挙げる.
+\begin{definition}
+  $\varphi$は$(V,+,\act)$から$(W,\pplus,\aact)$への$\KK$-線形写像であることを,
+  写像$\varphi$は$\KK$-線形であるということもある.
+\end{definition}
 
+線形写像の例をいくつか挙げる.
+\begin{example}
+  $\KK$を体とする.
+  $A\in \KK^{m\times n}$とし,
+  $\varphi$を次の写像とする:
+  \begin{align*}
+    \shazo{\varphi}{\KK^m}{\KK^n}{w}{Aw}.
+  \end{align*}
+  このとき, $\varphi$は$\KK$-線形である.
+\end{example}
+
+\begin{example}
+  $\KK$を体とする.
+  $A\in \KK^{m\times n}$とし,
+  $\varphi$を次の写像とする:
+  \begin{align*}
+    \shazo{\varphi}{\KK^{k\times m}}{\KK^{k\times n}}{X}{AX}.
+  \end{align*}
+  このとき, $\varphi$は$\KK$-線形である.
+\end{example}
+
+\begin{example}
+  $\KK$を体とする.
+  $\varphi$を次の写像とする:
+  \begin{align*}
+    \shazo{\varphi}{\KK^{m\times n}}{\KK^{n\times m}}{A}{\transposed{A}}.
+  \end{align*}
+  このとき, $\varphi$は$\KK$-線形である.
+\end{example}
+
+\begin{example}
+  $\varphi$を次の写像とする:
+  \begin{align*}
+    \shazo{\varphi}{\CC}{\CC}{z}{\overline{z}},
+  \end{align*}
+  ただし, 
+  $x,y\in\RR$に対し$\overline{x+y\sqrt{-1}}=x-y\sqrt{-1}$, つまり,
+  $\overline{z}$は$z$の複素共軛とする.
+  このとき, $\varphi$は$\RR$-線形である.
+  しかし, $\CC$-線形ではない.
+\end{example}
+
+\begin{example}
+  $\KK$を体とする.
+  $\varphi$を次の写像とする:
+  \begin{align*}
+    \shazo{\varphi}{\KK^\NN}{\KK^\NN}{(a_i)_{i\in \NN}}{(a_{i+1})_{i\in \NN}}.
+  \end{align*}
+  このとき, $\varphi$は$\KK$-線形である.
+\end{example}
+
+\begin{example}
+  $(V,+,\act)$を$\KK$-線形空間とする.
+  恒等写像$\id_V$は$\KK$-線形である.
+\end{example}
+\begin{lemma}
+  $(V,+,\act)$, $(W,\pplus,\aact)$を$\KK$-線形空間とし,
+  $\varphi\colon V\to W$は全単射であるとする.
+  $\varphi$が$\KK$-線形なら,
+  逆写像$\varphi^{-1}$は
+  $(W,\pplus,\aact)$から
+  $(V,+,\act)$への$\KK$-線形写像.
+\end{lemma}
+\begin{proof}\end{proof}
+
+線形写像の性質をいくつか紹介する.
+\begin{prop}
+  $V$, $U$, $W$を$\KK$-線形空間とし,
+  $\varphi\colon V\to U$,
+  $\psi\colon U\to W$を$\KK$-線形写像とする.
+  このとき, $\psi\circ\varphi\colon V\to W$は$\KK$-線形写像である.
+\end{prop}
+\begin{proof}\end{proof}
+
+\begin{prop}
+  $(V,+,\act,0_V)$, $(W,\pplus,\aact,0_W)$を$\KK$-線形空間とし,
+  $\varphi\colon V\to W$を$\KK$-線形写像とする.
+  このとき,
+  \begin{enumerate}
+    \item $\varphi(0_V)=0_W$.
+    \item $\varphi(-x)=-\varphi(x)$.
+  \end{enumerate}
+\end{prop}
+\begin{proof}\end{proof}
+
+
+\section{同型写像}
+
+\begin{definition}
+  $V$, $W$を$\KK$-線形空間とする.
+  以下の条件を満たす
+  $\varphi\colon V\to W$を,
+  $V$から$W$への($\KK$-線形空間としての)同型写像と呼ぶ:
+  \begin{enumerate}
+  \item $\varphi\colon V\to W$は$\KK$-線形写像.
+  \item 以下の条件を満たす$\KK$-線形写像$\psi\colon W \to V$が存在する:
+    \begin{enumerate}
+      \item $\varphi\circ \psi=\id_W$.
+      \item $\psi\circ \varphi=\id_V$.
+    \end{enumerate}
+  \end{enumerate}
+\end{definition}
+\begin{definition}
+  $V$, $W$を$\KK$-線形空間とする.
+  $V$から$W$への($\KK$-線形空間としての)同型写像が存在するとき,
+  $V$と$W$は($\KK$-線形空間として)同型であるといい,  
+  $V\simeq W$と書く.
+\end{definition}
+
+同型写像の例を挙げる:
+\begin{example}
+  $\KK$を体とする.
+  $\KK$-線形写像$\varphi$を以下で定める:
+  \begin{align*}
+    &\shazo{\varphi}{\RR^{m\times n}}{\RR^{n\times m}}{A}{\transposed{A}}.
+  \end{align*}
+  このとき,
+  $\psi$を
+  \begin{align*}
+    &\shazo{\psi}{\RR^{n\times m}}{\RR^{m\times n}}{A}{\transposed{A}}
+  \end{align*}
+  とすると,
+  $\psi$は$\KK$-線形であり, $\varphi\circ \psi=\id_{\KK^{n\times m}}$, $\psi\circ\varphi=\id_{\KK^{m\times n}}$である.
+  よって, $\varphi$は同型写像である.
+  したがって, $\KK^{m\times n}\simeq\KK^{n\times m}$である.
+\end{example}
+
+
+\begin{example}
+  $\RR$-線形写像$\varphi$を以下で定める:
+  \begin{align*}
+    &\shazo{\varphi}{\RR^2}{\CC}{\begin{pmatrix}x\\y\end{pmatrix}}{x+y\sqrt{-1}}.
+  \end{align*}
+  このとき,
+  $\psi$を
+  \begin{align*}
+    &\shazo{\varphi}{\RR^2}{\CC}{\begin{pmatrix}x\\y\end{pmatrix}}{x+y\sqrt{-1}},\\
+   &\shazo{\psi}{\CC}{\RR^2}{x+y\sqrt{-1}}{\begin{pmatrix}x\\y\end{pmatrix}}.
+  \end{align*}
+  とすると,
+  $\RR$-線形であり,
+  $\varphi\circ \psi=\id_\CC$,
+  $\psi\circ\varphi=\id_{\RR^2}$である.
+  よって, 同型写像であり,
+  $\RR$-線形空間として$\RR^2\simeq\CC$である.
+\end{example}
+
+\begin{example}
+  $I={1,\ldots,m}$, $J={1,\ldots,n}$, $\Lambda=\Set{1,\ldots,mn}$とする.
+  このとき,
+  \begin{align*}
+    &\shazo{\lambda}{I\times J}{\Lambda}{(i,j)}{i+(m-1)j}
+  \end{align*}
+  は全単射である.  $\lambda$の逆写像を$\kappa$とする.
+  $\KK$を体とし,
+  $\KK$線形写像$\varphi$を以下で定める:
+  \begin{align*}
+    &\shazo{\varphi}{\KK^{mn}}{\KK^{m\times n}}{\begin{pmatrix}a_1\\\vdots\\a_{mn}\end{pmatrix}}{(a_{\lambda(i,j)})_{i\in I, j\in J}}.
+  \end{align*}
+  $\psi$を
+  \begin{align*}
+    &\shazo{\psi}{\KK^{m\times n}}{\KK^{mn}}
+    {(a_{i,j})_{i\in I, j\in J}}{\begin{pmatrix}a_{\kappa(1)}\\a_{\kappa(2)}\\\vdots\\a_{\kappa(mn)}\\\end{pmatrix}}
+  \end{align*}
+  とすると,
+  $\KK$-線形であり,
+  $\varphi\circ \psi=\id_{\KK^{m\times n}}$,
+  $\psi\circ\varphi=\id_{\KK^{mn}}$である.
+  よって, 同型写像であり,
+  $\KK^{mn}\simeq \KK^{m\times n}$.
+\end{example}
+
+
+\begin{example}
+  $V$を$\KK$-線形空間とする.
+  このとき, $\id_{V}$は$\KK$-線形であり,
+  $\id_{V}\circ\id_{V}=\id_{V}$であるので, 同型写像である.
+  したがって, $V\simeq V$である.
+\end{example}
+
+\begin{example}
+  $\varphi$を次の写像とする:
+  \begin{align*}
+    \shazo{\varphi}{\CC}{\CC}{z}{\overline{z}},
+  \end{align*}
+  このとき, $\varphi$は$\RR$-線形であり, $\varphi\circ\varphi=\id_{\CC}$である.
+  $\varphi$は, $\CC$から$\CC$への$\RR$-線形空間としての同型写像である.
+\end{example}
+
+
+\begin{example}
+  $\KK$を体とし, $I=\Set{1,\dots,n}$とする.
+  $\varphi$を以下で定義する:
+  \begin{align*}
+    \shazo{\varphi}{\KK^I}{\KK^n}{f}{\begin{pmatrix}f(1)\\\vdots\\f(n)\end{pmatrix}}.
+  \end{align*}
+  $\varphi$は$\KK$-線形写像である.
+  逆に,
+  \begin{align*}
+    a=
+    \begin{pmatrix}
+      a_1\\\vdots\\a_n
+    \end{pmatrix}
+  \end{align*}
+  に対し,
+  $I$から$\KK$への
+  写像$f_a$を
+  \begin{align*}
+    \shazo{f_a}{I}{\KK}{i}{a_i}
+  \end{align*}
+  で定める.
+  次の写像を考える:
+  \begin{align*}
+    \shazo{\psi}{\KK^n}{\KK^I}{a}{f_a}.
+  \end{align*}
+  つまり$\psi$以下で定義する.
+  \begin{align*}
+    \shazo{\psi}{\KK^n}{\KK^I}{a=
+    \begin{pmatrix}
+      a_1\\\vdots\\a_n
+    \end{pmatrix}
+  }{\left(\shazo{f_a}{I}{\KK}{i}{a_i}\right)}.
+  \end{align*}
+  このとき$\psi$も$\KK$-線形写像であり,
+  $\varphi\circ\psi=\id_{\KK^n}$,
+  $\psi\circ\varphi=\id_{\KK^I}$である.
+  よって$\varphi$は同型写像であり,
+  $\KK^I\simeq \KK^n$.
+\end{example}
+
+\begin{example}
+  $\KK$を体とし, $I=\Set{1,\dots,m}$, $J=\Set{1,\ldots,n}$とする.
+  $\varphi$を以下で定義する:
+  \begin{align*}
+    \shazo{\varphi}{\KK^{I\times J}}{\KK^{m\times n}}{f}{(f(i,j))_{i\in I,j\in J}}.
+  \end{align*}
+  $\varphi$は$\KK$-線形写像である.
+  逆に,
+  \begin{align*}
+    A=
+      (a_{i,j})_{i\in I,j\in J}
+  \end{align*}
+  に対し,
+  $I\times J$から$\KK$への
+  写像$f_a$を
+  \begin{align*}
+    \shazo{f_A}{I\times J}{\KK}{(i,j)}{a_{i,j}}
+  \end{align*}
+  で定め,
+  次の写像を考える:
+  \begin{align*}
+    \shazo{\psi}{\KK^{m\times n}}{\KK^{I\times J}}{A}{f_A}.
+  \end{align*}
+  つまり$\psi$以下で定義する.
+  \begin{align*}
+    \shazo{\psi}{\KK^{m\times n}}{\KK^{I\times J}}
+          {A=(a_{i,j})_{i\in I,j\in J}}{\left(\shazo{f_A}{I\times J}{\KK}{(i,j)}{a_{i,j}}\right)}.
+  \end{align*}
+  このとき$\psi$も$\KK$-線形写像であり,
+  $\varphi\circ\psi=\id_{\KK^{m\times n}}$,
+  $\psi\circ\varphi=\id_{\KK^{I\times J}}$である.
+  よって$\varphi$は同型写像であり,
+  $\KK^{I\times J}\simeq \KK^{m\times n}$.
+\end{example}
+
+\begin{example}
+  $\KK$を体とし,
+  $\NN$から$\KK$への写像を集めた集合を$V$,
+  $\NN$で添字付された数列を集めた集合を$W$とする.
+  どちらも$\KK$-線形空間であった.
+  $\varphi$を以下で定義する:
+  \begin{align*}
+    \shazo{\varphi}{V}{W}{f}{(f(i))_{i\in \NN}}.
+  \end{align*}
+  $\varphi$は$\KK$-線形写像である.
+  逆に,
+  \begin{align*}
+    a=
+      (a_{i})_{i\in \NN}
+  \end{align*}
+  に対し,
+  $\NN$から$\KK$への
+  写像$f_a$を
+  \begin{align*}
+    \shazo{f_a}{\NN}{\KK}{i}{a_{i}}
+  \end{align*}
+  で定め,
+  次の写像を考える:
+  \begin{align*}
+    \shazo{\psi}{W}{V}{a}{f_a}.
+  \end{align*}
+  つまり$\psi$以下で定義する.
+  \begin{align*}
+    \shazo{\psi}{W}{V}{a=(a_{i})_{i\in \NN}}{\left(\shazo{f_a}{\NN}{\KK}{i}{a_{i}}\right)}.
+  \end{align*}
+  このとき$\psi$も$\KK$-線形写像であり,
+  $\varphi\circ\psi=\id_{W}$,
+  $\psi\circ\varphi=\id_{V}$である.
+  よって$\varphi$は同型写像であり,
+  $V\simeq W$.
+\end{example}
+
+
+\begin{remark}
+  $V$と$W$を$\KK$-線形空間とする.
+  $\varphi\colon V\to W$が$\KK$-線形写像であるとき,
+  $V$において和やスカラー倍に関してなりたつことは,
+  $\varphi$を通して, $W$における命題に翻訳できる.
+  $\varphi\colon V\to W$が同型写像であるなら,
+  $\KK$-線形写像$\psi\colon W\to V$で
+  $\varphi\circ \psi=\id_W$と
+  $\psi\circ \varphi=\id_V$を満たすものが存在する.
+  $W$において和やスカラー倍に関してなりたつことは,
+  $\psi$を通して, $V$における命題に翻訳できる.
+  $\varphi$と$\psi$を使い, 双方を自由に行き来できるので,
+  $V$と$W$は$\KK$-線形空間として同一視できる.
+\end{remark}
+
+\begin{prop}
+  $V$, $W$, $U$を$\KK$-線形空間とする.
+  このとき, 以下が成り立つ:
+  \begin{enumerate}
+  \item $V\simeq W$.
+  \item $V\simeq W \implies W\simeq V$.
+  \item $V\simeq U, U\simeq W \implies V\simeq W$.
+  \end{enumerate}
+\end{prop}
+\begin{proof}\end{proof}
+
+\begin{prop}
+  $V$, $W$を$\KK$-線形空間とし, $\varphi\colon V\to W$を$\KK$-線形写像とする.
+  このとき, 以下は同値:
+  \begin{enumerate}
+  \item $\varphi$は同型写像.
+  \item $\varphi$は全単射.
+  \end{enumerate}
+\end{prop}
+\begin{proof}\end{proof}
 
 \sectionX{章末問題}
 \begin{quiz}
   %\solvelater{quiz:1:1}
 \end{quiz}
 
+\chapter{部分空間}
 
+
+\sectionX{章末問題}
+\begin{quiz}
+  %\solvelater{quiz:1:1}
+\end{quiz}
