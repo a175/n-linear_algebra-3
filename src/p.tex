@@ -312,6 +312,29 @@ $K$は
   \end{enumerate}
 \end{quiz}
 
+\begin{quiz}
+  %\solvelater{quiz:0:1}
+  $\KK$を体とし, $a, b\in \KK$とする.
+  \begin{align*}
+    \shazo{\varphi}{\KK}{\KK}{x}{ax+b}
+  \end{align*}
+  とする.
+  \begin{enumerate}
+  \item
+  $b=0$なら, 以下がなりたつことを示せ:
+  \begin{enumerate}
+    \item $x,y\in \KK\implies \varphi(x+y)=\varphi(x)+\varphi(y)$.
+    \item $\alpha\in\KK x\in \KK\implies \varphi(\alpha x)=\alpha\varphi(x)$.
+  \end{enumerate}
+  \item
+  $b\neq 0$なら, 以下がなりたたないことを示せ:
+  \begin{enumerate}
+    \item $x,y\in \KK\implies \varphi(x+y)=\varphi(x)+\varphi(y)$.
+    \item $\alpha\in\KK x\in \KK\implies \varphi(\alpha x)=\alpha\varphi(x)$.
+  \end{enumerate}
+  \end{enumerate}
+\end{quiz}
+
 
 \chapter{線形空間と線形写像}
 ここでは, 線形空間と線形写像を定義し,
@@ -1025,9 +1048,515 @@ $a_1\cdots a_n w$と略記する.
 \sectionX{章末問題}
 \begin{quiz}
   %\solvelater{quiz:1:1}
+  次が通常の和とスカラー倍で$\KK$線形空間となることを示せ:
+  \begin{align*}
+    \Set{\begin{pmatrix}x\\x\end{pmatrix}|x\in\KK}
+  \end{align*}
+\end{quiz}
+
+\begin{quiz}
+  %\solvelater{quiz:1:1}
+  次が通常の和とスカラー倍で$\KK$線形空間とはならないことを示せ:
+  \begin{align*}
+    \Set{\begin{pmatrix}x\\0\end{pmatrix}|x\in\KK}
+    \cup \Set{\begin{pmatrix}0\\x\end{pmatrix}|x\in\KK}
+  \end{align*}
 \end{quiz}
 
 \chapter{部分空間}
+\section{部分空間の定義}
+\begin{definition}
+  $(V,+,\act,0_V)$を$\KK$-線形空間とする.
+  以下の条件を満たすとき,
+  $W$を$V$の部分空間 (部分$\KK$-線形空間)と呼ぶ:
+  \begin{enumerate}
+  \item $W\subset V$.
+  \item $(W,+,\act,0_V)$が$\KK$-線形空間.
+  \end{enumerate}
+\end{definition}
+\begin{remark}
+  $(V,+,\act,0_V)$を$\KK$-線形空間とし, $W\subset V$とする.
+このとき, $v,w,u\in V$に対して,
+\begin{align*}
+  v+w&=w+v\\
+  (v+w)+u&=v+(w+u)\\
+  0_V+w&=w\\
+  w+(-1)\act w=0_V
+\end{align*}
+が成り立っているので,
+$v,w,u\in W\subset V$に対しても,
+\begin{align*}
+  v+w&=w+v\\
+  (v+w)+u&=v+(w+u)\\
+  0_V+w&=w\\
+  w+(-1)\act w=0_V
+\end{align*}
+は成り立つ.
+同様の理由で,
+$a,b\in \KK$, $v,w\in U$に対して,
+\begin{align*}
+  1\act v&=v\\
+  (ab)\act v&=a\act(b\act v)\\
+  (a+b)\act v&=a\act v+b\act v\\
+  a\act(v+w)=a\act v+a\act w
+\end{align*}
+が成り立つ.
+$(W,+,\act,0_V)$が$\KK$-線形空間であるための条件で非自明なのは,
+これらではなく, $+$などが$U$上の演算であるかということである.
+つまり, 以下の$3$条件が重要である.
+\begin{enumerate}
+  \item $v,w\in U \implies v+w\in U$.
+  \item $a\in\KK$, $v\in U \implies a\act v\in U$.
+  \item $0_V\in U$.
+\end{enumerate}
+\end{remark}
+\begin{lemma}
+  $(V,+,\act,0_V)$を$\KK$-線形空間とし, $W\subset V$とする.
+  このとき以下は同値:
+  \begin{enumerate}
+  \item $U$が$V$の部分空間.
+  \item 以下の$3$条件を満たす:
+    \begin{enumerate}
+  \item $v,w\in U \implies v+w\in U$.
+  \item $a\in\KK$, $v\in U \implies a\act v\in U$.
+  \item $0_V\in U$.
+    \end{enumerate}
+  \item 以下の$3$条件を満たす:
+    \begin{enumerate}
+  \item $v,w\in U \implies v+w\in U$.
+  \item $a\in\KK$, $v\in U \implies a\act v\in U$.
+  \item $U\neq \emptyset$.
+    \end{enumerate}
+  \end{enumerate}
+\end{lemma}
+
+\section{部分空間の例}
+\subsection{部分空間の具体例}
+\begin{example}
+  $(V,+,\act,0_V)$を$\KK$-線形空間とする.
+  $V$は$V$の部分空間である.
+  $\Set{0_V}$は$V$の部分空間である.
+  この2つを$V$の自明な部分空間と呼ぶ.
+\end{example}
+
+\begin{example}
+  $a\neq \KK^2\setminus\Set{\zzero_2}$とする.
+  このとき, $\Set{ta|t\in \KK}$は原点と$a$を通る直線である.
+  これは, $\KK^2$の非自明な部分空間である.
+\end{example}
+\begin{proof}\end{proof}
+
+
+\begin{example}
+  \begin{align*}
+    V=\Set{\begin{pmatrix}a_1\\\vdots\\a_n\\0\end{pmatrix}|a_1,\ldots,a_n\in\KK}
+  \end{align*}
+  は$\KK^{n+1}$の非自明な部分空間である.
+\end{example}
+\begin{proof}\end{proof}
+
+\begin{example}
+  \label{subsp:example:fiber}
+  $A\in \KK^{m\times n}$とする.
+  つまり$A$を成分が$\KK$の元である$(m,n)$-行列とする.
+  \begin{align*}
+    \KKK=\Set{x\in \KK^n|Ax=\zzero_m}
+  \end{align*}
+  とおく. $\KKK$は$\KK^n$の部分空間である.
+  (\Cref{subsp:nonexample:fiber}も見よ.)
+\end{example}
+\begin{proof}\end{proof}
+
+\begin{example}
+  \label{subsp:example:cc}
+  $\CC$は$\RR$-線形空間であった.
+  $\RR$は, $\CC$の部分$\RR$-線形空間である.
+  (\Cref{subsp:nonexample:cc}も見よ.)
+\end{example}
+\begin{proof}\end{proof}
+
+
+\begin{example}
+  数列をすべて集めた集合$\CC^{\NN}$は$\CC$は$\CC$線形空間であった.
+  $p>0$に対し,
+  \begin{align*}
+    \ell^p=\Set{(a_i)_{i\in\NN}|\sum_i |a_i|^p < \infty}
+  \end{align*}
+  とおくと, $\ell^p$は$\CC^{\NN}$の部分空間.
+  \begin{align*}
+    \ell^\infty=\Set{(a_i)_{i\in\NN}|\sup \Set{\left|a_i\right||i\in \NN} < \infty}
+  \end{align*}
+  とおくと, $\ell^\infty$は$\CC^{\NN}$の部分空間.
+  \begin{align*}
+    c&=\Set{(a_i)_{i\in\NN} | \lim_{i\to\infty} a_i \in\RR}\\
+    c_0&=\Set{(a_i)_{i\in\NN} | \lim_{i\to\infty} a_i =0}
+  \end{align*}
+  とおくと, $c$と$c_0$は$\CC^{\NN}$の部分空間.
+  $c_0$は$c$の部分空間でもある.
+\end{example}
+\begin{proof}\end{proof}
+
+\begin{example}
+  $V$を$\KK$-線形空間とする.
+  $V$から$\KK$への写像をすべて集めた集合
+  $\KK^V$は$\KK$線形空間であった.
+  \begin{align*}
+    V^\ast =\Set{f\colon V\to \KK\text{: 線形写像} }
+  \end{align*}
+  とおく. これは$\KK^V$の部分空間.
+  $V^\ast$を$\KK$-線形空間$V$の双対空間と呼ぶ.
+\end{example}
+\begin{proof}\end{proof}
+
+\begin{example}
+  $V$, $W$を$\KK$-線形空間とする.
+  $V$から$W$への写像をすべて集めた集合
+  $W^V$は$\KK$線形空間であった.
+  \begin{align*}
+    \Hom_\KK(V,W) =\Set{f\colon V\to W\text{: $\KK$-線形写像} }
+  \end{align*}
+  とおく. これは$W^V$の部分空間.
+\end{example}
+\begin{proof}\end{proof}
+
+
+\subsection{部分空間から得られる部分空間}
+
+\begin{example}
+  \begin{align*}
+    V&=\Set{\begin{pmatrix}a\\b\\0\end{pmatrix}|a,b\in\KK}\\
+    W&=\Set{\begin{pmatrix}0\\a\\b\end{pmatrix}|a,b\in\KK}
+  \end{align*}
+  とする.
+  このとき, $V$も$W$も$\KK^3$の部分空間である.
+  \begin{align*}
+    V\cap W&=\Set{\begin{pmatrix}0\\a\\0\end{pmatrix}|a\in\KK}\\
+  \end{align*}
+  となっており, $V\cap W$も$\KK^3$の部分空間である.
+\end{example}
+\begin{proof}\end{proof}
+
+\begin{example}
+  $U$を$\KK$-線形空間とする.
+  $V, W$を$U$の部分空間とする.
+  このとき, $V\cap W$は$U$の部分空間.
+\end{example}
+\begin{proof}\end{proof}
+
+
+\begin{example}
+  $U$を$\KK$-線形空間とする.
+  $I$を集合とし,
+  $i\in I$に対し, $V_i$を$U$の部分空間とする.
+  このとき, $\bigcap_{i\in I}V_i$は$U$の部分空間である.
+\end{example}
+\begin{proof}\end{proof}
+
+
+\begin{example}
+  \label{subspace:nonexample:cup}
+  \begin{align*}
+    V&=\Set{\begin{pmatrix}a\\0\end{pmatrix}|a\in\KK}\\
+    W&=\Set{\begin{pmatrix}0\\a\end{pmatrix}|a\in\KK}
+  \end{align*}
+  とする.
+  このとき, $V$も$W$も$\KK^2$の部分空間である.
+  \begin{align*}
+    \begin{pmatrix}1\\0\end{pmatrix},
+    \begin{pmatrix}0\\1\end{pmatrix}\in V\cup W
+  \end{align*}
+  であるが,
+  \begin{align*}
+    \begin{pmatrix}1\\0\end{pmatrix}+
+    \begin{pmatrix}0\\1\end{pmatrix}=\begin{pmatrix}1\\1\end{pmatrix}\not\in V\cup W
+  \end{align*}
+  となっており, $V\cup W$は$U$の部分空間ではない.
+\end{example}
+\begin{proof}\end{proof}
+
+\begin{example}
+  $U$を$\KK$-線形空間とする.
+  $V, W$を$U$の部分空間とする.
+  \begin{enumerate}
+    \item $V\subset W$なら$V\cup W=W$であるので, $V\cup W$は$U$の部分空間.
+    \item $W\subset V$なら$V\cup W=V$であるので, $V\cup W$は$U$の部分空間.
+    \item $V$と$W$に包含関係がないとき, $V\cup W$は$U$の部分空間ではない. 
+  \end{enumerate}
+\end{example}
+\begin{proof}
+  $V$と$W$に包含関係が無いとする.
+  $v\in V\setminus W$, $w\in W\setminus V$
+  とし, $u=v+w$とおく.
+  $u\in V$とすると, $v\in V$であるから, $u-v\in V$となるが,
+  $u-v=w\not\in V$に矛盾する.
+  $u\in W$とすると, $w\in W$であるから, $u-w\in W$となるが,
+  $u-w=v\not\in W$に矛盾する.
+  よって, $u\not\in V\cup W$となるので, $V\cup W$は部分空間ではない.
+\end{proof}
+
+
+
+\begin{example}
+  \begin{align*}
+    V&=\Set{\begin{pmatrix}a\\0\\0\end{pmatrix}|a\in\KK}\\
+    W&=\Set{\begin{pmatrix}0\\a\\0\end{pmatrix}|a\in\KK}
+  \end{align*}
+  とする.
+  このとき, $V$も$W$も$\KK^3$の部分空間である.
+  \begin{align*}
+    U=\Set{v+w|v\in V, w\in W}
+  \end{align*}
+  とすると,
+  \begin{align*}
+    U&=\Set{\begin{pmatrix}a\\b\\0\end{pmatrix}|a,b\in\KK}\\
+  \end{align*}
+  となっており, $U$も$\KK^3$の部分空間である.
+\end{example}
+\begin{proof}\end{proof}
+
+\begin{example}
+  $(U,+,\act,0_V)$を$\KK$-線形空間とする.
+  $V, W$を$U$の部分空間とする.
+  このとき,
+  \begin{align*}
+    V+W=\Set{v+w|v\in V,w\in W}
+  \end{align*}
+  とおく.
+  このとき, $V+W$は$U$の部分空間.
+  $V+W$を$V$と$W$の和と呼ぶことがある.
+\end{example}
+\begin{proof}\end{proof}
+\begin{prop}
+  $(U,+,\act,0_V)$を$\KK$-線形空間とし,
+  $V, W$を$U$の部分空間とする.
+  \begin{align*}
+    \SSS=\Set{U'|\text{$U'$は$U$の部分空間,} V\cup W \subset U'}
+  \end{align*}
+  とおく.  
+  \begin{align*}
+    U_0 = \bigcap_{U'\in\SSS} U'
+  \end{align*}
+  とする.  また, $\SSS$の中で包含関係で極小なものを$U_1$とする.
+  このとき,
+  \begin{align*}
+    U_0=U_1=V+W.
+  \end{align*}
+\end{prop}
+\begin{proof}
+\end{proof}
+\begin{remark}
+  $V, W$を$U$の部分空間とするとき,
+  $V+W$は$V$と$W$の両方を含む最小の部分空間である.
+  また$V\cap W$は$V$と$W$の両方に含まれる最大の部分空間である.
+\end{remark}
+
+
+
+
+\subsection{線形写像から得られる部分空間}
+
+\begin{definition}
+  $(V,+,\act,0_V)$,
+  $(W,+,\act,0_W)$を
+  $\KK$-線形写像とし,
+  $\varphi\colon V\to W$を線形写像とする.
+  このとき,
+  \begin{align*}
+    \Ker(\varphi)&=\Set{x\in V|\varphi(x)=0_V  },\\
+    \Img(\varphi)&=\Set{\varphi(x)|x\in V}\\
+  \end{align*}
+  とおく. $\Ker(\varphi)$を$\varphi$のKernel,
+  $\Img(\varphi)$を$\varphi$のImageと呼ぶ.
+\end{definition}
+\begin{prop}
+  $(V,+,\act,0_V)$,
+  $(W,+,\act,0_W)$を
+  $\KK$-線形写像とし,
+  $\varphi\colon V\to W$を線形写像とする.
+このとき, 以下が成り立つ:
+\begin{enumerate}
+  \item $\Ker(\varphi)$は$V$の部分空間.
+  \item $\Img(\varphi)$は$W$の部分空間.
+\end{enumerate}
+\end{prop}
+\begin{proof}\end{proof}
+
+\begin{example}
+  $A\in \KK^{m\times n}$とし,
+  \begin{align*}
+    \shazo{\varphi}{\KK^{n}}{\KK^{m}}
+    {x}{Ax}
+  \end{align*}
+  とすると, $\varphi$
+  は線形写像.
+  \begin{align*}
+    \Ker(\varphi)=\Set{x\in\KK^n|Ax=\zzero_m}
+  \end{align*}
+  であり, これは斉次連立一次方程式の解空間である.
+  また, $A=(\aaa_1|\cdots|\aaa_n)$と列ベクトル表示すると
+  \begin{align*}
+    \Img(\varphi)=\Set{x_1\aaa_1+\cdots+x_n\aaa_n|x_1,\ldots,x_n\in \KK}
+  \end{align*}
+  である. これは, $\Set{\aaa_1,\ldots,\aaa_n}$を含む最小の部分空間である.
+\end{example}
+\begin{proof}\end{proof}
+
+\begin{prop}
+  \label{subspace:prop:img:inverseimage}
+  $(V,+,\act,0_V)$,
+  $(W,+,\act,0_W)$を
+  $\KK$-線形写像とし,
+  $\varphi\colon V\to W$を線形写像とする.
+  \begin{enumerate}
+  \item
+    $V$の部分空間$V'$に対し,
+    \begin{align*}
+      \Set{\varphi(x)|x\in V'}
+    \end{align*}
+    は, $W$の部分空間である.
+  \item
+    $W$の部分空間$W'$に対し,
+    \begin{align*}
+      \Set{x\in V|\varphi(x)\in W'}
+    \end{align*}
+    は, $V$の部分空間である.
+  \end{enumerate}
+\end{prop}
+\begin{proof}\end{proof}
+\begin{remark}
+  \Cref{subspace:prop:img:inverseimage}の
+  $W'$として自明な部分空間$\Set{0_W}$を考えたものが,
+  $\Ker(\varphi)$である.
+  \Cref{subspace:prop:img:inverseimage}の
+  $V'$として自明な部分空間$V$を考えたものが,
+  $\Ker(\varphi)$である.
+\end{remark}
+
+\begin{prop}
+  $(V,+,\act,0_V)$,
+  $(W,+,\act,0_W)$を
+  $\KK$-線形写像とし,
+  $\varphi\colon V\to W$を線形写像とする.
+  次は同値:
+  \begin{enumerate}
+  \item $\varphi$は単射.
+  \item $\Ker(\varphi)=\Set{0_V}$
+  \end{enumerate}
+\end{prop}
+\begin{proof}\end{proof}
+
+\begin{prop}
+  $(V,+,\act,0_V)$,
+  $(W,+,\act,0_W)$を
+  $\KK$-線形写像とし,
+  $\varphi\colon V\to W$を線形写像とする.
+  次は同値:
+  \begin{enumerate}
+  \item $\varphi$は全射.
+  \item $\Img(\varphi)=W$
+  \end{enumerate}
+\end{prop}
+\begin{proof}\end{proof}
+
+\begin{prop}
+  $(V,+,\act,0_V)$,
+  $(W,+,\act,0_W)$を
+  $\KK$-線形写像とし,
+  $\varphi\colon V\to W$を線形写像とする.
+  次は同値:
+  \begin{enumerate}
+  \item $\varphi$は$\underline{0_W}$.
+  \item $\Ker(\varphi)=V$
+  \end{enumerate}
+\end{prop}
+\begin{proof}\end{proof}
+
+\begin{prop}
+  $(V,+,\act,0_V)$,
+  $(W,+,\act,0_W)$を
+  $\KK$-線形写像とし,
+  $\varphi\colon V\to W$を線形写像とする.
+  次は同値:
+  \begin{enumerate}
+  \item $\varphi$は$\underline{0_W}$.
+  \item $\Img(\varphi)=0_W$.
+  \end{enumerate}
+\end{prop}
+\begin{proof}\end{proof}
+
+\begin{prop}
+  $V$を$U$の部分空間とする.
+  このとき,
+  \begin{align*}
+    \shazo{\nu}{V}{U}
+    {v}{v}
+  \end{align*}
+  は, 単射な線形写像.
+\end{prop}
+
+
+\section{部分空間ではない例}
+
+\begin{example}
+  \Cref{subspace:nonexample:cup}では,
+  \begin{align*}
+    V&=\Set{\begin{pmatrix}a\\0\end{pmatrix}|a\in\KK}\\
+    W&=\Set{\begin{pmatrix}0\\a\end{pmatrix}|a\in\KK}
+  \end{align*}
+  とすると, $V\cup W$は$U$の部分空間ではないことを見た.
+  この場合, 和が閉じておらず, $V\cup W$は$\KK$-線形空間ではないので,
+  部分空間ではない.
+\end{example}
+
+\begin{example}
+  \label{subsp:nonexample:fiber}
+  $A\in \KK^{m\times n}$とする.
+  つまり$A$を成分が$\KK$の元である$(m,n)$-行列とする.
+  $b\in \KK^m$とし,
+  \begin{align*}
+    \FFF_b=\Set{x\in \KK^n|Ax=b}
+  \end{align*}
+  とおく.
+  $b\neq \zzero_m$なら,
+  $\FFF_b$は$\KK^n$の部分空間ではない.
+  $b= \zzero_m$なら,
+  \Cref{subsp:example:fiber}で挙げたものである.
+\end{example}
+\begin{proof}\end{proof}
+
+
+
+\begin{example}
+  \label{subsp:nonexample:cc}
+  $\CC$は$\CC$-線形空間である.
+  $\RR$は$\RR$-線形空間である.
+  どちらも同じ演算で線形空間であり
+  $\RR\subset \CC$ではあるが,
+  `$\KK$'が異なるので,
+  $\RR$-線形空間$\RR$は$\CC$-線形空間の部分空間であるとは言わない.
+
+  \Cref{subsp:example:cc}も見よ.
+\end{example}
+\begin{proof}\end{proof}
+
+\begin{example}
+  $\RR_{>0}=\Set{x\in\RR|x>0}$について考える.
+  $\pplus$と$\aact$を次で定める:
+  $x,y\in\RR_{>0}$に対し,
+  \begin{align*}
+    x\pplus y =x\cdot y.
+  \end{align*}
+  $a\in\RR$, $x\in\RR_{>0}$に対し,
+  \begin{align*}
+    a\aact x=x^a.
+  \end{align*}
+  このとき, $(\RR_{>0},\pplus,\aact,1)$は, $\RR$線形空間である.
+  また, $\RR$は通常の和$+$と積$\cdot$で$\RR$線形空間である.
+  $\RR_{>0}\subset \RR$であり, $\RR_{>0}$, $\RR$はどちらも, $\RR$-線形空間であるが, 演算が異なる.
+  つまり, $\RR_{>0}$の演算は$\RR$の演算をそのまま流用したものではないので,
+  $\RR_{>0}$は$\RR$の部分空間ではない.
+\end{example}
+\begin{proof}\end{proof}
 
 \sectionX{章末問題}
 \begin{quiz}
