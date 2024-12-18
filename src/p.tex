@@ -24,6 +24,25 @@
 \item 行列の対角化
 \end{enumerate}
 
+キーワード:
+\begin{enumerate}
+\item 線形空間
+\item 線形写像, 同型写像
+\item Ker Img
+\item 双対空間, Hom
+\item 部分空間
+\item (剰余空間と準同型定理)
+\item 生成系
+\item 一次独立性
+\item 基底
+\item 次元 (次元の一意性)
+\item 基底の延長定理
+\item 次元定理
+\item 和と共通部分
+\item 内部直和, 外部直和
+\item 表現行列, 基底の変換行列
+\end{enumerate}
+
 \section{参考書}
 %% このノートの末尾に挙げた参考文献のうち,
 %% \cite{978-4-7806-0772-7}
@@ -854,6 +873,66 @@ $a_1\cdots a_n w$と略記する.
 \end{example}
 
 \begin{example}
+  $V$を$\KK$-線形空間とする.
+  このとき,
+  $\id_V\colon V\to V$は同型写像であり
+  $V\simeq V$.
+\end{example}
+
+\begin{example}
+  $\KK$を体とする.
+  $\KK$-線形空間$\KK^n$と$\KK^m$について考える.
+
+  $m=n$のとき, $\KK^n=\KK^m$であるので, 同型である.
+
+  $m\neq n$のとき, $\KK^n$と$\KK^m$は同型ではないことを示す.
+
+  $m>n$とし,
+  \begin{align*}
+    \varphi&\colon \KK^n \to \KK^m\\
+    \psi&\colon \KK^m \to \KK^n
+  \end{align*}
+  を線形写像とする.
+  $\aaa_i=\varphi(\ee_i)$とし,
+  $\aaa_1,\ldots,\aaa_n$を並べて得られる$(m,n)$行列を$A$とおく.
+  $m>n$であるので, $\rank(A)<m$であるから,
+  連立一次方程式$A\xx=\zzero_m$は$\xx\neq \zzero_n$以外の解を持つ.
+  その解を
+  \begin{align*}
+    \ccc=\begin{pmatrix}c_1\\\vdots\\c_n\end{pmatrix}
+  \end{align*}
+  とおく.
+  \begin{align*}
+    A\ccc=(\aaa_1|\cdots|\aaa_n)\ccc=c_1\aaa_1+\cdots+c_n\aaa_n
+  \end{align*}
+  であることに注意すると,
+  \begin{align*}
+    \varphi(\ccc)&=\varphi(c_1\ee_1+\cdots+c_n\ee_n)\\
+    &=c_1\varphi(\ee_1)+\cdots+c_n\varphi(\ee_n)\\
+    &=c_1\aaa_1+\cdots+c_n\aaa_n\\
+    &=A\ccc\\
+    &=\zzero_m.
+  \end{align*}
+  よって,
+  $\psi\circ\varphi(\ccc)=\psi(\zzero_m)=\zzero_n\neq \ccc$であり,
+  $\psi\circ\varphi\neq \id_{\KK^n}$である.
+
+  したがって,
+  $m>n$のとき,
+  線形写像$\varphi\colon \KK^n \to \KK^m$は,
+  どんな線形写像$\psi\colon \KK^m\to \KK^n$に対しても,
+  $\psi\circ \varphi \neq \id_{\KK^n}$となるので,
+  $\varphi$は同型写像ではない.
+  (また, 同様に,
+  線形写像$\psi\colon \KK^m \to \KK^n$は,
+  どんな線形写像$\varphi\colon \KK^n\to \KK^m$に対しても,
+  $\psi\circ \varphi \neq \id_{\KK^n}$となるので,
+  $\psi$は同型写像ではない.)
+  どんな線形写像$\varphi\colon \KK^n \to \KK^m$も同型写像にはならないので,
+  $\KK^n$と$\KK^m$は同型ではない.
+\end{example}
+
+\begin{example}
   $I={1,\ldots,m}$, $J={1,\ldots,n}$, $\Lambda=\Set{1,\ldots,mn}$とする.
   このとき,
   \begin{align*}
@@ -1189,10 +1268,11 @@ $(W,+,\act,0_V)$が$\KK$-線形空間であるための条件で非自明なの�
   とおくと, $\ell^\infty$は$\CC^{\NN}$の部分空間.
   \begin{align*}
     c&=\Set{(a_i)_{i\in\NN} | \lim_{i\to\infty} a_i \in\RR}\\
-    c_0&=\Set{(a_i)_{i\in\NN} | \lim_{i\to\infty} a_i =0}
+    c_0&=\Set{(a_i)_{i\in\NN} | \lim_{i\to\infty} a_i =0}\\
+    c_{00}&=\Set{(a_i)_{i\in\NN} | \#\Set{i| a_i \neq 0} < 0}
   \end{align*}
-  とおくと, $c$と$c_0$は$\CC^{\NN}$の部分空間.
-  $c_0$は$c$の部分空間でもある.
+  とおくと, $c$, $c_0$, $c_{00}$は$\CC^{\NN}$の部分空間.
+  %$c_0$は$c$の部分空間でもある.
 \end{example}
 \begin{proof}\end{proof}
 
