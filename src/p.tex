@@ -707,6 +707,8 @@ $a_1\cdots a_n w$と略記する.
 \end{definition}
 
 線形写像の例をいくつか挙げる.
+
+
 \begin{example}
   $\KK$を体とする.
   $A\in \KK^{m\times n}$とし,
@@ -735,6 +737,19 @@ $a_1\cdots a_n w$と略記する.
   \end{align*}
   このとき, $\varphi$は$\KK$-線形である.
 \end{example}
+
+\begin{example}
+  $\KK$を体とし,
+  $I=\Set{1,2,\ldots, n}$する.
+  $\tr$を次の写像とする:
+  \begin{align*}
+    \shazo{\tr}{\KK^{n\times n}}{\KK}{(a_{i,j})_{i\in I, j\in A}}{\sum_{i\in I}a_{i,i}}.
+  \end{align*}
+  この写像は$\KK$-線形である.
+  $A\in \KK^{n\times n}$に対し,
+  $\tr(A)$を$A$のトレースと呼ぶ.
+\end{example}
+
 
 \begin{example}
   $\varphi$を次の写像とする:
@@ -1480,6 +1495,27 @@ $(W,+,\act,0_V)$が$\KK$-線形空間であるための条件で非自明なの�
   である. これは, $\Set{\aaa_1,\ldots,\aaa_n}$を含む最小の部分空間である.
 \end{example}
 \begin{proof}\end{proof}
+
+\begin{example}
+$\KK$を体とし,  
+  \begin{align*}
+    \shazo{\varphi}{\KK^{n\times n}}{\KK}
+    {A}{\tr A}
+  \end{align*}
+  とすると, $\varphi$
+  は線形写像.
+  $\Ker(\varphi)$は, $I=\Set{1,\dots,n}$とすると,
+  \begin{align*}
+    \Ker(\varphi)=
+    \Set{(a_{i,j})_{i\in I,j\in I} \in\KK^{n\times n}|\sum_{i\in I}a_{i,i}=0}
+  \end{align*}
+  である. 特に, $n=2$のときは,
+  \begin{align*}
+    \Ker(\varphi)=
+    \Set{\begin{pmatrix}a&b\\c&-a\end{pmatrix}|a,b,c}
+  \end{align*}
+  である.
+\end{example}
 
 \begin{prop}
   \label{subspace:prop:img:inverseimage}
