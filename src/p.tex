@@ -135,7 +135,7 @@ Prop/Porposition/命題  などの見出しを使います.
 
 基本的な概念:
 \begin{enumerate}
-  \item 集合 $\in$, $\subset$
+  \item 集合 $\in$, $\subset$, 極大極小最大最小.
   \item 写像 $\circ$
   \item 恒等写像$\id_V$.
   \item 演算, 作用.
@@ -436,6 +436,23 @@ $K$は
   とおくと,
   $(\KK^n,+,\act ,\zzero_n$は$\KK$-線形空間.
   これを$\KK$上の$n$次元数ベクトル空間と呼ぶ.
+
+  また, 形式的に,
+  長さ$0$の列, つまり空列$()$を考え,
+  これを$\zzero_0$と書き,
+  \begin{align*}
+    \KK^0
+    =\Set{\zzero_0}
+  \end{align*}
+  とおく.
+  このとき, $c\in\KK$に対し,
+  \begin{align*}
+    \zzero_0+\zzero_0&=\zzero_0\\
+    c\act \zzero_0&=\zzero_0
+  \end{align*}
+  とおくと,
+  $(\KK^0,+,\act ,\zzero_0$は$\KK$-線形空間.
+  これを$\KK$上の$0$次元数ベクトル空間と呼ぶ.
 \end{example}
 
 \begin{example}
@@ -790,6 +807,17 @@ $a_1\cdots a_n w$と略記する.
   \end{align*}
   このとき, $\varphi$は$\KK$-線形である.
 \end{example}
+
+\begin{example}
+  $(V,+,.,\zzero)$を$\KK$線形空間とする.
+  $w_1,\ldots,w_r\in V$に対し,
+    \begin{align*}
+      \shazo{\varphi}{\KK^r}{V}
+      {\begin{pmatrix}a_1\\\vdots\\a_r\end{pmatrix}}{\sum_{i=1}^{r}a_iw_i}
+    \end{align*}
+  は$\KK$-線形写像である.
+\end{example}
+
 
 \begin{example}
   $(V,+,\act)$を$\KK$-線形空間とする.
@@ -1446,7 +1474,55 @@ $(W,+,\act,0_V)$が$\KK$-線形空間であるための条件で非自明なの�
 \end{remark}
 
 
+\begin{definition}
+  $U$を$\KK$-線形空間とし,
+  $V$, $W$を$U$の部分空間とする.
+  次の条件を満たすとき,
+  $U$は$V$と$W$の(内部)直和に分解できるという.
+  \begin{enumerate}
+  \item $U=V+W$.
+  \item $V\cap W=\Set{\zzero}$.
+  \end{enumerate}
+  $U$が$V$と$W$の(内部)直和に分解できることを,
+  $U=V\oplus W$と書き表す.
+\end{definition}
+\begin{example}
+  $U=\KK^3$とし,
+  \begin{align*}
+    V&=\Set{\begin{pmatrix}x\\y\\0\end{pmatrix}|x,y\in\KK}&
+    W&=\Set{\begin{pmatrix}0\\0\\z\end{pmatrix}|z\in\KK}&
+    W'&=\Set{\begin{pmatrix}0\\y\\z\end{pmatrix}|y,z\in\KK}
+  \end{align*}
+  とする.
+  $U=V+W$であり, $U=V+W'$でもある.
+  $V\cap W=\Set{\zzero_3}$であるので,
+  $U$は$V$と$W$の(内部)直和に分解できる.
+  つまり, $U=V\oplus W$である.
+  一方$V\cap W'\neq \Set{\zzero_3}$であるので,
+  $V$と$W'$には(内部)直和に分解できない.
+\end{example}
 
+\begin{prop}
+  $U=V\oplus W$であるとき,
+  $v,v'\in V$,
+  $w,w'\in W$に対し, 以下は同値:
+  \begin{enumerate}
+  \item $v+w=v'+w'$.
+  \item $v=v'$, $w=w'$.
+  \end{enumerate}
+\end{prop}
+\begin{proof}
+  \paragraph{$v+w=v'+w'\implies v=v', w=w'$}
+  $v+w=v'+w'$であるので,
+  $v-v'=-w+w'$.
+  左辺は$V$の元, 右辺は$W$の元であるから,
+  これらは, $V\cap W$の元.
+  よって, $\zzero$である.
+  $v-v'=\zzero$であるので, $v=v'$.
+  $w-w'=\zzero$であるので, $w=w'$.
+  \paragraph{$v=v', w=w'\implies v+w=v'+w'$}
+  明らか,
+\end{proof}
 
 \subsection{線形写像から得られる部分空間}
 
@@ -1679,8 +1755,369 @@ $\KK$を体とし,
   %\solvelater{quiz:1:1}
 \end{quiz}
 
+
+\chapter{基底}
+\section{数ベクトル空間と標準基底}
+$\KK$を体とする.
+このとき$\KK^n$は$\KK$-線形空間であり,
+数ベクトル空間と呼んだ.
+第$i$成分のみ$1$で他は$0$である$\KK^n$の元
+\begin{align*}
+  \begin{pmatrix}0\\\vdots\\0\\1\\0\\\vdots\\0\end{pmatrix}
+\end{align*}
+を$\ee_i$で表し,
+第$i$基本ベクトルと呼ぶ.
+これらの組 $(\ee_1,\ee_2,\ldots,\ee_n)$を
+$\KK^n$の標準基底と呼ぶ.
+次のことが定義からわかる:
+\begin{enumerate}
+\item
+    \begin{align*}
+      \aaa=\begin{pmatrix}a_1\\\vdots\\a_n\end{pmatrix}\in\KK^n
+    \end{align*}
+    に対し, $\aaa=\sum_{i=1}^na_i\ee_i$.
+  \item
+    $\sum_{i=1}^na_i\ee_i=\zzero$ならば, $a_1=\cdots=a_n=0$.
+\end{enumerate}
+\section{有限次元線形空間と基底}
+\subsection{定義}
+
+
+\begin{definition}
+  $(V,+,\act,\zzero)$を$\KK$線形空間とし,
+  $w_1,\ldots,w_r\in V$とする.
+  次の条件を満たすとき,
+  組$(w_1,\ldots,w_r)$が$\KK$上一次独立であるという:
+  \begin{enumerate}
+  \item $\sum_{i=1}^{r} c_i\act w_i=\zzero \implies c_1=\cdots=c_r=0$.
+  \end{enumerate}
+  $(w_1,\ldots,w_r)$が$\KK$上一次独立でないとき,
+  $(w_1,\ldots,w_r)$が$\KK$上一次従属であるという.
+\end{definition}
+\begin{prop}
+  $(V,+,.,\zzero)$を$\KK$線形空間とし,
+  $w_1,\ldots,w_r\in V$とする.
+  このとき以下は同値:
+  \begin{enumerate}
+  \item $(w_1,\ldots,w_r)$は$\KK$上一次独立.
+  \item 線形写像
+    \begin{align*}
+      \shazo{\varphi}{\KK^r}{V}
+      {\begin{pmatrix}a_1\\\vdots\\a_r\end{pmatrix}}{\sum_{i=1}^{r}a_i\act w_i}
+    \end{align*}
+    が単射.
+  \end{enumerate}
+\end{prop}
+
+\begin{prop}
+  $(w_1,\ldots,w_r)$を$V$の基底とする.
+  $v\in V$とするとき,
+  $v$は$w_1,\ldots,w_r$の線型結合として一意に書き表せる.
+  つまり,
+ (双対基底でつかう)  
+\end{prop}
+
+\begin{definition}
+  $(V,+,\act,\zzero)$を$\KK$線形空間とし,
+  $w_1,\ldots,w_r\in V$とする.
+  次の条件を満たすとき,
+  組$(w_1,\ldots,w_r)$は$V$の生成系であるという.
+  \begin{enumerate}
+  \item
+    $v\in V$とする.
+    このとき,
+    $\sum_{i=1}^{r} c_i\act w_i=v$
+    を満たす$c_1,\ldots,c_r\in\KK$ が存在する.
+  \end{enumerate}
+\end{definition}
+\begin{prop}
+  $(V,+,.,\zzero)$を$\KK$線形空間とし,
+  $w_1,\ldots,w_r\in V$とする.
+  このとき以下は同値:
+  \begin{enumerate}
+  \item $(w_1,\ldots,w_r)$は$\KK$の生成系である.
+  \item 線形写像
+    \begin{align*}
+      \shazo{\varphi}{\KK^r}{V}
+      {\begin{pmatrix}a_1\\\vdots\\a_r\end{pmatrix}}{\sum_{i=1}^{r}a_i\act w_i}
+    \end{align*}
+    が全射.
+  \end{enumerate}
+\end{prop}
+
+\begin{definition}
+  $(V,+,\act,\zzero)$を$\KK$線形空間とし,
+  $w_1,\ldots,w_r\in V$とする.
+  線形写像
+  \begin{align*}
+    \shazo{\varphi}{\KK^r}{V}
+          {\begin{pmatrix}a_1\\\vdots\\a_r\end{pmatrix}}{\sum_{i=1}^{r}a_i\act w_i}
+  \end{align*}
+  の像$\Img(\varphi)$を,
+  $(w_1,\ldots,w_r)$で生成される$V$の部分空間と呼び,
+  $\Braket{w_1,\ldots,w_r}_{\KK}$
+  で表す.  
+\end{definition}
+
+
+\begin{definition}
+  $(V,+,\act,\zzero)$を$\KK$線形空間とし,
+  $w_1,\ldots,w_r\in V$とする.
+  次の条件を満たすとき,
+  組$(w_1,\ldots,w_r)$は$V$の基底であるという.
+  \begin{enumerate}
+  \item $(w_1,\ldots,w_r)$は一次独立.
+  \item $(w_1,\ldots,w_r)$は$V$の生成系.
+  \end{enumerate}
+\end{definition}
+\begin{prop}
+  $(V,+,\act,\zzero)$を$\KK$線形空間とし,
+  $w_1,\ldots,w_r\in V$とする.
+  このとき以下は同値:
+  \begin{enumerate}
+  \item $(w_1,\ldots,w_r)$は$V$の基底である.
+  \item 線形写像
+    \begin{align*}
+      \shazo{\varphi}{\KK^r}{V}
+      {\begin{pmatrix}a_1\\\vdots\\a_r\end{pmatrix}}{\sum_{i=1}^{r}a_i\act w_i}
+    \end{align*}
+    が同型写像.
+  \end{enumerate}
+\end{prop}
+
+\begin{lemma}
+  $(V,+,\act,\zzero)$を$\KK$線形空間とし,
+  $(w_1,\ldots,w_r)$も
+  $(v_1,\ldots,v_l)$も
+  は$V$の基底であるとする.
+  このとき, $r=l$.
+\end{lemma}
+\begin{proof}
+  次は同値:
+  \begin{enumerate}
+  \item $\KK^n\sim \KK^m$.
+  \item $n=m$.
+  \end{enumerate}
+  したがって,
+  $\KK^r \simeq V\simeq \KK^l$であるこから,
+  $r=l$.
+\end{proof}
+
+\begin{definition}
+  $V\simeq \KK^n$であるとき,
+  $V$は有限次元線形空間であるという.
+  また$n$を$V$の次元と呼び,
+  $\dim_\KK(V)$で表す.
+  また, どの$n\in\NN$に対しても$V\not\simeq \KK^n$となるとき,
+  $V$は無限次元線形空間であるという.
+\end{definition}
+\begin{lemma}
+  $V$を$\KK$線形空間とし, $n>0$とする.
+  次は同値である:
+  \begin{enumerate}
+  \item $\dim_\KK(V)=n$
+  \item $(v_1,\ldots,v_n)$が$V$の基底となるような$v_1,\ldots,v_n\in V$が取れる.
+  \end{enumerate}
+\end{lemma}
+
+\begin{remark}
+BasisとBasis elementの違い.
+\end{remark}
+
+\subsection{例}
+\begin{example}
+  $\KK^n$の標準基底$(\ee_1,\ldots,\ee_n)$は,
+  $\KK^n$の基底である.
+\end{example}
+
+\begin{example}
+  $v_1,\ldots,v_n\in \KK^m$とする.
+  縦ベクトル$v_1,\ldots,v_n$を並べて得られる行列を$A$,
+  つまり
+  \begin{align*}
+    A=
+    \begin{pmatrix}
+      v_1|\cdots|v_n
+    \end{pmatrix}
+  \end{align*}
+  とおく.
+  また,
+  \begin{align*}
+    \shazo{\varphi}{\KK^r}{V}
+          {\begin{pmatrix}a_1\\\vdots\\a_r\end{pmatrix}}{\sum_{i=1}^{r}a_i\act w_i}
+  \end{align*}
+  とする.  
+  このとき,
+  \begin{enumerate}
+  \item 次は同値:
+    \begin{enumerate}
+      \item $(v_1,\ldots,v_n)$は$V$の生成系.
+      \item $\varphi$が全射.
+      \item $\rank(A)=m$
+    \end{enumerate}
+  \item 次は同値:
+    \begin{enumerate}
+      \item $(v_1,\ldots,v_n)$は$\KK$上一次独立.
+      \item $\varphi$が単射.
+      \item $\rank(A)=n$
+    \end{enumerate}
+  \item 次は同値:
+    \begin{enumerate}
+      \item $(v_1,\ldots,v_n)$は$V$の基底.
+      \item $\varphi$が全単射.
+      \item $\rank(A)=m=n$.
+      \item $A$は正則.
+    \end{enumerate}
+  \end{enumerate}
+\end{example}
+
+
+\begin{example}
+  $(k,l)$成分は$1$でそれ以外の成分は$0$である
+  $\KK^{m\times n}$の元を$B_{k,l}$で表す.
+  $B_{k,l}$のことを行列単位\footnote{単位行列と用語が紛らわしいが混同しないこと}と呼ぶこともある.
+  このとき,
+  $B_{k,l}$を全て集めた
+  $(B_{1,1},\ldots,B_{1,n},B_{2,1},\ldots,B_{2,n},\ldots,B_{m,1},\ldots,B_{1,n})$は$\KK^{m\times n}$の基底である.
+\end{example}
+
+\begin{example}
+  $\CC$は$\RR$線形空間であった.
+  $(1,\sqrt{-1})$は$\CC$の基底である.
+  したがって$\dim_\RR(\CC) = 2$である.
+  また,
+  $\CC$は$\CC$線形空間でもあった.
+  $(1)$は$\CC$の基底である.
+  したがって$\dim_\CC(\CC) = 1$である.
+\end{example}
+
+
+\begin{example}
+双対基底.  $\Hom$の基底.
+\end{example}
+
+
+\subsection{性質}
+\begin{prop}
+  $V$を$\KK$線形空間とする.
+  $(\zzero)$は一次従属.
+\end{prop}
+  
+\begin{prop}
+  $\KK$を体とする.
+  $V$を$\KK$ベクトル空間とする.
+  $v\in V\setminus\Set{\zzero}$に対し,
+  $(v)$は一次独立.
+\end{prop}
+
+\begin{prop}
+  $V$, $W$を有限次元線形空間とする.
+  このとき, 以下は同値:
+  \begin{enumerate}
+  \item $V\simeq W$.
+  \item $\dim_\KK V = \dim_\KK W$.
+  \end{enumerate}
+\end{prop}
+
+\begin{prop}
+  $W$をベクトル空間とし, $V$を$W$の部分空間とする.
+  $(v_1,\ldots,v_n)$を$V$の基底とする.
+  このとき,
+  $w_1,\ldots,w_m\in W$で,
+  $(v_1,\ldots,v_n,w_1,\ldots,w_m)$が$W$の基底となるものが
+  存在する.  
+\end{prop}
+
+\begin{prop}
+  $W$を線形空間とし, $V$を$W$の部分空間とする.
+  このとき,  $\dim_\KK V \leq \dim_\KK W$.
+\end{prop}
+
+\begin{prop}
+  $W$をベクトル空間とし, $V$を$W$の部分空間とする.
+  このとき, 以下は同値:
+  \begin{enumerate}
+   \item $V = W$.
+   \item $\dim_\KK V = \dim_\KK W$.
+  \end{enumerate}
+\end{prop}
+
+\begin{prop}
+  $U$をベクトル空間とし, $V$, $W$を$U$の部分空間とする.
+  このとき,  $\dim_\KK(V+W)=\dim_\KK(V)+\dim_\KK(W) - \dim_\KK(W\cap V)$.
+\end{prop}
+\begin{prop}
+  $U$をベクトル空間とし, $V$, $W$を$U$の部分空間とする.
+  このとき,
+  \begin{enumerate}
+  \item $V+W=V\oplus W$.
+  \item $\dim_\KK(V+W)=\dim_\KK(V)+\dim_\KK(W)$.
+  \end{enumerate}
+\end{prop}
+
+\begin{prop}
+  $U$を有限次元ベクトル空間とし, $V$を$U$の部分空間とする.
+  このとき,
+  $U=V\oplus W$を満たす$U$の部分空間$W$が存在する.
+\end{prop}
+
+
+\begin{prop}
+  $V$, $W$を有限次元ベクトル空間とする.
+  $\varphi\colon V\to W$を線形写像とする.
+  $\dim_\KK(V)=\dim_\KK(W)$のとき, 以下は同値:
+  \begin{enumerate}
+  \item $\varphi$は同型写像.
+  \item $\varphi$は全単射.
+  \item $\varphi$は全射.
+  \item $\varphi$は単射.
+  \end{enumerate}
+\end{prop}
+
+
+\begin{prop}
+  $V$, $W$を$\KK$-線形空間とし,
+  $\varphi\colon V\to W$を線形写像とする.
+  このとき以下は同値:
+  \begin{enumerate}
+  \item $\varphi$が単射.
+  \item $n\in \NN$, $v_1,\ldots,v_n\in V$,
+    $(v_1,\ldots,v_n)$が$\KK$上一次独立
+    $\implies (\varphi(v_1),\ldots,\varphi(v_n))$は$\KK$上一次独立.
+  \end{enumerate}
+\end{prop}
+
+\begin{prop}
+  基底の交換定理.
+\end{prop}
+\begin{prop}
+  $V$を$\KK$線形空間とする.
+  次は同値:
+  \begin{enumerate}
+  \item $\dim_{\KK}(V)=n$.
+  \item $\max\Set{r|(v_1,\ldots,v_r)\text{は一次独立}}=n$.
+  \item $(v_1,\ldots, v_r)$が極大な一次独立な組なら$n=r$.
+  \item $\min\Set{r|(v_1,\ldots,v_r)\text{は一次従属}}=n$.
+  \item $(v_1,\ldots, v_r)$が極小な一次従属な組なら$n=r$.
+  \end{enumerate}
+\end{prop}
+
+\begin{prop}
+  $(v_1,\ldots, v_r)$が極大な一次独立な組は基底.
+\end{prop}
+\begin{prop}
+  $(v_1,\ldots, v_r)$が極小な一次従属な組は基底.
+\end{prop}
+
+\section{無限次元線形空間}
+\sectionX{章末問題}
+\begin{quiz}
+  %\solvelater{quiz:1:1}
+\end{quiz}
+
 \chapter{商空間}
 \sectionX{章末問題}
 \begin{quiz}
   %\solvelater{quiz:1:1}
 \end{quiz}
+内部直和と外部直和
