@@ -2109,6 +2109,7 @@ BasisとBasis elementの違い.
   $(v_1,\ldots, v_r)$が極小な一次従属な組は基底.
 \end{prop}
 
+
 \section{無限次元線形空間}
 \sectionX{章末問題}
 \begin{quiz}
@@ -2116,8 +2117,261 @@ BasisとBasis elementの違い.
 \end{quiz}
 
 \chapter{商空間}
+\section{商空間}
+$U$を$\KK$線形空間とし,
+$V$を$U$の部分空間とする.
+$u\in U$に対し,
+\begin{align*}
+  [u]_V=\Set{u+v|v\in V}
+\end{align*}
+とする.
+\begin{example}
+$U=\RR^2$, $V=\Set{\begin{pmatrix}t\\t\end{pmatrix}|t\in\RR}$
+  とする. $V$は$U$の部分空間である.
+  $u=\begin{pmatrix}a\\b\end{pmatrix}$
+  とすると,
+  $[u]_V$は$u$を通り$V$に平行な直線である.
+  たとえば,
+  \begin{align*}
+    u=\begin{pmatrix}a\\0\end{pmatrix}\\
+    u'=\begin{pmatrix}0\\-a\end{pmatrix}
+  \end{align*}
+  とすると,
+  \begin{align*}
+    [u]_V=[u']_V=\Set{\begin{pmatrix}a+t\\t\end{pmatrix}|t\in\RR}
+  \end{align*}
+  である.
+  \begin{figure}\caption{}\end{figure}
+\end{example}
+\begin{lemma}
+$v\in V$ならば, $[v]_V=V$.
+とくに,  $[\zzero]_V=V$.
+\end{lemma}
+\begin{proof}
+定義から明白.
+\end{proof}
+\begin{lemma}
+$u,v\in U$に対し, 以下は同値:
+\begin{enumerate}
+\item $[u]_V=[v]_V$.
+\item $u-v \in V$.
+\end{enumerate}
+\end{lemma}
+\begin{proof}\end{proof}
+
+\begin{lemma}
+\label{lem:quotientspace:well:def}
+  $u,u',w,w'\in U$, $c\in \KK$に対し, 以下が成り立つ:  
+  \begin{enumerate}
+  \item $[u]_V=[u']_V, [w]_V=[w']_V \implies [u+w]_V=[u'+w']_V$.
+  \item $[u]_V=[u']_V \implies [c\act u]_V=[c\act u']_V$.
+  \end{enumerate}
+\end{lemma}
+\begin{proof}\end{proof}
+
+\begin{align*}
+  U/V=\Set{[u]_V|u\in U}
+\end{align*}
+とおく.
+\Cref{lem:quotientspace:well:def}
+より,
+$[u]_V,[w]_V\in U/V$, $c\in\KK$に対し
+\begin{align*}
+[u]_V\pplus [w]_V &= [u+w]_V\\
+c\aact [u]_V &= [c\act u]_V
+\end{align*}
+とすると,
+$\pplus$, $\aact$は
+$U/V$上の演算として定義できる.
+\begin{lemma}
+  $(U/V,\pplus,\aact,[\zzero]_V)$
+  は$\KK$線形空間.
+\end{lemma}
+\begin{proof}\end{proof}
+\begin{definition}
+  $\KK$線形空間
+  $(U/V,\pplus,\aact,[\zzero]_V)$
+  を$U$の$V$による剰余空間, 商空間と呼ぶ.
+\end{definition}
+
+\begin{remark}
+  ここでは,
+  議論をはっきりさせるため,
+  剰余空間の演算を
+  $\pplus,\aact$という記号で書いたが,
+  通常は,
+  剰余空間の演算を
+  もとの空間と同じ記号を用いる.
+  つまり,
+  \begin{align*}
+    [u]_V+[w]_V&=[u+w]_V=\Set{u+w+v|v\in V}, \\
+    c\act [u]_V&=[c\act u]_V=\Set{c\act u +v|v\in V}
+  \end{align*}
+  とする.
+\end{remark}
+
+\section{次元定理}
+\begin{theorem}
+  \label{thm:fund:hom}
+  $\varphi\colon U \to W$を$\KK$-線形写像とする.
+  このとき,
+  $U/\Ker(\varphi)\simeq \Img(\varphi)$.
+\end{theorem}
+\begin{proof}
+  $V=\Ker(\varphi)$とする.
+  
+  $[u]_V=[u']_V$とすると, $u-u'\in W=\Ker(\varphi)$であるので,
+  $\varphi(u-u')=\zzero_W$である.
+  よって, $\varphi(u)-\varphi(u')=\zzero_W$であるから,
+  $\varphi(u)=\varphi(u')$.
+  したがって, $\Phi([u]_V)=\varphi(u)$
+  と定めると,
+  $\Phi$は$U/V$から$\Img(\varphi)$への写像となる.
+  \begin{align*}
+    \shazo{\Phi}{U/V}{\Img(\varphi)}
+    {[u]_V}{\varphi(u)}
+  \end{align*}
+  が同型写像であることを示す.
+  \paragraph{線型性}
+  \begin{align*}
+    \Phi([u]_V+[u']_V)&=\Phi([u+u']_V)=\varphi(u+u')=\varphi(u)+\varphi(u')\\
+    \Phi([u]_V)+\Phi([u']_V)&=\varphi(u)+\varphi(u')\\
+    \Phi(c\act [u]_V)&=\Phi([c\act u]_V)\varphi(c\act u)=c\act \varphi(u)\\
+    c\act \Phi([u]_V)&=c\act \varphi(u)
+  \end{align*}
+  であるので, $\Phi$は線形写像.
+  \paragraph{単射性}
+  $\Phi([u]_V)=\Phi([u']_V)$とする.
+  このとき, $\varphi(u)=\varphi(u')$であるので,
+  $\varphi(u)-\varphi(u')=\zzero_W$である.
+  よって,
+  $\varphi(u-u')=\zzero_W$であるから,
+  $u-u'\in \Ker(\varphi)=V$.
+  したがって, $[u]_V=[u']_V$.
+  
+  \paragraph{全射性}
+  $\varphi(u)\in \Img(\varphi)$とする.
+  このとき, $\Phi([u]_V)=\varphi(u)$であるので,
+  $\Phi$は全射である.
+\end{proof}
+
+\begin{cor}
+$U=V\oplus W$
+  であるとき, $U/V\simeq= W$.
+\end{cor}
+\begin{proof}
+$U=V\oplus W$であるので,
+  $u\in U$に対し,
+  $u=v+w$となる$v\in V$, $w\in W$がただ一組存在するので,
+  この, $w$を$\varphi(u)$とおく.
+  このとき,
+  \begin{align*}
+    \shazo{\varphi}{U}{W}{u}{\varphi(u)}
+  \end{align*}
+  は線形写像である.
+  その定義から, $\Img(\varphi)=W$, $\Ker(\varphi)=V$であるので,
+  \Cref{thm:fund:hom}より $U/V\simeq W$.
+\end{proof}
+
+\begin{theorem}
+  \label{thm:dim:quotient}
+  $V$を$U$の部分空間とする.
+  $v_1,\ldots, v_n,w_1,\ldots,w_m\in U$とし,
+  $(v_1,\ldots, v_n)$は$V$の基底,
+  $(v_1,\ldots, v_n,w_1,\ldots, w_m)$は$U$の基底であるとする.
+  このとき,
+  \begin{align*}
+    ([w_1]_V,\ldots, [w_m]_V)
+  \end{align*}
+  は$U/V$の基底.
+  とくに, $\dim_\KK(U/V)=\dim_\KK(U)-\dim_\KK(V)$.
+\end{theorem}
+\begin{proof}
+  \begin{align*}
+    \shazo{\varphi}{\KK^m}{U/V}
+          {\begin{pmatrix}a_1\\\vdots\\a_m\end{pmatrix}}
+          {\sum_{i=1}^m a_i\act [w_i]_V}
+  \end{align*}
+  は線形写像である.
+  これが同型写像であることを示す.
+  \paragraph{全射性}
+  $[u]_V\in U/V$とする.
+  $(v_1,\ldots, v_n,w_1,\ldots, w_m)$は$U$の基底であるので,
+  $u=\sum_{i}a_i\act v_i+\sum_{i}b_i \act w_i$
+  とかける.
+  そこで,
+  $w=\sum_{i}b_i \act w_i$
+  とおく.
+  このとき$v=u-w$とおくと$v\in V$である.
+  したがって, $[u]_V=[w]_V$である.
+  よって,
+  \begin{align*}
+    [u]_V
+    &=[w]_V\\
+    &=[\sum_{i}b_i \act w_i]_V\\
+    &=\sum_{i}b_i \act[ w_i]_V\\
+    &=\varphi(\begin{pmatrix}b_1\\\vdots\\b_m\end{pmatrix})\\
+  \end{align*}
+  \paragraph{単射性}
+  $\Ker(\varphi)\subset\Set{\zzero_m}$を示す.
+  $\varphi(\begin{pmatrix}b_1\\\vdots\\b_m\end{pmatrix})=[\zzero]_V$
+  とする.
+  このとき,
+  $[\sum_{i}b_i \act w_i]_V=[\zzero]_V$
+  であるので, $\sum_{i}b_i \act w_i\in V$である.
+  $(v_1,\ldots, v_n)$は$V$の基底であるから,
+  $\sum_{i}b_i \act w_i=\sum_{i}a_i\act v_i$
+  となる$a_i\in \KK$が存在するが,
+  移項すると,
+  $-\sum_{i}a_i\act v_i+\sum_{i}b_i \act w_i=\zzero$
+  となる.
+  $(v_1,\ldots, v_n,w_1,\ldots, w_m)$は一次独立であるので,
+  $a_1=\cdots=a_n=b_1=\cdots=b_m=0$.
+  よって
+  $\begin{pmatrix}b_1\\\vdots\\b_m\end{pmatrix}=\zzero_m$.
+\end{proof}
+
+
+\begin{cor}
+  $V$を有限次元ベクトル空間とし,
+  $\varphi\colon V\to W$を線形写像とする.
+  このとき,
+  $\dim_{\KK}(\Img(\varphi))+\dim_{\KK}(\Ker(\varphi))=\dim_{\KK}(V)$.
+\end{cor}
+\begin{proof}
+  \Cref{thm:fund:hom}より $V/\Ker(\varphi) \simeq \Img(\varphi)$.
+  したがって,
+  $\dim_{\KK}(V/\Ker(\varphi))=\dim_{\KK}(\Img(\varphi))$.
+  \Cref{thm:dim:quotient}より,
+  $\dim_{\KK}(V/\Ker(\varphi))=\dim_{\KK}(V)-\dim_{\KK}(\Ker(\varphi))$
+  であるので,
+  $\dim_{\KK}(\Img(\varphi))+\dim_{\KK}(\Ker(\varphi))=\dim_{\KK}(V)$.
+\end{proof}
+
+
 \sectionX{章末問題}
 \begin{quiz}
   %\solvelater{quiz:1:1}
 \end{quiz}
+
+
+
+
+\chapter{}
+\sectionX{章末問題}
+\begin{quiz}
+  %\solvelater{quiz:1:1}
+\end{quiz}
+
+
+
+
+
+
+\chapter{}
 内部直和と外部直和
+\begin{prop}
+  $U=V\oplus W$とする.
+  $v\in V$, $w\in W$ならば,
+  $(v,w)$は一次独立.
+\end{prop}
