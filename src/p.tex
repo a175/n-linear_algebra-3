@@ -2357,13 +2357,385 @@ $U=V\oplus W$であるので,
 
 
 
-\chapter{}
+\chapter{表現行列}
+\section{数ベクトル空間上の線形写像}
+$\KK^n$から$\KK^m$への$\KK$-線形写像について考える.
+\begin{lemma}
+  $\varphi\colon \KK^n\to \KK^m$,
+  $\psi\colon \KK^n\to \KK^m$を$\KK$-線形写像とする.
+  すべての$i$に対し, $\varphi(\ee_i)=\psi(\ee_i)$とする.
+  このとき,
+  $\varphi=\psi$.
+\end{lemma}
+\begin{proof}
+  \begin{align*}
+    \aaa=\begin{pmatrix}a_1\\\vdots\\a_n\end{pmatrix}
+    \in\KK^n
+\end{align*}
+とする. このとき, $\aaa=a_1\ee_1+\cdots+a_n\ee_n$である.
+  \begin{align*}
+    \varphi(\aaa)=\varphi(a_1\ee_1+\cdots+a_n\ee_n)
+    =\varphi(a_1\ee_1+\cdots+a_n\ee_n)
+    =a_1\varphi(\ee_1)+\cdots+a_n\varphi(\ee_n).
+    \psi(\aaa)=\varphi(a_1\ee_1+\cdots+a_n\ee_n)
+    =\psi(a_1\ee_1+\cdots+a_n\ee_n)
+    =a_1\psi(\ee_1)+\cdots+a_n\psi(\ee_n).
+  \end{align*}
+  よって$\varphi(\aaa)=\psi(\aaa)$.
+\end{proof}
+
+\begin{lemma}
+  $\aaa_1,\ldots,\aaa_n\in \KK^m$とする.
+  このとき,
+  \begin{align*}
+    \shazo{\varphi}{\KK^n}{\KK^m}
+          {\begin{pmatrix}x_1\\\vdots\\x_n\end{pmatrix}}
+          {x_1\aaa_1+\cdots+x_n\aaa_n}
+  \end{align*}
+  とすると, これは線形写像.
+  また, $A$を$\aaa_1,\ldots,\aaa_n$を並べた$(m,n)$-行列とする.
+  つまり, $A=(\aaa_1|\cdots|\aaa_n)$とする.
+  このとき, $\varphi(\xx)=A\xx$.
+\end{lemma}
+\begin{proof}\end{proof}
+
+よって, 
+$\KK^n$から$\KK^m$への$\KK$-線形写像を考えるなら,
+$A\in\KK^{m\times n}$に対して,
+\begin{align*}
+  \shazo{\mu_A}{\KK^n}{\KK^m}
+        {\xx}
+        {A\xx}
+\end{align*}
+を考えれば十分である.
+
+\begin{prop}
+  $A,A\in \KK^{m\times n}$,
+  $B\in\KK^{l\times m}$,
+  $c\in\KK$に対し, 以下が成り立つ:
+  \begin{enumerate}
+  \item $\mu_{A+A'}=\mu(A)+\mu_{A'}$.
+  \item $\mu_{cA}=c\mu(A)$.
+  \item $\mu_{BA}=\mu(B)\circ\mu_{A}$.
+  \end{enumerate}
+\end{prop}
+\begin{proof}\end{proof}
+
+\begin{prop}
+  $A\KK^{m\times n}$とする.
+  $A=(\aaa_1|\cdots|\aaa_n)$とすると,
+  以下が成り立つ:
+  \begin{enumerate}
+  \item $\Img(\mu_A)=\Braket{\aaa_1,\ldots,\aaa_n}$.
+  \item $\Ker(\mu_A)=\Set{\xx\in\KK^n|A\xx=\zzero_m}$. つまり, $\Ker(\mu_A)$は,
+    方程式$A\xx=\zzero_m$の解の空間.
+  \end{enumerate}
+\end{prop}
+\begin{proof}\end{proof}
+
+\begin{cor}
+  $A\KK^{m\times n}$とする.
+  このとき,
+  以下が成り立つ:
+  \begin{enumerate}
+  \item $\dim_\KK(\Img(\mu_A))=\rank(A)$.
+  \item $\dim_\KK(\Ker(\mu_A))$は
+    方程式$A\xx=\zzero_m$の解の自由度, つまり$n-\rank(A)$.
+  \end{enumerate}
+\end{cor}
+\begin{proof}\end{proof}
+
+
+\begin{cor}
+  $A\KK^{m\times n}$とする.
+  このとき,
+  以下が成り立つ:
+  \begin{enumerate}
+  \item $\rank(A)=m \implies \mu_A$は全射.
+  \item $\rank(A)=n \implies \mu_A$は単射.
+  \item $\rank(A)=n \implies \mu_A$は同型写像.
+  \end{enumerate}
+\end{cor}
+\begin{proof}\end{proof}
+
+\section{表現行列}
+$V$を$\KK$-線形空間とし, $v_1,\ldots,v_n\in V$とする.
+このとき,
+\begin{align*}
+    \shazo{\nu_{(v_1,\ldots,v_n)}}{\KK^n}{V}
+          {\begin{pmatrix}x_1\\\vdots\\x_n\end{pmatrix}}
+          {x_1\act v_1+\cdots+x_n\act v_n}
+\end{align*}
+とする.
+$(v_1,\ldots,v_n)$が$V$の基底であるとき,
+$\nu_{(v_1,\ldots,v_n)}$は同型写像である.
+
+\begin{definition}
+  $V$, $W$を$\KK$-線形空間とし,
+  $D=(v_1,\ldots,v_n)$,
+  $B=(w_1,\ldots,w_m)$とする.
+  $\varphi\colon V\to W$を$\KK$-線形写像に対し,
+  $(\nu_B)^{-1}\circ \varphi\circ \nu_D$は,
+  $\KK^n$から $\KK^m$への$\KK$-線形写像である.
+  $\mu_A=(\nu_B)^{-1}\circ \varphi\circ \nu_D$
+  を満たす$A\in\KK^{m\times n}$を$\varphi$の$D$, $B$に関する
+  表現行列と呼ぶ.
+\end{definition}
+\begin{prop}
+  $V$, $W$を$\KK$-線形空間とし,
+  $D=(v_1,\ldots,v_n)$を$V$の基底,
+  $B=(w_1,\ldots,w_m)$を$W$の基底とする.
+  $\varphi\colon V\to W$を$\KK$-線形写像とし,
+  $A\in\KK^{m\times n}$を$\varphi$の$D$, $B$に関する表現行列とする.
+このとき,
+\begin{align*}
+  \varphi=\nu_B\mu_A(\nu_{D})^{-1}
+\end{align*}
+である.
+\end{prop}
+\begin{proof}\end{proof}
+
+\begin{prop}
+  $V$, $W$を$\KK$-線形空間とし,
+  $D=(v_1,\ldots,v_n)$を$V$の基底,
+  $B=(w_1,\ldots,w_m)$を$W$の基底とする.
+  $\varphi\colon V\to W$を$\KK$-線形写像とし,
+  $A\in\KK^{m\times n}$を$\varphi$の$D$, $B$に関する表現行列とする.
+  また,
+  $\varphi(v_j)=\sum_{i=1}^m a_{i,j} w_i$
+  とする.
+  このとき,
+\begin{align*}
+  A=(a_{i,j})_{i\in I, j\in J}
+\end{align*}
+ただし,
+$I=\Set{1,\ldots,m}$,
+$J=\Set{1,\ldots,m}$.
+\end{prop}
+\begin{proof}\end{proof}
+
+
+\begin{prop}
+  $V$, $W$を$\KK$-線形空間とし,
+  $D=(v_1,\ldots,v_n)$を$V$の基底,
+  $B=(w_1,\ldots,w_m)$を$W$の基底とする.
+  $\varphi\colon V\to W$を$\KK$-線形写像とし,
+  $A\in\KK^{m\times n}$を$\varphi$の$D$, $B$に関する表現行列とする.
+このとき,
+\begin{align*}
+  \varphi(v_j)=\sum_{i=1}^m a_{i,j}w_i
+\end{align*}
+である.
+つまり,
+\begin{align*}
+  \varphi(\sum_{j=1}^n x_j v_j)
+  &=\sum_{i=1}^m a_{i,j}x_jw_i.
+\end{align*}
+\end{prop}
+\begin{proof}\end{proof}
+
+
+\begin{prop}
+  $V$, $W$, $U$を$\KK$-線形空間とし,
+  $D=(v_1,\ldots,v_n)$を$V$の基底,
+  $B=(w_1,\ldots,w_m)$を$W$の基底,
+  $C=(u_1,\ldots,u_l)$を$U$の基底
+  とする.
+  $\varphi\colon V\to W$を$\KK$-線形写像とし,
+  $A\in\KK^{m\times n}$を$\varphi$の$D$, $B$に関する表現行列とする.
+  $\varphi'\colon V\to W$を$\KK$-線形写像とし,
+  $A'\in\KK^{m\times n}$を$\varphi'$の$D$, $B$に関する表現行列とする.
+  $\psi\colon W\to U$を$\KK$-線形写像とし,
+  $B\in\KK^{m\times n}$を$\psi$の$B$, $C$に関する表現行列とする.
+  $c\in \KK$とする.
+このとき,
+\begin{enumerate}
+  \item $\varphi+\varphi'$の$B$, $D$に関する表現行列は$A+A'$.
+  \item $c\varphi+\varphi'$の$B$, $D$に関する表現行列は$cA$.
+  \item $\psi\varphi'$の$B$, $C$に関する表現行列は$BA$.
+\end{enumerate}
+\end{prop}
+\begin{proof}\end{proof}
+
+
+
+\begin{prop}
+  $V$, $W$を$\KK$-線形空間とし,
+  $D=(v_1,\ldots,v_n)$を$V$の基底,
+  $B=(w_1,\ldots,w_m)$を$W$の基底
+  とする.
+  $\varphi\colon V\to W$を$\KK$-線形写像とし,
+  $A\in\KK^{m\times n}$を$\varphi$の$D$, $B$に関する表現行列とする.
+  このとき,
+\begin{enumerate}
+  \item $\Img(\varphi)=\Set{\nu_B(\xx) |\xx\in \Img(\mu_A)}$.
+  \item $\Ker(\varphi)=\Set{\nu_D(\xx) |\xx\in \Ker(\mu_A)}$.
+\end{enumerate}
+\end{prop}
+\begin{proof}\end{proof}
+
+\begin{prop}
+  $V$, $W$を$\KK$-線形空間とし,
+  $D=(v_1,\ldots,v_n)$を$V$の基底,
+  $B=(w_1,\ldots,w_m)$を$W$の基底
+  とする.
+  $\varphi\colon V\to W$を$\KK$-線形写像とし,
+  $A\in\KK^{m\times n}$を$\varphi$の$D$, $B$に関する表現行列とする.
+  このとき,
+\begin{enumerate}
+  \item $\dim_\KK\Img(\varphi)=\rank(A)$.
+  \item $\dim_\KK\Ker(\varphi)=n-\rank(A)$.
+\end{enumerate}
+\end{prop}
+\begin{proof}\end{proof}
+
+\begin{prop}
+  $V$, $W$を$\KK$-ベクトル空間とし,
+  $D=(v_1,\ldots,v_n)$を$V$の基底,
+  $B=(w_1,\ldots,w_m)$を$W$の基底
+  とする.
+  $\varphi\colon V\to W$を$\KK$-線形写像とし,
+  $A\in\KK^{m\times n}$を$\varphi$の$D$, $B$に関する表現行列とする.
+  このとき,
+\begin{enumerate}
+  \item $\rank(A)=m\implies \varphi$は全射.
+  \item $\rank(A)=n\implies \varphi$は単射.
+  \item $\rank(A)=m=n\implies \varphi$は同型写像.
+\end{enumerate}
+\end{prop}
+\begin{proof}\end{proof}
+
+\section{基底の変換行列と表現行列}
+定義を確認.
+
+\begin{definition}
+  $V$を$n$次元$\KK$-線形空間とする.
+  $D,D'$を$V$の基底とする.
+  このとき, $(\nu_{D'})^{-1}\circ\nu_{D}$は$\KK^n$から$\KK^n$への線形写像
+  である.
+  $\mu_T=(\nu_{D'})^{-1}\circ\nu_{D}$
+  となる$T\in\KK^{n\times n}$を基底$D$から基底$D'$への変換行列と呼ぶ.
+\end{definition}
+\begin{prop}
+  $V$を$n$次元$\KK$-線形空間とする.
+  $D=(v_1,\ldots, v_n),D'=(v'_1,\ldots, v'_n)$を$V$の基底とし,
+  $T\in\KK^{n\times n}$を$D$から$D'$への変換行列とする.
+  $v'_j=\sum_{i=1}^n t_{i,j}v_i$とすると,
+  \begin{align*}
+    T=(t_{i,j})_{i\in I, j\in I}.
+  \end{align*}
+  ただし, $I=\Set{1,\ldots, n} $.
+\end{prop}
+\begin{proof}\end{proof}
+
+\begin{prop}
+  $V$を$n$次元$\KK$-線形空間とする.
+  $D=(v_1,\ldots, v_n),D'=(v'_1,\ldots, v'_n)$を$V$の基底とし,
+  $T\in\KK^{n\times n}$を$D$から$D'$への変換行列とする.
+  このとき, $T$は正則である.
+\end{prop}
+\begin{proof}\end{proof}
+
+\begin{prop}
+  $V$を$n$次元$\KK$-線形空間とする.
+  $D=(v_1,\ldots, v_n)$を$V$の基底とする.
+  $T=(t_{i,j})_{i\in I, j\in I}$とし,
+  $v'_j=\sum_{i=1}^n t_{i,j}v_i$とする.
+  $T$が正則なら,
+  $D'=(v'_1,\ldots, v'_n)$は$V$の基底であり,
+  $D$から$D'$への変換行列は$T$である.
+\end{prop}
+\begin{proof}\end{proof}
+
+
+\begin{prop}
+  $V$, $W$を$\KK$-線形空間とする.
+  $D, D'$を$V$の基底とする.
+  $B, B'$を$V$の基底とする.
+  $T$を$D$から$D'$への変換行列とし,
+  $F$を$B$から$B'$への変換行列とする.
+  $\varphi\colon V\to W$を$\KK$-線形写像とする.
+  $A$を$\varphi$の$D$, $B$に関する表現行列とする.
+  $A'$を$\varphi'$の$D'$, $B'$に関する表現行列とする.
+  このとき,
+  $A'=FAT^{-1}$.
+\end{prop}
+\begin{proof}\end{proof}
+
+\begin{prop}
+  $V$, $W$を$\KK$-線形空間とする.
+  $D, D'$を$V$の基底とする.
+  $B, B'$を$V$の基底とする.
+  $A$を$\varphi$の$D$, $B$に関する表現行列とする.
+  このとき,
+  \begin{align*}
+    \Set{A'|\text{$\varphi$の基底$D'$, $B'$に関する表現行列}}
+    &=
+    \Set{FAT^{-1}|\text{$F$,$T^{-1}$は正則}}.
+  \end{align*}
+\end{prop}
+\begin{proof}\end{proof}
+
+
+
+\begin{definition}
+$V$を$\KK$-線形空間とする.
+  線形変換
+$\varphi\colon V\to V$
+と
+$V$の基底$D$
+に対し,
+$\varphi$の$D$, $D$に関する表現行列を,
+$\varphi$の$D$に関する行現行列と呼ぶ.
+\end{definition}
+\begin{prop}
+  $V$を$\KK$-線形空間とする.
+  $D, D'$を$V$の基底とする.
+  $D$から$D'$への変換行列を$T$とする.
+  $A$を$\varphi$の$D$に関する表現行列とする.
+  $A'$を$\varphi$の$D'$に関する表現行列とする.
+  このとき,
+  \begin{align*}
+    A'=TAT^{-1}.
+  \end{align*}
+\end{prop}
+\begin{proof}\end{proof}
+
+\begin{prop}
+  $V$を$\KK$-線形空間とする.
+  $D$を$V$の基底とする.
+  $A$を$\varphi$の$D$に関する表現行列とする.
+  このとき,
+  \begin{align*}
+    \Set{A'|\text{$\varphi$の基底$D'$に関する表現行列}}
+    &=
+    \Set{TAT^{-1}|\text{$T$は正則}}.
+  \end{align*}
+\end{prop}
+\begin{proof}\end{proof}
+
+
+\section{表現行列の例}
+
 \sectionX{章末問題}
 \begin{quiz}
   %\solvelater{quiz:1:1}
 \end{quiz}
 
 
+
+\chapter{行列式}
+\sectionX{章末問題}
+\begin{quiz}
+  %\solvelater{quiz:1:1}
+\end{quiz}
+
+
+\chapter{}
+\sectionX{章末問題}
+\begin{quiz}
+  %\solvelater{quiz:1:1}
+\end{quiz}
 
 
 
