@@ -2374,12 +2374,11 @@ $\KK^n$から$\KK^m$への$\KK$-線形写像について考える.
 \end{align*}
 とする. このとき, $\aaa=a_1\ee_1+\cdots+a_n\ee_n$である.
   \begin{align*}
-    \varphi(\aaa)=\varphi(a_1\ee_1+\cdots+a_n\ee_n)
-    =\varphi(a_1\ee_1+\cdots+a_n\ee_n)
-    =a_1\varphi(\ee_1)+\cdots+a_n\varphi(\ee_n).
-    \psi(\aaa)=\varphi(a_1\ee_1+\cdots+a_n\ee_n)
-    =\psi(a_1\ee_1+\cdots+a_n\ee_n)
-    =a_1\psi(\ee_1)+\cdots+a_n\psi(\ee_n).
+    \varphi(\aaa)&=\varphi(a_1\ee_1+\cdots+a_n\ee_n)\\
+    &=a_1\varphi(\ee_1)+\cdots+a_n\varphi(\ee_n).\\
+    \psi(\aaa)
+    &=\psi(a_1\ee_1+\cdots+a_n\ee_n)\\
+    &=a_1\psi(\ee_1)+\cdots+a_n\psi(\ee_n).
   \end{align*}
   よって$\varphi(\aaa)=\psi(\aaa)$.
 \end{proof}
@@ -2410,19 +2409,31 @@ $A\in\KK^{m\times n}$に対して,
 を考えれば十分である.
 
 \begin{prop}
-  $A,A\in \KK^{m\times n}$,
+  $A,A'\in \KK^{m\times n}$,
   $B\in\KK^{l\times m}$,
   $c\in\KK$に対し, 以下が成り立つ:
   \begin{enumerate}
-  \item $\mu_{A+A'}=\mu(A)+\mu_{A'}$.
-  \item $\mu_{cA}=c\mu(A)$.
-  \item $\mu_{BA}=\mu(B)\circ\mu_{A}$.
+  \item $\mu_{A+A'}=\mu_A+\mu_{A'}$.
+  \item $\mu_{cA}=c\mu_A$.
+  \item $\mu_{BA}=\mu_B\circ\mu_{A}$.
   \end{enumerate}
 \end{prop}
 \begin{proof}\end{proof}
 
+\begin{cor}
+  $A\in \KK^{n\times n}$とする.
+  このとき,
+  以下が成り立つ:
+  \begin{enumerate}
+  \item $\mu_{E_n}=\id_{\KK^n}$
+  \item $A$が正則$\implies \mu_A$は同型写像.
+  \end{enumerate}
+\end{cor}
+\begin{proof}\end{proof}
+
+
 \begin{prop}
-  $A\KK^{m\times n}$とする.
+  $A\in\KK^{m\times n}$とする.
   $A=(\aaa_1|\cdots|\aaa_n)$とすると,
   以下が成り立つ:
   \begin{enumerate}
@@ -2434,7 +2445,8 @@ $A\in\KK^{m\times n}$に対して,
 \begin{proof}\end{proof}
 
 \begin{cor}
-  $A\KK^{m\times n}$とする.
+  $\KK$を体とし,
+  $A\in\KK^{m\times n}$とする.
   このとき,
   以下が成り立つ:
   \begin{enumerate}
@@ -2445,18 +2457,20 @@ $A\in\KK^{m\times n}$に対して,
 \end{cor}
 \begin{proof}\end{proof}
 
-
 \begin{cor}
-  $A\KK^{m\times n}$とする.
+  $\KK$を体とし,
+  $A\in\KK^{m\times n}$とする.
   このとき,
   以下が成り立つ:
   \begin{enumerate}
   \item $\rank(A)=m \implies \mu_A$は全射.
   \item $\rank(A)=n \implies \mu_A$は単射.
-  \item $\rank(A)=n \implies \mu_A$は同型写像.
+  \item $\rank(A)=n=m\implies \mu_A$は同型写像.
   \end{enumerate}
 \end{cor}
 \begin{proof}\end{proof}
+
+
 
 \section{表現行列}
 $V$を$\KK$-線形空間とし, $v_1,\ldots,v_n\in V$とする.
@@ -2489,7 +2503,7 @@ $\nu_{(v_1,\ldots,v_n)}$は同型写像である.
   $A\in\KK^{m\times n}$を$\varphi$の$D$, $B$に関する表現行列とする.
 このとき,
 \begin{align*}
-  \varphi=\nu_B\mu_A(\nu_{D})^{-1}
+  \varphi=\nu_B\circ \mu_A\circ (\nu_{D})^{-1}
 \end{align*}
 である.
 \end{prop}
@@ -2590,6 +2604,7 @@ $J=\Set{1,\ldots,m}$.
 \begin{proof}\end{proof}
 
 \begin{prop}
+  $\KK$を体とし,
   $V$, $W$を$\KK$-ベクトル空間とし,
   $D=(v_1,\ldots,v_n)$を$V$の基底,
   $B=(w_1,\ldots,w_m)$を$W$の基底
@@ -2606,7 +2621,6 @@ $J=\Set{1,\ldots,m}$.
 \begin{proof}\end{proof}
 
 \section{基底の変換行列と表現行列}
-定義を確認.
 
 \begin{definition}
   $V$を$n$次元$\KK$-線形空間とする.
@@ -2614,13 +2628,67 @@ $J=\Set{1,\ldots,m}$.
   このとき, $(\nu_{D'})^{-1}\circ\nu_{D}$は$\KK^n$から$\KK^n$への線形写像
   である.
   $\mu_T=(\nu_{D'})^{-1}\circ\nu_{D}$
-  となる$T\in\KK^{n\times n}$を基底$D$から基底$D'$への変換行列と呼ぶ.
+  となる$T\in\KK^{n\times n}$を基底$D'$から基底$D$への変換行列と呼ぶ.
 \end{definition}
+\begin{remark}
+  $T\in\KK^{n\times n}$を基底$D'$から基底$D$への変換行列とするとき,
+  $\mu_T=(\nu_{D'})^{-1}\circ\nu_{D}=(\nu_{D'})^{-1}\circ\id_{V}\circ\nu_{D}$
+  とかけるので,
+  $T$は
+  $\id_{V}\colon V\to V$の$D,D'$に関する表現行列である.
+\end{remark}
+  $\mu_T=(\nu_{D'})^{-1}\circ\nu_{D}$
+となる$T\in\KK^{n\times n}$が,
+($\nu_{D}$の後に$(\nu_{D'})^{-1}$が来ているにも関わらず)
+`基底$D'$から基底$D$への'変換行列
+と呼ばれるのは,
+\Cref{thm:trasmat:description}が成り立つからである.
+\begin{prop}
+  \label{thm:trasmat:description}
+  $V$を$n$次元$\KK$-線形空間とする.
+  $D=(v_1,\ldots, v_n)$,
+  $D'=(v'_1,\ldots, v'_n)$を$V$の基底とし,
+  $T=(t_{i,j})_{i\in I, j\in I}\in\KK^{n\times n}$を$D'$から$D$への変換行列とする.
+  このとき,
+  \begin{align*}
+    v_j=\sum_{i=1}^n t_{i,j}v'_i.
+  \end{align*}
+  ただし, $I=\Set{1,\ldots, n} $.
+  つまり,
+  \begin{align*}
+    (v_1,\ldots, v_n)=(v'_1,\ldots, v'_n)T.
+  \end{align*}
+\end{prop}
+\begin{proof}
+  $\ttt_j=((\nu_{D'})^{-1}\circ\nu_{D})(\ee_j)$とする.
+  このとき,
+  \begin{align*}
+     \nu_{D'}(\ttt_j)
+    &=(\nu_{D'}\circ(\nu_{D'})^{-1}\circ\nu_{D})(\ee_j))\\
+    &=(\nu_{D}(v_j)\\
+    &=v_j
+  \end{align*}
+  である.
+  一方,
+  \begin{align*}
+    \ttt_j&=((\nu_{D'})^{-1}\circ\nu_{D})(\ee_j)\\
+    &=T\ee_j\\
+    &=\sum_{i=1}^n t_{i,j}\ee_j
+  \end{align*}
+  であるので,
+  \begin{align*}
+    \nu_{D'}(\ttt_j)
+    &=\nu_{D'}(\sum_{i=1}^n t_{i,j}\ee_j)\\
+    &=\sum_{i=1}^n t_{i,j}\nu_{D'}(\ee_j)\\
+    &=\sum_{i=1}^n t_{i,j}v'_j.
+  \end{align*}
+\end{proof}
+
 \begin{prop}
   $V$を$n$次元$\KK$-線形空間とする.
   $D=(v_1,\ldots, v_n),D'=(v'_1,\ldots, v'_n)$を$V$の基底とし,
-  $T\in\KK^{n\times n}$を$D$から$D'$への変換行列とする.
-  $v'_j=\sum_{i=1}^n t_{i,j}v_i$とすると,
+  $T\in\KK^{n\times n}$を$D'$から$D$への変換行列とする.
+  $v_j=\sum_{i=1}^n t_{i,j}v'_i$とすると,
   \begin{align*}
     T=(t_{i,j})_{i\in I, j\in I}.
   \end{align*}
@@ -2631,7 +2699,7 @@ $J=\Set{1,\ldots,m}$.
 \begin{prop}
   $V$を$n$次元$\KK$-線形空間とする.
   $D=(v_1,\ldots, v_n),D'=(v'_1,\ldots, v'_n)$を$V$の基底とし,
-  $T\in\KK^{n\times n}$を$D$から$D'$への変換行列とする.
+  $T\in\KK^{n\times n}$を$D'$から$D$への変換行列とする.
   このとき, $T$は正則である.
 \end{prop}
 \begin{proof}\end{proof}
@@ -2640,25 +2708,35 @@ $J=\Set{1,\ldots,m}$.
   $V$を$n$次元$\KK$-線形空間とする.
   $D=(v_1,\ldots, v_n)$を$V$の基底とする.
   $T=(t_{i,j})_{i\in I, j\in I}$とし,
-  $v'_j=\sum_{i=1}^n t_{i,j}v_i$とする.
+  $v_j=\sum_{i=1}^n t_{i,j}v'_i$とする.
   $T$が正則なら,
   $D'=(v'_1,\ldots, v'_n)$は$V$の基底であり,
-  $D$から$D'$への変換行列は$T$である.
+  $D'$から$D$への変換行列は$T$である.
 \end{prop}
 \begin{proof}\end{proof}
+
+
+\begin{prop}
+  $V$を$n$次元$\KK$-線形空間とする.
+  $D=(v_1,\ldots, v_n),D'=(v'_1,\ldots, v'_n)$を$V$の基底とし,
+  $T\in\KK^{n\times n}$を$D'$から$D$への変換行列とする.
+  このとき, $T^{-1}$は$D$から$D'$への変換行列である.
+\end{prop}
+\begin{proof}\end{proof}
+
 
 
 \begin{prop}
   $V$, $W$を$\KK$-線形空間とする.
   $D, D'$を$V$の基底とする.
   $B, B'$を$V$の基底とする.
-  $T$を$D$から$D'$への変換行列とし,
-  $F$を$B$から$B'$への変換行列とする.
+  $T$を$D'$から$D$への変換行列とし,
+  $F$を$B'$から$B$への変換行列とする.
   $\varphi\colon V\to W$を$\KK$-線形写像とする.
   $A$を$\varphi$の$D$, $B$に関する表現行列とする.
   $A'$を$\varphi'$の$D'$, $B'$に関する表現行列とする.
   このとき,
-  $A'=FAT^{-1}$.
+  $A'=F^{-1}AT$.
 \end{prop}
 \begin{proof}\end{proof}
 
@@ -2671,7 +2749,7 @@ $J=\Set{1,\ldots,m}$.
   \begin{align*}
     \Set{A'|\text{$\varphi$の基底$D'$, $B'$に関する表現行列}}
     &=
-    \Set{FAT^{-1}|\text{$F$,$T^{-1}$は正則}}.
+    \Set{F^{-1}AT|\text{$F^{-1}$,$T$は正則}}.
   \end{align*}
 \end{prop}
 \begin{proof}\end{proof}
@@ -2739,11 +2817,36 @@ $\varphi$の$D$に関する行現行列と呼ぶ.
   第$i$変数に関して, 
   線形であるという:
   \begin{enumerate}
-  \item $v_1,\ldots,v_n,v'_i\in V\implies F(v_1,\ldots,v_{i-1},v_i+v'_i,v_{i+1},\ldots,v_n)=F(v_1,\ldots,v_{i-1},v_i,v_{i+1},\ldots,v_n)+F(v_1,\ldots,v_{i-1},v'_i,v_{i+1},\ldots,v_n)$.
-  \item $v_1,\ldots,v_n\in V, c\in\KK\implies F(v_1,\ldots,v_{i-1},cv_i,v_{i+1},\ldots,v_n)=c\act F(v_1,\ldots,v_{i-1},v_i,v_{i+1},\ldots,v_n)$.
+  \item $v_1,\ldots,v_n,v'_i\in V$に対し
+    \begin{align*}
+      &F(v_1,\ldots,v_{i-1},v_i+v'_i,v_{i+1},\ldots,v_n)\\&=F(v_1,\ldots,v_{i-1},v_i,v_{i+1},\ldots,v_n)+F(v_1,\ldots,v_{i-1},v'_i,v_{i+1},\ldots,v_n).
+    \end{align*}
+  \item $v_1,\ldots,v_n\in V$, $c\in\KK$に対し,
+    \begin{align*}
+      F(v_1,\ldots,v_{i-1},cv_i,v_{i+1},\ldots,v_n)=c\act F(v_1,\ldots,v_{i-1},v_i,v_{i+1},\ldots,v_n).
+    \end{align*}
   \end{enumerate}
 \end{definition}
-
+\begin{remark}
+  写像
+  \begin{align*}
+    F\colon V\times V\times \cdots \times V\to W
+  \end{align*}
+  に対して,
+  $v_1,\ldots,v_{i-1},v_{i+1},\ldots,v_n\in V$
+  ごとに,
+  \begin{align*}
+    \shazo{\varphi_{v_1,\ldots,v_{i-1},v_{i+1},\ldots,v_n}}{V}{W}
+    {v}{F(v_1,\ldots,v_{i-1},v,v_{i+1},\ldots,v_n)}
+  \end{align*}
+  を考えることができる.
+  この記号の下, 以下は同値である:
+  \begin{enumerate}
+  \item $F$が第$i$成分に関して線形.
+  \item 任意の$v_1,\ldots,v_{i-1},v_{i+1},\ldots,v_n\in V$
+    に対し, $\varphi_{v_1,\ldots,v_{i-1},v_{i+1},\ldots,v_n}$は線形.
+  \end{enumerate}
+\end{remark}
 \begin{definition}
   $V$, $W$を$\KK$-線形空間とする.
   次を満たすとき,
@@ -2754,7 +2857,23 @@ $\varphi$の$D$に関する行現行列と呼ぶ.
   は,
   $n$重線形であるという:
   \begin{enumerate}
-  \item $i=1,\ldots,n$に対し, $F$は第$i$変数に関して線形である.
+  \item 任意の$i$に対し, $F$は第$i$変数に関して線形である.
+  \end{enumerate}
+\end{definition}
+
+\begin{definition}
+  $V$, $W$を$\KK$-線形空間とする.
+  $i\neq j$とする.
+  次を満たすとき,
+  写像
+  \begin{align*}
+    F\colon \underbrace{V\times V\times \cdots \times V}_n\to W
+  \end{align*}
+  は,
+  第$i$変数と第$j$変数に関して
+  交代的であるという:
+  \begin{enumerate}
+      \item $v_i=v_j\implies F(v_1,\ldots,v_n)=\zzero_W$.
   \end{enumerate}
 \end{definition}
 
@@ -2768,10 +2887,8 @@ $\varphi$の$D$に関する行現行列と呼ぶ.
   は,
   交代的であるという:
   \begin{enumerate}
-  \item $i\neq j$に対し, 次が成り立つ:
-    \begin{enumerate}
-      \item $v_i=v_j\implies F(v_1,\ldots,v_n)=\zzero_W$
-    \end{enumerate}
+  \item
+    任意の$i<j$に対して第$i$変数と第$j$変数に関して交代的である.
   \end{enumerate}
 \end{definition}
 \begin{prop}
@@ -2871,7 +2988,7 @@ $\sigma\in S_n$に対し,
   \begin{align*}
     D_B(u_{1},\ldots,u_{n})
     =
-    \sum_{\sigma\in S_n} a_{1,\sigma(1)}\cdots a_{n,\sigma(n)}.
+    \sum_{\sigma\in S_n} \sgn(\sigma)a_{1,\sigma(1)}\cdots a_{n,\sigma(n)}.
   \end{align*}
   とおくと, $D_B\colon V\times \cdots \times V \to \KK$
   は交代的な$n$重線形写像である.
@@ -2973,6 +3090,13 @@ $\sigma\in S_n$に対し,
   %\solvelater{quiz:1:1}
 \end{quiz}
 
+
+
+\chapter{対角化と直和分解}
+\sectionX{章末問題}
+\begin{quiz}
+  %\solvelater{quiz:1:1}
+\end{quiz}
 
 
 \chapter{}
