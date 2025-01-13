@@ -2724,11 +2724,255 @@ $\varphi$の$D$に関する行現行列と呼ぶ.
 
 
 
+
 \chapter{行列式}
+\section{交代的多重線形写像}
+
+\begin{definition}
+  $V$, $W$を$\KK$-線形空間とする.
+  以下を満たすとき,
+  写像
+  \begin{align*}
+    F\colon V\times V\times \cdots \times V\to W
+  \end{align*}
+  は,
+  第$i$変数に関して, 
+  線形であるという:
+  \begin{enumerate}
+  \item $v_1,\ldots,v_n,v'_i\in V\implies F(v_1,\ldots,v_{i-1},v_i+v'_i,v_{i+1},\ldots,v_n)=F(v_1,\ldots,v_{i-1},v_i,v_{i+1},\ldots,v_n)+F(v_1,\ldots,v_{i-1},v'_i,v_{i+1},\ldots,v_n)$.
+  \item $v_1,\ldots,v_n\in V, c\in\KK\implies F(v_1,\ldots,v_{i-1},cv_i,v_{i+1},\ldots,v_n)=c\act F(v_1,\ldots,v_{i-1},v_i,v_{i+1},\ldots,v_n)$.
+  \end{enumerate}
+\end{definition}
+
+\begin{definition}
+  $V$, $W$を$\KK$-線形空間とする.
+  次を満たすとき,
+  写像
+  \begin{align*}
+    F\colon \underbrace{V\times V\times \cdots \times V}_n\to W
+  \end{align*}
+  は,
+  $n$重線形であるという:
+  \begin{enumerate}
+  \item $i=1,\ldots,n$に対し, $F$は第$i$変数に関して線形である.
+  \end{enumerate}
+\end{definition}
+
+\begin{definition}
+  $V$, $W$を$\KK$-線形空間とする.
+  次を満たすとき,
+  写像
+  \begin{align*}
+    F\colon \underbrace{V\times V\times \cdots \times V}_n\to W
+  \end{align*}
+  は,
+  交代的であるという:
+  \begin{enumerate}
+  \item $i\neq j$に対し, 次が成り立つ:
+    \begin{enumerate}
+      \item $v_i=v_j\implies F(v_1,\ldots,v_n)=\zzero_W$
+    \end{enumerate}
+  \end{enumerate}
+\end{definition}
+\begin{prop}
+  $V$, $W$を$\KK$-線形空間とし,
+  \begin{align*}
+    F\colon \underbrace{V\times V\times \cdots \times V}_n\to W
+  \end{align*}
+  は
+  交代的な$n$重線形写像とする.
+  $i<j$に対し, 次が成り立つ:
+  \begin{align*}
+    &F(v_1,\ldots,v_{i-1};v_i;v_{i+1},\ldots,v_{j-1};v_j;v_{j+1},\ldots,v_n)\\
+    =
+    -&
+F(v_1,\ldots,v_{i-1};v_j;v_{i+1},\ldots,v_{j-1};v_i;v_{j+1},\ldots,v_n)
+  \end{align*}
+\end{prop}
+変数を入れ替えたときに符号がどうなるかについて考える.
+$\Set{1,\ldots,n}$から$\Set{1,\ldots,n}$への全単射$\sigma$を
+$\Set{1,\ldots,n}$上の順列と呼ぶ.
+数列$[\sigma(1),\sigma(2),\ldots,\sigma(n)]$
+は$\Set{1,\ldots,n}$がちょうど一度ずつ現れる数列である.
+$S_n$で
+$\Set{1,\ldots,n}$上の順列をすべて集めた集合とする.
+$\sigma\in S_n$に対し,
+\begin{align*}
+  \Inv(\sigma)=\Set{(i,j)|i<j,\sigma(i)>\sigma(j)}
+\end{align*}
+とし,
+\begin{align*}
+ \sgn(\sigma) =(-1)^{\numof{\Inv(\sigma)}}
+\end{align*}
+とおく.
+
+\begin{prop}
+  $V$, $W$を$\KK$-線形空間とし,
+  \begin{align*}
+    F\colon \underbrace{V\times V\times \cdots \times V}_n\to W
+  \end{align*}
+  は
+  交代的な$n$重線形写像とする.
+  このとき, $v_1,\ldots,v_n\in V$に対し,
+  \begin{align*}
+    F(v_{\sigma(1)},\ldots,v_{\sigma(n)})
+    =
+    \sgn(\sigma)\act F(v_1,\ldots,v_n).
+  \end{align*}
+\end{prop}
+\begin{proof}\end{proof}
+
+\begin{prop}
+  $V$, $W$を$\KK$-線形空間とし,
+  \begin{align*}
+    F\colon \underbrace{V\times V\times \cdots \times V}_n\to W
+  \end{align*}
+  は
+  交代的な$n$重線形写像とする.
+  $v_1,\ldots,v_n\in V$に対し,
+  \begin{align*}
+    u_j=\sum_{i=1}^n a_{i,j}\act v_i
+  \end{align*}
+  とすると,
+  \begin{align*}
+    F(u_{1},\ldots,u_{n})
+    =
+    (\sum_{\sigma\in S_n} a_{1,\sigma(1)}\cdots a_{n,\sigma(n)})
+    \act F(v_1,\ldots,v_n).
+  \end{align*}
+\end{prop}
+\begin{proof}\end{proof}
+
+\begin{prop}
+  $V$, $W$を$\KK$-線形空間とし,
+  $(v_1,\ldots,v_n)$は$V$の基底であるとする.
+  \begin{align*}
+    F&\colon \underbrace{V\times V\times \cdots \times V}_n\to W\\
+    F'&\colon \underbrace{V\times V\times \cdots \times V}_n\to W
+  \end{align*}
+  は
+  交代的な$n$重線形写像とする.
+  このとき,
+  \begin{align*}
+    F(v_1,\ldots,v_n)=F'(v_1,\ldots,v_n)
+    \implies
+    F=F'.
+  \end{align*}
+\end{prop}
+\begin{proof}\end{proof}
+
+\begin{example}
+  $V$を$\KK$-線形空間とし,
+  $B=(v_1,\ldots,v_n)$は$V$の基底であるとする.
+  \begin{align*}
+    u_j=\sum_{i=1}^n a_{i,j}\act v_i
+  \end{align*}
+  に対して,
+  \begin{align*}
+    D_B(u_{1},\ldots,u_{n})
+    =
+    \sum_{\sigma\in S_n} a_{1,\sigma(1)}\cdots a_{n,\sigma(n)}.
+  \end{align*}
+  とおくと, $D_B\colon V\times \cdots \times V \to \KK$
+  は交代的な$n$重線形写像である.
+  とくに,
+  \begin{align*}
+    D_B(v_{1},\ldots,v_{n})=1
+  \end{align*}
+  である,
+\end{example}
+
+\section{行列式}
+
+\begin{prop}
+  \label{thm:universalprop:det}
+  $V$を$n$次元$\KK$-線形空間とし,
+  $\varphi\colon V \to V$を$\KK$-線形写像とする.
+  このとき, 次を満たす$d\in\KK$がただ一つ存在する:
+  \begin{enumerate}
+  \item $W$が$\KK$-線形空間かつ$F\colon V\times\cdots \times V\colon W$が交代的な多重線形写像ならば.
+    \begin{align*}
+      v_1,\ldots, v_n \implies F(\varphi(v_1,\ldots,\varphi(v_n))=d \act F(\varphi(v_1,\ldots,\varphi(v_n)).
+    \end{align*}
+  \end{enumerate}
+\end{prop}
+\begin{proof}\end{proof}
+
+\begin{definition}
+  $V$を$n$次元$\KK$-線形空間とし,
+  $\varphi\colon V \to V$を$\KK$-線形写像とする.
+  このとき,
+  \Cref{thm:universalprop:det}における定数$d$を$\det(\varphi)$とおく.
+\end{definition}
+
+\begin{prop}
+  $V$を$n$次元$\KK$-線形空間とする.
+  このとき, $\det(\id_V)=1$
+\end{prop}
+\begin{proof}\end{proof}
+
+\begin{lemma}
+  $V$を$n$次元$\KK$-線形空間とし,
+  $\varphi\colon V \to V$を$\KK$-線形写像とする.
+  このとき, $\det(\id_V)\neq 0$ならば$\varphi$は単射.
+\end{lemma}
+\begin{proof}\end{proof}
+
+
+\begin{prop}
+  $V$を$n$次元$\KK$-線形空間とし,
+  $\varphi\colon V \to V$,
+  $\psi\colon V \to V$,
+  を$\KK$-線形写像とする.
+  このとき,
+  $\det(\psi\circ \varphi)=\det(\psi)\det(\varphi)$. 
+\end{prop}
+\begin{proof}\end{proof}
+
+\begin{prop}
+  $V$を$n$次元$\KK$-線形空間とし,
+  $\varphi\colon V \to V$
+  を$\KK$-線形写像とする.
+  このとき,
+  以下は同値:
+  \begin{enumerate}
+  \item $\det(\varphi)$が逆数を持つ.
+  \item $\varphi$は同型写像.
+  \end{enumerate}
+\end{prop}
+\begin{proof}\end{proof}
+
+
+
+\begin{prop}
+  $V$を$n$次元$\KK$-線形空間とし,
+  $\varphi\colon V \to V$を$\KK$-線形写像とする.
+  $B$を$V$の基底とし,
+  $A$を$\varphi$の$B$に関する表現行列とする.
+  このとき,
+  $\det(\varphi)=\det(A)$. 
+\end{prop}
+\begin{proof}\end{proof}
+
+\begin{cor}
+  $A, P \in \KK^{n\times n}$とする.
+  $P$が正則なら
+  $\det(A)=\det(P^{-1}AP)$. 
+\end{cor}
+\begin{proof}\end{proof}
+
+
 \sectionX{章末問題}
 \begin{quiz}
   %\solvelater{quiz:1:1}
 \end{quiz}
+
+\chapter{固有空間と固有値}
+\sectionX{章末問題}
+\begin{quiz}
+  %\solvelater{quiz:1:1}
+\end{quiz}
+
 
 
 \chapter{}
