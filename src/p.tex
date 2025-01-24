@@ -1521,8 +1521,35 @@ $(W,+,\act,0_V)$が$\KK$-線形空間であるための条件で非自明なの�
   $v-v'=\zzero$であるので, $v=v'$.
   $w-w'=\zzero$であるので, $w=w'$.
   \paragraph{$v=v', w=w'\implies v+w=v'+w'$}
-  明らか,
+  明らか.
 \end{proof}
+
+
+$U$が$U=V_1\oplus W_1$と内部直和に分解され,
+$W_1$が$V_2\oplus W_2$と内部直和に分解され,
+$W_2$が$V_3\oplus W_3$と内部直和に分解され,
+ということが繰り返された状況を考える.
+つまり,
+$U=V_1\oplus (V_2\oplus \cdots \oplus(V_{l-1}\oplus V_l))$
+と分解されていることを考える.
+\begin{definition}
+$U=V_1\oplus (V_2\oplus \cdots \oplus(V_{l-1}\oplus V_l))$
+と内部直和に分解されているとき,
+$U$は$U=V_1\oplus V_2\oplus \cdots \oplus V_l$
+と(内部)直和に分解されると言う.
+\end{definition}
+\begin{prop}
+  $U$を$\KK$-線形空間とし, $V_i\subset U$を$U$の部分空間とし,
+  $U=V_1+\cdots+ V_l$を満たすとする.
+  このとき, 以下は同値である:
+  \begin{enumerate}
+  \item $U=V_1\oplus \cdots \oplus V_l$と内部直和に分解される.
+  \item 全ての$i$に対して,
+    \begin{align*}
+      V_i \cap (V_1+\cdots+ V_{i-1}+V_{i+1}+\cdots+ V_{l}).
+    \end{align*}
+  \end{enumerate}
+\end{prop}
 
 \subsection{線形写像から得られる部分空間}
 
@@ -1534,7 +1561,7 @@ $(W,+,\act,0_V)$が$\KK$-線形空間であるための条件で非自明なの�
   このとき,
   \begin{align*}
     \Ker(\varphi)&=\Set{x\in V|\varphi(x)=0_V  },\\
-    \Img(\varphi)&=\Set{\varphi(x)|x\in V}\\
+    \Img(\varphi)&=\Set{\varphi(x)|x\in V}
   \end{align*}
   とおく. $\Ker(\varphi)$を$\varphi$のKernel,
   $\Img(\varphi)$を$\varphi$のImageと呼ぶ.
@@ -1895,7 +1922,7 @@ $\KK^n$の標準基底と呼ぶ.
 \begin{proof}
   次は同値:
   \begin{enumerate}
-  \item $\KK^n\sim \KK^m$.
+  \item $\KK^n\simeq \KK^m$.
   \item $n=m$.
   \end{enumerate}
   したがって,
@@ -1997,6 +2024,13 @@ BasisとBasis elementの違い.
 \end{example}
 
 
+\begin{example}
+  $V$を1次元$\KK$-線形空間であるとする.
+  $v\in V\setminus \Set{\zzero}$とすると,
+  $(v)$は$V$の基底.
+\end{example}
+
+
 \subsection{性質}
 \begin{prop}
   $V$を$\KK$線形空間とする.
@@ -2061,6 +2095,61 @@ BasisとBasis elementの違い.
   $U=V\oplus W$を満たす$U$の部分空間$W$が存在する.
 \end{prop}
 
+\begin{prop}
+  $U$を$\KK$-線形空間とし, $V, W$を$U$の部分空間とする.
+  $(v_1,\ldots,v_n)$を$V$の基底,
+  $(w_1,\ldots,w_m)$を$W$の基底とする.
+  $U=V\oplus W$と内部直和に分解されるとき,
+  $(v_1,\ldots,v_n,w_1,\ldots,w_m)$
+  は$U$の基底である.
+\end{prop}
+
+\begin{cor}
+  $U$を$n$次元$\KK$線形空間とし,
+  $U=V_1\oplus \cdots \oplus V_n$と
+  $n$個の1次元部分空間の内部直和に分解されるとする.
+  $v_i\in V_i \setminus \Set{0}$とすると,
+  $(v_1,\ldots,v_n)$は$U$の基底.
+\end{cor}
+
+
+\begin{prop}
+  $V$を$\KK$線形空間とし,
+  $v_1,\ldots, v_n\in V\setminus\Set{\zzero}$とする.
+  また,
+  $V_i=\Braket{v_i}_\KK=\Set{c\act v_i|c\in\KK}$とする.
+  このとき, 以下は同値:
+  \begin{enumerate}
+  \item $(v_1,\ldots, v_n)$は$V$の生成系.
+  \item $V=V_1+\cdots + V_k$.
+  \end{enumerate}
+\end{prop}
+
+\begin{prop}
+  $V$を$\KK$線形空間とし,
+  $v_1,\ldots, v_n\in V\setminus\Set{\zzero}$とする.
+  また,
+  $V_i=\Braket{v_i}_\KK=\Set{c\act v_i|c\in\KK}$とし,
+  $U=V_1+\cdots + V_k$とする.
+  このとき, 以下は同値:
+  \begin{enumerate}
+  \item $(v_1,\ldots, v_n)$は一次独立.
+  \item $U$は$U=V_1\oplus\cdots \oplus V_k$と内部直和に分解される.
+  \end{enumerate}
+\end{prop}
+
+\begin{prop}
+  $V$を$\KK$線形空間とし,
+  $v_1,\ldots, v_n\in V\setminus\Set{\zzero}$とする.
+  また,
+  $V_i=\Braket{v_i}_\KK=\Set{c\act v_i|c\in\KK}$とする.
+  このとき, 以下は同値:
+  \begin{enumerate}
+  \item $(v_1,\ldots, v_n)$は$V$の基底.
+  \item $V$は$V=V_1\oplus\cdots \oplus V_k$と内部直和に分解される.
+  \end{enumerate}
+\end{prop}
+  
 
 \begin{prop}
   $V$, $W$を有限次元ベクトル空間とする.
@@ -2086,6 +2175,8 @@ BasisとBasis elementの違い.
     $\implies (\varphi(v_1),\ldots,\varphi(v_n))$は$\KK$上一次独立.
   \end{enumerate}
 \end{prop}
+
+
 
 \begin{prop}
   基底の交換定理.
@@ -2794,6 +2885,18 @@ $\varphi$の$D$に関する行現行列と呼ぶ.
 
 
 \section{表現行列の例}
+\begin{example}
+  $V$を$n$次元$\KK$線形空間とし,
+  $\lambda \in \KK$に対し,
+  \begin{align*}
+    \shazo{\varphi}{V}{V}
+    {v}{\lambda v}
+  \end{align*}
+  という$V$上の線形変換を考える.
+  このとき, $\varphi$の表現行列は,
+  どの基底に対しても,
+  $\lambda E_n$となる.
+\end{example}
 
 \sectionX{章末問題}
 \begin{quiz}
@@ -3085,6 +3188,150 @@ $\sigma\in S_n$に対し,
 \end{quiz}
 
 \chapter{固有空間と固有値}
+\section{固有空間}
+
+$V$を$\KK$-線形空間とし,
+$\varphi\colon V\to V$を線形変換とする.
+このとき, $\lambda\in \KK$
+\begin{align*}
+  \shazo{\varphi-\lambda\id_V}{V}{V}
+  {v}{\varphi(v)-\lambda v}
+\end{align*}
+は線形写像である.
+\begin{definition}
+  $V$を$\KK$-線形空間とし,
+  $\varphi\colon V\to V$を線形写像とする.
+  $\lambda \in \KK$に対し,
+  \begin{align*}
+    E(\varphi,\lambda) = \Ker(\varphi - \lambda\id_V)
+  \end{align*}
+  とおく.
+  $E(\varphi,\lambda)\neq \Set{\zzero}$であるとき,
+  \begin{enumerate}
+  \item $\lambda$を$\varphi$の固有値と呼ぶ.
+  \item $E(\varphi,\lambda)$を固有値$\lambda$に属する$\varphi$の固有空間と呼ぶ.
+  \item $v\in E(\varphi,\lambda)\setminus\Set{\zzero}$を固有値$\lambda$に属する$\varphi$の固有ベクトルと呼ぶ.
+  \end{enumerate}
+\end{definition}
+
+\begin{remark}
+  $V$を$\KK$-線形空間とし,
+  $\varphi\colon V\to V$を線形写像とする.
+  $\lambda \in \KK$に対し,
+  $E(\varphi,\lambda)$は$V$の部分空間.
+\end{remark}
+
+\begin{remark}
+  $V$を$\KK$-線形空間とし,
+  $\varphi\colon V\to V$を線形写像とする.
+  $\lambda \in \KK$に対し,
+  \begin{align*}
+    E(\varphi,\lambda) &= \Ker(\varphi - \lambda\id_V)\\
+    &= \Set{v\in V|(\varphi - \lambda\id_V)(v)=\zzero}\\
+    &= \Set{v\in V|\varphi(v) - \lambda v =\zzero}\\
+    &= \Set{v\in V|\varphi(v) = \lambda v }
+  \end{align*}
+  である.
+  つまり, $v\in V\setminus\Set{\zzero}$が
+  固有値$\lambda$に属する$\varphi$の固有ベクトルであるというのは
+  \begin{align*}
+    \varphi(v)=\lambda v
+  \end{align*}
+  を満たすということである.
+  特に, $v\in E(\varphi,\lambda)$に対し, $\varphi(v)\in E(\varphi,\lambda)$
+  であるので,
+  $E(\varphi,\lambda)$に制限し,
+  \begin{align*}
+    \shazo{\psi}{E(\varphi,\lambda)}{E(\varphi,\lambda)}
+    {v}{\varphi(v)}
+  \end{align*}
+  を定義できる. 
+  このとき, $\psi=\lambda \id_{E(\varphi,\lambda)}$である.
+  $\dim_\KK(E(\varphi,\lambda))=l$とし, $B$を
+  $E(\varphi,\lambda)$の基底すると,
+  $\psi$の
+  $B$に関する表現行列は$\lambda E_l$である.
+\end{remark}
+  
+
+\begin{prop}
+  $V$を$\KK$-線形空間とし,
+  $\varphi\colon V\to V$を線形写像とする.
+  $v_i$を固有値$\lambda_i$に属する$\varphi$の固有ベクトルとする.
+  $\lambda_i$は相異なるとする.
+  つまり, $i\neq j$ならば$\lambda_i \neq \lambda_j$を満たすとする.
+  このとき,
+  $(v_1,\ldots, v_l)$は一次独立.
+\end{prop}
+\begin{proof}\end{proof}
+
+\begin{cor}
+  $V$を$\KK$-線形空間とし,
+  $\varphi\colon V\to V$を線形写像とする.
+  $\lambda_i$を$\varphi$の相異なる固有値とする.
+  このとき, 任意の$i$に対し,
+  \begin{align*}
+    E(\varphi,\lambda_i)\cap(E(\varphi,\lambda_1)+\cdots +E(\varphi,\lambda_{i-1})+E(\varphi,\lambda_i)+\cdots +E(\varphi,\lambda_{l})).
+  \end{align*}
+\end{cor}
+\begin{proof}\end{proof}
+
+\begin{cor}
+  $V$を$\KK$-線形空間とし,
+  $\varphi\colon V\to V$を線形写像とする.
+  $\lambda_i$を$\varphi$の相異なる固有値とし,
+  $U=E(\varphi,\lambda_1)+\cdots +E(\varphi,\lambda_{l})$
+  とする.
+  このとき, $U$は$U=E(\varphi,\lambda_1)\oplus \cdots \oplus E(\varphi,\lambda_{l})$と内部直和に分解される.
+\end{cor}
+\begin{proof}\end{proof}
+
+\begin{prop}
+  $V$を$\KK$-線形空間とし,
+  $\varphi\colon V\to V$を線形写像とする.
+  このとき, 以下は同値:
+  \begin{enumerate}
+  \item $\lambda$は$\varphi$の固有値である.
+  \item $\dim(E(\varphi,\lambda))\geq 1$.
+  \item $\varphi-\lambda\id_V$は単射でない.
+  \item $\det(\varphi-\lambda\id_V)=0$.    
+  \end{enumerate}
+\end{prop}
+
+\section{正方行列の固有値}
+$A$を$n$次正方行列とし,
+$V=\KK^n$とし,
+\begin{align*}
+  \shazo{\varphi}{\KK^n}{\KK^n}
+  {v}{Av}
+\end{align*}
+という線形変換を考え,
+この線形変換の固有値や固有空間を$A$の固有値や固有空間と呼ぶ.
+つまり, 以下のように定義する:
+\begin{definition}
+  $A\in\KK^{n\times n}$とする.
+  $\lambda \in \KK$に対し,
+  \begin{align*}
+    E(\varphi,\lambda) = \Set{v\in\KK^n|(A-\lambda E_n)v=\zzero_n}
+  \end{align*}
+  とおく.
+  $E(\varphi,\lambda)\neq \Set{\zzero}$であるとき,
+  \begin{enumerate}
+  \item $\lambda$を$A$の固有値と呼ぶ.
+  \item $E(\varphi,\lambda)$を固有値$\lambda$に属する$A$の固有空間と呼ぶ.
+  \item $v\in E(\varphi,\lambda)\setminus\Set{\zzero}$を固有値$A$に属する$\varphi$の固有ベクトルと呼ぶ.
+  \end{enumerate}
+\end{definition}
+
+\begin{prop}
+  $A\in\KK^{n\times n}$とする.
+  $\lambda \in \KK$に対し, 以下は同値:
+  \begin{enumerate}
+  \item $\lambda$は$A$の固有値.
+  \item $\det(A-\lambda E_n)=0$.
+  \end{enumerate}
+\end{prop}
+
 \sectionX{章末問題}
 \begin{quiz}
   %\solvelater{quiz:1:1}
@@ -3093,6 +3340,206 @@ $\sigma\in S_n$に対し,
 
 
 \chapter{対角化と直和分解}
+\section{線形写像の直和}
+$V$, $U$を$\KK$線形空間とし,
+$V=V_1\oplus V_2$,
+$U=U_1\oplus U_2$と内部直和に分解されているとする.
+$\varphi_1\colon V_1\to U_1$,
+$\varphi_2\colon V_2\to U_2$
+を線形写像とする.
+このとき,
+$v_1\in V_1$, $v_2\in V_2$
+に対し,
+$\varphi(v_1+v_2)=\varphi_1(v_1)+\varphi_2(v_2)$
+とおくと,
+線形写像
+$\varphi\colon V\to U$
+が定義できる.
+この線形写像$\varphi$を$\varphi_1\oplus \varphi_2$と書く.
+$D_1=(v_1,\ldots,v_n)$を$V_1$の基底,
+$D_2=(v'_1,\ldots,v'_{n'})$を$V_2$の基底,
+とすると,
+$D=(v_1,\ldots,v_n,v'_1,\ldots,v'_{n'}$は$V$の基底である.
+$B_1=(u_1,\ldots,u_m)$を$U_1$の基底,
+$B_2=(u'_1,\ldots,u'_{m'})$を$U_2$の基底
+とすると,
+$B=(u_1,\ldots,u_m,u'_1,\ldots,u'_{m'})$は$U$の基底である.
+$\varphi_1$の$D_1$, $B_1$に関する表現行列を$A_1$,
+$\varphi_2$の$D_2$, $B_2$に関する表現行列を$A_2$とする.
+このとき,
+$\varphi_1\oplus \varphi_2$の$D$, $B$に関する表現行列は
+\begin{align*}
+  \begin{pmatrix}A_1&O\\O&A_2\end{pmatrix}
+\end{align*}
+である.
+
+より一般に
+$V=V_1\oplus \cdots \oplus V_l$,
+$U=U_1\oplus \cdots \oplus U_l$
+の様に$l$個の空間に直和分解されているとき,
+同様に線形写像$\varphi_i\colon V_i\to U_i$の
+直和$\varphi_1\oplus \cdots \oplus \varphi_l$を考えることができる.
+各$V_i$や$U_i$の基底を合わせて$V$や$U$の基底を使った基底を考えるとき,
+この基底に関する$\varphi_1\oplus \cdots \oplus \varphi_l$の表現行列は,
+同様にブロック対角となる.
+
+$V$上の線形変換について考える.
+$V$を$n$次元$\KK$線形空間とし,
+$V=V_1\oplus \cdots V_k$と内部直和に分解されているとする.
+このとき, 線形変換$\varphi\colon V\to V$が,
+\begin{align*}
+\Set{\varphi(v)|v\in V_i}\subset V_i
+\end{align*}
+を満たすならば,
+線形写像
+\begin{align*}
+  \shazo{\varphi_i}{V_i}{V_i}
+  {v}{\varphi(v)}
+\end{align*}
+を定義できる.
+定義から, $\varphi=\varphi_1\oplus \cdots \oplus \varphi_k$
+である.
+したがって, $V_i$の基底を合わせて$V$の基底にしたものを考えると,
+$\varphi$のこの基底に関する表現行列はブロック対角となる.
+特に$\dim_\KK(V)=k$で, 
+$V=V_1\oplus \cdots V_k$と1次元部分空間$V_k$の内部直和に分解されているならば,
+$v_i\in V_i\setminus \Set{\zzero}$とすると,
+$B=(v_1,\ldots,v_k)$は$V$の基底となり,
+この基底$B$に関する
+$\varphi$の表現行列は対角行列となる.
+表現行列が,
+\begin{align*}
+\begin{pmatrix}\lambda_1&&\\&\ddots&\\&&\lambda_n\end{pmatrix}
+\end{align*}
+となっているとき, $\varphi(v_i)=\lambda_iv_i$となるので,
+$v_i$は固有値$\lambda_i$に属する固有ベクトルである.
+
+\begin{definition}
+  $V$を$\KK$線形空間とし,
+  $\varphi\colon V\to V$を線形変換とする.
+  $B$に関する$\varphi$の表現行列が対角行列となるような$V$の基底$B$が存在するとき,
+  $\varphi$は対角化可能であるという.
+\end{definition}
+\begin{remark}
+  どんな線形変換も対角化可能であるわけではない.
+\end{remark}
+
+\begin{lemma}
+  $V$を$\KK$線形空間とし,
+  $\lambda\in\KK$とする.
+  線形変換
+  \begin{align*}
+    \shazo{\varphi}{V}{V}
+    {v}{\lambda v}
+  \end{align*}
+  は対角化可能.
+\end{lemma}
+\begin{proof}\end{proof}
+\begin{lemma}
+  $V$を$\KK$線形空間とし,
+  $\varphi\colon V\to V$を線形変換とする.
+  線形変換
+  \begin{align*}
+    \shazo{\varphi}{E(\varphi,\lambda)}{E(\varphi,\lambda)}
+    {v}{\varphi(v)}
+  \end{align*}
+  は対角化可能.
+\end{lemma}
+\begin{proof}\end{proof}
+\begin{prop}
+  $V$を有限次元$\KK$線形空間とし,
+  $\varphi\colon V\to V$を線形変換とする.
+  $\lambda_1,\ldots,\lambda_l$を$\varphi$の相異なる固有値とし,
+  $\varphi$の固有値はこれで全てであるとする.
+  このとき, 以下は同値:
+  \begin{enumerate}
+  \item $\varphi$は対角化可能.
+  \item $V$は$V=E(\varphi,\lambda_1)\oplus\cdots \oplus E(\varphi,\lambda_l)$
+    と内部直和に分解される.
+  \item $\dim_\KK(V)=\sum_{i=1}^{l} \dim_{\KK}(E(\varphi,\lambda_1))$.
+  \end{enumerate}
+\end{prop}
+\begin{proof}\end{proof}
+
+\begin{cor}
+  $V$を$n$次元$\KK$線形空間とし,
+  $\varphi\colon V\to V$を線形変換とする.
+  $\lambda_1,\ldots,\lambda_n$が$\varphi$の相異なる固有値であるなら,
+  $\varphi$は対角化可能.  
+\end{cor}
+
+\section{行列の対角化}
+$A$を$n$次正方行列とする.
+$V=\KK^n$とし, 線形変換
+\begin{align*}
+  \shazo{\varphi}{V}{V}
+  {v}{Av}
+\end{align*}
+を考える.
+この線形変換が対角化可能であるとき,
+行列$A$は対角化可能であるという.
+基底を取り替えることは,
+表現行列に対し正則行列$P$で$P^{-1}AP$という操作を行うことであるので,
+以下のように定義できる:
+\begin{definition}
+  次を満たすとき$A\in \KK^{n\times n}$は対角化可能であるという:
+  \begin{enumerate}
+  \item 次の条件を満たす正則行列$P$と$\lambda_1,\ldots,\lambda_n\in\KK$が存在する:
+    \begin{align*}
+      P^{-1}AP=
+      \begin{pmatrix}\lambda_1&&\\&\ddots&\\&&\lambda_n\end{pmatrix}
+    \end{align*}
+  \end{enumerate}
+\end{definition}
+\begin{remark}
+  $A$が正則行列$P$と対角行列$D$に対し, $P^{-1}AP=D$となっているとき,
+  $A$は$P$によって$D$に対角化されるという.
+  また, このような$P$と$D$を求めることを$A$を対角化するということがある.
+\end{remark}
+
+\begin{lemma}
+  $A,P\in\KK^{n\times n}$が
+    \begin{align*}
+      P^{-1}AP=
+      \begin{pmatrix}\lambda_1&&\\&\ddots&\\&&\lambda_n\end{pmatrix}
+    \end{align*}
+    を満たしているとき,
+    $P(\ee_i)$は固有値$\lambda_i$に属する$A$の固有ベクトルである.
+\end{lemma}
+\begin{proof}\end{proof}
+
+\begin{lemma}
+  $A\in\KK^{n\times n}$とし,
+  $v_i$を固有値$\lambda_i$に属する$A$の固有ベクトルとする.
+  $P$を$v_i$を並べて得られる$n$次正方行列とする.
+  つまり$P=(v_1|\cdots | v_n)$とする.
+  $P$が正則ならば
+    \begin{align*}
+      P^{-1}AP=
+      \begin{pmatrix}\lambda_1&&\\&\ddots&\\&&\lambda_n\end{pmatrix}
+    \end{align*}
+    である.
+\end{lemma}
+\begin{proof}\end{proof}
+
+
+\begin{prop}
+  $A\in\KK^{n\times n}$とする.
+  このとき, 以下は同値:
+  \begin{enumerate}
+  \item $A$が対角化可能.
+  \item
+    以下の条件を満たす$v_1,\ldots,v_n$が存在する.
+\begin{enumerate}
+\item $(v_1,\ldots,v_n)$が一次独立
+\item  各$v_j$は$A$の固有ベクトル
+  \end{enumerate}
+  \end{enumerate}
+\end{prop}
+\begin{proof}\end{proof}
+
+
+
 \sectionX{章末問題}
 \begin{quiz}
   %\solvelater{quiz:1:1}
