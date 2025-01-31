@@ -1,7 +1,11 @@
 % !TeX root =./x2.tex
 % !TeX program = pdfpLaTeX
 \frontmatter
-\chapter{注意など}
+\let\originalthesection\thesection
+\renewcommand{\thesection}{\alph{section}}
+
+\chapter{数学以前の話}
+%\chapter{注意など}
 \section{注意}
 このメモは随時追記, 修正する.
 必ずしも末尾に追記するとは限らない.
@@ -72,19 +76,30 @@
 \end{enumerate}
 
 \section{参考書}
+講義では教科書は特に指定しないが,
+参考書を手元においておき,
+講義の中での説明と,
+参考書の記述を比べながら学習することを勧める.
+
+参考書については,
+線形代数学IIと内容が重複していることから,
+線形代数学IIで指定されていた教科書等でも構わないし,
+この講義に引き続いて後期に行われる
+基礎数学A2で指定されている教科書等でも構わない.
+
 %% このノートの末尾に挙げた参考文献のうち,
 %% \cite{978-4-7806-0772-7}
 %% はシラバスに教科書として挙げたものである.
 %% \cite{978-4-7806-0164-0,978-4-535-78682-0}
 %% はシラバスに参考書として挙げたものである.
 
-%% \cite{978-4-535-78682-0}は大学の数学に関する講義全般について解説している本である.
-%% 講義を受ける上での注意や,
-%% 講義の前提となる集合や論理の知識についても解説がしてある.
-%% 本講義とは直接関係はないが,
-%% 図書館で借りるなどして一度最初の数章を読んでみることを勧める.
 
-\chapter{数学以前の話}
+\cite{978-4-535-78682-0}は大学の数学に関する講義全般について解説している本である.
+講義を受ける上での注意や,
+講義の前提となる集合や論理の知識についても解説がしてある.
+本講義とは直接関係はないが,
+図書館で借りるなどして一度最初の数章を読んでみることを勧める.
+
 \section{講義で使われる見出し}
 講義に出てくる言明には大きく分けて二つあります:
 \begin{itemize}
@@ -149,7 +164,10 @@ Prop/Porposition/命題  などの見出しを使います.
 
 \tableofcontents
 
+
+\renewcommand{\thesection}{\originalthesection}
 \mainmatter
+
 \chapter{線形代数以前の話}
 
 
@@ -3141,7 +3159,7 @@ $\sigma\in S_n$に対し,
   \begin{enumerate}
   \item $W$が$\KK$-線形空間かつ$F\colon V\times\cdots \times V\to W$が交代的な多重線形写像ならば.
     \begin{align*}
-      v_1,\ldots, v_n \implies F(\varphi(v_1,\ldots,\varphi(v_n))=d \act F(\varphi(v_1,\ldots,\varphi(v_n)).
+      v_1,\ldots, v_n \in V\implies F(\varphi(v_1,\ldots,\varphi(v_n))=d \act F(\varphi(v_1,\ldots,\varphi(v_n)).
     \end{align*}
   \end{enumerate}
 \end{prop}
@@ -3351,8 +3369,23 @@ $V=\KK^n$とし,
   \item $v\in E(\varphi,\lambda)\setminus\Set{\zzero}$を固有値$A$に属する$\varphi$の固有ベクトルと呼ぶ.
   \end{enumerate}
 \end{definition}
+$\lambda$が正方行列$A$の固有値であるとき,
+固有値$\lambda$に属する$A$の固有空間
+$E(\varphi,\lambda)$は,
+\begin{align*}
+    E(\varphi,\lambda) = \Set{v\in\KK^n|(A-\lambda E_n)v=\zzero_n}
+\end{align*}
+である.
+これは,
+係数行列が$A-\lambda E_n$である斉次連立一次方程式の解空間そのものである.
+この斉次連立一次方程式の解空間は,
+$A-\lambda E_n$を行基本変形するなどして求める
+(つまり, 基底を与える) ことができる.
+%基底を書くことができる.
 
+固有値を求めるには次を利用することが多い:
 \begin{prop}
+\label{prop:mat:eignevalue:rootofcharpoly}
   $A\in\KK^{n\times n}$とする.
   $\lambda \in \KK$に対し, 以下は同値:
   \begin{enumerate}
@@ -3360,6 +3393,20 @@ $V=\KK^n$とし,
   \item $\det(A-\lambda E_n)=0$.
   \end{enumerate}
 \end{prop}
+
+正方行列$A$が与えられたとき,
+$\lambda$に関する方程式
+\begin{align*}
+\det(A-\lambda E_n)=0
+\end{align*}
+を考えると,
+一般に$n$次方程式である.
+この方程式を解が求められれば,
+その解は
+\Cref{prop:mat:eignevalue:rootofcharpoly}
+より,
+$A$の固有値である.
+
 
 \sectionX{章末問題}
 \begin{quiz}
@@ -3388,7 +3435,7 @@ $\varphi\colon V\to U$
 $D_1=(v_1,\ldots,v_n)$を$V_1$の基底,
 $D_2=(v'_1,\ldots,v'_{n'})$を$V_2$の基底,
 とすると,
-$D=(v_1,\ldots,v_n,v'_1,\ldots,v'_{n'}$は$V$の基底である.
+$D=(v_1,\ldots,v_n,v'_1,\ldots,v'_{n'})$は$V$の基底である.
 $B_1=(u_1,\ldots,u_m)$を$U_1$の基底,
 $B_2=(u'_1,\ldots,u'_{m'})$を$U_2$の基底
 とすると,
@@ -3576,6 +3623,14 @@ $V=\KK^n$とし, 線形変換
 
 
 \chapter{}
+\sectionX{章末問題}
+\begin{quiz}
+  %\solvelater{quiz:1:1}
+\end{quiz}
+
+
+\chapter{}
+上半三角化とケーリーハミルトンの定理
 \sectionX{章末問題}
 \begin{quiz}
   %\solvelater{quiz:1:1}
