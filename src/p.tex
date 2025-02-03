@@ -208,7 +208,6 @@ Prop/Porposition/命題  などの見出しを使います.
   \item 写像 $\circ$
   \item 恒等写像$\id_V$.
   \item 演算, 作用.
-  \item 行列の和, スカラー倍, 積, 転置.
 \end{enumerate}
 
 
@@ -259,7 +258,8 @@ $K$は
     が($K$の元の)解を持つ.
   \end{enumerate}
 \item
-  このとき, $a+x=0$の解は,
+  $a+x=0$が解を持つとき,
+  その解は,
   $a$が定まればただ一つに定まるので,
   この解を$-a$と書く.
 
@@ -289,8 +289,8 @@ $K$は
   \end{enumerate}
 
 \item
-  $a\neq 0$とする.
-  このとき, $ax=1$の解は,
+  $ax=1$が解を持つとすると,
+  その解は,
   $a$が定まればただ一つに定まるので,
   この解を$a^{-1}$とか$\frac{1}{a}$と書く.
 
@@ -308,7 +308,7 @@ $K$は
 \begin{remark}
   つまり体とは,
   結合則, 分配則, 可換則などが成り立つ
-  四則演算が備わった数の集合のことである.
+  (その集合の中で閉じた)四則演算が備わった数の集合のことである.
 \end{remark}
 
 
@@ -339,6 +339,12 @@ $K$は
   $\ZZ$は体ではない.
 \end{example}
 
+
+\section{行列など}
+\begin{enumerate}
+\item 行列の和, スカラー倍, 積, 転置.
+\item 行列式.
+\end{enumerate}
 %% 本講義では,
 %% 体$K$の元のことを数と呼ぶ.
 %% つまり,
@@ -500,7 +506,7 @@ $K$は
     c\begin{pmatrix}a_1\\\vdots\\a_n\end{pmatrix}
     &=\begin{pmatrix}ca_1\\\vdots\\ca_n\end{pmatrix}
     \intertext{とし,}
-    \zzero_n&=\begin{pmatrix}0\\\vdots\\a_n\end{pmatrix}
+    \zzero_n&=\begin{pmatrix}0\\\vdots\\0\end{pmatrix}
   \end{align*}
   とおくと,
   $(\KK^n,+,\act ,\zzero_n$は$\KK$-線形空間.
@@ -520,7 +526,7 @@ $K$は
     c\act \zzero_0&=\zzero_0
   \end{align*}
   とおくと,
-  $(\KK^0,+,\act ,\zzero_0$は$\KK$-線形空間.
+  $(\KK^0,+,\act ,\zzero_0)$は$\KK$-線形空間.
   これを$\KK$上の$0$次元数ベクトル空間と呼ぶ.
 \end{example}
 
