@@ -3446,7 +3446,7 @@ $A-\lambda E_n$を行基本変形するなどして求める
 正方行列$A$が与えられたとき,
 $\lambda$に関する方程式
 \begin{align*}
-\det(A-\lambda E_n)=0
+\det(\lambda E_n-A)=0
 \end{align*}
 を考えると,
 一般に$n$次方程式である.
@@ -3456,6 +3456,19 @@ $\lambda$に関する方程式
 より,
 $A$の固有値である.
 
+この方程式には名前がついている.
+
+\begin{definition}
+$A\in\KK^{n\times n}$
+とする.
+$t$に関する$n$次多項式
+$\det(t E_n-A)$
+を$A$の固有多項式と呼ぶ.
+また,
+$t$に関する方程式
+$\det(t E_n-A)=0$
+を$A$の固有方程式と呼ぶ.
+\end{definition}
 
 \sectionX{章末問題}
 \begin{quiz}
