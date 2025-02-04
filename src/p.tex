@@ -3752,6 +3752,74 @@ $a_0t^0+a_1t+a_2t^2\cdots+a_{,}t^{m}$
 a_0E_n+a_1A+a_2A^2+\cdots+a_mA^m=O_{n,n}.
 \end{align*}
 \end{definition}
+
+$\KK$を体とする.
+$A\in\KK^{n\times n}$とする.
+$I$を$A$の零化多項式をすべて集めた集合とする.
+$A$の固有多項式は$I$の元である.
+$I$に含まれる$0$ではない多項式の次数のうち最小のものを$d$とおく.
+つまり,
+$d=\min\Set{ \deg(f) |f \in I\setminus\Set{0}}$.
+$A$の固有多項式は$n$次多項式であるから,
+$0<d\leq n$である.
+$d$次多項式$f$
+と
+$m$次多項式$g$
+がともに, $I$の元とする.
+$d$は最小の次数であるから,
+$d\leq m$である.
+このとき,
+$g$を$f$で割ったあまりを考えると,
+$g=pf+q$とかけるが,
+あまりの, 定義から$q\neq 0$であれば, $1\leq \deg(q)<\deg(f)=d$
+である.
+$g=pf+q$の, $pf$を移項すると$g-pf=q$である.
+$g,f\in I$であるから, $g,f$に$A$を代入すると$O_{n,n}$である.
+したがって,
+$g-pf$の$t$に$A$を代入すると$O_{n,n}$になるので,
+$g-pf\in I$である.
+したがって, $q\in I$である.
+$I$に含まれる$0$でない多項式の次数は$d$以上であるから,
+$q\neq 0$となることはない.
+よって$q=0$である.
+つまり, $f$は$g$を割り切る.
+さらに, $f$も$g$も$I$の元であり$\deg(f)=\deg(g)=d$であるとすると,
+$f$は$g$を割り切り, $g$も$f$を割り切ることから,
+$f=cg$を満たす$c\in\KK$がとれる.
+したがって,
+$I$に含まれる多項式で最高次数係数が$1$であるものはただ一つに定まる.
+これを$A$の最小多項式と呼ぶ.
+
+\begin{definition}
+$A\in\KK^{n\times n}$とする.
+最高次の係数が$1$である$A$の零化多項式のうち, 
+次数が最も低いものを,
+$A$の最小多項式と呼ぶ.
+\end{definition}
+
+\begin{cor}
+$A\in\KK^{n\times n}$とする.
+$A$の最小多項式は$A$の固有多項式を割り切る.
+\end{cor}
+\begin{prop}
+$A\in\KK^{n\times n}$とし,
+$a_0+a_1t+\cdots+a_mt^m$を$A$の零化多項式とする.
+$\lambda$が$A$の固有値ならば,
+$a_0+a_1\lambda+\cdots+a_m\lambda^m=0$,
+\end{prop}
+\begin{cor}
+$A\in\KK^{n\times n}$とする.
+このとき, 以下は同値:
+\begin{enumerate}
+\item $\lambda$は$A$の固有値.
+\item $\lambda$は$A$の固有多項式の根.
+(つまり, $\lambda$は$A$の固有方程式の解)
+\item $\lambda$は$A$の最小多項式の根.
+(つまり, $f(t)$を$A$の最小多項式とすると,
+$\lambda$は$t$に関する方程式$f(t)=0$の解.)
+\end{enumerate}
+\end{cor}
+
 \sectionX{章末問題}
 \begin{quiz}
   %\solvelater{quiz:1:1}
