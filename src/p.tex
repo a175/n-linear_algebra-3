@@ -344,6 +344,7 @@ $K$は
 \begin{enumerate}
 \item 行列の和, スカラー倍, 積, 転置.
 \item 行列式.
+\item 三角行列, 正方行列.
 \end{enumerate}
 %% 本講義では,
 %% 体$K$の元のことを数と呼ぶ.
@@ -3669,6 +3670,95 @@ $V=\KK^n$とし, 線形変換
   %\solvelater{quiz:1:1}
 \end{quiz}
 
+\chapter{上半三角化とケーリーハミルトンの定理}
+
+\section{上半三角化}
+
+\begin{definition}
+$V$を$\KK$-線形空間とし,
+$\varphi\colon V\to V$を$\KK$-線形変換とする.
+$V$の基底$B=(v_1,\ldots,v_n)$が以下の条件を満たすとき,
+$\varphi$は$V$によって三角化されるという:
+\begin{enumerate}
+\item
+$i\in\Set{1,\ldots,n}$に対し,
+以下を満たす$a_{i,j}\in\KK$がとれる:
+\begin{align*}
+\varphi(v_i)=\sum_{j\colon j\leq i }a_{i,j}v_i.
+\end{align*}
+\end{enumerate}
+\end{definition}
+$\vaphi$が$B$によって三角化されるとき,
+$B$に関する表現行列は三角行列である.
+正方行列$A$に対しても三角化という用語を導入する:
+\begin{definition}
+$A\in \KK^{n\times n}$とする.
+正則行列$P$で$T=P^{-1}AP$が上半三角行列であるとき,
+$A$は$P$で$T$に三角化されるという.
+\end{definition}
+
+\begin{prop}
+$A\in \KK^{n\times n}$とする.
+$\det(tE_n-A)=\prod_{i=1}^n (t-\lambda_i)$
+と因数分解できるとき,
+$A$は対角成分が$\lambda_1,\ldots,\lambda_n$である三角行列に対角化される.
+\end{prop}
+\begin{proof}
+$n$に関する数学的帰納法で示す.
+\paragraph{Base Case}
+\paragraph{Induction Step}
+\end{proof}
+
+\begin{prop}
+\label{prop:chthm}
+$A\in \KK^{n\times n}$とし,
+$\det(tE_n-A)=a_0t^0+a_1t+a_2t^2\cdots+a_{n-1}t^{n-1}+t^n$
+とする.
+このとき,
+\begin{align*}
+a_0E_n+a_1A+a_2A^2+\cdots+a_{n-1}A^{n-1}+A^n=O_{n,n}.
+\end{align*}
+\end{prop}
+\begin{proof}
+$\det(tE_n-A)=\prod_{i=1}^n (t-\lambda_i)$
+と因数分解できるときのみについて,
+ここでは証明する.
+\end{proof}
+\begin{remark}
+例えば,
+体として$\RR$を考えている場合には,
+$\det(tE_n-A)$は一次式の積には因数分解できないかもしれない.
+しかしならが,
+$\RR\subset\CC$であり,
+体として$\CC$を考えれば,
+必ず一次式の積に分解できる.
+したがって,
+$\RR$の場合でも, 一旦$\CC$で考えることでこの証明が適用でき,
+\Cref{prop:chthm}が成り立つ.
+\end{remark}
+$a_0t^0+a_1t+a_2t^2\cdots+a_{n-1}t^{n-1}+t^n$
+の$t$に$A$を代入したもの, つまり, $t^k$を$A^k$に, $t^0$を$E_n$に置き換えたもの,
+$a_0E_n+a_1A+a_2A^2+\cdots+a_{n-1}A^{n-1}+A^n$
+は,
+多項式が固有多項式であるとき, $O_{n,n}$になる.
+同様に$A$を代入すると$O_{n,n}$となる多項式について考える.
+\begin{definition}
+$A\in\KK^{n\times n}$とする.
+以下を満たすとき,
+多項式
+$a_0t^0+a_1t+a_2t^2\cdots+a_{,}t^{m}$
+を$A$の零化多項式と呼ぶ:
+\begin{align*}
+a_0E_n+a_1A+a_2A^2+\cdots+a_mA^m=O_{n,n}.
+\end{align*}
+\end{definition}
+\sectionX{章末問題}
+\begin{quiz}
+  %\solvelater{quiz:1:1}
+\end{quiz}
+
+
+
 
 \chapter{}
 \sectionX{章末問題}
@@ -3676,13 +3766,6 @@ $V=\KK^n$とし, 線形変換
   %\solvelater{quiz:1:1}
 \end{quiz}
 
-
-\chapter{}
-上半三角化とケーリーハミルトンの定理
-\sectionX{章末問題}
-\begin{quiz}
-  %\solvelater{quiz:1:1}
-\end{quiz}
 
 
 
