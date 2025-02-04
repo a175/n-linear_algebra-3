@@ -344,7 +344,7 @@ $K$は
 \begin{enumerate}
 \item 行列の和, スカラー倍, 積, 転置.
 \item 行列式.
-\item 三角行列, 正方行列.
+\item 三角行列, 正方行列, 対角行列, 対角なら可換.
 \end{enumerate}
 %% 本講義では,
 %% 体$K$の元のことを数と呼ぶ.
@@ -3679,6 +3679,49 @@ $V=\KK^n$とし, 線形変換
 
 
 \section{同時対角化}
+\begin{definition}
+$V$を$\KK$-線形空間とし,
+$B$を$V$の基底とする.
+$V$上の線形変換
+$\varphi\colon V\to V$と$\psi\colon V\to V$の
+$B$に関する表現行列がどちらも対角行列であるとき,
+$\varphi$と$\psi$は基底$B$によって同時対角化されるという.
+\end{definition}
+これは, 行列の言葉で言い換えると以下の様になる:
+\begin{definition}
+$A,B\in\KK^{n\times n}$とする.
+$P^{-1}AP$, $P^{-1}BP$がどちらも対角行列となるような
+正則行列$P$が存在するとき,
+$A$と$B$は$P$により同時対角化されるという.
+\end{definition}
+\begin{prop}
+$A,B\in\KK^{n\times n}$とし,
+どちらも対角可能であるとする.
+以下は同値:
+\begin{enumerate}
+\item $A$と$B$は同時対角化可能.
+\item $A$と$B$は可換. つまり$AB=BA$.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+$X$, $Y$は対角行列とし,
+正則行列$P$により
+$P^{-1}AP=X$, $P^{-1}BP=Y$
+とかけるする.
+このとき,
+$XY=YX$である.
+また
+\begin{align*}
+XY&=P^{-1}APP^{-1}BP=P^{-1}ABP\\
+YX&=P^{-1}BPP^{-1}AP=P^{-1}BAP
+\end{align*}
+であるので, $P^{-1}ABP=P^{-1}BAP$.
+両辺に左から$P$, 右から$P^{-1}$をかけることで,
+$AB=BA$が得られる.
+
+$A$と$B$が可換であるとする.
+
+\end{proof}
 
 \sectionX{章末問題}
 \begin{quiz}
@@ -3872,5 +3915,7 @@ $A$は対角化可能.
   $(v,w)$は一次独立.
 \end{prop}
 
+同時対角化の証明.
+多項式環, 次数
 
 無限次元ベクトル空間の基底と多項式環.
