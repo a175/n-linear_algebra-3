@@ -3720,7 +3720,47 @@ YX&=P^{-1}BPP^{-1}AP=P^{-1}BAP
 $AB=BA$が得られる.
 
 $A$と$B$が可換であるとする.
-
+$v\in E(A,\lambda_i)$とすると,
+\begin{align*}
+A(Bv)&=B(Av)=B(\lambda_i v)=\lambda_i Bv
+\end{align*}
+となるので, $Bv\in E(A,\lambda_i)$である.
+$A$が対角化可能であることから,
+$\lambda_1,\ldots,\lambda_m$を$A$の相異なる固有値とすると
+\begin{align*}
+\RR^n=E(A,\lambda_1)\oplus\cdots\oplus E(A,\lambda_m)
+\end{align*}
+とかける.
+$v\in E(B,\mu)$とする.
+このとき,
+$v=v_1+\cdots+v_m$
+となる$v_i\in E(A,\lambda_i)$がとれる.
+$Bv$に対し
+\begin{align*}
+Bw&=\mu w=\mu v_1+\cdots+\mu v_m\\
+Bw&=B v_1+\cdots+B v_m
+\end{align*}
+という2つの表示をえるが,
+$Bv_i\in E(A,\lambda_i)$であるので,
+$Bv_i=\mu v_i$を得る.
+つまり, $v_i \in E(A,\lambda_i)\cap E(B,\mu)$である.
+多くの$i$に対しては, $v_i=\zzero$であるが,
+$v\neq \zzero$なら少なくとも一つの$i$で$v_i\neq \zzero$となる.
+$w^{(i)}\in E(B,\mu)$とし,
+$v^{(i)}_j\in E(A,\lambda_i)$が
+$w^{(i)}=v^{(i)}_{1}+\cdots+v^{(i)}_m$
+をみたすとする.
+どんな
+$j_1,\ldots,j_l$に対しても$(v^{(1)}_{j_1},\ldots, v^{(l)}_{j_l})$が一次従属なら,
+$(w^{(1)},\ldots, w^{(l)})$も一次従属である.
+したがって,
+$(w^{(1)},\ldots, w^{(l)})$が一次独立なら,
+$(v^{(1)}_{j_1},\ldots, v^{(l)}_{j_l})$が一次独立となる
+$j_1,\ldots,j_l$を選ぶことができる.
+したがって,
+$\RR^n$の基底で,
+どの元も$A$の固有ベクトルかつ$B$の固有ベクトルとなるものが取れる.
+この基底を用いることで$A$と$B$を同時に対角化することができる.
 \end{proof}
 
 \sectionX{章末問題}
