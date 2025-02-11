@@ -1375,25 +1375,92 @@ $(W,+,\act,0_V)$が$\KK$-線形空間であるための条件で非自明なの�
 
 
 \begin{example}
-  数列をすべて集めた集合$\CC^{\NN}$は$\CC$は$\CC$線形空間であった.
+  $\KK$が$\CC$や$\RR$のときには,
+  数列の極限を考えることができる.  
+  数列をすべて集めた集合$\KK^{\NN}$は$\KK$線形空間であった.
   $p>0$に対し,
   \begin{align*}
-    \ell^p=\Set{(a_i)_{i\in\NN}|\sum_i |a_i|^p < \infty}
+    \ell^p=\Set{(a_i)_{i\in\NN}\in \KK^{\NN}|\sum_i |a_i|^p < \infty}
   \end{align*}
-  とおくと, $\ell^p$は$\CC^{\NN}$の部分空間.
+  とおくと, $\ell^p$は$\KK^{\NN}$の部分空間.
   \begin{align*}
-    \ell^\infty=\Set{(a_i)_{i\in\NN}|\sup \Set{\left|a_i\right||i\in \NN} < \infty}
+    \ell^\infty=\Set{(a_i)_{i\in\NN}\in \KK^{\NN}|\sup \Set{\left|a_i\right||i\in \NN} < \infty}
   \end{align*}
-  とおくと, $\ell^\infty$は$\CC^{\NN}$の部分空間.
+  とおくと, $\ell^\infty$は$\KK^{\NN}$の部分空間.
   \begin{align*}
-    c&=\Set{(a_i)_{i\in\NN} | \lim_{i\to\infty} a_i \in\RR}\\
-    c_0&=\Set{(a_i)_{i\in\NN} | \lim_{i\to\infty} a_i =0}\\
-    c_{00}&=\Set{(a_i)_{i\in\NN} | \#\Set{i| a_i \neq 0} < 0}
+    c&=\Set{(a_i)_{i\in\NN} \in \KK^{\NN}| \lim_{i\to\infty} a_i \in\KK}\\
+    c_0&=\Set{(a_i)_{i\in\NN} \in \KK^{\NN}| \lim_{i\to\infty} a_i =0}\\
   \end{align*}
-  とおくと, $c$, $c_0$, $c_{00}$は$\CC^{\NN}$の部分空間.
+  とおくと, $c$, $c_0$は$\KK^{\NN}$の部分空間.
   %$c_0$は$c$の部分空間でもある.
 \end{example}
 \begin{proof}\end{proof}
+
+\begin{example}
+  数列をすべて集めた集合$\KK^{\NN}$は$\KK$線形空間であった.
+  \begin{align*}
+    c_{00}&=\Set{(a_i)_{i\in\NN} \in \KK^{\NN} | \#\Set{i| a_i \neq 0} < 0}
+  \end{align*}
+  とおくと, $c_{00}$は$\CC^{\NN}$の部分空間である.
+  
+  文字$x$を用いて各$i\in\NN$に対し形式的な記号$x^i$を用意し,
+  数列$(a_i)_{i\in\NN} \in \KK^{\NN}$を
+  $\sum_{i\in \NN} a_ix^i$
+  と書くことにする.
+  $\sum_{i\in \NN} a_ix^i$は,
+  不定元$x$に関する形式的冪級数とよばれる.
+  不定元$x$に関する形式的冪級数をすべて集めた集合を,
+  $\KK[[x]]$と書く.
+  $i>n$ならば$a_i=0$となるような数列$(a_i)_{i\in\NN} \in \KK^{\NN}$
+  に対しては,
+  $\sum_{i=0}^{n} a_ix^i$
+  とか
+  $a_0x^0+a_1x_1+\cdots+a_nx^n$
+  とか
+  $a_0+a_1x_1+\cdots+a_nx^n$
+  の様に書くこともあり,
+  不定元$x$に関する多項式とよばれる.
+  不定元$x$に関する多項式をすべて集めた集合を,
+  $\KK[x]$と書く.
+  $\KK[[x]]$は形式的冪級数環,
+  $\KK[x]$は多項式環と呼ばれる.
+\end{example}
+\begin{proof}\end{proof}
+\begin{remark}
+  多項式や形式的冪級数に現れる不定元$x$は単なる文字であって,
+  代入を目的とした変数ではない.
+  $x^i$は数列における位置を表すための記号であり,
+  $\KK[[x]]$の元と$\KK^{\NN}$の元は表記が違うだけで同じものである.
+  $x^i$は$(\underbrace{0,\ldots,0}_{i},1,0,0,\ldots)$という数列を表しており,
+  $j\neq i$なら$x^i$と$x^j$は区別される.
+  したがって,
+  $\KK[[x]]$や$\KK[x]$には無限個の元が含まれている.
+
+  多項式と混同しやすいものに多項式関数がある.
+  $a_0,\ldots, a_n\in \KK$としたとき,
+  \begin{align*}
+  \shazo{f}{\KK}{\KK}
+  {x}{a_0+a_1x+\cdots+a_nx^n}
+  \end{align*}
+  という写像を考えることができる.
+  このような写像を$n$次の多項式関数と呼ぶ.
+  多項式関数すべてを集めた集合を$V$と置くと,
+  $V$は$\KK^\KK$の部分空間である.
+  例えば$\KK$が有限集合なら,
+  $\KK^\KK$も有限集合であるから,
+  $V$も有限集合である.
+  \begin{align*}
+  &\shazo{f}{\KK}{\KK}
+  {x}{a_0+a_1x+\cdots+a_nx^n}
+  &
+  &\shazo{g}{\KK}{\KK}
+  {x}{b_0+b_1x+\cdots+b_mx^m}
+  \end{align*}
+  という
+  2つの多項式関数があったとき,
+  $(a_0,\ldots,a_n)\neq (b_0,\ldots,b_m)$
+  であっても, $f\neq g$とは限らないことに注意が必要である.
+\end{remark}
 
 \begin{example}
   $V$を$\KK$-線形空間とする.
@@ -3945,16 +4012,19 @@ $A$は対角化可能.
 
 
 
-
-
-\chapter{}
-内部直和と外部直和
+\chapter{余談}
+\section{内部直和と外部直和}
 \begin{prop}
   $U=V\oplus W$とする.
   $v\in V$, $w\in W$ならば,
   $(v,w)$は一次独立.
 \end{prop}
 
-多項式環, 次数
+\section{無限次元ベクトル空間の基底と多項式環.}
+\sectionX{章末問題}
+\begin{quiz}
+  %\solvelater{quiz:1:1}
+\end{quiz}
 
-無限次元ベクトル空間の基底と多項式環.
+
+
