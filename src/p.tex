@@ -204,13 +204,26 @@ Prop/Porposition/命題  などの見出しを使います.
 
 基本的な概念:
 \begin{enumerate}
-  \item 集合 $\in$, $\subset$, 極大極小最大最小.
   \item 写像 $\circ$
   \item 恒等写像$\id_V$.
   \item 演算, 作用.
 \end{enumerate}
 
-
+集合とは何かということを説明するときには,
+`もの'を集めてきたものを集合といい,
+集合$X$に元$x$が属しているとき$x\in X$,
+集合$X$に元$x$が属していないとき$x\not\in X$と書く
+と説明されれることが多い.
+言い換えると,
+どんな$x$に対しても$x\in X$が命題であるとき,
+$X$は集合であるといい,
+$x\in X$の否定を$x\not\in X$と書くということである.
+$x\in X$であるとき,
+$x$は$X$の元であるとか,
+$x$は$X$ の要素であるとか,
+$x$は$X$に属するなどという.
+代表的な数の集合に関して,
+ここでは,
 以下の記号を用いる:
 \begin{itemize}
 \item 複素数全体のなす集合を$\CC$とおく.
@@ -223,6 +236,120 @@ Prop/Porposition/命題  などの見出しを使います.
 `$x\in\CC$'は
 `$x$は複素数である'
 ということを意味する.
+
+\begin{definition}
+$X$と$Y$を集合とする.
+次の条件を満たすとき,
+$X$は$Y$の部分集合であるといい, $X\subset Y$と書く:
+\begin{align*}
+a\in X \implies a\in Y.
+\end{align*}
+以下の条件を満たすとき,
+$X$と$Y$は等しいといい$X=Y$と書く:
+\begin{enumerate}
+\item $X\subset Y$.
+\item $Y\subset X$.
+\end{enumerate}
+$X\subset Y$かつ$X\neq Y$であることを,
+$X\subsetneq Y$と書く.
+\end{definition}
+\begin{remark}
+$X$と$Y$を集合とする.
+このとき, 以下は同値:
+\begin{enumerate}
+\item $X=Y$.
+\item $a\in X \iff a\in Y$
+\end{enumerate}
+\end{remark}
+$x_1,x_2,\ldots, x_n$が元である集合を表すのに,
+\begin{align*}
+\Set{x_1,x_2,\ldots,x_n}
+\end{align*}
+の様に表記する.
+つまり, 
+\begin{align*}
+x\in \Set{x_1,x_2,\ldots,x_n} \iff \text{$x_i=x$となる$i$が存在する}
+\end{align*}
+と定義する.
+また, 条件$P(x)$を満たす元$x\in X$を集めた集合を表すのに,
+\begin{align*}
+\Set{x\in X|P(x)}
+\end{align*}
+の様に表記する.
+つまり, 
+\begin{align*}
+x\in \Set{x\in X|P(x)} \iff \text{$x\in X$かつ$P(x)$を満たす}
+\end{align*}
+と定義する.
+\begin{definition}
+$X$, $Y$を集合とする.
+このとき,
+$X\cap Y$を次で定義する:
+\begin{align*}
+a\in X\cap Y \iff a\in X \text{ かつ } a\in Y.
+\end{align*}
+$X\cup Y$を次で定義する:
+\begin{align*}
+a\in X\cup Y \iff a\in X \text{ または } a\in Y.
+\end{align*}
+\end{definition}
+
+集合$X_1, X_2,\ldots,X_n$を集めた集合を$\XXX$とする.
+$\XXX$の各元はそれ自身が集合であるが,
+要素が集合であることを強調するために,
+このような集合のことを, 
+集合族と呼ぶことがある.
+
+集合族に対しても, 和集合や共通部分を考えることもある.
+\begin{definition}
+$\XXX$を集合族とする.
+$\bigcap_{X\in \XXX}X$を
+次で定義する:
+\begin{align*}
+a\in \bigcap_{X\in \XXX}X \iff \text{すべての$X\in \XXX$に対し, $a\in X$.}
+\end{align*}
+$\bigcup_{X\in \XXX}X$を
+次で定義する:
+\begin{align*}
+a\in \bigcup_{X\in \XXX}X \iff \text{$a\in X$を満たす$X\in \XXX$が存在する.}
+\end{align*}
+\end{definition}
+
+また, $X\subset Y$であるとき, $X$が$Y$よりも小さいと思い,
+一番小さいものを考えたいときがある.
+\begin{definition}
+$\XXX$を集合族とする.
+次の条件を満たすとき, $X$は$\XXX$で最小であるという:
+\begin{align*}
+A\in \XXX \implies X \subset A.
+\end{align*}
+次の条件を満たすとき, $X$は$\XXX$で極小であるという:
+\begin{align*}
+A\in \XXX,  A \subset X\implies A=X.
+\end{align*}
+\end{definition}
+\begin{remark}
+$X$は$\XXX$で最小であるというのは,
+$X$が他のどの集合$A\in \XXX$よりも小さいということである.
+$X$は$\XXX$で極小であるというのは,
+$X$より小さな$A\in \XXX$が存在しないということである.
+実数の大小と異なり,
+集合$X$, $Y$に対しては,
+$X\subset Y$も$Y\subset X$もどちらも成り立たないことがあるので,
+最小と極小は異なる概念であることに注意する必要がある.
+\end{remark}
+
+\begin{definition}
+$X_1,\ldots,X_n$が集合であるとき,
+\begin{align*}
+X_1\times \cdots \times X_n
+=\Set{(x_1,\ldots,x_n)|x_1\in X_1,\ldots, x_n\in X_n}
+\end{align*}
+と定義し, $X_1,\ldots,X_n$の直積と呼ぶ.
+\end{definition}
+
+
+
 
 演算と作用について.
 
