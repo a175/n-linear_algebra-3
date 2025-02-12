@@ -653,8 +653,45 @@ $K$は
 \item 三角行列, 正方行列, 対角行列, 対角なら可換.
 \end{enumerate}
 
+$\KK$を体とする.
+$N=\Set{1,\ldots,n}$,
+$M=\Set{1,\ldots,m}$とし,
+$(i,j)\in M\times N$に対し$a_{i,j}\in \KK$が定まっているとき,
+それらを表のように
+\begin{align*}
+\begin{pmatrix}
+a_{1,1} &a_{1,2} & \cdots & a_{1,n}\\
+a_{2,2} &a_{2,2} & \cdots & a_{2,n}\\
+\vdots &\vdots &   & \vdots\\
+a_{2,2} &a_{2,2} & \cdots & a_{2,n}
+\end{pmatrix}
+\end{align*}
+と並べたものを$(m,n)$-行列と呼んだ.
+この表記はスペースを使うので,
+この行列を
+$(a_{i,j})_{i\in M, j\in N}$
+で表すこともある.
+\begin{definition}
+以下の条件を満たすとき,
+行列$(a_{i,j})_{i\in M, j\in N}$と
+行列$(b_{k,l})_{k\in M', l\in N'}$は
+等しいといい,
+$(a_{i,j})_{i\in M, j\in N}=(b_{k,l})_{k\in M', l\in N'}$と書く:
+\begin{enumerate}
+\item $M=M'$.
+\item $N=N'$.
+\item $i\in M,j\in N\implies a_{i,j}=b_{i,j}$.
+\end{enumerate}
+\end{definition}
 
-
+\begin{remark}
+定義から,
+$(a_{i,j})_{i\in M, j\in N}=(a_{k,l})_{k\in M, l\in N}$
+である.
+$\sum_{k=1}^{10}a_k$を$\sum_{n=1}^{10}a_n$と書いても同じことを表していたことを思い出すと,
+$(a_{i,j})_{i\in M, j\in N}$という表記における$i$や$j$は,
+$\sum_{k=1}^{10}a_k$における$k$と同じようなものであると思うことができる.
+\end{remark}
 \sectionX{章末問題}
 
 \begin{quiz}
