@@ -209,6 +209,7 @@ Prop/Porposition/命題  などの見出しを使います.
   \item 演算, 作用.
 \end{enumerate}
 
+\subsubsection{集合}
 集合とは何かということを説明するときには,
 `もの'を集めてきたものを集合といい,
 集合$X$に元$x$が属しているとき$x\in X$,
@@ -236,6 +237,10 @@ $x$は$X$に属するなどという.
 `$x\in\CC$'は
 `$x$は複素数である'
 ということを意味する.
+\begin{remark}
+この講義では, 虚数単位を表すのに$\sqrt{-1}$という記号を用いる.
+$i$は虚数単位ではなく単なる変数として使われる.
+\end{remark}
 
 \begin{definition}
 $X$と$Y$を集合とする.
@@ -349,9 +354,183 @@ X_1\times \cdots \times X_n
 \end{definition}
 
 
+\subsection{写像}
+$X$, $Y$を集合とする.
+このとき写像とは何かを説明するとき,
+$X$の元$x$に対して$Y$の元$f(x)$を対応させる`関数'$f$を
+$X$から$Y$への写像と呼ぶと説明されることが多い.
+言い換えると, $X$から$Y$の写像$f$は以下の条件を満たすことである:
+\begin{enumerate}
+\item どの$x\in X$に対しても$f(x)$が定まる.
+\item どの$x\in X$に対しても, 常に$f(x)\in Y$である.
+\item $x, x'\in X$かつ$x=x'$ならば$f(x)=f(x')$である.
+\end{enumerate}
+また, `$X$から$Y$への写像$f$' ということを表すのに,
+`写像$f\colon X\to Y$'と書くこともある.
+\begin{definition}
+$X$, $Y$, $A$, $B$を集合とする.
+以下の条件を満たすとき,
+写像$\varphi\colon X\to Y$と写像$\psi\colon Y\colon A\to  B$
+は等しいといい, $\varphi=\psi$と書く:
+\begin{enumerate}
+\item $X=A$.
+\item $Y=B$.
+\item $x\in X\implies \varphi(x)=\psi(x)$.
+\end{enumerate}
+\end{definition}
+
+具体的な写像を与えるには,
+その対応を書く必要がある.
+例えば, $x$に対して$\sqrt{-1}x$を対応させる$\RR$から$\CC$への写像$\varphi$を表すのに.
+\begin{align*}
+\shazo{\varphi}{\RR}{\CC}
+{x}{\sqrt{-1}x}
+\end{align*}
+の様に書くことが多い.
+スペースが限られている場合などには,
+\begin{align*}
+\varphi\colon \RR \to \CC,\ x\mapsto \sqrt{-1}x
+\end{align*}
+とか,
+\begin{align*}
+\varphi\colon \RR\ni x\mapsto \sqrt{-1}x \in CC
+\end{align*}
+などと書くこともある.
+
+\begin{remark}
+$\NN$から$\ZZ$への写像$\varphi$
+\begin{align*}
+\shazo{\varphi}{\NN}{\ZZ}
+{x}{2x-1}
+\end{align*}
+を考える.
+このとき,
+$\varphi(0)=1,\varphi(1)=3,\varphi(2)=5,\ldots$, 
+つまり$\varphi(x)=2x+1$である.
+この対応のそのものことを$\varphi$で表し, $\varphi$のことを写像と呼ぶ.
+$\varphi(x)$は$x\in\NN$を代入して得られる$2x+1$という整数を表しており,
+$\varphi(x)$は写像ではない.
+\end{remark}
+\begin{definition}
+集合$X$を集合とする.
+$x\in X$に対して$x$を対応させる写像を$\id_X$で表し,
+$X$上の恒等写像と呼ぶ. つまり,
+\begin{align*}
+\shazo{\id_X}{X}{X}
+{x}{x}
+\end{align*}
+である.
+また, $Y$を$X$の部分集合とするとき,
+$x\in Y$に対して$x\in X$を対応させる写像を,
+$Y$から$X$への包含写像と呼ぶ.
+\end{definition}
+
+$X$, $Y$, $X'$, $Y'$を集合とし,
+写像$\varphi\colon X\to Y$, $\psi\colon X\to Y$
+について考える.
+$x\in X$に対し$\varphi(x)\in Y$であるので,
+$Y\subset X'$であるなら,
+$\psi$に$f(x)$を代入することができる.
+\begin{definition}
+$X$, $Y$, $X'$, $Y'$を集合とし,
+$Y\subset X'$とする.
+写像$\varphi\colon X\to Y$, $\psi\colon X\to Y$に対し,
+$\psi\circ\varphi$を次で定義する:
+\begin{align*}
+\shazo{\psi\circ\varphi}{X}{Y'}
+{x}{\psi(\varphi(x))}.
+\end{align*}
+$\psi\circ\varphi$を$\varphi$と$\psi$の合成と呼ぶ.
+\end{definition}
+$A$, $B$, $B'$, $C$, $C'$, $D$という集合が
+$B\subset B'$, $C\subset C'$を満たしているとき,
+写像
+$\phi\colon A\to B$,
+$\psi\colon B'\to C$,
+$\varphi\colon C'\to D$
+の合成を考えることができる.
+$\varphi\circ (\psi\circ \phi)$
+と
+$(\varphi\circ \psi)\circ \phi$
+を考えることができるが, この2つは等しい.
+そこでカッコを省略し
+$\varphi \circ \psi \circ \phi$
+と書く.
+\begin{prop}
+$X$から$Y$への写像$\varphi$に対し,
+以下が成り立つ:
+\begin{align*}
+\varphi\circ\id_X&=\varphi.\\
+\id_Y\circ\varphi&=\varphi.
+\end{align*}
+\end{prop}
+
+\begin{definition}
+$X$, $Y$を集合とする.
+次の条件を満たすとき,
+$\varphi\colon Y\to X$を$\psi\colon X\to Y$の逆写像と呼ぶ:
+\begin{enumerate}
+\item $\varphi\circ\psi =\id_X$.
+\item $\psi\circ \varphi =\id_Y$.
+\end{enumerate}
+$\psi$の逆写像が存在するとき,
+$\psi$は全単射であるという.
+\end{definition}
+$\psi\colon X\to Y$が全単射であるとき, その逆写像はただ一つに定まる.
+つまり, $\varphi\colon Y\to X$と$\phi\colon Y\to X$とが,
+\begin{align*}
+\varphi\circ\psi &=\id_X, &
+\psi\circ \varphi &=\id_Y \\
+\phi\circ\psi &=\id_X, &
+\psi\circ \phi &=\id_Y 
+\end{align*}
+を満たすなら,
+$\varphi=\phi$である.
+$\psi\colon X\to Y$が全単射であるとき, その逆写像を$\varphi^{-1}$で表す.
+ 
 
 
-演算と作用について.
+\begin{definition}
+$X$, $Y$を集合とする.
+次の条件を満たすとき,
+$\varphi\colon X\to Y$は全射であるという:
+\begin{enumerate}
+\item $\Set{\varphi(x)|x\in X}=Y$.
+\end{enumerate}
+次の条件を満たすとき,
+$\varphi\colon X\to Y$は単射であるという:
+\begin{enumerate}
+\item $x,x'\in X$,  $x\neq x'\implies \varphi(x)\neq \varphi(x')$.
+\end{enumerate}
+\end{definition}
+\begin{prop}
+写像$\varphi\colon X\to Y$
+に対し, 以下は同値:
+\begin{enumerate}
+\item $\varphi$は全単射.
+\item $\varphi$は全射かつ単射.
+\end{enumerate}
+\end{prop}
+
+$X$を集合とする.
+$X\times X$から$X$への写像のことを,
+$X$上の$2$項演算と呼ぶことがある.
+例えば, 整数の足し算$x+y$は,
+\begin{align*}
+\shazo{+}{\RR\times \RR}{\RR}
+{(x,y)}{x+y}
+\end{align*}
+という写像である.
+ここまでの写像は, 代入する際に$\varphi(x,y)$のように,
+写像を表す記号の後ろに代入する元を書いたが,
+$2$項演算の場合には, $x+y$の様に写像を表す記号の前後に代入するものを書くことも多い.
+このような記法を中置記法と呼ぶ.
+
+$X$, $Y$を集合とする.
+$X\times Y$から$Y$への写像のことを,
+$X$の$Y$への作用と呼ぶことがある.
+この場合にも中置記法を用いることが多い.
+
 
 \section{体}
 $K$を集合とする.
@@ -473,12 +652,7 @@ $K$は
 \item 行列式.
 \item 三角行列, 正方行列, 対角行列, 対角なら可換.
 \end{enumerate}
-%% 本講義では,
-%% 体$K$の元のことを数と呼ぶ.
-%% つまり,
-%% 数に対しては四則演算ができる.
-%% 特に断らない限り,
-%% 体としては何を考えても構わない.
+
 
 
 \sectionX{章末問題}
