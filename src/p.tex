@@ -662,7 +662,7 @@ $a_i\neq 1$となる$a_i$達の積を$\sum_{i\in I} a_i$で表す.
 
 \section{行列など}
 \begin{enumerate}
-\item 行列の和, スカラー倍, 積, 転置.
+%\item 行列の和, スカラー倍, 積, 転置.
 \item 行列式.
 \item 三角行列, 正方行列, 対角行列, 対角なら可換.
 \end{enumerate}
@@ -687,6 +687,10 @@ a_{2,2} &a_{2,2} & \cdots & a_{2,n}
 $(a_{i,j})_{i\in M, j\in N}$
 で表すこともある.
 $(m,1)$-行列のことを$m$-項列ベクトルと呼ぶこともある.
+$M=N$であるとき正方行列と呼ぶ.
+つまり$(a_{i,j})_{i\in M, j\in M}$のことを正方行列と呼ぶ.
+
+
 \begin{definition}
 以下の条件を満たすとき,
 行列$(a_{i,j})_{i\in M, j\in N}$と
@@ -728,6 +732,11 @@ $B=(a_{i,j})_{i\in L, j\in N}$
 に対し,
 $AB=(\sum_{k\in L}a_{i,k}b_{k,j})_{i\in M, j\in N}$
 と定義し$A$と$B$の積と呼ぶ.
+\end{definition}
+\begin{definition}
+行列$A=(a_{i,j})_{i\in M, j\in N}$に対し,
+$\transposed{A}=(a_{l,k})_{k\in M, l\in N}$
+と定義し$A$の転置と呼ぶ.
 \end{definition}
 
 \sectionX{章末問題}
