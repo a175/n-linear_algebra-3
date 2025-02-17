@@ -633,12 +633,19 @@ $K$は
   掛け算の意味では用いない)
 \end{remark}
 
-
 \begin{example}
   $2\in\ZZ$ではあるが$\frac{1}{2}\not\in \ZZ$である.
   したがって$2x=1$は$\ZZ$の元の解を持たない.
   $2\neq 0$であるが$2x=1$は$\ZZ$の元の解を持たないので,
   $\ZZ$は体ではない.
+\end{example}
+
+\begin{example}
+$K=\Set{0,1}$とし,
+$0+0=1+1=0$, $1+0=0+1=1$,
+$0\cdot 0=1\cdot 0=0\cdot 1=0$, $1\cdot 1=1$
+と定めると$K$は体となる.
+このように有限集合である体もある.
 \end{example}
 
 $\KK$を体とし,
@@ -661,11 +668,7 @@ $a_i\neq 1$となる$a_i$達の積を$\sum_{i\in I} a_i$で表す.
 \end{remark}
 
 \section{行列など}
-\begin{enumerate}
-%\item 行列の和, スカラー倍, 積, 転置.
-\item 行列式.
-\item 三角行列, 正方行列, 対角行列, 対角なら可換.
-\end{enumerate}
+\subsection{行列に関する用語と記号}
 
 $\KK$を体とする.
 $M=\Set{1,\ldots,m}$,
@@ -713,6 +716,53 @@ $(a_{i,j})_{i\in M, j\in N}$という表記における$i$や$j$は,
 $\sum_{k=1}^{10}a_k$における$k$と同じようなものであると思うことができる.
 \end{remark}
 
+すべての成分が$0$である行列を零行列と呼ぶ.
+$(0)_{i\in \Set{1,\ldots,m}, j\in \Set{1,\ldots,n}}$
+を$O_{m,n}$で表す.
+
+\begin{definition}
+次の条件を満たす正方行列$(a_{i,j})_{i\in M, j\in M}$を対角行列と呼ぶ:
+\begin{align*}
+i,j\in M, i\neq j \implies a_{i,j}=0.
+\end{align*}
+\end{definition}
+
+\begin{definition}
+次の条件を満たす正方行列$(a_{i,j})_{i\in M, j\in M}$を対角行列と呼ぶ:
+\begin{align*}
+i,j\in M, i\neq j \implies a_{i,j}=0.
+\end{align*}
+\end{definition}
+
+
+次の条件を満たす対角行列$(a_{i,j})_{i\in M, j\in M}$を単位行列とよぶ:
+\begin{align*}
+a_{i,j}=
+\begin{cases}
+1&i=j\\
+0&i\neq j.
+\end{cases}
+\end{align*}
+とくに, $M=\Set{1,\ldots,m}$であるものを$m$次単位行列とよび, $E_m$で表す.
+
+
+\begin{definition}
+$M=\Set{1,\ldots,m}$とする.
+次の条件を満たす正方行列$(a_{i,j})_{i\in M, j\in M}$を
+上半三角行列と呼ぶ:
+\begin{align*}
+i,j\in M, i>j \implies a_{i,j}=0.
+\end{align*}
+次の条件を満たす正方行列$(a_{i,j})_{i\in M, j\in M}$を
+下半三角行列と呼ぶ:
+\begin{align*}
+i,j\in M, i<j \implies a_{i,j}=0.
+\end{align*}
+\end{definition}
+
+
+\subsection{行列の演算}
+
 \begin{definition}
 行列$A=(a_{i,j})_{i\in M, j\in N}$,
 $B=(b_{i,j})_{i\in M, j\in N}$に対し,
@@ -733,11 +783,56 @@ $B=(a_{i,j})_{i\in L, j\in N}$
 $AB=(\sum_{k\in L}a_{i,k}b_{k,j})_{i\in M, j\in N}$
 と定義し$A$と$B$の積と呼ぶ.
 \end{definition}
+\begin{remark}
+$A=(a_{i,j})_{i\in M, j\in M}$,
+$B=(b_{i,j})_{i\in M, j\in M}$
+とする.
+このとき,
+一般には,
+$AB\neq BA$である.
+$AB=BA$を満たすとき,
+$A$と$B$は可換であるという.
+$A$も$B$も対角行列なら可換である.
+単位行列$E$と$A$も可換である.
+\end{remark}
+
 \begin{definition}
 行列$A=(a_{i,j})_{i\in M, j\in N}$に対し,
 $\transposed{A}=(a_{l,k})_{k\in M, l\in N}$
 と定義し$A$の転置と呼ぶ.
 \end{definition}
+\begin{prop}
+$A=(a_{i,j})_{i\in M, j\in M}$,
+$B=(b_{i,j})_{i\in M, j\in M}$
+とする.
+このとき,
+\begin{align*}
+\transposed{(AB)}&=\transposed{B}\transposed{A}.
+\end{align*}
+\end{prop}
+
+\begin{definition}
+$A$を正方行列とする.
+次を満たす正方行列$B$のことを$A$の逆行列と呼ぶ:
+\begin{align*}
+AB=BA=E.
+\end{align*}
+$A$の逆行列が存在するとき, $A$は正則であるという.
+正則行列$A$に対し$A$の逆行列は唯一つ存在するので,
+それを$A^{-1}$と書く.
+\end{definition}
+
+%% \begin{prop}
+%% $A=(a_{i,j})_{i\in M, j\in M}$,
+%% $B=(b_{i,j})_{i\in M, j\in M}$
+%% とする.
+%% このとき,
+%% \begin{align*}
+%% (AB)^{-1}&=B^{-1}A^{-1}\\
+%% \end{align*}
+%% \end{prop}
+\subsection{行列式}
+
 
 \sectionX{章末問題}
 
