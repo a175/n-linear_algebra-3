@@ -706,7 +706,7 @@ $a_{i,j}$を$A$の$(i,j)$-成分と呼ぶ.
 $a_{i,i}$を対角成分と呼び,
 $i\neq j$に対して, $a_{i,j}$を非対角成分と呼ぶ.
 
->>>>>>> refs/remotes/origin/main
+
 \begin{definition}
 以下の条件を満たすとき,
 行列$(a_{i,j})_{i\in M, j\in N}$と
@@ -974,18 +974,18 @@ $(\KK,+,\cdot,0,1)$を体とする.
   \end{enumerate}
 \end{definition}
 \begin{remark}
-  $(V,+,\act ,0_V)$が$\KK$-線形空間
+  $(V,\plus,\act ,0_V)$が$\KK$-線形空間
   であるとき,
-  $+$を加法, $\act $をスカラー倍と呼ぶ.
+  $\plus$を加法, $\act $をスカラー倍と呼ぶ.
   また, $0_V$を$V$の零元とか零ベクトルと呼ぶ.
   また, 
-  $(V,+,\act ,0_V)$が$\KK$-線形空間であることを,
-  $V$は加法$+$とスカラー倍$\act $で$0_V$を零元とする$\KK$-線形空間であるということもある.
-  また, $+$, $\act $, $0_V$が文脈上明らかなときには,
+  $(V,\plus,\act ,0_V)$が$\KK$-線形空間であることを,
+  $V$は加法$\plus$とスカラー倍$\act $で$0_V$を零元とする$\KK$-線形空間であるということもある.
+  また, $\plus$, $\act $, $0_V$が文脈上明らかなときには,
   単に$V$を$\KK$-線形空間と呼ぶこともある.
 \end{remark}
 \begin{remark}
-  $(V,+,\act ,0_V)$が$\KK$上のベクトル空間
+  $(V,\plus,\act ,0_V)$が$\KK$上のベクトル空間
   であるとき,
   $V$の元をベクトルと呼ぶ.
   また, 零元$0_V$のことを, 零ベクトルと呼ぶこともある.
@@ -1169,12 +1169,14 @@ $(\KK,+,\cdot,0,1)$を体とする.
 
 表記方法などについてのいくつかコメントする.
 \begin{remark}
+$(V,\plus,\act,0_V)$を$\KK$線形空間とする.
 \Cref{def:vecsp:item:sum:ass}
-があるので, $v+w+u$を, $(v+w)+u$と思っても,
-$v+(w+u)$と思っても差し支えない.
-そこで, $(v+w)+u$を$v+w+u$と略記する.
+があるので, $v\plus w\plus u$を, $(v\plus w)\plus u$と思っても,
+$v\plus (w\plus u)$と思っても差し支えない.
+そこで, $(v\plus w)\plus u$を$v\plus w\plus u$と略記する.
 \end{remark}
 \begin{remark}
+$(V,\plus,\act,0_V)$を$\KK$線形空間とする.
 \Cref{def:vecsp:item:prod:ass}
 があるので, $abw$を, $a\act (b\act w)$と思っても,
 $(a\cdot b)\act w$と思っても差し支えない.
@@ -1191,85 +1193,88 @@ $a_1\cdots a_n w$と略記する.
 \end{remark}
 \begin{prop}
   \label{lem:uniq:zero}
-  $(V,+,\act ,0_V)$を$\KK$-線形空間とする.
+  $(V,\plus ,\act ,0_V)$を$\KK$-線形空間とする.
   $o\in V$が, 次の条件を満たすとする:
   \begin{align*}
-    w\in V \implies w+o=w.
+    w\in V \implies w\plus o=w.
   \end{align*}
   このとき, $o=0_V$.
 \end{prop}
 \begin{proof}
-  $0_V$の満たす条件から$0_V+o=o$.
-  一方, $o$の満たす条件から$0_V+o=0_V$.
-  よって, $0_V=0_V+o=o$.
+  $0_V$の満たす条件から$0_V\plus o=o$.
+  一方, $o$の満たす条件から$0_V\plus o=0_V$.
+  よって, $0_V=0_V\plus o=o$.
 \end{proof}
 \begin{remark}
-  $u,w\in V$に対し, $u+w=w+u$であるので,
+  $(V,\plus,\act,0_V)$を$\KK$線形空間とする.
+  $u,w\in V$に対し, $u\plus w=w\plus u$であるので,
   次の条件は同値である:
   \begin{enumerate}
-  \item $w\in V \implies w+o=w$.
-  \item $w\in V \implies o+w=w$.
+  \item $w\in V \implies w\plus o=w$.
+  \item $w\in V \implies o\plus w=w$.
   \end{enumerate}
   したがって, \cref{lem:uniq:zero}から,
   零ベクトルの条件を満たす元はただ一つしかないことがわかる.
   何が$V$の零ベクトルであるかを明示しなくともよい場合は,
-  単に$(V,+,\act )$を$\KK$-線形空間と呼ぶこともある.
+  単に$(V,\plus ,\act )$を$\KK$-線形空間と呼ぶこともある.
 \end{remark}
 \begin{prop}
   \label{prop:zeroveciszeroscalar}
-  $(V,+,\act ,0_V)$を$\KK$-線形空間とする.
+  $(V,\plus ,\act ,0_V)$を$\KK$-線形空間とする.
   このとき,
   \begin{align*}
     w\in V \implies 0\act w=0_V. 
   \end{align*}
 \end{prop}
 \begin{proof}
+$(V,\plus,\act,0_V)$を$\KK$線形空間とする.
   $x\in x$は
-  $0\act w+x=0_V$を満たすとする.
+  $0\act w\plus x=0_V$を満たすとする.
   このとき,
   \begin{align*}
-    (0\act w+0\act w)+x&=(0+0)\act w+x=0\act w+x=0_V\\
-    0\act w+(0\act w+x)&=0\act w+0_V=0\act w
+    (0\act w\plus 0\act w)\plus x&=(0+0)\act w\plus x=0\act w\plus x=0_V\\
+    0\act w\plus (0\act w\plus x)&=0\act w\plus 0_V=0\act w
   \end{align*}
   よって, $0\act w=0_V$.  
 \end{proof}
 
 \begin{lemma}
   \label{lem:uniq:inv}
-  $(V,+,\act ,0_V)$を$\KK$-線形空間とする.
+  $(V,\plus ,\act ,0_V)$を$\KK$-線形空間とする.
   $w\in V$とする.
   $x,y\in V$が以下を満たすなら$x=y$:
   \begin{align*}
-    w+x&=0_V\\
-    y+w&=0_V
+    w\plus x&=0_V\\
+    y\plus w&=0_V
   \end{align*}
 \end{lemma}
 \begin{proof}
   $x$の満たす条件から,
-  $y+(w+x)=y+0_V=y$.
+  $y\plus (w\plus x)=y\plus 0_V=y$.
   $y$の満たす条件から,
-  $(y+w)+x=0_V+x=x$.
+  $(y\plus w)\plus x=0_V\plus x=x$.
   よって$x=y$.
 \end{proof}
 \begin{remark}
-  $u,w\in V$に対し, $u+w=w+u$であるので,
+$(V,\plus,\act,0_V)$を$\KK$線形空間とする.
+$u,w\in V$に対し, $u\plus w=w\plus u$であるので,
   次の条件は同値である:
   \begin{enumerate}
-  \item $w+x=0_V$.
-  \item $x+w=0_V$.
+  \item $w\plus x=0_V$.
+  \item $x\plus w=0_V$.
   \end{enumerate}
   したがって, \cref{lem:uniq:inv}から,
-  各$w\in V$に対し, $w+x=0_V$を満たす$x\in V$は
+  各$w\in V$に対し, $w\plus x=0_V$を満たす$x\in V$は
   ただ一つしかないことがわかる.
 \end{remark}
 \begin{prop}
-  $(V,+,\act ,0_V)$を$\KK$-線形空間とする.
+  $(V,\plus ,\act ,0_V)$を$\KK$-線形空間とする.
   $w,x\in V$に対し,
   以下は同値:
   \begin{enumerate}
   \item
     \label{prop:inverse:-1:item:1}
-    $w+x=0_V$.
+    $w\plus x=0_V$.
   \item
     \label{prop:inverse:-1:item:2}
     $x=(-1)\act w$.    
@@ -1281,12 +1286,12 @@ $a_1\cdots a_n w$と略記する.
     w+(-1)\act w=(1-1)\act w=0\act w=0_V.
   \end{align}
   したがって,
-  $w+x=0_V$を満たす
+  $w\plus x=0_V$を満たす
   $x$は$(-1)\act w$に等しいことがわかる.
 \end{proof}
 
 \begin{prop}
-$(V,+,\act ,0_V)$を$\KK$-線形空間とする.
+$(V,\plus ,\act ,0_V)$を$\KK$-線形空間とする.
 このとき, $c\in\KK$に対し,
 \begin{align*}
 c\act 0_V = 0_V.
@@ -1419,19 +1424,19 @@ $c\act 0_V = c\act (0\act 0_V)= (c\cdot 0)\act 0_V=0\act 0_V=0_V.$
 \end{example}
 
 \begin{example}
-  $(V,+,.,\zzero)$を$\KK$線形空間とし,
+  $(V,\plus,\act,\zzero)$を$\KK$線形空間とし,
   $w_1,\ldots,w_r\in V$とする.
   $\nu_{(w_1,\ldots,w_r)}$を
     \begin{align*}
       \shazo{\nu_{(w_1,\ldots,w_r)}}{\KK^r}{V}
-      {\begin{pmatrix}a_1\\\vdots\\a_r\end{pmatrix}}{a_1w_1+\cdots+a_rw_r}
+      {\begin{pmatrix}a_1\\\vdots\\a_r\end{pmatrix}}{a_1\act w_1\plus\cdots\plus a_r\act w_r}
     \end{align*}
     で定義する.
   $\nu_{(w_1,\ldots,w_r)}$は$\KK$-線形写像である.
 \end{example}
 
 \begin{example}
-  $(V,+,.,\zzero)$
+  $V$
   $(W,\pplus,\aact,\zzero_W)$
   を$\KK$線形空間とする.
     \begin{align*}
@@ -1443,7 +1448,7 @@ $c\act 0_V = c\act (0\act 0_V)= (c\cdot 0)\act 0_V=0\act 0_V=0_V.$
 
 
 \begin{example}
-  $(V,+,\act)$を$\KK$-線形空間とする.
+  $V$を$\KK$-線形空間とする.
   恒等写像$\id_V$は$\KK$-線形である.
 \end{example}
 
@@ -1887,30 +1892,30 @@ $\dim_\KK(V)=\infty$と書く:
 \chapter{部分空間}
 \section{部分空間の定義}
 \begin{definition}
-  $(V,+,\act,0_V)$を$\KK$-線形空間とする.
+  $(V,\plus,\act,0_V)$を$\KK$-線形空間とする.
   以下の条件を満たすとき,
   $W$を$V$の部分空間 (部分$\KK$-線形空間)と呼ぶ:
   \begin{enumerate}
   \item $W\subset V$.
-  \item $(W,+,\act,0_V)$が$\KK$-線形空間.
+  \item $(W,\plus,\act,0_V)$が$\KK$-線形空間.
   \end{enumerate}
 \end{definition}
 \begin{remark}
-  $(V,+,\act,0_V)$を$\KK$-線形空間とし, $W\subset V$とする.
+  $(V,\plus,\act,0_V)$を$\KK$-線形空間とし, $W\subset V$とする.
 このとき, $v,w,u\in V$に対して,
 \begin{align*}
-  v+w&=w+v\\
-  (v+w)+u&=v+(w+u)\\
-  0_V+w&=w\\
-  w+(-1)\act w&=0_V
+  v\plus w&=w\plus v\\
+  (v\plus w)\plus u&=v\plus (w\plus u)\\
+  0_V\plus w&=w\\
+  w\plus (-1)\act w&=0_V
 \end{align*}
 が成り立っているので,
 $v,w,u\in W\subset V$に対しても,
 \begin{align*}
-  v+w&=w+v\\
-  (v+w)+u&=v+(w+u)\\
-  0_V+w&=w\\
-  w+(-1)\act w&=0_V
+  v\plus w&=w\plus v\\
+  (v\plus w)\plus u&=v\plus (w\plus u)\\
+  0_V\plus w&=w\\
+  w\plus (-1)\act w&=0_V
 \end{align*}
 は成り立つ.
 同様の理由で,
@@ -1918,45 +1923,45 @@ $a,b\in \KK$, $v,w\in W$に対して,
 \begin{align*}
   1\act v&=v\\
   (ab)\act v&=a\act(b\act v)\\
-  (a+b)\act v&=a\act v+b\act v\\
-  a\act(v+w)&=a\act v+a\act w
+  (a+ b)\act v&=a\act v\plus b\act v\\
+  a\act(v\plus w)&=a\act v\plus a\act w
 \end{align*}
 が成り立つ.
-$(W,+,\act,0_V)$が$\KK$-線形空間であるための条件で非自明なのは,
-これらではなく, $+$などが$W$上の演算であるかということである.
+$(W,\plus ,\act,0_V)$が$\KK$-線形空間であるための条件で非自明なのは,
+これらではなく, $\plus $などが$W$上の演算であるかということである.
 つまり, 以下の$3$条件が重要である.
 \begin{enumerate}
   \item $0_V\in W$.
-  \item $v,w\in W \implies v+w\in W$.
+  \item $v,w\in W \implies v\plus w\in W$.
   \item $a\in\KK$, $v\in W \implies a\act v\in W$.
 \end{enumerate}
 \end{remark}
 \begin{lemma}
-  $(V,+,\act,0_V)$を$\KK$-線形空間とし, $W\subset V$とする.
+  $(V,\plus ,\act,0_V)$を$\KK$-線形空間とし, $W\subset V$とする.
   このとき以下は同値:
   \begin{enumerate}
   \item $W$が$V$の部分空間.
   \item 以下の$3$条件を満たす:
     \begin{enumerate}
   \item $0_V\in W$.
-  \item $v,w\in W \implies v+w\in W$.
+  \item $v,w\in W \implies v\plus w\in W$.
   \item $a\in\KK$, $v\in W \implies a\act v\in W$.
     \end{enumerate}
   \item 以下の$2$条件を満たす:
     \begin{enumerate}
   \item $0_V\in W$.
-  \item $v,w\in W, a,b\in\KK \implies a\act v+b\act w\in W$.
+  \item $v,w\in W, a,b\in\KK \implies a\act v\plus b\act w\in W$.
     \end{enumerate}
   \item 以下の$3$条件を満たす:
     \begin{enumerate}
   \item $W\neq \emptyset$.
-  \item $v,w\in W \implies v+w\in W$.
+  \item $v,w\in W \implies v\plus w\in W$.
   \item $a\in\KK$, $v\in W \implies a\act v\in W$.
     \end{enumerate}
   \item 以下の$2$条件を満たす:
     \begin{enumerate}
   \item $W\neq \emptyset$.
-  \item $v,w\in W, a,b\in\KK \implies a\act v+b\act w\in W$.
+  \item $v,w\in W, a,b\in\KK \implies a\act v\plus b\act w\in W$.
     \end{enumerate}
   \end{enumerate}
 \end{lemma}
@@ -1964,7 +1969,7 @@ $(W,+,\act,0_V)$が$\KK$-線形空間であるための条件で非自明なの�
 \section{部分空間の例}
 \subsection{部分空間の具体例}
 \begin{example}
-  $(V,+,\act,0_V)$を$\KK$-線形空間とする.
+  $(V,\plus ,\act,0_V)$を$\KK$-線形空間とする.
   $V$は$V$の部分空間である.
   $\Set{0_V}$は$V$の部分空間である.
   この2つを$V$の自明な部分空間と呼ぶ.
@@ -2231,11 +2236,11 @@ $(W,+,\act,0_V)$が$\KK$-線形空間であるための条件で非自明なの�
 \begin{proof}\end{proof}
 
 \begin{example}
-  $(U,+,\act,0_V)$を$\KK$-線形空間とする.
+  $(U,\plus ,\act,0_V)$を$\KK$-線形空間とする.
   $V, W$を$U$の部分空間とする.
   このとき,
   \begin{align*}
-    V+W=\Set{v+w|v\in V,w\in W}
+    V+W=\Set{v\plus w|v\in V,w\in W}
   \end{align*}
   とおく.
   このとき, $V+W$は$U$の部分空間.
@@ -2243,7 +2248,7 @@ $(W,+,\act,0_V)$が$\KK$-線形空間であるための条件で非自明なの�
 \end{example}
 \begin{proof}\end{proof}
 \begin{prop}
-  $(U,+,\act,0_V)$を$\KK$-線形空間とし,
+  $(U,\plus ,\act,0_V)$を$\KK$-線形空間とし,
   $V, W$を$U$の部分空間とする.
   \begin{align*}
     \SSS=\Set{U'|\text{$U'$は$U$の部分空間,} V\cup W \subset U'}
@@ -2301,20 +2306,21 @@ $(W,+,\act,0_V)$が$\KK$-線形空間であるための条件で非自明なの�
   $v,v'\in V$,
   $w,w'\in W$に対し, 以下は同値:
   \begin{enumerate}
-  \item $v+w=v'+w'$.
+  \item $v\plus w=v'\plus w'$.
   \item $v=v'$, $w=w'$.
   \end{enumerate}
 \end{prop}
 \begin{proof}
-  \paragraph{$v+w=v'+w'\implies v=v', w=w'$}
-  $v+w=v'+w'$であるので,
-  $v-v'=-w+w'$.
+  \paragraph{$v\plus w=v'\plus w'\implies v=v', w=w'$}
+  $v\plus w=v'\plus w'$であるので,
+  $-v'\plus v=-w\plus w'$.
   左辺は$V$の元, 右辺は$W$の元であるから,
   これらは, $V\cap W$の元.
   よって, $\zzero$である.
-  $v-v'=\zzero$であるので, $v=v'$.
-  $w-w'=\zzero$であるので, $w=w'$.
-  \paragraph{$v=v', w=w'\implies v+w=v'+w'$}
+  $-v'\plus v=\zzero$であるので, $v=v'$.
+  $-w'\plus w=\zzero$であるので, $w=w'$.
+  
+  \paragraph{$v=v', w=w'\implies v\plus w=v'\plus w'$}
   明らか.
 \end{proof}
 
@@ -2348,8 +2354,8 @@ $U$は$U=V_1\oplus V_2\oplus \cdots \oplus V_l$
 \subsection{線形写像から得られる部分空間}
 
 \begin{definition}
-  $(V,+,\act,0_V)$,
-  $(W,+,\act,0_W)$を
+  $(V,\plus,\act,0_V)$,
+  $(W,\pplus,\aact,0_W)$を
   $\KK$-線形写像とし,
   $\varphi\colon V\to W$を線形写像とする.
   このとき,
@@ -2361,8 +2367,8 @@ $U$は$U=V_1\oplus V_2\oplus \cdots \oplus V_l$
   $\Img(\varphi)$を$\varphi$のImageと呼ぶ.
 \end{definition}
 \begin{prop}
-  $(V,+,\act,0_V)$,
-  $(W,+,\act,0_W)$を
+  $(V,\plus,\act,0_V)$,
+  $(W,\pplus,\aact,0_W)$を
   $\KK$-線形写像とし,
   $\varphi\colon V\to W$を線形写像とする.
 このとき, 以下が成り立つ:
@@ -2374,12 +2380,12 @@ $U$は$U=V_1\oplus V_2\oplus \cdots \oplus V_l$
 \begin{proof}\end{proof}
 
 \begin{definition}
-  $(V,+,\act,\zzero)$を$\KK$線形空間とし,
+  $(V,\plus,\act,\zzero)$を$\KK$線形空間とし,
   $w_1,\ldots,w_r\in V$とする.
   線形写像
     \begin{align*}
       \shazo{\nu_{(w_1,\ldots,w_r)}}{\KK^r}{V}
-      {\begin{pmatrix}a_1\\\vdots\\a_r\end{pmatrix}}{a_1w_1+\cdots+a_rw_r}
+      {\begin{pmatrix}a_1\\\vdots\\a_r\end{pmatrix}}{a_1\act w_1+\cdots+a_r\act w_r}
     \end{align*}
   の像$\Img(\nu_{(w_1,\ldots,w_r)})$を,
   $(w_1,\ldots,w_r)$で生成される$V$の部分空間と呼び,
@@ -2430,8 +2436,8 @@ $\KK$を体とし,
 
 \begin{prop}
   \label{subspace:prop:img:inverseimage}
-  $(V,+,\act,0_V)$,
-  $(W,+,\act,0_W)$を
+  $(V,\plus,\act,0_V)$,
+  $(W,\pplus,\aact,0_W)$を
   $\KK$-線形写像とし,
   $\varphi\colon V\to W$を線形写像とする.
   \begin{enumerate}
@@ -2460,8 +2466,8 @@ $\KK$を体とし,
 \end{remark}
 
 \begin{prop}
-  $(V,+,\act,0_V)$,
-  $(W,+,\act,0_W)$を
+  $(V,\plus,\act,0_V)$,
+  $(W,\pplus,\aact,0_W)$を
   $\KK$-線形写像とし,
   $\varphi\colon V\to W$を線形写像とする.
   次は同値:
@@ -2473,8 +2479,8 @@ $\KK$を体とし,
 \begin{proof}\end{proof}
 
 \begin{prop}
-  $(V,+,\act,0_V)$,
-  $(W,+,\act,0_W)$を
+  $(V,\plus,\act,0_V)$,
+  $(W,\pplus,\aact,0_W)$を
   $\KK$-線形写像とし,
   $\varphi\colon V\to W$を線形写像とする.
   次は同値:
@@ -2486,8 +2492,8 @@ $\KK$を体とし,
 \begin{proof}\end{proof}
 
 \begin{prop}
-  $(V,+,\act,0_V)$,
-  $(W,+,\act,0_W)$を
+  $(V,\plus,\act,0_V)$,
+  $(W,\pplus,\aact,0_W)$を
   $\KK$-線形写像とし,
   $\varphi\colon V\to W$を線形写像とする.
   次は同値:
@@ -2499,8 +2505,8 @@ $\KK$を体とし,
 \begin{proof}\end{proof}
 
 \begin{prop}
-  $(V,+,\act,0_V)$,
-  $(W,+,\act,0_W)$を
+  $(V,\plus,\act,0_V)$,
+  $(W,\pplus,\aact,0_W)$を
   $\KK$-線形写像とし,
   $\varphi\colon V\to W$を線形写像とする.
   次は同値:
@@ -2623,18 +2629,18 @@ $\KK^n$の標準基底と呼ぶ.
 
 
 \begin{definition}
-  $(V,+,\act,\zzero)$を$\KK$線形空間とし,
+  $(V,\plus,\act,\zzero)$を$\KK$線形空間とし,
   $w_1,\ldots,w_r\in V$とする.
   次の条件を満たすとき,
   組$(w_1,\ldots,w_r)$が$\KK$上一次独立であるという:
   \begin{enumerate}
-  \item $\sum_{i=1}^{r} c_i\act w_i=\zzero \implies c_1=\cdots=c_r=0$.
+  \item $c_1\act w_1\plus\cdots\plus c_r\act w_r=\zzero \implies c_1=\cdots=c_r=0$.
   \end{enumerate}
   $(w_1,\ldots,w_r)$が$\KK$上一次独立でないとき,
   $(w_1,\ldots,w_r)$が$\KK$上一次従属であるという.
 \end{definition}
 \begin{prop}
-  $(V,+,.,\zzero)$を$\KK$線形空間とし,
+  $(V,\plus,\act,\zzero)$を$\KK$線形空間とし,
   $w_1,\ldots,w_r\in V$とする.
   このとき以下は同値:
   \begin{enumerate}
@@ -2642,7 +2648,7 @@ $\KK^n$の標準基底と呼ぶ.
   \item 線形写像
     \begin{align*}
       \shazo{\nu_{(w_1,\ldots,w_r)}}{\KK^r}{V}
-      {\begin{pmatrix}a_1\\\vdots\\a_r\end{pmatrix}}{\sum_{i=1}^{r}a_i\act w_i}
+      {\begin{pmatrix}a_1\\\vdots\\a_r\end{pmatrix}}{a_1\act w_1\plus\cdots\plus a_r\act w_r}
     \end{align*}
     が単射.
   \end{enumerate}
@@ -2652,8 +2658,8 @@ $\KK^n$の標準基底と呼ぶ.
   $w_i\in V$とし, 
   $(w_1,\ldots,w_r)$は$\KK$上一次独立であるとする.
   \begin{align*}
-  v&=a_1\act w_1+\cdots +a_r\act w_r\\
-  v'&=a'_1\act w_1+\cdots +a'_r\act w_r\\
+  v&=a_1\act w_1\plus\cdots \plus a_r\act w_r\\
+  v'&=a'_1\act w_1\plus\cdots \plus a'_r\act w_r\\
   \end{align*}
   とする.
   このとき以下は同値:
@@ -2671,7 +2677,7 @@ v'&=\nu_{(w_1,\ldots,w_r)}(\begin{pmatrix}a'_1\\\vdots\\a'_n\end{pmatrix})
 \end{proof}
 
 \begin{definition}
-  $(V,+,\act,\zzero)$を$\KK$線形空間とし,
+  $(V,\plus,\act,\zzero)$を$\KK$線形空間とし,
   $w_1,\ldots,w_r\in V$とする.
   次の条件を満たすとき,
   組$(w_1,\ldots,w_r)$は$V$の生成系であるという.
@@ -2680,13 +2686,13 @@ v'&=\nu_{(w_1,\ldots,w_r)}(\begin{pmatrix}a'_1\\\vdots\\a'_n\end{pmatrix})
     すべての$v\in V$に対して次が成り立つ:
     \begin{enumerate}
     \item
-    $\sum_{i=1}^{r} c_i\act w_i=v$
+    $c_1\act w_1\plus \cdots c_r\act w_r=v$
     を満たす$c_1,\ldots,c_r\in\KK$ が存在する.
     \end{enumerate}
   \end{enumerate}
 \end{definition}
 \begin{prop}
-  $(V,+,.,\zzero)$を$\KK$線形空間とし,
+  $(V,\plus,\act,\zzero)$を$\KK$線形空間とし,
   $w_1,\ldots,w_r\in V$とする.
   このとき以下は同値:
   \begin{enumerate}
@@ -2712,7 +2718,7 @@ v'&=\nu_{(w_1,\ldots,w_r)}(\begin{pmatrix}a'_1\\\vdots\\a'_n\end{pmatrix})
 
 
 \begin{definition}
-  $(V,+,\act,\zzero)$を$\KK$線形空間とし,
+  $V$を$\KK$線形空間とし,
   $w_1,\ldots,w_r\in V$とする.
   次の条件を満たすとき,
   組$(w_1,\ldots,w_r)$は$V$の基底であるという.
@@ -2722,7 +2728,7 @@ v'&=\nu_{(w_1,\ldots,w_r)}(\begin{pmatrix}a'_1\\\vdots\\a'_n\end{pmatrix})
   \end{enumerate}
 \end{definition}
 \begin{prop}
-  $(V,+,\act,\zzero)$を$\KK$線形空間とし,
+  $V$を$\KK$線形空間とし,
   $w_1,\ldots,w_r\in V$とする.
   このとき以下は同値:
   \begin{enumerate}
@@ -2737,7 +2743,7 @@ v'&=\nu_{(w_1,\ldots,w_r)}(\begin{pmatrix}a'_1\\\vdots\\a'_n\end{pmatrix})
   $v\in V$とするとき,
   $v$は$w_1,\ldots,w_r$の線型結合として一意に書き表せる.
   つまり,
-  $v=a_1\act w_1+\ldots+a_r\act w_r$
+  $v=a_1\act w_1\plus \ldots\plus a_r\act w_r$
   を満たす$a_1,\ldots, a_r\in\KK$がただ一組存在する.
 \end{prop}
 
@@ -3043,11 +3049,11 @@ $\Set{v_1,\ldots, v_n}\neq \Set{w_1,\ldots, w_n}$
 
 \chapter{商空間}
 \section{商空間}
-$U$を$\KK$線形空間とし,
+$(U,\plus,\act)$を$\KK$線形空間とし,
 $V$を$U$の部分空間とする.
 $u\in U$に対し,
 \begin{align*}
-  [u]_V=\Set{u+v|v\in V}
+  [u]_V=\Set{u\plus v|v\in V}
 \end{align*}
 とする.
 \begin{example}
@@ -3088,7 +3094,7 @@ $u,v\in U$に対し, 以下は同値:
 \label{lem:quotientspace:well:def}
   $u,u',w,w'\in U$, $c\in \KK$に対し, 以下が成り立つ:  
   \begin{enumerate}
-  \item $[u]_V=[u']_V, [w]_V=[w']_V \implies [u+w]_V=[u'+w']_V$.
+  \item $[u]_V=[u']_V, [w]_V=[w']_V \implies [u\plus w]_V=[u'\plus w']_V$.
   \item $[u]_V=[u']_V \implies [c\act u]_V=[c\act u']_V$.
   \end{enumerate}
 \end{lemma}
@@ -3102,7 +3108,7 @@ $u,v\in U$に対し, 以下は同値:
 より,
 $[u]_V,[w]_V\in U/V$, $c\in\KK$に対し
 \begin{align*}
-[u]_V\pplus [w]_V &= [u+w]_V\\
+[u]_V\pplus [w]_V &= [u\plus w]_V\\
 c\aact [u]_V &= [c\act u]_V
 \end{align*}
 とすると,
@@ -3130,7 +3136,7 @@ $U/V$上の演算として定義できる.
   つまり,
   \begin{align*}
     [u]_V\plus [w]_V&=[u \plus w]_V=\Set{u \plus w \plus v|v\in V}, \\
-    c\act [u]_V&=[c\act u]_V=\Set{c\act u \plus v|v\in V}
+    c\act [u]_V&=[c\act u]_V=\Set{c\act u|v\in V}
   \end{align*}
   とする.
 \end{remark}
@@ -3159,8 +3165,8 @@ $U/V$上の演算として定義できる.
   が同型写像であることを示す.
   \paragraph{線型性}
   \begin{align*}
-    \Phi([u]_V+[u']_V)&=\Phi([u+u']_V)=\varphi(u+u')=\varphi(u)+\varphi(u')\\
-    \Phi([u]_V)+\Phi([u']_V)&=\varphi(u)+\varphi(u')\\
+    \Phi([u]_V\plus [u']_V)&=\Phi([u\plus u']_V)=\varphi(u\plus u')=\varphi(u)\plus \varphi(u')\\
+    \Phi([u]_V)\plus \Phi([u']_V)&=\varphi(u)\plus \varphi(u')\\
     \Phi(c\act [u]_V)&=\Phi([c\act u]_V)\varphi(c\act u)=c\act \varphi(u)\\
     c\act \Phi([u]_V)&=c\act \varphi(u)
   \end{align*}
@@ -3215,7 +3221,7 @@ $U=V\oplus W$であるので,
   \begin{align*}
     \shazo{\varphi}{\KK^m}{U/V}
           {\begin{pmatrix}a_1\\\vdots\\a_m\end{pmatrix}}
-          {\sum_{i=1}^m a_i\act [w_i]_V}
+          {a_1\act [w_1]_V\plus \cdots \plus a_m\act [w_m]_V}
   \end{align*}
   は線形写像である.
   これが同型写像であることを示す.
@@ -3410,12 +3416,12 @@ $A\in\KK^{m\times n}$に対して,
 
 
 \section{表現行列}
-$V$を$\KK$-線形空間とし, $v_1,\ldots,v_n\in V$とする.
+$(V,\plus,\act)$を$\KK$-線形空間とし, $v_1,\ldots,v_n\in V$とする.
 このとき,
 \begin{align*}
     \shazo{\nu_{(v_1,\ldots,v_n)}}{\KK^n}{V}
           {\begin{pmatrix}x_1\\\vdots\\x_n\end{pmatrix}}
-          {x_1\act v_1+\cdots+x_n\act v_n}
+          {x_1\act v_1\plus \cdots\plus x_n\act v_n}
 \end{align*}
 とする.
 $(v_1,\ldots,v_n)$が$V$の基底であるとき,
@@ -3797,7 +3803,7 @@ $\varphi$の$D$に関する表現行列と呼ぶ.
 \section{交代的多重線形写像}
 
 \begin{definition}
-  $V$, $W$を$\KK$-線形空間とする.
+  $(V,\plus,act)$, $(W,\pplus,\aact)$を$\KK$-線形空間とする.
   以下を満たすとき,
   写像
   \begin{align*}
@@ -3809,11 +3815,11 @@ $\varphi$の$D$に関する表現行列と呼ぶ.
   \begin{enumerate}
   \item $v_1,\ldots,v_n,v'_i\in V$に対し
     \begin{align*}
-      &F(v_1,\ldots,v_{i-1},v_i+v'_i,v_{i+1},\ldots,v_n)\\&=F(v_1,\ldots,v_{i-1},v_i,v_{i+1},\ldots,v_n)+F(v_1,\ldots,v_{i-1},v'_i,v_{i+1},\ldots,v_n).
+      &F(v_1,\ldots,v_{i-1},v_i\plus v'_i,v_{i+1},\ldots,v_n)\\&=F(v_1,\ldots,v_{i-1},v_i,v_{i+1},\ldots,v_n)\pplus F(v_1,\ldots,v_{i-1},v'_i,v_{i+1},\ldots,v_n).
     \end{align*}
   \item $v_1,\ldots,v_n\in V$, $c\in\KK$に対し,
     \begin{align*}
-      F(v_1,\ldots,v_{i-1},cv_i,v_{i+1},\ldots,v_n)=c\act F(v_1,\ldots,v_{i-1},v_i,v_{i+1},\ldots,v_n).
+      F(v_1,\ldots,v_{i-1},c\act v_i,v_{i+1},\ldots,v_n)=c\aact F(v_1,\ldots,v_{i-1},v_i,v_{i+1},\ldots,v_n).
     \end{align*}
   \end{enumerate}
 \end{definition}
@@ -3938,7 +3944,7 @@ $\sigma\in S_n$に対し,
   交代的な$n$重線形写像とする.
   $v_1,\ldots,v_n\in V$に対し,
   \begin{align*}
-    u_j=\sum_{i=1}^n a_{i,j}\act v_i
+    u_j= a_{1,j}\act v_1\plus \cdots \plus a_{n,j}\act v_n
   \end{align*}
   とすると,
   \begin{align*}
@@ -3972,7 +3978,7 @@ $\sigma\in S_n$に対し,
   $V$を$\KK$-線形空間とし,
   $B=(v_1,\ldots,v_n)$は$V$の基底であるとする.
   \begin{align*}
-    u_j=\sum_{i=1}^n a_{i,j}\act v_i
+    u_j= a_{1,j}\act v_1\plus \cdots \plus a_{n,j}\act v_n
   \end{align*}
   に対して,
   \begin{align*}
@@ -4573,7 +4579,7 @@ $\varphi$は$V$によって三角化されるという:
 $i\in\Set{1,\ldots,n}$に対し,
 以下を満たす$a_{i,j}\in\KK$がとれる:
 \begin{align*}
-\varphi(v_i)=\sum_{j\colon j\leq i }a_{i,j}v_i.
+\varphi(v_j)=\sum_{i\colon i\leq j }a_{i,j}\act v_i.
 \end{align*}
 \end{enumerate}
 \end{definition}
