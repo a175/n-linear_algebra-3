@@ -660,10 +660,10 @@ $I$が無限集合であるとき,
 $\sum_{i\in I} a_i$や$\prod_{i\in I} a_i$は
 $\KK$の演算からは定義できない.
 ただし,
-$a_i\neq 0$となる$i\in I$が有限集合であるときには,
+$\Set{i \in I |a_i\neq 0}$が有限集合であるときには,
 $a_i\neq 0$となる$a_i$達の和を$\sum_{i\in I} a_i$で表す.
 また,
-$a_i\neq 1$となる$i\in I$が有限集合であるときには,
+$\Set{i \in I |a_i\neq 1}$が有限集合であるときには,
 $a_i\neq 1$となる$a_i$達の積を$\sum_{i\in I} a_i$で表す.
 \end{remark}
 
@@ -693,7 +693,6 @@ $(m,1)$-行列のことを$m$-項列ベクトルと呼ぶこともある.
 $(1,n)$-行列のことを$n$-項行ベクトルと呼ぶこともある.
 $M=N$であるとき正方行列と呼ぶ.
 つまり$(a_{i,j})_{i\in M, j\in M}$のことを正方行列と呼ぶ.
-
 
 \begin{definition}
 以下の条件を満たすとき,
@@ -773,11 +772,11 @@ $A+B=(a_{i,j}+b_{i,j})_{i\in M, j\in N}$
 \begin{definition}
 行列$A=(a_{i,j})_{i\in M, j\in N}$
 と$c\in \KK$に対し,
-$cA=(ca_{i,j}+b_{i,j})_{i\in M, j\in N}$
+$cA=(ca_{i,j})_{i\in M, j\in N}$
 と定義し$c$による$A$のスカラー倍と呼ぶ.
 \end{definition}
 \begin{definition}
-$L=\Set{1,\ldots,l}$とし,
+$L=\Set{1,\ldots,l}$とする.
 行列$A=(a_{i,j})_{i\in M, j\in L}$,
 $B=(a_{i,j})_{i\in L, j\in N}$
 に対し,
@@ -834,6 +833,27 @@ $A$の逆行列が存在するとき, $A$は正則であるという.
 %% \end{prop}
 \subsection{行基本変形と列基本変形}
 行基本変形と列基本変形, 階数, 斉次連立一次方程式.
+
+$M=\Set{1,\ldots,m}$,
+$N=\Set{1,\ldots,n}$
+とし,
+行列
+$A=(a_{i,j})_{i\in M, j\in N}$
+を考える.
+\begin{align*}
+\begin{pmatrix}
+a_{1,j}\\a_{2,j}\\\vdots \\a_{m,j}
+\end{pmatrix}
+\end{align*}
+を$A$の$j$列目と呼ぶ.
+\begin{align*}
+\begin{pmatrix}
+a_{i,1}& a_{i,2}&\cdots &a_{i,n}
+\end{pmatrix}
+\end{align*}
+を$A$の$j$行目と呼ぶ.
+
+
 
 \subsection{行列式}
 
