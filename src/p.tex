@@ -1419,13 +1419,15 @@ $c\act 0_V = c\act (0\act 0_V)= (c\cdot 0)\act 0_V=0\act 0_V=0_V.$
 \end{example}
 
 \begin{example}
-  $(V,+,.,\zzero)$を$\KK$線形空間とする.
-  $w_1,\ldots,w_r\in V$に対し,
+  $(V,+,.,\zzero)$を$\KK$線形空間とし,
+  $w_1,\ldots,w_r\in V$とする.
+  $\nu_{(w_1,\ldots,w_r)}$を
     \begin{align*}
-      \shazo{\varphi}{\KK^r}{V}
-      {\begin{pmatrix}a_1\\\vdots\\a_r\end{pmatrix}}{\sum_{i=1}^{r}a_iw_i}
+      \shazo{\nu_{(w_1,\ldots,w_r)}}{\KK^r}{V}
+      {\begin{pmatrix}a_1\\\vdots\\a_r\end{pmatrix}}{a_1w_1+\cdots+a_rw_r}
     \end{align*}
-  は$\KK$-線形写像である.
+    で定義する.
+  $\nu_{(w_1,\ldots,w_r)}$は$\KK$-線形写像である.
 \end{example}
 
 \begin{example}
@@ -1546,6 +1548,12 @@ $\psi\colon \KK^n \to \KK^m$
 $\KK^n$から$\KK^m$への線形写像は,
 行列$A\in\KK^{m\times n}$から得られる
 $\mu_A$という線形写像のみ考えればよいことがわかる.
+また, $A$の$j$列目を$\aaa_j$とし,
+\begin{align*}
+\shazo{\nu_{(\aaa_1,\ldots,\aaa_n)}}{\KK^m}{\KK^n}
+      {\begin{pmatrix}c_1\\\vdots\\c_r\end{pmatrix}}{c_1\aaa_1+\cdots+c_n\aaa_n}
+\end{align*}
+という$\KK$線形写像を考えると$\mu_A=\nu_{(\aaa_1,\ldots,\aaa_n)}$である.
 \end{remark}
 
 \begin{prop}
@@ -1894,7 +1902,7 @@ $\dim_\KK(V)=\infty$と書く:
   v+w&=w+v\\
   (v+w)+u&=v+(w+u)\\
   0_V+w&=w\\
-  w+(-1)\act w=0_V
+  w+(-1)\act w&=0_V
 \end{align*}
 が成り立っているので,
 $v,w,u\in W\subset V$に対しても,
@@ -1902,43 +1910,53 @@ $v,w,u\in W\subset V$に対しても,
   v+w&=w+v\\
   (v+w)+u&=v+(w+u)\\
   0_V+w&=w\\
-  w+(-1)\act w=0_V
+  w+(-1)\act w&=0_V
 \end{align*}
 は成り立つ.
 同様の理由で,
-$a,b\in \KK$, $v,w\in U$に対して,
+$a,b\in \KK$, $v,w\in W$に対して,
 \begin{align*}
   1\act v&=v\\
   (ab)\act v&=a\act(b\act v)\\
   (a+b)\act v&=a\act v+b\act v\\
-  a\act(v+w)=a\act v+a\act w
+  a\act(v+w)&=a\act v+a\act w
 \end{align*}
 が成り立つ.
 $(W,+,\act,0_V)$が$\KK$-線形空間であるための条件で非自明なのは,
-これらではなく, $+$などが$U$上の演算であるかということである.
+これらではなく, $+$などが$W$上の演算であるかということである.
 つまり, 以下の$3$条件が重要である.
 \begin{enumerate}
-  \item $v,w\in U \implies v+w\in U$.
-  \item $a\in\KK$, $v\in U \implies a\act v\in U$.
-  \item $0_V\in U$.
+  \item $0_V\in W$.
+  \item $v,w\in W \implies v+w\in W$.
+  \item $a\in\KK$, $v\in W \implies a\act v\in W$.
 \end{enumerate}
 \end{remark}
 \begin{lemma}
   $(V,+,\act,0_V)$を$\KK$-線形空間とし, $W\subset V$とする.
   このとき以下は同値:
   \begin{enumerate}
-  \item $U$が$V$の部分空間.
+  \item $W$が$V$の部分空間.
   \item 以下の$3$条件を満たす:
     \begin{enumerate}
-  \item $v,w\in U \implies v+w\in U$.
-  \item $a\in\KK$, $v\in U \implies a\act v\in U$.
-  \item $0_V\in U$.
+  \item $0_V\in W$.
+  \item $v,w\in W \implies v+w\in W$.
+  \item $a\in\KK$, $v\in W \implies a\act v\in W$.
+    \end{enumerate}
+  \item 以下の$2$条件を満たす:
+    \begin{enumerate}
+  \item $0_V\in W$.
+  \item $v,w\in W, a,b\in\KK \implies a\act v+b\act w\in W$.
     \end{enumerate}
   \item 以下の$3$条件を満たす:
     \begin{enumerate}
-  \item $v,w\in U \implies v+w\in U$.
-  \item $a\in\KK$, $v\in U \implies a\act v\in U$.
-  \item $U\neq \emptyset$.
+  \item $W\neq \emptyset$.
+  \item $v,w\in W \implies v+w\in W$.
+  \item $a\in\KK$, $v\in W \implies a\act v\in W$.
+    \end{enumerate}
+  \item 以下の$2$条件を満たす:
+    \begin{enumerate}
+  \item $W\neq \emptyset$.
+  \item $v,w\in W, a,b\in\KK \implies a\act v+b\act w\in W$.
     \end{enumerate}
   \end{enumerate}
 \end{lemma}
@@ -2221,7 +2239,7 @@ $(W,+,\act,0_V)$が$\KK$-線形空間であるための条件で非自明なの�
   \end{align*}
   とおく.
   このとき, $V+W$は$U$の部分空間.
-  $V+W$を$V$と$W$の和と呼ぶことがある.
+  $V+W$を$V$と$W$の和空間と呼ぶことがある.
 \end{example}
 \begin{proof}\end{proof}
 \begin{prop}
@@ -2260,6 +2278,7 @@ $(W,+,\act,0_V)$が$\KK$-線形空間であるための条件で非自明なの�
   \end{enumerate}
   $U$が$V$と$W$の(内部)直和に分解できることを,
   $U=V\oplus W$と書き表す.
+  また$V$や$W$のことを$U$の直和因子と呼ぶことがある.
 \end{definition}
 \begin{example}
   $U=\KK^3$とし,
@@ -2354,21 +2373,35 @@ $U$は$U=V_1\oplus V_2\oplus \cdots \oplus V_l$
 \end{prop}
 \begin{proof}\end{proof}
 
+\begin{definition}
+  $(V,+,\act,\zzero)$を$\KK$線形空間とし,
+  $w_1,\ldots,w_r\in V$とする.
+  線形写像
+    \begin{align*}
+      \shazo{\nu_{(w_1,\ldots,w_r)}}{\KK^r}{V}
+      {\begin{pmatrix}a_1\\\vdots\\a_r\end{pmatrix}}{a_1w_1+\cdots+a_rw_r}
+    \end{align*}
+  の像$\Img(\nu_{(w_1,\ldots,w_r)})$を,
+  $(w_1,\ldots,w_r)$で生成される$V$の部分空間と呼び,
+  $\Braket{w_1,\ldots,w_r}_{\KK}$
+  で表す.  
+\end{definition}
+
 \begin{example}
   $A\in \KK^{m\times n}$とし,
   \begin{align*}
-    \shazo{\varphi}{\KK^{n}}{\KK^{m}}
+    \shazo{\mu_A}{\KK^{n}}{\KK^{m}}
     {x}{Ax}
   \end{align*}
-  とすると, $\varphi$
-  は線形写像.
+  とすると, $\mu_A$
+  は$\KK$線形写像.
   \begin{align*}
-    \Ker(\varphi)=\Set{x\in\KK^n|Ax=\zzero_m}
+    \Ker(\mu_A)=\Set{x\in\KK^n|Ax=\zzero_m}
   \end{align*}
   であり, これは斉次連立一次方程式の解空間である.
   また, $A=(\aaa_1|\cdots|\aaa_n)$と列ベクトル表示すると
   \begin{align*}
-    \Img(\varphi)=\Set{x_1\aaa_1+\cdots+x_n\aaa_n|x_1,\ldots,x_n\in \KK}
+    \Img(\mu_A)=\Set{x_1\aaa_1+\cdots+x_n\aaa_n|x_1,\ldots,x_n\in \KK}
   \end{align*}
   である. これは, $\Set{\aaa_1,\ldots,\aaa_n}$を含む最小の部分空間である.
 \end{example}
@@ -2473,7 +2506,7 @@ $\KK$を体とし,
   次は同値:
   \begin{enumerate}
   \item $\varphi$は$\underline{0_W}$.
-  \item $\Img(\varphi)=0_W$.
+  \item $\Img(\varphi)=\Set{0_W}$.
   \end{enumerate}
 \end{prop}
 \begin{proof}\end{proof}
@@ -2486,7 +2519,9 @@ $\KK$を体とし,
     {v}{v}
   \end{align*}
   は, 単射な線形写像.
+  特に, $V\simeq \Img(\nu)$.
 \end{prop}
+\begin{proof}\end{proof}
 
 
 \section{部分空間ではない例}
@@ -2567,20 +2602,22 @@ $\KK$を体とする.
 \begin{align*}
   \begin{pmatrix}0\\\vdots\\0\\1\\0\\\vdots\\0\end{pmatrix}
 \end{align*}
-を$\ee_i$で表し,
+を$\ee^{(n)}_i$で表し,
 第$i$基本ベクトルと呼ぶ.
-これらの組 $(\ee_1,\ee_2,\ldots,\ee_n)$を
+これらの組 $(\ee^{(n)}_1,\ee^{(n)}_2,\ldots,\ee^{(n)}_n)$を
 $\KK^n$の標準基底と呼ぶ.
 次のことが定義からわかる:
 \begin{enumerate}
+  \item
+    $\sum_{i=1}^na_i\ee^{(n)}_i=\zzero$ならば, $a_1=\cdots=a_n=0$.
 \item
     \begin{align*}
       \aaa=\begin{pmatrix}a_1\\\vdots\\a_n\end{pmatrix}\in\KK^n
     \end{align*}
-    に対し, $\aaa=\sum_{i=1}^na_i\ee_i$.
-  \item
-    $\sum_{i=1}^na_i\ee_i=\zzero$ならば, $a_1=\cdots=a_n=0$.
+    に対し, $\aaa=\sum_{i=1}^na_i\ee^{(n)}_i$.
 \end{enumerate}
+
+
 \section{有限次元線形空間と基底}
 \subsection{定義}
 
@@ -2604,7 +2641,7 @@ $\KK^n$の標準基底と呼ぶ.
   \item $(w_1,\ldots,w_r)$は$\KK$上一次独立.
   \item 線形写像
     \begin{align*}
-      \shazo{\varphi}{\KK^r}{V}
+      \shazo{\nu_{(w_1,\ldots,w_r)}}{\KK^r}{V}
       {\begin{pmatrix}a_1\\\vdots\\a_r\end{pmatrix}}{\sum_{i=1}^{r}a_i\act w_i}
     \end{align*}
     が単射.
@@ -2612,12 +2649,26 @@ $\KK^n$の標準基底と呼ぶ.
 \end{prop}
 
 \begin{prop}
-  $(w_1,\ldots,w_r)$を$V$の基底とする.
-  $v\in V$とするとき,
-  $v$は$w_1,\ldots,w_r$の線型結合として一意に書き表せる.
-  つまり,
- (双対基底でつかう)  
+  $w_i\in V$とし, 
+  $(w_1,\ldots,w_r)$は$\KK$上一次独立であるとする.
+  \begin{align*}
+  v&=a_1\act w_1+\cdots +a_r\act w_r\\
+  v'&=a'_1\act w_1+\cdots +a'_r\act w_r\\
+  \end{align*}
+  とする.
+  このとき以下は同値:
+  \begin{enumerate}
+  \item $v=v'$.
+  \item すべての$i$に対し, $a_i=a'_i$.
+  \end{enumerate}
 \end{prop}
+\begin{proof}
+\begin{align*}
+v&=\nu_{(w_1,\ldots,w_r)}(\begin{pmatrix}a_1\\\vdots\\a_n\end{pmatrix}), &
+v'&=\nu_{(w_1,\ldots,w_r)}(\begin{pmatrix}a'_1\\\vdots\\a'_n\end{pmatrix}) 
+\end{align*}
+である. $\nu_{(w_1,\ldots,w_r)}$が単射であることから, すぐわかる.
+\end{proof}
 
 \begin{definition}
   $(V,+,\act,\zzero)$を$\KK$線形空間とし,
@@ -2626,10 +2677,12 @@ $\KK^n$の標準基底と呼ぶ.
   組$(w_1,\ldots,w_r)$は$V$の生成系であるという.
   \begin{enumerate}
   \item
-    $v\in V$とする.
-    このとき,
+    すべての$v\in V$に対して次が成り立つ:
+    \begin{enumerate}
+    \item
     $\sum_{i=1}^{r} c_i\act w_i=v$
     を満たす$c_1,\ldots,c_r\in\KK$ が存在する.
+    \end{enumerate}
   \end{enumerate}
 \end{definition}
 \begin{prop}
@@ -2637,29 +2690,25 @@ $\KK^n$の標準基底と呼ぶ.
   $w_1,\ldots,w_r\in V$とする.
   このとき以下は同値:
   \begin{enumerate}
-  \item $(w_1,\ldots,w_r)$は$\KK$の生成系である.
-  \item 線形写像
-    \begin{align*}
-      \shazo{\varphi}{\KK^r}{V}
-      {\begin{pmatrix}a_1\\\vdots\\a_r\end{pmatrix}}{\sum_{i=1}^{r}a_i\act w_i}
-    \end{align*}
+  \item $(w_1,\ldots,w_r)$は$V$の生成系である.
+  \item $V=\Braket{w_1,\ldots,w_r}_\KK$.
+  \item 線形写像 $\nu_{(w_1,\ldots,w_r)}\colon \KK^r \to V$
     が全射.
   \end{enumerate}
 \end{prop}
 
-\begin{definition}
-  $(V,+,\act,\zzero)$を$\KK$線形空間とし,
-  $w_1,\ldots,w_r\in V$とする.
-  線形写像
-  \begin{align*}
-    \shazo{\varphi}{\KK^r}{V}
-          {\begin{pmatrix}a_1\\\vdots\\a_r\end{pmatrix}}{\sum_{i=1}^{r}a_i\act w_i}
-  \end{align*}
-  の像$\Img(\varphi)$を,
-  $(w_1,\ldots,w_r)$で生成される$V$の部分空間と呼び,
-  $\Braket{w_1,\ldots,w_r}_{\KK}$
-  で表す.  
-\end{definition}
+\begin{prop}
+  $V, U$を$\KK$線形空間とし,
+  $(w_1,\ldots,w_r)$は$V$の生成系であるとする.
+  線形写像$\varphi\colon V\to U$,
+  $\psi\colon V\to U$に対し,
+  以下は同値:
+  \begin{enumerate}
+  \item $\psi=\varphi$.
+  \item すべての$i$に対し,  $\psi(w_i)=\varphi(w_i)$.
+  \end{enumerate}
+\end{prop}
+
 
 
 \begin{definition}
@@ -2678,39 +2727,21 @@ $\KK^n$の標準基底と呼ぶ.
   このとき以下は同値:
   \begin{enumerate}
   \item $(w_1,\ldots,w_r)$は$V$の基底である.
-  \item 線形写像
-    \begin{align*}
-      \shazo{\varphi}{\KK^r}{V}
-      {\begin{pmatrix}a_1\\\vdots\\a_r\end{pmatrix}}{\sum_{i=1}^{r}a_i\act w_i}
-    \end{align*}
+  \item 線形写像 $\nu_{(w_1,\ldots,w_r)}\colon \KK^r\to V$
     が同型写像.
   \end{enumerate}
 \end{prop}
 
-\begin{lemma}
-  $(V,+,\act,\zzero)$を$\KK$線形空間とし,
-  $(w_1,\ldots,w_r)$も
-  $(v_1,\ldots,v_l)$も
-  は$V$の基底であるとする.
-  このとき, $r=l$.
-\end{lemma}
-\begin{proof}
-  次は同値:
-  \begin{enumerate}
-  \item $\KK^n\simeq \KK^m$.
-  \item $n=m$.
-  \end{enumerate}
-  したがって,
-  $\KK^r \simeq V\simeq \KK^l$であるこから,
-  $r=l$.
-\end{proof}
+\begin{prop}
+  $(w_1,\ldots,w_r)$を$V$の基底とする.
+  $v\in V$とするとき,
+  $v$は$w_1,\ldots,w_r$の線型結合として一意に書き表せる.
+  つまり,
+  $v=a_1\act w_1+\ldots+a_r\act w_r$
+  を満たす$a_1,\ldots, a_r\in\KK$がただ一組存在する.
+\end{prop}
 
-\begin{definition}
-  $V\simeq \KK^n$であるとき,
-  $V$は有限次元線形空間であるという.
-  また$n$を$V$の次元と呼び,
-  $\dim_\KK(V)$で表す.
-\end{definition}
+
 \begin{lemma}
   $V$を$\KK$線形空間とし, $n>0$とする.
   次は同値である:
@@ -2720,56 +2751,51 @@ $\KK^n$の標準基底と呼ぶ.
   \end{enumerate}
 \end{lemma}
 
-\begin{remark}
-BasisとBasis elementの違い.
-\end{remark}
+\begin{cor}
+  $V$を$\KK$線形空間とし,
+  $(w_1,\ldots,w_r)$も
+  $(v_1,\ldots,v_l)$も
+  は$V$の基底であるとする.
+  このとき, $r=l=\dim_{\KK}(V)$.
+\end{cor}
+
+
 
 \subsection{例}
 \begin{example}
-  $\KK^n$の標準基底$(\ee_1,\ldots,\ee_n)$は,
+  $\KK^n$の標準基底$(\ee^{(n)}_1,\ldots,\ee^{(n)}_n)$は,
   $\KK^n$の基底である.
 \end{example}
 
 \begin{example}
-  $v_1,\ldots,v_n\in \KK^m$とする.
-  縦ベクトル$v_1,\ldots,v_n$を並べて得られる行列を$A$,
-  つまり
-  \begin{align*}
-    A=
-    \begin{pmatrix}
-      v_1|\cdots|v_n
-    \end{pmatrix}
-  \end{align*}
-  とおく.
-  また,
-  \begin{align*}
-    \shazo{\varphi}{\KK^r}{V}
-          {\begin{pmatrix}a_1\\\vdots\\a_r\end{pmatrix}}{\sum_{i=1}^{r}a_i\act w_i}
-  \end{align*}
-  とする.  
+$\KK$を体とし,
+  $\aaa_1,\ldots,\aaa_n\in \KK^m$とする.
+  縦ベクトル$\aaa_1,\ldots,\aaa_n$を並べて得られる行列を$A$とする.
   このとき,
   \begin{enumerate}
   \item 次は同値:
     \begin{enumerate}
-      \item $(v_1,\ldots,v_n)$は$V$の生成系.
-      \item $\varphi$が全射.
+      \item $(\aaa_1,\ldots,\aaa_n)$は$\KK^m$の生成系.
       \item $\rank(A)=m$
     \end{enumerate}
   \item 次は同値:
     \begin{enumerate}
-      \item $(v_1,\ldots,v_n)$は$\KK$上一次独立.
-      \item $\varphi$が単射.
-      \item $\rank(A)=n$
+      \item $(\aaa_1,\ldots,\aaa_n)$は$\KK$上一次独立.
+      \item $\rank(A)=n$.
     \end{enumerate}
   \item 次は同値:
     \begin{enumerate}
-      \item $(v_1,\ldots,v_n)$は$V$の基底.
-      \item $\varphi$が全単射.
+      \item $(\aaa_1,\ldots,\aaa_n)$は$\KK^m$の基底.
       \item $\rank(A)=m=n$.
       \item $A$は正則.
     \end{enumerate}
   \end{enumerate}
+したがって,
+$\KK^m$の基底は$m$次正則行列の分だけ選び方がある.
 \end{example}
+\begin{remark}
+BasisとBasis elementの違い.
+\end{remark}
 
 
 \begin{example}
@@ -2793,16 +2819,14 @@ BasisとBasis elementの違い.
 
 
 \begin{example}
-双対基底.  $\Hom$の基底.
-\end{example}
-
-
-\begin{example}
   $V$を1次元$\KK$-線形空間であるとする.
   $v\in V\setminus \Set{\zzero}$とすると,
   $(v)$は$V$の基底.
 \end{example}
 
+\begin{example}
+双対基底.  $\Hom$の基底.
+\end{example}
 
 \subsection{性質}
 \begin{prop}
@@ -2827,6 +2851,7 @@ BasisとBasis elementの違い.
 \end{prop}
 
 \begin{prop}
+\label{prop:basis:ext}
   $W$をベクトル空間とし, $V$を$W$の部分空間とする.
   $(v_1,\ldots,v_n)$を$V$の基底とする.
   このとき,
@@ -2834,8 +2859,15 @@ BasisとBasis elementの違い.
   $(v_1,\ldots,v_n,w_1,\ldots,w_m)$が$W$の基底となるものが
   存在する.  
 \end{prop}
+\begin{remark}
+\Cref{prop:basis:ext}で得られる$W$の基底
+  $(v_1,\ldots,v_n,w_1,\ldots,w_m)$
+  を,
+  $V$の基底$(v_1,\ldots,v_n)$を延長して得られる$W$の基底と呼ぶことがある.
+\end{remark}
 
 \begin{prop}
+$\KK$を体とする.
   $W$を線形空間とし, $V$を$W$の部分空間とする.
   このとき,  $\dim_\KK V \leq \dim_\KK W$.
 \end{prop}
@@ -2853,42 +2885,43 @@ BasisとBasis elementの違い.
   $U$をベクトル空間とし, $V$, $W$を$U$の部分空間とする.
   このとき,  $\dim_\KK(V+W)=\dim_\KK(V)+\dim_\KK(W) - \dim_\KK(W\cap V)$.
 \end{prop}
-\begin{prop}
+
+\begin{cor}
   $U$をベクトル空間とし, $V$, $W$を$U$の部分空間とする.
-  このとき,
+  このとき, 以下は同値:
   \begin{enumerate}
   \item $V+W=V\oplus W$.
   \item $\dim_\KK(V+W)=\dim_\KK(V)+\dim_\KK(W)$.
   \end{enumerate}
-\end{prop}
+\end{cor}
 
-\begin{prop}
+\begin{cor}
   $U$を有限次元ベクトル空間とし, $V$を$U$の部分空間とする.
   このとき,
   $U=V\oplus W$を満たす$U$の部分空間$W$が存在する.
-\end{prop}
+\end{cor}
 
-\begin{prop}
+\begin{cor}
   $U$を$\KK$-線形空間とし, $V, W$を$U$の部分空間とする.
   $(v_1,\ldots,v_n)$を$V$の基底,
   $(w_1,\ldots,w_m)$を$W$の基底とする.
   $U=V\oplus W$と内部直和に分解されるとき,
   $(v_1,\ldots,v_n,w_1,\ldots,w_m)$
   は$U$の基底である.
-\end{prop}
-
-\begin{cor}
-  $U$を$n$次元$\KK$線形空間とし,
-  $U=V_1\oplus \cdots \oplus V_n$と
-  $n$個の1次元部分空間の内部直和に分解されるとする.
-  $v_i\in V_i \setminus \Set{0}$とすると,
-  $(v_1,\ldots,v_n)$は$U$の基底.
 \end{cor}
+
+%% \begin{cor}
+%%   $U$を$n$次元$\KK$線形空間とし,
+%%   $U=V_1\oplus \cdots \oplus V_n$と
+%%   $n$個の1次元部分空間の内部直和に分解されるとする.
+%%   $v_i\in V_i \setminus \Set{0}$とすると,
+%%   $(v_1,\ldots,v_n)$は$U$の基底.
+%% \end{cor}
 
 
 \begin{prop}
   $V$を$\KK$線形空間とし,
-  $v_1,\ldots, v_n\in V\setminus\Set{\zzero}$とする.
+  $v_1,\ldots, v_n\in V$とする.
   また,
   $V_i=\Braket{v_i}_\KK=\Set{c\act v_i|c\in\KK}$とする.
   このとき, 以下は同値:
@@ -2950,10 +2983,33 @@ BasisとBasis elementの違い.
 \end{prop}
 
 
+\begin{prop}
+$V$を$\KK$線形空間とする.
+  $v_i\in V$とし,
+  $(v_1,\ldots, v_r)$が$\KK$上一次独立であるとする.
+  このとき,
+  $1\leq i_1<\cdots<i_k \leq r$
+  $(v_{i_1},\ldots, v_{i_k})$は$\KK$上一次独立.
+\end{prop}
 
 \begin{prop}
-  基底の交換定理.
+  $(v_1,\ldots, v_r)$が極大な一次独立な組は基底.
 \end{prop}
+
+
+\begin{prop}
+  $V$を$\KK$線形空間とする.
+  $v_i\in V$とし,
+  $(v_1,\ldots, v_r)$が$V$の生成系であるとする.
+  このとき,
+  $w_1,\ldots,w_l\in V$に対し,
+  $(v_{1},\ldots, v_{r},w_1,\ldots,w_l)$は$V$の生成系.
+\end{prop}
+
+\begin{prop}
+  $(v_1,\ldots, v_r)$が極小な一次従属な組は基底.
+\end{prop}
+
 \begin{prop}
   $V$を$\KK$線形空間とする.
   次は同値:
@@ -2961,41 +3017,24 @@ BasisとBasis elementの違い.
   \item $\dim_{\KK}(V)=n$.
   \item $\max\Set{r|(v_1,\ldots,v_r)\text{は一次独立}}=n$.
   \item $(v_1,\ldots, v_r)$が極大な一次独立な組なら$n=r$.
-  \item $\min\Set{r|(v_1,\ldots,v_r)\text{は一次従属}}=n$.
-  \item $(v_1,\ldots, v_r)$が極小な一次従属な組なら$n=r$.
+  \item $\min\Set{r|(v_1,\ldots,v_r)\text{は$V$の生成系}}=n$.
+  \item $(v_1,\ldots, v_r)$が極小な$V$の生成系なら$n=r$.
   \end{enumerate}
 \end{prop}
-
 \begin{prop}
-  $(v_1,\ldots, v_r)$が極大な一次独立な組は基底.
-\end{prop}
-\begin{prop}
-  $(v_1,\ldots, v_r)$が極小な一次従属な組は基底.
-\end{prop}
-
-
-\section{無限次元線形空間}
-\begin{definition}
-$\KK$を体とし,
-$V$を$\KK$-ベクトル空間とする.
-どの$n\in\NN$に対しても,
-単射な線形写像$\varphi_n\colon \KK^n\to V$が存在するとき,
-$V$は無限次元ベクトル空間であるという.
-\end{definition}
-\begin{remark}
-$\KK$を体とし,
-$V$を$\KK$-ベクトル空間とする.
-このとき, 以下は同値:
+  $V$を$\KK$線形空間とする.
+  $(v_1,\ldots, v_n)$,
+  $(w_1,\ldots, w_n)$が
+  $V$の基底であるとする.
+$\Set{v_1,\ldots, v_n}\neq \Set{w_1,\ldots, w_n}$
+とする.
+このとき, 次を満たす$i$, $j$が存在する.
 \begin{enumerate}
-\item
-$V$は無限次元ベクトル空間であるという.
-\item
-どの$n\in\NN$に対しても,
-$\KK^n$と$V$が同型にならない.
+\item $w_i \not\in \Set{v_1,\ldots,v_n}$.
+\item $(v_1,\ldots,v_{i-1},w_{j},v_{i+1},\ldots,v_n)$が$V$の基底.
 \end{enumerate}
-\end{remark}
-無限次元線形空間の基底については,
-範囲外であるのでここでは省略する.
+\end{prop}
+
 
 \sectionX{章末問題}
 \begin{quiz}
@@ -3106,7 +3145,7 @@ $U/V$上の演算として定義できる.
 \begin{proof}
   $V=\Ker(\varphi)$とする.
   
-  $[u]_V=[u']_V$とすると, $u-u'\in W=\Ker(\varphi)$であるので,
+  $[u]_V=[u']_V$とすると, $u-u'\in V=\Ker(\varphi)$であるので,
   $\varphi(u-u')=\zzero_W$である.
   よって, $\varphi(u)-\varphi(u')=\zzero_W$であるから,
   $\varphi(u)=\varphi(u')$.
@@ -3143,7 +3182,7 @@ $U/V$上の演算として定義できる.
 
 \begin{cor}
 $U=V\oplus W$
-  であるとき, $U/V\simeq= W$.
+  であるとき, $U/V\simeq W$.
 \end{cor}
 \begin{proof}
 $U=V\oplus W$であるので,
@@ -3246,44 +3285,55 @@ $U=V\oplus W$であるので,
 \chapter{表現行列}
 \section{数ベクトル空間上の線形写像}
 $\KK^n$から$\KK^m$への$\KK$-線形写像について考える.
-\begin{lemma}
-  $\varphi\colon \KK^n\to \KK^m$,
-  $\psi\colon \KK^n\to \KK^m$を$\KK$-線形写像とする.
-  すべての$i$に対し, $\varphi(\ee_i)=\psi(\ee_i)$とする.
-  このとき,
-  $\varphi=\psi$.
-\end{lemma}
-\begin{proof}
-  \begin{align*}
-    \aaa=\begin{pmatrix}a_1\\\vdots\\a_n\end{pmatrix}
-    \in\KK^n
+%% \begin{lemma}
+%%   $\varphi\colon \KK^n\to \KK^m$,
+%%   $\psi\colon \KK^n\to \KK^m$を$\KK$-線形写像とする.
+%%   すべての$i$に対し, $\varphi(\ee^{(n)}_i)=\psi(\ee^{(n)}_i)$とする.
+%%   このとき,
+%%   $\varphi=\psi$.
+%% \end{lemma}
+%% \begin{proof}
+%%   \begin{align*}
+%%     \aaa=\begin{pmatrix}a_1\\\vdots\\a_n\end{pmatrix}
+%%     \in\KK^n
+%% \end{align*}
+%% とする. このとき, $\aaa=a_1\ee^{(n)}_1+\cdots+a_n\ee^{(n)}_n$である.
+%%   \begin{align*}
+%%     \varphi(\aaa)&=\varphi(a_1\ee^{(n)}_1+\cdots+a_n\ee^{(n)}_n)\\
+%%     &=a_1\varphi(\ee^{(n)}_1)+\cdots+a_n\varphi(\ee^{(n)}_n).\\
+%%     \psi(\aaa)
+%%     &=\psi(a_1\ee^{(n)}_1+\cdots+a_n\ee^{(n)}_n)\\
+%%     &=a_1\psi(\ee^{(n)}_1)+\cdots+a_n\psi(\ee^{(n)}_n).
+%%   \end{align*}
+%%   よって$\varphi(\aaa)=\psi(\aaa)$.
+%% \end{proof}
+
+%% \begin{lemma}
+%%   $\aaa_1,\ldots,\aaa_n\in \KK^m$とする.
+%%   このとき,
+%%   \begin{align*}
+%%     \shazo{\varphi}{\KK^n}{\KK^m}
+%%           {\begin{pmatrix}x_1\\\vdots\\x_n\end{pmatrix}}
+%%           {x_1\aaa_1+\cdots+x_n\aaa_n}
+%%   \end{align*}
+%%   とすると, これは線形写像.
+%%   また, $A$を$\aaa_1,\ldots,\aaa_n$を並べた$(m,n)$-行列とする.
+%%   つまり, $A=(\aaa_1|\cdots|\aaa_n)$とする.
+%%   このとき, $\varphi(\xx)=A\xx$.
+%% \end{lemma}
+%% \begin{proof}\end{proof}
+
+$A\in\KK^{m\times n}$に対して,
+\begin{align*}
+  \shazo{\mu_A}{\KK^n}{\KK^m}
+        {\xx}
+        {A\xx}
 \end{align*}
-とする. このとき, $\aaa=a_1\ee_1+\cdots+a_n\ee_n$である.
-  \begin{align*}
-    \varphi(\aaa)&=\varphi(a_1\ee_1+\cdots+a_n\ee_n)\\
-    &=a_1\varphi(\ee_1)+\cdots+a_n\varphi(\ee_n).\\
-    \psi(\aaa)
-    &=\psi(a_1\ee_1+\cdots+a_n\ee_n)\\
-    &=a_1\psi(\ee_1)+\cdots+a_n\psi(\ee_n).
-  \end{align*}
-  よって$\varphi(\aaa)=\psi(\aaa)$.
-\end{proof}
-
-\begin{lemma}
-  $\aaa_1,\ldots,\aaa_n\in \KK^m$とする.
-  このとき,
-  \begin{align*}
-    \shazo{\varphi}{\KK^n}{\KK^m}
-          {\begin{pmatrix}x_1\\\vdots\\x_n\end{pmatrix}}
-          {x_1\aaa_1+\cdots+x_n\aaa_n}
-  \end{align*}
-  とすると, これは線形写像.
-  また, $A$を$\aaa_1,\ldots,\aaa_n$を並べた$(m,n)$-行列とする.
-  つまり, $A=(\aaa_1|\cdots|\aaa_n)$とする.
-  このとき, $\varphi(\xx)=A\xx$.
-\end{lemma}
-\begin{proof}\end{proof}
-
+とおくと, これは$\KK$-線形写像であった.
+また, 線形写像$\varphi\colon \KK^n\to \KK^m$に対し,
+$\varphi(e^{(n)}_1),\ldots,\varphi(e^{(n)}_n)\in\KK^m$を並べて得られる
+行列を$A$と置くと,
+$\varphi=\mu_A$であった.
 よって, 
 $\KK^n$から$\KK^m$への$\KK$-線形写像を考えるなら,
 $A\in\KK^{m\times n}$に対して,
@@ -3302,6 +3352,7 @@ $A\in\KK^{m\times n}$に対して,
   \item $\mu_{A+A'}=\mu_A+\mu_{A'}$.
   \item $\mu_{cA}=c\mu_A$.
   \item $\mu_{BA}=\mu_B\circ\mu_{A}$.
+  \item $\mu_{E_n}=\id_{\KK^n}$
   \end{enumerate}
 \end{prop}
 \begin{proof}\end{proof}
@@ -3309,10 +3360,10 @@ $A\in\KK^{m\times n}$に対して,
 \begin{cor}
   $A\in \KK^{n\times n}$とする.
   このとき,
-  以下が成り立つ:
+  以下は同値:
   \begin{enumerate}
-  \item $\mu_{E_n}=\id_{\KK^n}$
-  \item $A$が正則$\implies \mu_A$は同型写像.
+  \item $A$が正則
+  \item $\mu_A$は同型写像.
   \end{enumerate}
 \end{cor}
 \begin{proof}\end{proof}
@@ -3323,7 +3374,7 @@ $A\in\KK^{m\times n}$に対して,
   $A=(\aaa_1|\cdots|\aaa_n)$とすると,
   以下が成り立つ:
   \begin{enumerate}
-  \item $\Img(\mu_A)=\Braket{\aaa_1,\ldots,\aaa_n}$.
+  \item $\Img(\mu_A)=\Braket{\aaa_1,\ldots,\aaa_n}_{\KK}$.
   \item $\Ker(\mu_A)=\Set{\xx\in\KK^n|A\xx=\zzero_m}$. つまり, $\Ker(\mu_A)$は,
     方程式$A\xx=\zzero_m$の解の空間.
   \end{enumerate}
@@ -3374,7 +3425,7 @@ $\nu_{(v_1,\ldots,v_n)}$は同型写像である.
   $V$, $W$を$\KK$-線形空間とし,
   $D=(v_1,\ldots,v_n)$,
   $B=(w_1,\ldots,w_m)$とする.
-  $\varphi\colon V\to W$を$\KK$-線形写像に対し,
+  $\KK$-線形写像$\varphi\colon V\to W$に対し,
   $(\nu_B)^{-1}\circ \varphi\circ \nu_D$は,
   $\KK^n$から $\KK^m$への$\KK$-線形写像である.
   $\mu_A=(\nu_B)^{-1}\circ \varphi\circ \nu_D$
@@ -3442,17 +3493,17 @@ $J=\Set{1,\ldots,m}$.
   $C=(u_1,\ldots,u_l)$を$U$の基底
   とする.
   $\varphi\colon V\to W$を$\KK$-線形写像とし,
-  $A\in\KK^{m\times n}$を$\varphi$の$D$, $B$に関する表現行列とする.
+  $F\in\KK^{m\times n}$を$\varphi$の$D$, $B$に関する表現行列とする.
   $\varphi'\colon V\to W$を$\KK$-線形写像とし,
-  $A'\in\KK^{m\times n}$を$\varphi'$の$D$, $B$に関する表現行列とする.
+  $F'\in\KK^{m\times n}$を$\varphi'$の$D$, $B$に関する表現行列とする.
   $\psi\colon W\to U$を$\KK$-線形写像とし,
-  $B\in\KK^{m\times n}$を$\psi$の$B$, $C$に関する表現行列とする.
+  $G\in\KK^{m\times n}$を$\psi$の$B$, $C$に関する表現行列とする.
   $c\in \KK$とする.
 このとき,
 \begin{enumerate}
-  \item $\varphi+\varphi'$の$B$, $D$に関する表現行列は$A+A'$.
-  \item $c\varphi+\varphi'$の$B$, $D$に関する表現行列は$cA$.
-  \item $\psi\varphi'$の$B$, $C$に関する表現行列は$BA$.
+  \item $\varphi+\varphi'$の$B$, $D$に関する表現行列は$F+F'$.
+  \item $c\varphi+\varphi'$の$B$, $D$に関する表現行列は$cF$.
+  \item $\psi\varphi'$の$B$, $C$に関する表現行列は$GF$.
 \end{enumerate}
 \end{prop}
 \begin{proof}\end{proof}
@@ -3523,12 +3574,25 @@ $J=\Set{1,\ldots,m}$.
   $T$は
   $\id_{V}\colon V\to V$の$D,D'$に関する表現行列である.
 \end{remark}
-  $\mu_T=(\nu_{D'})^{-1}\circ\nu_{D}$
-となる$T\in\KK^{n\times n}$が,
-($\nu_{D}$の後に$(\nu_{D'})^{-1}$が来ているにも関わらず)
-`基底$D'$から基底$D$への'変換行列
-と呼ばれるのは,
-\Cref{thm:trasmat:description}が成り立つからである.
+
+\begin{remark}
+  $D=(v_1,\ldots,v_n)$を$V$の基底とすると,
+  $\mu_D$は同型写像であり,
+  $D=(\mu_D(\ee^{(n)}_1)),\ldots,\mu_D(\ee^{(n)}_1)))$である.
+  逆に, 同型写像$\varphi\colon \KK^n\to V$が与えられたとき,
+  $D=(\varphi(\ee^{(n)}_1)),\ldots,\varphi(\ee^{(n)}_1)))$は$V$の基底である.
+  したがって,
+  $V$の基底を与えることと同型写像$\varphi\colon \KK^n\to V$は同じことである.
+  $V$の基底$D$, $D'$が与えられたとき, $D'$から$D$への基底の変換行列$T$は
+  $\mu_T=(\nu_{D'})^{-1}\circ\nu_{D}$を満たす.
+  この条件は,
+  $\nu_{D'}\circ\mu_T=\nu_{D}$と書き直すことができる.
+  これは,
+  基底$D'$を与える同型写像$\nu_{D'}$
+  に, $D'$から$D$への基底の変換行列による線形写像$\mu_T$を合成すると,
+  基底$D$を与える同型写像$\nu_{D}$が得られることを意味している.
+\end{remark}
+基底の変換行列の具体的な成分は以下のように計算できる.
 \begin{prop}
   \label{thm:trasmat:description}
   $V$を$n$次元$\KK$-線形空間とする.
@@ -3546,26 +3610,26 @@ $J=\Set{1,\ldots,m}$.
   \end{align*}
 \end{prop}
 \begin{proof}
-  $\ttt_j=((\nu_{D'})^{-1}\circ\nu_{D})(\ee_j)$とする.
+  $\ttt_j=((\nu_{D'})^{-1}\circ\nu_{D})(\ee^{(n)}_j)$とする.
   このとき,
   \begin{align*}
      \nu_{D'}(\ttt_j)
-    &=(\nu_{D'}\circ(\nu_{D'})^{-1}\circ\nu_{D})(\ee_j))\\
+    &=(\nu_{D'}\circ(\nu_{D'})^{-1}\circ\nu_{D})(\ee^{(n)}_j))\\
     &=(\nu_{D}(v_j)\\
     &=v_j
   \end{align*}
   である.
   一方,
   \begin{align*}
-    \ttt_j&=((\nu_{D'})^{-1}\circ\nu_{D})(\ee_j)\\
-    &=T\ee_j\\
-    &=\sum_{i=1}^n t_{i,j}\ee_j
+    \ttt_j&=((\nu_{D'})^{-1}\circ\nu_{D})(\ee^{(n)}_j)\\
+    &=T\ee^{(n)}_j\\
+    &=\sum_{i=1}^n t_{i,j}\ee^{(n)}_j
   \end{align*}
   であるので,
   \begin{align*}
     \nu_{D'}(\ttt_j)
-    &=\nu_{D'}(\sum_{i=1}^n t_{i,j}\ee_j)\\
-    &=\sum_{i=1}^n t_{i,j}\nu_{D'}(\ee_j)\\
+    &=\nu_{D'}(\sum_{i=1}^n t_{i,j}\ee^{(n)}_j)\\
+    &=\sum_{i=1}^n t_{i,j}\nu_{D'}(\ee^{(n)}_j)\\
     &=\sum_{i=1}^n t_{i,j}v'_j.
   \end{align*}
 \end{proof}
@@ -3592,11 +3656,11 @@ $J=\Set{1,\ldots,m}$.
 
 \begin{prop}
   $V$を$n$次元$\KK$-線形空間とする.
-  $D=(v_1,\ldots, v_n)$を$V$の基底とする.
+  $D'=(v'_1,\ldots, v'_n)$を$V$の基底とする.
   $T=(t_{i,j})_{i\in I, j\in I}$とし,
   $v_j=\sum_{i=1}^n t_{i,j}v'_i$とする.
   $T$が正則なら,
-  $D'=(v'_1,\ldots, v'_n)$は$V$の基底であり,
+  $D=(v_1,\ldots, v_n)$は$V$の基底であり,
   $D'$から$D$への変換行列は$T$である.
 \end{prop}
 \begin{proof}\end{proof}
@@ -3628,12 +3692,17 @@ $J=\Set{1,\ldots,m}$.
 
 \begin{prop}
   $V$, $W$を$\KK$-線形空間とする.
-  $D, D'$を$V$の基底とする.
-  $B, B'$を$V$の基底とする.
+  $D$を$V$の基底とする.
+  $B$を$W$の基底とする.
   $A$を$\varphi$の$D$, $B$に関する表現行列とする.
   このとき,
   \begin{align*}
-    \Set{A'|\text{$\varphi$の基底$D'$, $B'$に関する表現行列}}
+    \Set{A'|
+\begin{array}{c}
+\text{$D'$は$V$の基底.}\\
+\text{$B'$は$W$の基底.}\\
+\text{$\varphi$の基底$D'$, $B'$に関する表現行列.}
+\end{array}}
     &=
     \Set{F^{-1}AT|\text{$F^{-1}$,$T$は正則}}.
   \end{align*}
@@ -3641,7 +3710,17 @@ $J=\Set{1,\ldots,m}$.
 \begin{proof}\end{proof}
 
 
-
+\section{線形変換の表現行列}
+\begin{definition}
+$V$を$\KK$線形空間とする.
+線形写像$\varphi\colon V \to V$
+を$V$上の線形変換と呼ぶ.
+\end{definition}
+$V$上の線形変換とは,
+定義域も終域も
+$V$であるような線形写像のことである.
+このような場合
+定義域と終域とで同一の基底をとるのが自然である.
 \begin{definition}
 $V$を$\KK$-線形空間とする.
   線形変換
@@ -3650,8 +3729,17 @@ $\varphi\colon V\to V$
 $V$の基底$D$
 に対し,
 $\varphi$の$D$, $D$に関する表現行列を,
-$\varphi$の$D$に関する行現行列と呼ぶ.
+$\varphi$の$D$に関する表現行列と呼ぶ.
 \end{definition}
+\begin{prop}
+線形変換$\varphi\colon V\to V$の基底$D$に関する表現行列を$A$とする.
+このとき,
+\begin{align*}
+\underbrace{\varphi\circ\cdots\circ\varphi}_n
+\end{align*}
+の基底$D$に関する表現行列は$A^n$である.
+\end{prop}
+
 \begin{prop}
   $V$を$\KK$-線形空間とする.
   $D, D'$を$V$の基底とする.
@@ -3660,7 +3748,7 @@ $\varphi$の$D$に関する行現行列と呼ぶ.
   $A'$を$\varphi$の$D'$に関する表現行列とする.
   このとき,
   \begin{align*}
-    A'=TAT^{-1}.
+    A'=T^{-1}AT.
   \end{align*}
 \end{prop}
 \begin{proof}\end{proof}
@@ -3671,9 +3759,13 @@ $\varphi$の$D$に関する行現行列と呼ぶ.
   $A$を$\varphi$の$D$に関する表現行列とする.
   このとき,
   \begin{align*}
-    \Set{A'|\text{$\varphi$の基底$D'$に関する表現行列}}
+    \Set{A'|
+\begin{array}{c}
+\text{$D'$は$V$の基底.}\\
+\text{$\varphi$の$D'$に関する表現行列}
+\end{array}}
     &=
-    \Set{TAT^{-1}|\text{$T$は正則}}.
+    \Set{T^{-1}AT|\text{$T$は正則}}.
   \end{align*}
 \end{prop}
 \begin{proof}\end{proof}
@@ -3989,8 +4081,8 @@ $V$を$\KK$-線形空間とし,
 $\varphi\colon V\to V$を線形変換とする.
 このとき, $\lambda\in \KK$
 \begin{align*}
-  \shazo{\varphi-\lambda\id_V}{V}{V}
-  {v}{\varphi(v)-\lambda v}
+  \shazo{\lambda\id_V-\varphi}{V}{V}
+  {v}{\lambda v-\varphi(v)}
 \end{align*}
 は線形写像である.
 \begin{definition}
@@ -3998,7 +4090,7 @@ $\varphi\colon V\to V$を線形変換とする.
   $\varphi\colon V\to V$を線形写像とする.
   $\lambda \in \KK$に対し,
   \begin{align*}
-    E(\varphi,\lambda) = \Ker(\varphi - \lambda\id_V)
+    E(\varphi,\lambda) = \Ker(\lambda\id_V-\varphi )
   \end{align*}
   とおく.
   $E(\varphi,\lambda)\neq \Set{\zzero}$であるとき,
@@ -4021,9 +4113,9 @@ $\varphi\colon V\to V$を線形変換とする.
   $\varphi\colon V\to V$を線形写像とする.
   $\lambda \in \KK$に対し,
   \begin{align*}
-    E(\varphi,\lambda) &= \Ker(\varphi - \lambda\id_V)\\
-    &= \Set{v\in V|(\varphi - \lambda\id_V)(v)=\zzero}\\
-    &= \Set{v\in V|\varphi(v) - \lambda v =\zzero}\\
+    E(\varphi,\lambda) &= \Ker( \lambda\id_V - \varphi)\\
+    &= \Set{v\in V|(\lambda\id_V-\varphi)(v)=\zzero}\\
+    &= \Set{v\in V|\lambda v-\varphi(v)  =\zzero}\\
     &= \Set{v\in V|\varphi(v) = \lambda v }
   \end{align*}
   である.
@@ -4097,7 +4189,7 @@ $\varphi\colon V\to V$を線形変換とする.
 $A$を$n$次正方行列とし,
 $V=\KK^n$とし,
 \begin{align*}
-  \shazo{\varphi}{\KK^n}{\KK^n}
+  \shazo{\mu_A}{\KK^n}{\KK^n}
   {v}{Av}
 \end{align*}
 という線形変換を考え,
@@ -4107,7 +4199,7 @@ $V=\KK^n$とし,
   $A\in\KK^{n\times n}$とする.
   $\lambda \in \KK$に対し,
   \begin{align*}
-    E(\varphi,\lambda) = \Set{v\in\KK^n|(A-\lambda E_n)v=\zzero_n}
+    E(\varphi,\lambda) = \Set{v\in\KK^n|(\lambda E_n-A)v=\zzero_n}
   \end{align*}
   とおく.
   $E(\varphi,\lambda)\neq \Set{\zzero}$であるとき,
@@ -4121,13 +4213,13 @@ $\lambda$が正方行列$A$の固有値であるとき,
 固有値$\lambda$に属する$A$の固有空間
 $E(\varphi,\lambda)$は,
 \begin{align*}
-    E(\varphi,\lambda) = \Set{v\in\KK^n|(A-\lambda E_n)v=\zzero_n}
+    E(\varphi,\lambda) = \Set{v\in\KK^n|(\lambda E_n-A)v=\zzero_n}
 \end{align*}
 である.
 これは,
-係数行列が$A-\lambda E_n$である斉次連立一次方程式の解空間そのものである.
+係数行列が$\lambda E_n-A$である斉次連立一次方程式の解空間そのものである.
 この斉次連立一次方程式の解空間は,
-$A-\lambda E_n$を行基本変形するなどして求める
+$\lambda E_n-A$を行基本変形するなどして求める
 (つまり, 基底を与える) ことができる.
 %基底を書くことができる.
 
@@ -4138,7 +4230,7 @@ $A-\lambda E_n$を行基本変形するなどして求める
   $\lambda \in \KK$に対し, 以下は同値:
   \begin{enumerate}
   \item $\lambda$は$A$の固有値.
-  \item $\det(A-\lambda E_n)=0$.
+  \item $\det(\lambda E_n-A)=0$.
   \end{enumerate}
 \end{prop}
 
@@ -4341,7 +4433,7 @@ $V=\KK^n$とし, 線形変換
       \begin{pmatrix}\lambda_1&&\\&\ddots&\\&&\lambda_n\end{pmatrix}
     \end{align*}
     を満たしているとき,
-    $P(\ee_i)$は固有値$\lambda_i$に属する$A$の固有ベクトルである.
+    $P(\ee^{(n)}_i)$は固有値$\lambda_i$に属する$A$の固有ベクトルである.
 \end{lemma}
 \begin{proof}\end{proof}
 
