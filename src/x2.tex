@@ -315,8 +315,19 @@
 \DeclareSymbolFont{symbols2}{LS1}{stixfrak}{m}{n}
 \DeclareMathSymbol{\tplus}{\mathbin}{symbols2}{"EB}
 \DeclareMathSymbol{\upin}{\mathrel}{symbols2}{"0E}
+\DeclareFontFamily{U}{matha}{\hyphenchar\font45}
+\DeclareFontShape{U}{matha}{m}{n}{
+      <5> <6> <7> <8> <9> <10> gen * matha
+      <10.95> matha10 <12> <14.4> <17.28> <20.74> <24.88> matha12
+      }{}
+\DeclareSymbolFont{matha}{U}{matha}{m}{n}
+\DeclareFontSubstitution{U}{matha}{m}{n}
+\DeclareMathSymbol{\hash}{\mathbin}{matha}{"23}
+
 \makeatother
-\newcommand{\pplus}{\tplus}
+%\newcommand{\pplus}{\tplus}
+\newcommand{\plus}{\tplus}
+\newcommand{\pplus}{\hash}
 \newcommand{\aact}{\mathbin{{}_\circ}}
 \newcommand{\act}{\mathbin{\boldsymbol{.}}}
 

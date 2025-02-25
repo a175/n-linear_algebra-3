@@ -934,26 +934,30 @@ a_{i,1}& a_{i,2}&\cdots &a_{i,n}
 また, 線形空間が同型であるということを定義する.
 
 \section{線形空間の定義とその例}
+本稿ではでは,
+特に断らなければ,
+$(\KK,+,\cdot,0,1)$を体とする.
+
 線形空間の定義と例を挙げる.
 
 \begin{definition}
-  $(\KK,+,\cdot,0,1)$を体とする.
   $V$を集合とする.
-  $\pplus\colon V\times V \to V$を$V$上の二項演算とする.
+  $\plus\colon V\times V \to V$を$V$上の二項演算とする.
   $\act \colon \KK\times V \to V$を$\KK$の$V$への作用とする.
   $0_V \in V$とする.
 
   以下の条件を満たすとき,
-  $(V,\pplus,\act ,0_V)$が$\KK$上のベクトル空間とか$\KK$-線形空間であるいう:
+  $(V,\plus,\act ,0_V)$は$\KK$上のベクトル空間であるとか
+  $\KK$-線形空間であるいう:
   \begin{enumerate}
   \item 
     \begin{enumerate}
-    \item $u,w\implies  u\pplus w=w\pplus u$.
+    \item $u,w \in V\implies  u\plus w=w\plus u$.
     \item
       \label{def:vecsp:item:sum:ass}
-      $v,w,u\in V \implies (v\pplus w)\pplus u=v\pplus (w\pplus u)$.
-    \item $w\in V \implies 0_V\pplus w=w$.
-    \item $w\in V\implies $ `$w\pplus x=0_V$を満たす$x\in V$が存在する'.
+      $v,w,u\in V \implies (v\plus w)\plus u=v\plus (w\plus u)$.
+    \item $w\in V \implies 0_V\plus w=w$.
+    \item $w\in V\implies $ `$w\plus x=0_V$を満たす$x\in V$が存在する'.
     \end{enumerate}
   \item
     \begin{enumerate}
@@ -964,8 +968,8 @@ a_{i,1}& a_{i,2}&\cdots &a_{i,n}
     \end{enumerate}
   \item
     \begin{enumerate}
-    \item $a\in \KK,u,w\in V \implies a\act (u\pplus w)=(a\act u)\pplus (a\act w)$.
-    \item $a,b\in\KK, w\in V\implies (a+b)\act w=(a\act w)\pplus (b\act w)$.
+    \item $a\in \KK,u,w\in V \implies a\act (u\plus w)=(a\act u)\plus (a\act w)$.
+    \item $a,b\in\KK, w\in V\implies (a+b)\act w=(a\act w)\plus (b\act w)$.
     \end{enumerate}
   \end{enumerate}
 \end{definition}
@@ -987,10 +991,18 @@ a_{i,1}& a_{i,2}&\cdots &a_{i,n}
   また, 零元$0_V$のことを, 零ベクトルと呼ぶこともある.
 \end{remark}
 
+\begin{remark}
+ベクトル空間の元のことをベクトルと呼ぶ.
+ベクトルとは向きと大きさを持ったものと説明されることもあるが,
+このメタファーは理解の役に立つこともあるものの,
+理解の弊害となることも多い.
+このメタファーに囚われない方が良いかもしれない.
+\end{remark}
+
 まず, ベクトル空間の例をいくつか挙げる.
 
 \begin{example}
-  $\KK$を体とし, $n\geq 1$とする.
+  $n\geq 1$とする.
   このとき,
   \begin{align*}
     \KK^n
@@ -1007,9 +1019,19 @@ a_{i,1}& a_{i,2}&\cdots &a_{i,n}
     \zzero_n&=\begin{pmatrix}0\\\vdots\\0\end{pmatrix}
   \end{align*}
   とおくと,
-  $(\KK^n,+,\act ,\zzero_n$は$\KK$-線形空間.
+  $(\KK^n,+,\act ,\zzero_n)$は$\KK$-線形空間.
   これを$\KK$上の$n$次元数ベクトル空間と呼ぶ.
-
+  $i$番目のみ$1$で他は$0$である$\KK^n$の元を,
+  $\ee^{(n)}_i$で表す.
+  \begin{align*}
+  a=
+  \begin{pmatrix}
+  a_1\\\vdots\\a_n
+  \end{pmatrix}\in\KK^n
+  \end{align*}
+  は, $a=a_1\ee^{(n)}_i+\cdots+a_n\ee^{(n)}_n$
+  と書くことができる.
+  
   また, 形式的に,
   長さ$0$の列, つまり空列$()$を考え,
   これを$\zzero_0$と書き,
@@ -1029,7 +1051,7 @@ a_{i,1}& a_{i,2}&\cdots &a_{i,n}
 \end{example}
 
 \begin{example}
-  $\KK$を体とし, $n,m\geq 1$とし,
+  $n,m\geq 1$とし,
   $I=\Set{1,\ldots,m}$, $J=\Set{1,\ldots, n}$とする.
   このとき,
   \begin{align*}
@@ -1055,7 +1077,6 @@ a_{i,1}& a_{i,2}&\cdots &a_{i,n}
   $\NN$で添字付けられた数列$a_0, a_1,\ldots$を
   $(a_i)_{i\in \NN}$
   で表す.
-  $\KK$を体とする.
   \begin{align*}
     \KK^\NN = \Set{(a_i)_{i\in \NN}|a_i\in \KK}
   \end{align*}
@@ -1069,7 +1090,6 @@ a_{i,1}& a_{i,2}&\cdots &a_{i,n}
 \end{example}
 
 \begin{example}
-  $\KK$を体とする.
   $X$を集合とする.
   \begin{align*}
     \KK^X = \Set{f\colon X \to \KK \text{; 写像}}
@@ -1092,7 +1112,6 @@ a_{i,1}& a_{i,2}&\cdots &a_{i,n}
 \end{example}
 
 \begin{example}
-  $\KK$を体とする.
   $X$を集合とし, $(V,+,\act,0_V)$を$\KK$-線形空間とする.
   \begin{align*}
     V^X = \Set{f\colon X \to V \text{; 写像}}
@@ -1115,8 +1134,8 @@ a_{i,1}& a_{i,2}&\cdots &a_{i,n}
 \end{example}
 
 \begin{example}
-  $(\KK,+,\cdot,0)$を体とする.
-  体としての和と積で$\KK$-線形空間.
+  %$(\KK,+,\cdot,0)$を体とする.
+  体としての和と積で$\KK$は, $\KK$-線形空間.
   つまり, $(\KK,+,\cdot,0)$は, $\KK$-線形空間.
 \end{example}
 
@@ -1146,11 +1165,6 @@ a_{i,1}& a_{i,2}&\cdots &a_{i,n}
   通常の和と積で$\QQ$-線形空間.
 \end{example}
 
-\begin{example}
-  $\CC$は,
-  通常の和と積で$\RR$-線形空間.
-\end{example}
-
 
 
 表記方法などについてのいくつかコメントする.
@@ -1164,9 +1178,9 @@ $v+(w+u)$と思っても差し支えない.
 \Cref{def:vecsp:item:prod:ass}
 があるので, $abw$を, $a\act (b\act w)$と思っても,
 $(a\cdot b)\act w$と思っても差し支えない.
-そこで, $a\act (b\act w)$を$abw$と略記する.
+そこで, $(a\act b)\act w$を$abw$と略記する.
 もっと一般に, $n\geq 1$, $a_1,\ldots, a_n\in\KK$, $w\in V$に対し,
-$a_1\act (a_2\act \ldots\act (a_n\act w)\cdots)$のことを
+$(a_1\cdots a_n)\act w$のことを
 $a_1\cdots a_n w$と略記する.
 \end{remark}
 \begin{remark}
@@ -1271,6 +1285,17 @@ $a_1\cdots a_n w$と略記する.
   $x$は$(-1)\act w$に等しいことがわかる.
 \end{proof}
 
+\begin{prop}
+$(V,+,\act ,0_V)$を$\KK$-線形空間とする.
+このとき, $c\in\KK$に対し,
+\begin{align*}
+c\act 0_V = 0_V.
+\end{align*}
+\end{prop}
+\begin{proof}
+$c\act 0_V = c\act (0\act 0_V)= (c\cdot 0)\act 0_V=0\act 0_V=0_V.$
+\end{proof}
+
 \begin{remark}
   $(-1)\act w$のことを$-w$と略記する.
   また, $u+(-w)$のことを$u-w$と略記する.
@@ -1281,26 +1306,34 @@ $a_1\cdots a_n w$と略記する.
 
 \section{線形写像の定義とその例}
 \begin{definition}
-  $(V,+,\act)$, $(W,\pplus,\aact)$を$\KK$-線形空間とする.
+  $(V,\plus,\act)$, $(W,\pplus,\aact)$を$\KK$-線形空間とする.
   $\varphi$を$V$から$W$への写像とする.
   $\varphi$が以下の条件を満たすとき,
-  $\varphi$は$(V,+,\act)$から$(W,\pplus,\aact)$への$\KK$-線形写像であるという:
+  $\varphi$は$(V,\plus,\act)$から$(W,\pplus,\aact)$への$\KK$-線形写像であるという:
   \begin{enumerate}
-    \item $v,u\in V\implies \varphi(v+u)=\varphi(v)\pplus\varphi(u)$.
+    \item $v,u\in V\implies \varphi(v\plus u)=\varphi(v)\pplus\varphi(u)$.
     \item $c\in \KK, u\in V\implies \varphi(c\act v)=c\aact\varphi(v)$.
   \end{enumerate}
 \end{definition}
 
-\begin{definition}
-  $\varphi$は$(V,+,\act)$から$(W,\pplus,\aact)$への$\KK$-線形写像であることを,
+\begin{remark}
+  $V$から$W$への写像$\varphi$が
+  $(V,\plus,\act)$から$(W,\pplus,\aact)$への$\KK$-線形写像であることを,
+  条件をまとめて,
+  \begin{enumerate}
+    \item $v,v'\in V, c,c'\in\KK\implies \varphi(c\act v\plus c'\act v')=c\aact \varphi(v)\pplus c'\aact\varphi(u)$
+  \end{enumerate}
+  を満たすことととして定義することもある.
+\end{remark}
+
+\begin{remark}
+  $\varphi$は$(V,\plus,\act)$から$(W,\pplus,\aact)$への$\KK$-線形写像であることを,
   写像$\varphi$は$\KK$-線形であるということもある.
-\end{definition}
+\end{remark}
 
 線形写像の例をいくつか挙げる.
 
-
 \begin{example}
-  $\KK$を体とする.
   $A\in \KK^{m\times n}$とし,
   $\varphi$を次の写像とする:
   \begin{align*}
@@ -1310,17 +1343,15 @@ $a_1\cdots a_n w$と略記する.
 \end{example}
 
 \begin{example}
-  $\KK$を体とする.
   $A\in \KK^{m\times n}$とし,
   $\varphi$を次の写像とする:
   \begin{align*}
-    \shazo{\varphi}{\KK^{k\times m}}{\KK^{k\times n}}{X}{AX}.
+    \shazo{\varphi}{\KK^{m\times k}}{\KK^{n\times k}}{X}{AX}.
   \end{align*}
   このとき, $\varphi$は$\KK$-線形である.
 \end{example}
 
 \begin{example}
-  $\KK$を体とする.
   $\varphi$を次の写像とする:
   \begin{align*}
     \shazo{\varphi}{\KK^{m\times n}}{\KK^{n\times m}}{A}{\transposed{A}}.
@@ -1373,12 +1404,18 @@ $a_1\cdots a_n w$と略記する.
 \end{example}
 
 \begin{example}
-  $\KK$を体とする.
   $\varphi$を次の写像とする:
   \begin{align*}
-    \shazo{\varphi}{\KK^\NN}{\KK^\NN}{(a_i)_{i\in \NN}}{(a_{i+1})_{i\in \NN}}.
+    \shazo{\varphi}{\KK^\NN}{\KK^\NN}
+    {(a_i)_{i\in \NN}=(a_0,a_1,a_2,\ldots)}{(a_{i+1})_{i\in \NN}=(a_1,a_2,a_3,\ldots)}.
   \end{align*}
   このとき, $\varphi$は$\KK$-線形である.
+  $\psi$を次の写像とする:
+  \begin{align*}
+    \shazo{\varphi}{\KK^\NN}{\KK^\NN}
+    {(a_0,a_1,a_2,\ldots)}{(0,a_0,a_1,\ldots)}.
+  \end{align*}
+  このとき, $\psi$は$\KK$-線形である.
 \end{example}
 
 \begin{example}
@@ -1391,32 +1428,82 @@ $a_1\cdots a_n w$と略記する.
   は$\KK$-線形写像である.
 \end{example}
 
+\begin{example}
+  $(V,+,.,\zzero)$
+  $(W,\pplus,\aact,\zzero_W)$
+  を$\KK$線形空間とする.
+    \begin{align*}
+      \shazo{\underline{\zzero_W}}{V}{W}
+      {x}{\zzero_W}
+    \end{align*}
+  は$\KK$-線形写像である.
+\end{example}
+
 
 \begin{example}
   $(V,+,\act)$を$\KK$-線形空間とする.
   恒等写像$\id_V$は$\KK$-線形である.
 \end{example}
-\begin{lemma}
-  $(V,+,\act)$, $(W,\pplus,\aact)$を$\KK$-線形空間とし,
+
+
+\begin{example}
+  $V$, $W$を$\KK$-線形空間とし,
   $\varphi\colon V\to W$は全単射であるとする.
   $\varphi$が$\KK$-線形なら,
   逆写像$\varphi^{-1}$は
-  $(W,\pplus,\aact)$から
-  $(V,+,\act)$への$\KK$-線形写像.
-\end{lemma}
+  $W$から
+  $V$への$\KK$-線形写像.
+\end{example}
 \begin{proof}\end{proof}
 
-線形写像の性質をいくつか紹介する.
-\begin{prop}
+\begin{example}
   $V$, $U$, $W$を$\KK$-線形空間とし,
   $\varphi\colon V\to U$,
   $\psi\colon U\to W$を$\KK$-線形写像とする.
   このとき, $\psi\circ\varphi\colon V\to W$は$\KK$-線形写像である.
-\end{prop}
+\end{example}
 \begin{proof}\end{proof}
 
+\begin{example}
+  $V$, $W$を$\KK$-線形空間とし,
+  $\varphi\colon V\to W$は全単射であるとする.
+  $\varphi$が$\KK$-線形なら,
+  逆写像$\varphi^{-1}$は
+  $W$から
+  $V$への$\KK$-線形写像.
+\end{example}
+\begin{proof}\end{proof}
+
+\begin{example}
+  $V$, $(W,\pplus,\aact,\zzero_W)$を$\KK$-線形空間とし,
+  $\varphi\colon V\to W$を線形写像とする.
+  このとき, $c\in \KK$に対し,
+  \begin{align*}
+  \shazo{c\varphi}{V}{W}
+  {x}{c\aact \varphi(x)}
+  \end{align*}
+  は$V$から$W$への線形写像.
+\end{example}
+\begin{proof}\end{proof}
+
+\begin{example}
+  $V$, $(W,\pplus,\aact,\zzero_W)$を$\KK$-線形空間とし,
+  $\varphi\colon V\to W$,
+  $\psi\colon V\to W$
+  を線形写像とする.
+  このとき, 
+  \begin{align*}
+  \shazo{\varphi+\psi}{V}{W}
+  {x}{\varphi(x) \pplus \psi(x)}
+  \end{align*}
+  は$V$から$W$への線形写像.
+\end{example}
+\begin{proof}\end{proof}
+
+
+線形写像の性質をいくつか紹介する.
 \begin{prop}
-  $(V,+,\act,0_V)$, $(W,\pplus,\aact,0_W)$を$\KK$-線形空間とし,
+  $(V,\plus,\act,0_V)$, $(W,\pplus,\aact,0_W)$を$\KK$-線形空間とし,
   $\varphi\colon V\to W$を$\KK$-線形写像とする.
   このとき,
   \begin{enumerate}
@@ -1426,6 +1513,54 @@ $a_1\cdots a_n w$と略記する.
 \end{prop}
 \begin{proof}\end{proof}
 
+\begin{prop}
+\label{prop:linmap:kn:1}
+線形写像
+$\varphi\colon \KK^n \to \KK^m$,
+$\psi\colon \KK^n \to \KK^m$
+に対し, 以下は同値:
+\begin{enumerate}
+\item $\varphi=\psi$
+\item すべての$i$に対し, $\varphi(\ee^{(n)}_i)=\psi(\ee^{(n)}_i)$
+\end{enumerate}
+\end{prop}
+\begin{proof}\end{proof}
+
+\begin{prop}
+\label{prop:linmap:kn:2}
+  $\aaa_1,\ldots, \aaa_n \in \KK^m$とし,
+  $\aaa_1,\ldots, \aaa_n $を並べて得られる行列を$A\in\KK^{m\times n}$
+  とする.
+  このとき, $\mu_A$を次の写像とする:
+  \begin{align*}
+    \shazo{\mu_A}{\KK^m}{\KK^n}{w}{Aw}.
+  \end{align*}
+  このとき, $\mu_A$は$\KK$-線形であり,
+   $\mu_A(\ee^{(n)}_j)=\aaa_j$である.
+\end{prop}
+\begin{proof}\end{proof}
+
+\begin{remark}
+\Cref{prop:linmap:kn:1,prop:linmap:kn:2}
+より,
+$\KK^n$から$\KK^m$への線形写像は,
+行列$A\in\KK^{m\times n}$から得られる
+$\mu_A$という線形写像のみ考えればよいことがわかる.
+\end{remark}
+
+\begin{prop}
+$A\in\KK^{m\times n}$とし,
+\begin{align*}
+\shazo{\varphi}{\KK^n}{\KK^m}
+{x}{Ax}
+\end{align*}
+とする.
+\begin{enumerate}
+\item $\varphi$は単射ならば$\rank(A)=n$.
+\item $\varphi$が全射ならば$\rank(A)=m$.
+\end{enumerate}
+\end{prop}
+\begin{proof}\end{proof}
 
 \section{同型写像}
 
@@ -1452,15 +1587,14 @@ $a_1\cdots a_n w$と略記する.
 
 同型写像の例を挙げる:
 \begin{example}
-  $\KK$を体とする.
   $\KK$-線形写像$\varphi$を以下で定める:
   \begin{align*}
-    &\shazo{\varphi}{\RR^{m\times n}}{\RR^{n\times m}}{A}{\transposed{A}}.
+    &\shazo{\varphi}{\KK^{m\times n}}{\KK^{n\times m}}{A}{\transposed{A}}.
   \end{align*}
   このとき,
   $\psi$を
   \begin{align*}
-    &\shazo{\psi}{\RR^{n\times m}}{\RR^{m\times n}}{A}{\transposed{A}}
+    &\shazo{\psi}{\KK^{n\times m}}{\KK^{m\times n}}{A}{\transposed{A}}
   \end{align*}
   とすると,
   $\psi$は$\KK$-線形であり, $\varphi\circ \psi=\id_{\KK^{n\times m}}$, $\psi\circ\varphi=\id_{\KK^{m\times n}}$である.
@@ -1489,73 +1623,23 @@ $a_1\cdots a_n w$と略記する.
 \end{example}
 
 \begin{example}
-  $V$を$\KK$-線形空間とする.
-  このとき,
-  $\id_V\colon V\to V$は同型写像であり
-  $V\simeq V$.
+  $\varphi$を次の写像とする:
+  \begin{align*}
+    \shazo{\varphi}{\CC}{\CC}{z}{\overline{z}},
+  \end{align*}
+  このとき, $\varphi$は$\RR$-線形であり, $\varphi\circ\varphi=\id_{\CC}$である.
+  $\varphi$は, $\CC$から$\CC$への$\RR$-線形空間としての同型写像である.
 \end{example}
 
-\begin{example}
-  $\KK$を体とする.
-  $\KK$-線形空間$\KK^n$と$\KK^m$について考える.
-
-  $m=n$のとき, $\KK^n=\KK^m$であるので, 同型である.
-
-  $m\neq n$のとき, $\KK^n$と$\KK^m$は同型ではないことを示す.
-
-  $m>n$とし,
-  \begin{align*}
-    \varphi&\colon \KK^n \to \KK^m\\
-    \psi&\colon \KK^m \to \KK^n
-  \end{align*}
-  を線形写像とする.
-  $\aaa_i=\varphi(\ee_i)$とし,
-  $\aaa_1,\ldots,\aaa_n$を並べて得られる$(m,n)$行列を$A$とおく.
-  $m>n$であるので, $\rank(A)<m$であるから,
-  連立一次方程式$A\xx=\zzero_m$は$\xx\neq \zzero_n$以外の解を持つ.
-  その解を
-  \begin{align*}
-    \ccc=\begin{pmatrix}c_1\\\vdots\\c_n\end{pmatrix}
-  \end{align*}
-  とおく.
-  \begin{align*}
-    A\ccc=(\aaa_1|\cdots|\aaa_n)\ccc=c_1\aaa_1+\cdots+c_n\aaa_n
-  \end{align*}
-  であることに注意すると,
-  \begin{align*}
-    \varphi(\ccc)&=\varphi(c_1\ee_1+\cdots+c_n\ee_n)\\
-    &=c_1\varphi(\ee_1)+\cdots+c_n\varphi(\ee_n)\\
-    &=c_1\aaa_1+\cdots+c_n\aaa_n\\
-    &=A\ccc\\
-    &=\zzero_m.
-  \end{align*}
-  よって,
-  $\psi\circ\varphi(\ccc)=\psi(\zzero_m)=\zzero_n\neq \ccc$であり,
-  $\psi\circ\varphi\neq \id_{\KK^n}$である.
-
-  したがって,
-  $m>n$のとき,
-  線形写像$\varphi\colon \KK^n \to \KK^m$は,
-  どんな線形写像$\psi\colon \KK^m\to \KK^n$に対しても,
-  $\psi\circ \varphi \neq \id_{\KK^n}$となるので,
-  $\varphi$は同型写像ではない.
-  (また, 同様に,
-  線形写像$\psi\colon \KK^m \to \KK^n$は,
-  どんな線形写像$\varphi\colon \KK^n\to \KK^m$に対しても,
-  $\psi\circ \varphi \neq \id_{\KK^n}$となるので,
-  $\psi$は同型写像ではない.)
-  どんな線形写像$\varphi\colon \KK^n \to \KK^m$も同型写像にはならないので,
-  $\KK^n$と$\KK^m$は同型ではない.
-\end{example}
 
 \begin{example}
-  $I={1,\ldots,m}$, $J={1,\ldots,n}$, $\Lambda=\Set{1,\ldots,mn}$とする.
+  $I=\Set{1,\ldots,m}$, $J=\Set{1,\ldots,n}$,
+  $\Lambda=\Set{1,\ldots,mn}$とする.
   このとき,
   \begin{align*}
     &\shazo{\lambda}{I\times J}{\Lambda}{(i,j)}{i+(m-1)j}
   \end{align*}
   は全単射である.  $\lambda$の逆写像を$\kappa$とする.
-  $\KK$を体とし,
   $\KK$線形写像$\varphi$を以下で定める:
   \begin{align*}
     &\shazo{\varphi}{\KK^{mn}}{\KK^{m\times n}}{\begin{pmatrix}a_1\\\vdots\\a_{mn}\end{pmatrix}}{(a_{\lambda(i,j)})_{i\in I, j\in J}}.
@@ -1574,25 +1658,11 @@ $a_1\cdots a_n w$と略記する.
 \end{example}
 
 
-\begin{example}
-  $V$を$\KK$-線形空間とする.
-  このとき, $\id_{V}$は$\KK$-線形であり,
-  $\id_{V}\circ\id_{V}=\id_{V}$であるので, 同型写像である.
-  したがって, $V\simeq V$である.
-\end{example}
 
-\begin{example}
-  $\varphi$を次の写像とする:
-  \begin{align*}
-    \shazo{\varphi}{\CC}{\CC}{z}{\overline{z}},
-  \end{align*}
-  このとき, $\varphi$は$\RR$-線形であり, $\varphi\circ\varphi=\id_{\CC}$である.
-  $\varphi$は, $\CC$から$\CC$への$\RR$-線形空間としての同型写像である.
-\end{example}
 
 
 \begin{example}
-  $\KK$を体とし, $I=\Set{1,\dots,n}$とする.
+  $I=\Set{1,\dots,n}$とする.
   $\varphi$を以下で定義する:
   \begin{align*}
     \shazo{\varphi}{\KK^I}{\KK^n}{f}{\begin{pmatrix}f(1)\\\vdots\\f(n)\end{pmatrix}}.
@@ -1632,7 +1702,7 @@ $a_1\cdots a_n w$と略記する.
 \end{example}
 
 \begin{example}
-  $\KK$を体とし, $I=\Set{1,\dots,m}$, $J=\Set{1,\ldots,n}$とする.
+  $I=\Set{1,\dots,m}$, $J=\Set{1,\ldots,n}$とする.
   $\varphi$を以下で定義する:
   \begin{align*}
     \shazo{\varphi}{\KK^{I\times J}}{\KK^{m\times n}}{f}{(f(i,j))_{i\in I,j\in J}}.
@@ -1667,7 +1737,6 @@ $a_1\cdots a_n w$と略記する.
 \end{example}
 
 \begin{example}
-  $\KK$を体とし,
   $\NN$から$\KK$への写像を集めた集合を$V$,
   $\NN$で添字付された数列を集めた集合を$W$とする.
   どちらも$\KK$-線形空間であった.
@@ -1703,6 +1772,7 @@ $a_1\cdots a_n w$と略記する.
   $V\simeq W$.
 \end{example}
 
+同型写像などについていくつか補足する.
 
 \begin{remark}
   $V$と$W$を$\KK$-線形空間とする.
@@ -1723,7 +1793,7 @@ $a_1\cdots a_n w$と略記する.
   $V$, $W$, $U$を$\KK$-線形空間とする.
   このとき, 以下が成り立つ:
   \begin{enumerate}
-  \item $V\simeq W$.
+  \item $V\simeq V$.
   \item $V\simeq W \implies W\simeq V$.
   \item $V\simeq U, U\simeq W \implies V\simeq W$.
   \end{enumerate}
@@ -1739,6 +1809,54 @@ $a_1\cdots a_n w$と略記する.
   \end{enumerate}
 \end{prop}
 \begin{proof}\end{proof}
+
+\begin{lemma}
+   $m,n\in\NN$に対し以下は同値:
+  \begin{enumerate}
+  \item $m=n$.
+  \item $\KK^m \simeq \KK^n$
+  \end{enumerate}
+\end{lemma}
+\begin{example}
+  $m=n$のとき, $\KK^n=\KK^m$であるので, 同型である.
+
+  $m\neq n$のとき, $\KK^n$と$\KK^m$は同型ではないことを示す.
+  $m>n$とし, $A\in \KK^{m\times n}$で定義される
+  \begin{align*}
+    \shazo{\varphi}{\KK^n}{\KK^m}
+    {x}{Ax}
+  \end{align*}
+  について考える.
+  $\rank(A)\leq n<m$であるので, $\varphi$は全射ではない.
+  したがって,
+  どんな$\psi\colon \KK^m\to \KK^n$に対しても
+  $\varphi\circ\psi\neq \id_{\KK^m}$であるので,
+  $\varphi$は同型写像ではない.
+  どんな線形写像$\varphi\colon \KK^n \to \KK^m$も同型写像にはならないので,
+  $\KK^n$と$\KK^m$は同型ではない.
+\end{example}
+
+\begin{definition}
+次を満たすとき$\KK$線形空間$V$の次元は$n$であるといい,
+$\dim_\KK(V)=n$と書く:
+\begin{enumerate}
+\item $\KK^n\simeq V$.
+\end{enumerate}
+また,
+このとき,
+$V$は有限次元であるともいい, $\dim_\KK(V)<\infty$と書くこともある.
+\end{definition}
+
+\begin{definition}
+次を満たすとき$\KK$線形空間$V$は無限次元であるといい,
+$\dim_\KK(V)=\infty$と書く:
+\begin{enumerate}
+\item $n\in \NN$ならば, 次が成り立つ:
+\begin{enumerate}
+\item $\KK^n$から$V$への単射線形写像が存在する.
+\end{enumerate}
+\end{enumerate}
+\end{definition}
 
 \sectionX{章末問題}
 \begin{quiz}
@@ -2972,8 +3090,8 @@ $U/V$上の演算として定義できる.
   もとの空間と同じ記号を用いる.
   つまり,
   \begin{align*}
-    [u]_V+[w]_V&=[u+w]_V=\Set{u+w+v|v\in V}, \\
-    c\act [u]_V&=[c\act u]_V=\Set{c\act u +v|v\in V}
+    [u]_V\plus [w]_V&=[u \plus w]_V=\Set{u \plus w \plus v|v\in V}, \\
+    c\act [u]_V&=[c\act u]_V=\Set{c\act u \plus v|v\in V}
   \end{align*}
   とする.
 \end{remark}
