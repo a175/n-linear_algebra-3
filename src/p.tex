@@ -958,7 +958,8 @@ $(\KK,+,\cdot,0,1)$を体とする.
       \label{def:vecsp:item:sum:ass}
       $v,w,u\in V \implies (v\plus w)\plus u=v\plus (w\plus u)$.
     \item $w\in V \implies 0_V\plus w=w$.
-    \item $w\in V\implies $ `$w\plus x=0_V$を満たす$x\in V$が存在する'.
+    %\item $w\in V\implies $ `$w\plus x=0_V$を満たす$x\in V$が存在する'.
+    \item $w\in V\implies w\plus (-1).w=0_V$.%を満たす$x\in V$が存在する'.
     \end{enumerate}
   \item
     \begin{enumerate}
@@ -978,7 +979,7 @@ $(\KK,+,\cdot,0,1)$を体とする.
   $(V,\plus,\act ,0_V)$が$\KK$-線形空間
   であるとき,
   $\plus$を加法, $\act $をスカラー倍と呼ぶ.
-  また, $0_V$を$V$の零元とか零ベクトルと呼ぶ.
+  また, $0_V$を$V$の零元と呼ぶ.
   また, 
   $(V,\plus,\act ,0_V)$が$\KK$-線形空間であることを,
   $V$は加法$\plus$とスカラー倍$\act $で$0_V$を零元とする$\KK$-線形空間であるということもある.
@@ -986,15 +987,14 @@ $(\KK,+,\cdot,0,1)$を体とする.
   単に$V$を$\KK$-線形空間と呼ぶこともある.
 \end{remark}
 \begin{remark}
-  $(V,\plus,\act ,0_V)$が$\KK$上のベクトル空間
+  $(V,\plus,\act ,0_V)$が体$\KK$上のベクトル空間
   であるとき,
   $V$の元をベクトルと呼ぶ.
   また, 零元$0_V$のことを, 零ベクトルと呼ぶこともある.
-\end{remark}
-
-\begin{remark}
-ベクトル空間の元のことをベクトルと呼ぶ.
-ベクトルとは向きと大きさを持ったものと説明されることもあるが,
+つまり,
+$x$がベクトルであるとは,
+何某かのベクトル空間$V$があり$x$は$V$の元であるといっているだけである.
+ベクトルは向きと大きさを持ったものと説明されることもあるが,
 このメタファーは理解の役に立つこともあるものの,
 理解の弊害となることも多い.
 このメタファーに囚われない方が良いかもしれない.
@@ -1020,10 +1020,14 @@ $(\KK,+,\cdot,0,1)$を体とする.
     \zzero_n&=\begin{pmatrix}0\\\vdots\\0\end{pmatrix}
   \end{align*}
   とおくと,
-  $(\KK^n,+,\act ,\zzero_n)$は$\KK$-線形空間.
+  $\KK^n$はこれらの演算で
+  $\zzero_n$を零元とする
+  $\KK$-線形空間.
   これを$\KK$上の$n$次元数ベクトル空間と呼ぶ.
+  今後,
   $i$番目のみ$1$で他は$0$である$\KK^n$の元を,
   $\ee^{(n)}_i$で表す.
+  この記号を用いると,
   \begin{align*}
   a=
   \begin{pmatrix}
@@ -1044,10 +1048,12 @@ $(\KK,+,\cdot,0,1)$を体とする.
   このとき, $c\in\KK$に対し,
   \begin{align*}
     \zzero_0+\zzero_0&=\zzero_0\\
-    c\act \zzero_0&=\zzero_0
+    c \zzero_0&=\zzero_0
   \end{align*}
   とおくと,
-  $(\KK^0,+,\act ,\zzero_0)$は$\KK$-線形空間.
+  $\KK^0$はこれらの演算で
+  $\zzero_0$を零元とする
+  $\KK$-線形空間.
   これを$\KK$上の$0$次元数ベクトル空間と呼ぶ.
 \end{example}
 
@@ -1071,7 +1077,10 @@ $(\KK,+,\cdot,0,1)$を体とする.
     O_{m,n}&=(0)_{i\in I,j\in J}
   \end{align*}
   とおくと,
-  $(\KK^{m \times n},+,\act ,O_{m,n})$は$\KK$-線形空間.
+  $\KK^{m \times n}$は
+  これらの演算で
+  $O_{m,n}$を零元とする
+  $\KK$-線形空間.
 \end{example}
 
 \begin{example}
@@ -1101,14 +1110,15 @@ $(\KK,+,\cdot,0,1)$を体とする.
   $x\in X$に対し,
   \begin{align*}
     (f+g)(x) &= f(x)+g(x),\\
-    (c\act f)(x) &= c(f(x)).
+    (cf)(x) &= c(f(x)).
   \end{align*}
   また $\underline{0}\in\KK^X$を以下で定める:
   $x\in X$に対し,
   \begin{align*}
     \underline{0}(x)=0.
   \end{align*}
-  このとき, $(\KK^X,+,\act ,\underline{0})$は,
+  このとき, $\KK^X$はこれらの演算で,
+  $\underline{0}$を零元とする
   $\KK$-線形空間.
 \end{example}
 
@@ -1123,14 +1133,16 @@ $(\KK,+,\cdot,0,1)$を体とする.
   $x\in X$に対し,
   \begin{align*}
     (f+g)(x) &= f(x)+g(x),\\
-    (c\act f)(x) &= c\act (f(x)).
+    (cf)(x) &= c\act (f(x)).
   \end{align*}
   また $\underline{0_V}\in\KK^X$を以下で定める:
   $x\in X$に対し,
   \begin{align*}
     \underline{0_V}(x)=0_V.
   \end{align*}
-  このとき, $(\KK^X,+,\act ,\underline{0_V})$は,
+  このとき,
+  $\KK^X$はこれらの演算で
+  $\underline{0_V}$を零元とする
   $\KK$-線形空間.
 \end{example}
 
@@ -1187,6 +1199,13 @@ $(a_1\cdots a_n)\act w$のことを
 $a_1\cdots a_n w$と略記する.
 \end{remark}
 \begin{remark}
+$(V,\plus,\act,0_V)$を$\KK$線形空間とする.
+スカラー倍の方が和よりも演算としての優先度が高いものとし,
+$(a\act v)+(b\act w)$を
+$a\act v+b\act w$
+と略記する.
+\end{remark}
+\begin{remark}
   $\KK$上のベクトル空間の定義において,
   割り算は条件として現れない.
   したがって,
@@ -1197,28 +1216,100 @@ $a_1\cdots a_n w$と略記する.
   $(V,\plus ,\act ,0_V)$を$\KK$-線形空間とする.
   $o\in V$が, 次の条件を満たすとする:
   \begin{align*}
-    w\in V \implies w\plus o=w.
+    w\in V \implies o\plus w=w.
   \end{align*}
   このとき, $o=0_V$.
 \end{prop}
 \begin{proof}
   $0_V$の満たす条件から$0_V\plus o=o$.
-  一方, $o$の満たす条件から$0_V\plus o=0_V$.
+  一方, $o$の満たす条件から$o\plus 0_V=0_V\plus o=0_V$.
   よって, $0_V=0_V\plus o=o$.
 \end{proof}
 \begin{remark}
+\label{rem:altdef:1}
   $(V,\plus,\act,0_V)$を$\KK$線形空間とする.
-  $u,w\in V$に対し, $u\plus w=w\plus u$であるので,
-  次の条件は同値である:
-  \begin{enumerate}
-  \item $w\in V \implies w\plus o=w$.
-  \item $w\in V \implies o\plus w=w$.
-  \end{enumerate}
-  したがって, \cref{lem:uniq:zero}から,
+  \cref{lem:uniq:zero}から,
   零ベクトルの条件を満たす元はただ一つしかないことがわかる.
+  したがって, 
   何が$V$の零ベクトルであるかを明示しなくともよい場合は,
-  単に$(V,\plus ,\act )$を$\KK$-線形空間と呼ぶこともある.
+  単に$(V,\plus ,\act)$を$\KK$-線形空間と呼ぶこともある.
 \end{remark}
+
+\begin{lemma}
+  \label{lem:uniq:inv}
+  $(V,\plus ,\act ,0_V)$を$\KK$-線形空間とする.
+  $w\in V$とする.
+  $x,y\in V$が以下を満たすなら$x=y$:
+  \begin{align*}
+    w\plus x&=0_V\\
+    w\plus y&=0_V
+  \end{align*}
+\end{lemma}
+\begin{proof}
+  $x$の満たす条件から,
+  $y\plus (w\plus x)=y\plus 0_V=y$.
+  $y$の満たす条件から,
+  $(y\plus w)\plus x=(w\plus y)\plus x=0_V\plus x=x$.
+  よって$x=y$.
+\end{proof}
+\begin{remark}
+\label{rem:altdef:2}
+$(V,\plus,\act,0_V)$を$\KK$線形空間とすると,
+\cref{lem:uniq:inv}から,
+各$w\in V$に対し, $w\plus x=0_V$を満たす$x\in V$は
+高々一つしかないことがわかる.
+\end{remark}
+\begin{remark}
+  $(-1)\act w$のことを$-w$と略記する.
+  また, $u\plus (-w)$のことを$u-w$と略記する.
+\end{remark}
+
+\Cref{rem:altdef:1,rem:altdef:2}
+を踏まえると$\KK$線形空間は次の様にも定義できる:
+\begin{definition}
+$V$を集合とする.
+$\plus\colon V\times V \to V$を$V$上の二項演算とする.
+$\act \colon \KK\times V \to V$を$\KK$の$V$への作用とする.
+以下の条件を満たすとき,
+$(V,\plus,\act)$は$\KK$上のベクトル空間であるとか
+$\KK$-線形空間であるいう:
+  \begin{enumerate}
+  \item 
+    \begin{enumerate}
+    \item $u,w \in V\implies  u\plus w=w\plus u$.
+    \item
+      \label{def:vecsp:item:sum:ass}
+      $v,w,u\in V \implies (v\plus w)\plus u=v\plus (w\plus u)$.
+    \item
+    次の条件を満たす$o\in V$が存在する
+    \begin{enumerate}
+          \label{def:vecsp:item:sum:zero}
+    \item $w\in V \implies o\plus w=w$.
+    \end{enumerate}
+    \item
+    $o\in V$が\Cref{def:vecsp:item:sum:zero}を満たすとする.
+    このとき,
+    各$w\in V$に対し, 次の条件を満たす$x_w\in V$が存在する:
+\begin{enumerate}
+\item $w\plus x_w=0_V$.
+\end{enumerate}
+    \end{enumerate}
+  \item
+    \begin{enumerate}
+    \item
+      \label{def:vecsp:item:prod:ass}
+      $a,b\in\KK, w\in V \implies a\act (b\act w)=(a\cdot b)\act w$
+    \item $w\in V \implies 1\act w=w$.
+    \end{enumerate}
+  \item
+    \begin{enumerate}
+    \item $a\in \KK,u,w\in V \implies a\act (u\plus w)=(a\act u)\plus (a\act w)$.
+    \item $a,b\in\KK, w\in V\implies (a+b)\act w=(a\act w)\plus (b\act w)$.
+    \end{enumerate}
+  \end{enumerate}
+\end{definition}
+
+
 \begin{prop}
   \label{prop:zeroveciszeroscalar}
   $(V,\plus ,\act ,0_V)$を$\KK$-線形空間とする.
@@ -1229,68 +1320,12 @@ $a_1\cdots a_n w$と略記する.
 \end{prop}
 \begin{proof}
 $(V,\plus,\act,0_V)$を$\KK$線形空間とする.
-  $x\in x$は
-  $0\act w\plus x=0_V$を満たすとする.
   このとき,
   \begin{align*}
-    (0\act w\plus 0\act w)\plus x&=(0+0)\act w\plus x=0\act w\plus x=0_V\\
-    0\act w\plus (0\act w\plus x)&=0\act w\plus 0_V=0\act w
+    0\act w\plus 0\act w&=(0+0)\act w=0\act w\\
+    0\act w\plus 0\act w&=0\act w\plus (-0)\act w=0_V.
   \end{align*}
-  よって, $0\act w=0_V$.  
 \end{proof}
-
-\begin{lemma}
-  \label{lem:uniq:inv}
-  $(V,\plus ,\act ,0_V)$を$\KK$-線形空間とする.
-  $w\in V$とする.
-  $x,y\in V$が以下を満たすなら$x=y$:
-  \begin{align*}
-    w\plus x&=0_V\\
-    y\plus w&=0_V
-  \end{align*}
-\end{lemma}
-\begin{proof}
-  $x$の満たす条件から,
-  $y\plus (w\plus x)=y\plus 0_V=y$.
-  $y$の満たす条件から,
-  $(y\plus w)\plus x=0_V\plus x=x$.
-  よって$x=y$.
-\end{proof}
-\begin{remark}
-$(V,\plus,\act,0_V)$を$\KK$線形空間とする.
-$u,w\in V$に対し, $u\plus w=w\plus u$であるので,
-  次の条件は同値である:
-  \begin{enumerate}
-  \item $w\plus x=0_V$.
-  \item $x\plus w=0_V$.
-  \end{enumerate}
-  したがって, \cref{lem:uniq:inv}から,
-  各$w\in V$に対し, $w\plus x=0_V$を満たす$x\in V$は
-  ただ一つしかないことがわかる.
-\end{remark}
-\begin{prop}
-  $(V,\plus ,\act ,0_V)$を$\KK$-線形空間とする.
-  $w,x\in V$に対し,
-  以下は同値:
-  \begin{enumerate}
-  \item
-    \label{prop:inverse:-1:item:1}
-    $w\plus x=0_V$.
-  \item
-    \label{prop:inverse:-1:item:2}
-    $x=(-1)\act w$.    
-  \end{enumerate}
-\end{prop}
-\begin{proof}
-  \Cref{prop:zeroveciszeroscalar}より,
-  \begin{align}
-    w+(-1)\act w=(1-1)\act w=0\act w=0_V.
-  \end{align}
-  したがって,
-  $w\plus x=0_V$を満たす
-  $x$は$(-1)\act w$に等しいことがわかる.
-\end{proof}
-
 \begin{prop}
 $(V,\plus ,\act ,0_V)$を$\KK$-線形空間とする.
 このとき, $c\in\KK$に対し,
@@ -1299,13 +1334,9 @@ c\act 0_V = 0_V.
 \end{align*}
 \end{prop}
 \begin{proof}
-$c\act 0_V = c\act (0\act 0_V)= (c\cdot 0)\act 0_V=0\act 0_V=0_V.$
+$c\act 0_V = c\act (0\act 0_V)= (c\cdot 0)\act 0_V=0\act 0_V=0_V$.
 \end{proof}
 
-\begin{remark}
-  $(-1)\act w$のことを$-w$と略記する.
-  また, $u+(-w)$のことを$u-w$と略記する.
-\end{remark}
 
 
 
@@ -2625,7 +2656,7 @@ $\KK^n$の標準基底と呼ぶ.
 \end{enumerate}
 
 
-\section{有限次元線形空間と基底}
+\section{有限次元線形空間の基底}
 \subsection{定義}
 
 
