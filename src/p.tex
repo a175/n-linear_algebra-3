@@ -2686,6 +2686,18 @@ $\KK^n$の標準基底と呼ぶ.
   \end{enumerate}
 \end{prop}
 
+\begin{remark}
+  $D=(v_1,\ldots,v_r)$が一次独立であるとすると,
+  $\mu_D$は単射線形写像であり,
+  $D=(\mu_D(\ee^{(r)}_1)),\ldots,\mu_D(\ee^{(r)}_r)))$である.
+  逆に, 単射線形写像$\varphi\colon \KK^r\to V$が与えられたとき,
+  $D=(\varphi(\ee^{(r)}_1),\ldots,\varphi(\ee^{(r)}_r))$は一次独立である.
+  したがって,
+  一次独立な元の組を与えることと
+  単射線形写像$\varphi\colon \KK^r\to V$を与えること
+  は同じことである.
+\end{remark}
+
 \begin{prop}
   $w_i\in V$とし, 
   $(w_1,\ldots,w_r)$は$\KK$上一次独立であるとする.
@@ -2734,6 +2746,17 @@ v'&=\nu_{(w_1,\ldots,w_r)}(\begin{pmatrix}a'_1\\\vdots\\a'_n\end{pmatrix})
     が全射.
   \end{enumerate}
 \end{prop}
+\begin{remark}
+  $D=(v_1,\ldots,v_r)$が$V$の生成系であるとすると,
+  $\mu_D$は全射線形写像であり,
+  $D=(\mu_D(\ee^{(r)}_1)),\ldots,\mu_D(\ee^{(r)}_r)))$である.
+  逆に, 全射線形写像$\varphi\colon \KK^r\to V$が与えられたとき,
+  $D=(\varphi(\ee^{(r)}_1),\ldots,\varphi(\ee^{(r)}_r))$は$V$の生成系である.
+  したがって,
+  $V$の生成系を与えることと
+  全射線形写像$\varphi\colon \KK^r\to V$を与えること
+  は同じことである.
+\end{remark}
 
 \begin{prop}
   $V, U$を$\KK$線形空間とし,
@@ -2769,6 +2792,17 @@ v'&=\nu_{(w_1,\ldots,w_r)}(\begin{pmatrix}a'_1\\\vdots\\a'_n\end{pmatrix})
     が同型写像.
   \end{enumerate}
 \end{prop}
+\begin{remark}
+  $D=(v_1,\ldots,v_r)$が$V$の基底であるとすると,
+  $\mu_D$は同型写像であり,
+  $D=(\mu_D(\ee^{(r)}_1)),\ldots,\mu_D(\ee^{(r)}_r)))$である.
+  逆に, 同型線形写像$\varphi\colon \KK^r\to V$が与えられたとき,
+  $D=(\varphi(\ee^{(r)}_1),\ldots,\varphi(\ee^{(r)}_r))$は$V$の基底である.
+  したがって,
+  $V$の基底を与えることと
+  同型写像$\varphi\colon \KK^r\to V$を与えること
+  は同じことである.
+\end{remark}
 
 \begin{prop}
   $(w_1,\ldots,w_r)$を$V$の基底とする.
@@ -3614,13 +3648,8 @@ $J=\Set{1,\ldots,m}$.
 \end{remark}
 
 \begin{remark}
-  $D=(v_1,\ldots,v_n)$を$V$の基底とすると,
-  $\mu_D$は同型写像であり,
-  $D=(\mu_D(\ee^{(n)}_1)),\ldots,\mu_D(\ee^{(n)}_1)))$である.
-  逆に, 同型写像$\varphi\colon \KK^n\to V$が与えられたとき,
-  $D=(\varphi(\ee^{(n)}_1)),\ldots,\varphi(\ee^{(n)}_1)))$は$V$の基底である.
-  したがって,
-  $V$の基底を与えることと同型写像$\varphi\colon \KK^n\to V$は同じことである.
+  $V$の基底を与えることと同型写像$\varphi\colon \KK^n\to V$を与えること
+  は同じことであった.
   $V$の基底$D$, $D'$が与えられたとき, $D'$から$D$への基底の変換行列$T$は
   $\mu_T=(\nu_{D'})^{-1}\circ\nu_{D}$を満たす.
   この条件は,
