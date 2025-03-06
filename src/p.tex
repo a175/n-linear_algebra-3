@@ -1212,6 +1212,34 @@ $a\act v+b\act w$
   これらの条件を, ある可換環に対して満たすものという概念を定義することができる.
 \end{remark}
 \begin{prop}
+  \label{prop:zeroveciszeroscalar}
+  $(V,\plus ,\act ,0_V)$を$\KK$-線形空間とする.
+  このとき,
+  \begin{align*}
+    w\in V \implies 0\act w=0_V. 
+  \end{align*}
+\end{prop}
+\begin{proof}
+$(V,\plus,\act,0_V)$を$\KK$線形空間とする.
+  このとき,
+  \begin{align*}
+    0\act w\plus 0\act w&=(0+0)\act w=0\act w\\
+    0\act w\plus 0\act w&=0\act w\plus (-0)\act w=0_V.
+  \end{align*}
+\end{proof}
+\begin{prop}
+$(V,\plus ,\act ,0_V)$を$\KK$-線形空間とする.
+このとき, $c\in\KK$に対し,
+\begin{align*}
+c\act 0_V = 0_V.
+\end{align*}
+\end{prop}
+\begin{proof}
+$c\act 0_V = c\act (0\act 0_V)= (c\cdot 0)\act 0_V=0\act 0_V=0_V$.
+\end{proof}
+
+
+\begin{prop}
   \label{lem:uniq:zero}
   $(V,\plus ,\act ,0_V)$を$\KK$-線形空間とする.
   $o\in V$が, 次の条件を満たすとする:
@@ -1310,32 +1338,6 @@ $\KK$-線形空間であるいう:
 \end{definition}
 
 
-\begin{prop}
-  \label{prop:zeroveciszeroscalar}
-  $(V,\plus ,\act ,0_V)$を$\KK$-線形空間とする.
-  このとき,
-  \begin{align*}
-    w\in V \implies 0\act w=0_V. 
-  \end{align*}
-\end{prop}
-\begin{proof}
-$(V,\plus,\act,0_V)$を$\KK$線形空間とする.
-  このとき,
-  \begin{align*}
-    0\act w\plus 0\act w&=(0+0)\act w=0\act w\\
-    0\act w\plus 0\act w&=0\act w\plus (-0)\act w=0_V.
-  \end{align*}
-\end{proof}
-\begin{prop}
-$(V,\plus ,\act ,0_V)$を$\KK$-線形空間とする.
-このとき, $c\in\KK$に対し,
-\begin{align*}
-c\act 0_V = 0_V.
-\end{align*}
-\end{prop}
-\begin{proof}
-$c\act 0_V = c\act (0\act 0_V)= (c\cdot 0)\act 0_V=0\act 0_V=0_V$.
-\end{proof}
 
 
 
@@ -1408,19 +1410,6 @@ $c\act 0_V = c\act (0\act 0_V)= (c\cdot 0)\act 0_V=0\act 0_V=0_V$.
   $\tr(A)$を$A$のトレースと呼ぶ.
 \end{example}
 
-
-\begin{example}
-  $\varphi$を次の写像とする:
-  \begin{align*}
-    \shazo{\varphi}{\CC}{\CC}{z}{\overline{z}},
-  \end{align*}
-  ただし, 
-  $x,y\in\RR$に対し$\overline{x+y\sqrt{-1}}=x-y\sqrt{-1}$, つまり,
-  $\overline{z}$は$z$の複素共軛とする.
-  このとき, $\varphi$は$\RR$-線形である.
-  しかし, $\CC$-線形ではない.
-\end{example}
-
 \begin{example}
   $a\in\RR$とする.
   $\varphi$を次の写像とする:
@@ -1439,6 +1428,20 @@ $c\act 0_V = c\act (0\act 0_V)= (c\cdot 0)\act 0_V=0\act 0_V=0_V$.
   \end{align*}
   これは$\RR$-線形写像ではない.
 \end{example}
+
+
+\begin{example}
+  $\varphi$を次の写像とする:
+  \begin{align*}
+    \shazo{\varphi}{\CC}{\CC}{z}{\overline{z}},
+  \end{align*}
+  ただし, 
+  $x,y\in\RR$に対し$\overline{x+y\sqrt{-1}}=x-y\sqrt{-1}$, つまり,
+  $\overline{z}$は$z$の複素共軛とする.
+  このとき, $\varphi$は$\RR$-線形である.
+  しかし, $\CC$-線形ではない.
+\end{example}
+
 
 \begin{example}
   $\varphi$を次の写像とする:
@@ -1485,15 +1488,6 @@ $c\act 0_V = c\act (0\act 0_V)= (c\cdot 0)\act 0_V=0\act 0_V=0_V$.
 \end{example}
 
 
-\begin{example}
-  $V$, $W$を$\KK$-線形空間とし,
-  $\varphi\colon V\to W$は全単射であるとする.
-  $\varphi$が$\KK$-線形なら,
-  逆写像$\varphi^{-1}$は
-  $W$から
-  $V$への$\KK$-線形写像.
-\end{example}
-\begin{proof}\end{proof}
 
 \begin{example}
   $V$, $U$, $W$を$\KK$-線形空間とし,
@@ -1596,7 +1590,7 @@ $\mu_A$という線形写像のみ考えればよいことがわかる.
 \begin{prop}
 $A\in\KK^{m\times n}$とし,
 \begin{align*}
-\shazo{\varphi}{\KK^n}{\KK^m}
+\shazo{\mu_A}{\KK^n}{\KK^m}
 {x}{Ax}
 \end{align*}
 とする.
@@ -1868,16 +1862,16 @@ $A\in\KK^{m\times n}$とし,
   $m\neq n$のとき, $\KK^n$と$\KK^m$は同型ではないことを示す.
   $m>n$とし, $A\in \KK^{m\times n}$で定義される
   \begin{align*}
-    \shazo{\varphi}{\KK^n}{\KK^m}
+    \shazo{\mu_A}{\KK^n}{\KK^m}
     {x}{Ax}
   \end{align*}
   について考える.
-  $\rank(A)\leq n<m$であるので, $\varphi$は全射ではない.
+  $\rank(A)\leq n<m$であるので, $\mu_A$は全射ではない.
   したがって,
   どんな$\psi\colon \KK^m\to \KK^n$に対しても
-  $\varphi\circ\psi\neq \id_{\KK^m}$であるので,
-  $\varphi$は同型写像ではない.
-  どんな線形写像$\varphi\colon \KK^n \to \KK^m$も同型写像にはならないので,
+  $\mu_A\circ\psi\neq \id_{\KK^m}$であるので,
+  $\mu_A$は同型写像ではない.
+  どんな線形写像$\mu_A\colon \KK^n \to \KK^m$も同型写像にはならないので,
   $\KK^n$と$\KK^m$は同型ではない.
 \end{example}
 
@@ -1902,6 +1896,24 @@ $\dim_\KK(V)=\infty$と書く:
 \end{enumerate}
 \end{enumerate}
 \end{definition}
+
+\begin{example}
+$\KK^{m\times n}$と$\KK^{mn}$は同型であった.
+したがって,
+$\dim_\KK(\KK^{m\times n})=mn$.
+\end{example}
+
+\begin{example}
+$\CC$と$\RR^{mn}$と$\RR$線形空間として同型であった.
+したがって,
+$\dim_\RR(\CC)=2$.
+また,
+$\CC$は,
+$\CC$線形空間としては$\CC^1$と同型である.
+したがって,
+$\dim_\CC(\CC)=1$.
+\end{example}
+
 
 \sectionX{章末問題}
 \begin{quiz}
@@ -2424,6 +2436,15 @@ $U$は$U=V_1\oplus V_2\oplus \cdots \oplus V_l$
   $\Braket{w_1,\ldots,w_r}_{\KK}$
   で表す.  
 \end{definition}
+\begin{remark}
+  $(V,\plus,\act,\zzero)$を$\KK$線形空間とし,
+  $w_1,\ldots,w_r\in V$とする.
+  このとき,
+  $\Braket{w_1,\ldots,w_r}_{\KK}$
+  は,
+  $w_1,\ldots,w_r$を含む最小の$V$の部分空間である.
+\end{remark}
+\begin{proof}\end{proof}
 
 \begin{example}
   $A\in \KK^{m\times n}$とし,
@@ -2441,7 +2462,8 @@ $U$は$U=V_1\oplus V_2\oplus \cdots \oplus V_l$
   \begin{align*}
     \Img(\mu_A)=\Set{x_1\aaa_1+\cdots+x_n\aaa_n|x_1,\ldots,x_n\in \KK}
   \end{align*}
-  である. これは, $\Set{\aaa_1,\ldots,\aaa_n}$を含む最小の部分空間である.
+  である.
+  %これは, $\Set{\aaa_1,\ldots,\aaa_n}$を含む最小の部分空間である.
 \end{example}
 \begin{proof}\end{proof}
 
