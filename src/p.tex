@@ -1904,7 +1904,7 @@ $\dim_\CC(\CC)=1$.
   このとき, 以下は同値:
   \begin{enumerate}
   \item $V\simeq W$.
-  \item $\dim_\KK V = \dim_\KK W$.
+  \item $\dim_\KK(V) = \dim_\KK(W)$.
   \end{enumerate}
 \end{prop}
 
@@ -1930,34 +1930,34 @@ $\dim_\CC(\CC)=1$.
 \chapter{部分空間}
 \section{部分空間の定義}
 \begin{definition}
-  $(V,\plus,\act,0_V)$を$\KK$-線形空間とする.
+  $(U,\plus,\act,0_U)$を$\KK$-線形空間とする.
   以下の条件を満たすとき,
-  $W$を$V$の部分空間 (部分$\KK$-線形空間)と呼ぶ:
+  $V$を$U$の部分空間 (部分$\KK$-線形空間)と呼ぶ:
   \begin{enumerate}
-  \item $W\subset V$.
-  \item $(W,\plus,\act,0_V)$が$\KK$-線形空間.
+  \item $V\subset U$.
+  \item $(V,\plus,\act,0_U)$が$\KK$-線形空間.
   \end{enumerate}
 \end{definition}
 \begin{remark}
-  $(V,\plus,\act,0_V)$を$\KK$-線形空間とし, $W\subset V$とする.
-このとき, $v,w,u\in V$に対して,
+  $(U,\plus,\act,0_U)$を$\KK$-線形空間とし, $V\subset U$とする.
+このとき, $v,w,u\in U$に対して,
 \begin{align*}
   v\plus w&=w\plus v\\
   (v\plus w)\plus u&=v\plus (w\plus u)\\
-  0_V\plus w&=w\\
-  w\plus (-1)\act w&=0_V
+  0_U\plus w&=w\\
+  w\plus (-1)\act w&=0_U
 \end{align*}
 が成り立っているので,
-$v,w,u\in W\subset V$に対しても,
+$v,w,u\in V\subset U$に対しても,
 \begin{align*}
   v\plus w&=w\plus v\\
   (v\plus w)\plus u&=v\plus (w\plus u)\\
-  0_V\plus w&=w\\
-  w\plus (-1)\act w&=0_V
+  0_U\plus w&=w\\
+  w\plus (-1)\act w&=0_U
 \end{align*}
 は成り立つ.
 同様の理由で,
-$\alpha,\beta\in \KK$, $v,w\in W$に対して,
+$\alpha,\beta\in \KK$, $v,w\in V$に対して,
 \begin{align*}
   1\act v&=v\\
   (\alpha\beta)\act v&=\alpha\act(\beta\act v)\\
@@ -1965,41 +1965,41 @@ $\alpha,\beta\in \KK$, $v,w\in W$に対して,
   \alpha\act(v\plus w)&=\alpha\act v\plus \alpha\act w
 \end{align*}
 が成り立つ.
-$(W,\plus ,\act,0_V)$が$\KK$-線形空間であるための条件で非自明なのは,
-これらではなく, $\plus $などが$W$上の演算であるかということである.
+$(V,\plus ,\act,0_U)$が$\KK$-線形空間であるための条件で非自明なのは,
+これらではなく, $\plus $などが$V$上の演算であるかということである.
 つまり, 以下の$3$条件が重要である.
 \begin{enumerate}
-  \item $0_V\in W$.
-  \item $v,w\in W \implies v\plus w\in W$.
-  \item $\alpha\in\KK$, $v\in W \implies \alpha\act v\in W$.
+  \item $0_U\in V$.
+  \item $v,w\in V \implies v\plus w\in V$.
+  \item $\alpha\in\KK$, $v\in V \implies \alpha\act v\in V$.
 \end{enumerate}
 \end{remark}
 \begin{lemma}
-  $(V,\plus ,\act,0_V)$を$\KK$-線形空間とし, $W\subset V$とする.
+  $(U,\plus ,\act,0_U)$を$\KK$-線形空間とし, $V\subset U$とする.
   このとき以下は同値:
   \begin{enumerate}
-  \item $W$が$V$の部分空間.
+  \item $V$が$U$の部分空間.
   \item 以下の$3$条件を満たす:
     \begin{enumerate}
-  \item $0_V\in W$.
-  \item $v,w\in W \implies v\plus w\in W$.
-  \item $\alpha\in\KK$, $v\in W \implies \alpha\act v\in W$.
+  \item $0_U\in V$.
+  \item $v,w\in V \implies v\plus w\in V$.
+  \item $\alpha\in\KK$, $v\in V \implies \alpha\act v\in V$.
     \end{enumerate}
   \item 以下の$2$条件を満たす:
     \begin{enumerate}
-  \item $0_V\in W$.
-  \item $v,w\in W, \alpha,\beta\in\KK \implies \alpha\act v\plus \beta\act w\in W$.
+  \item $0_U\in V$.
+  \item $v,w\in V, \alpha,\beta\in\KK \implies \alpha\act v\plus \beta\act w\in V$.
     \end{enumerate}
   \item 以下の$3$条件を満たす:
     \begin{enumerate}
-  \item $W\neq \emptyset$.
-  \item $v,w\in W \implies v\plus w\in W$.
-  \item $\alpha\in\KK$, $v\in W \implies \alpha\act v\in W$.
+  \item $V\neq \emptyset$.
+  \item $v,w\in W \implies v\plus w\in V$.
+  \item $\alpha\in\KK$, $v\in V \implies \alpha\act v\in V$.
     \end{enumerate}
   \item 以下の$2$条件を満たす:
     \begin{enumerate}
-  \item $W\neq \emptyset$.
-  \item $v,w\in W, \alpha,\beta\in\KK \implies \alpha\act v\plus \beta\act w\in W$.
+  \item $V\neq \emptyset$.
+  \item $v,w\in V, \alpha,\beta\in\KK \implies \alpha\act v\plus \beta\act w\in V$.
     \end{enumerate}
   \end{enumerate}
 \end{lemma}
@@ -2007,10 +2007,10 @@ $(W,\plus ,\act,0_V)$が$\KK$-線形空間であるための条件で非自明�
 \section{部分空間の例}
 \subsection{部分空間の具体例}
 \begin{example}
-  $(V,\plus ,\act,0_V)$を$\KK$-線形空間とする.
-  $V$は$V$の部分空間である.
-  $\Set{0_V}$は$V$の部分空間である.
-  この2つを$V$の自明な部分空間と呼ぶ.
+  $(U,\plus ,\act,0_U)$を$\KK$-線形空間とする.
+  $U$は$U$の部分空間である.
+  $\Set{0_U}$は$U$の部分空間である.
+  この2つを$U$の自明な部分空間と呼ぶ.
 \end{example}
 
 \begin{example}
@@ -3123,8 +3123,9 @@ $\Set{e_1,\ldots, e_n}\neq \Set{e'_1,\ldots, e'_n}$
 
 \section{基底の延長}
 \begin{prop}
-  $W$を$\KK$-線形空間とし, $V$を$W$の部分空間とする.
-  このとき,  $\dim_\KK V \leq \dim_\KK W$.
+  $U$を$\KK$-線形空間とし,
+  $V$を$U$の部分空間とする.
+  このとき,  $\dim_\KK(V) \leq \dim_\KK(U)$.
 \end{prop}
 \begin{proof}\end{proof}
 
@@ -3132,30 +3133,31 @@ $\Set{e_1,\ldots, e_n}\neq \Set{e'_1,\ldots, e'_n}$
 \begin{prop}
 \label{prop:basis:ext}
   $\KK$を体とし,
-  $W$をベクトル空間とし,
-  $V$を$W$の部分空間とする.
+  $U$をベクトル空間とし,
+  $V$を$U$の部分空間とする.
   $(e_1,\ldots,e_n)$を$V$の基底とする.
   このとき,
   $m\in \NN$,
-  $w_1,\ldots,w_m\in W$で,
-  $(e_1,\ldots,e_n,w_1,\ldots,w_m)$が$W$の基底となるものが
+  $w_1,\ldots,w_m\in U$で,
+  $(e_1,\ldots,e_n,w_1,\ldots,w_m)$が$U$の基底となるものが
   存在する.  
 \end{prop}
 \begin{proof}\end{proof}
 \begin{remark}
-\Cref{prop:basis:ext}で得られる$W$の基底
+\Cref{prop:basis:ext}で得られる$U$の基底
   $(e_1,\ldots,e_n,w_1,\ldots,w_m)$
   を,
-  $V$の基底$(e_1,\ldots,e_n)$を延長して得られる$W$の基底と呼ぶことがある.
+  $V$の基底$(e_1,\ldots,e_n)$を延長して得られる$U$の基底と呼ぶことがある.
 \end{remark}
 
 \begin{cor}
 $\KK$を体とし,
-  $W$をベクトル空間とし, $V$を$W$の部分空間とする.
+  $U$をベクトル空間とし,
+  $V$を$U$の部分空間とする.
   このとき, 以下は同値:
   \begin{enumerate}
-   \item $V = W$.
-   \item $\dim_\KK V = \dim_\KK W$.
+   \item $V = U$.
+   \item $\dim_\KK(V) = \dim_\KK(U)$.
   \end{enumerate}
 \end{cor}
 \begin{proof}\end{proof}
@@ -3169,7 +3171,8 @@ $\KK$を体とする.
 \begin{proof}\end{proof}
 
 \begin{prop}
-  $U$を$\KK$-線形空間とし, $V, W$を$U$の部分空間とする.
+  $U$を$\KK$-線形空間とし,
+  $V, W$を$U$の部分空間とする.
   $(e_1,\ldots,e_n)$を$V$の基底,
   $(w_1,\ldots,w_m)$を$W$の基底とする.
   $U=V\oplus W$と内部直和に分解されるとき,
@@ -4440,7 +4443,7 @@ $\varphi\colon V\to V$を線形変換とする.
   このとき, 以下は同値:
   \begin{enumerate}
   \item $\lambda$は$\varphi$の固有値である.
-  \item $\dim(E(\varphi,\lambda))\geq 1$.
+  \item $\dim_\KK(E(\varphi,\lambda))\geq 1$.
   \item $\varphi-\lambda\id_V$は単射でない.
   \item $\det(\varphi-\lambda\id_V)=0$.    
   \end{enumerate}
