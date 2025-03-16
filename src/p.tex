@@ -2678,26 +2678,26 @@ $\KK^n$の標準基底と呼ぶ.
 
 \begin{definition}
   $(V,\plus,\act,0_V)$を$\KK$線形空間とし,
-  $w_1,\ldots,w_r\in V$とする.
+  $v_1,\ldots,v_r\in V$とする.
   次の条件を満たすとき,
-  組$(w_1,\ldots,w_r)$が$\KK$上一次独立であるという:
+  組$(v_1,\ldots,v_r)$が$\KK$上一次独立であるという:
   \begin{enumerate}
-  \item $\alpha_1\act w_1\plus\cdots\plus \alpha_r\act w_r=\zzero \implies \alpha_1=\cdots=\alpha_r=0$.
+  \item $\alpha_1\act v_1\plus\cdots\plus \alpha_r\act v_r=\zzero \implies \alpha_1=\cdots=\alpha_r=0$.
   \end{enumerate}
-  $(w_1,\ldots,w_r)$が$\KK$上一次独立でないとき,
-  $(w_1,\ldots,w_r)$が$\KK$上一次従属であるという.
+  $(v_1,\ldots,v_r)$が$\KK$上一次独立でないとき,
+  $(v_1,\ldots,v_r)$が$\KK$上一次従属であるという.
 \end{definition}
 
 \begin{prop}
   $(V,\plus,\act,0_V)$を$\KK$線形空間とし,
-  $w_1,\ldots,w_r\in V$とする.
+  $v_1,\ldots,v_r\in V$とする.
   このとき以下は同値:
   \begin{enumerate}
-  \item $(w_1,\ldots,w_r)$は$\KK$上一次独立.
+  \item $(v_1,\ldots,v_r)$は$\KK$上一次独立.
   \item 線形写像
     \begin{align*}
-      \shazo{\nu_{(w_1,\ldots,w_r)}}{\KK^r}{V}
-      {\begin{pmatrix}a_1\\\vdots\\a_r\end{pmatrix}}{a_1\act w_1\plus\cdots\plus a_r\act w_r}
+      \shazo{\nu_{(v_1,\ldots,v_r)}}{\KK^r}{V}
+      {\begin{pmatrix}a_1\\\vdots\\a_r\end{pmatrix}}{a_1\act v_1\plus\cdots\plus a_r\act v_r}
     \end{align*}
     が単射.
   \end{enumerate}
@@ -2717,44 +2717,44 @@ $\KK^n$の標準基底と呼ぶ.
 
 \begin{prop}
   $(V,\plus,\act,0_V)$を$\KK$線形空間とし,
-  $w_1,\ldots,w_r\in V$とする.
+  $v_1,\ldots,v_r\in V$とする.
   このとき以下は同値:
   \begin{enumerate}
-  \item $(w_1,\ldots,w_r)$は$\KK$上一次独立.
-  \item $\alpha_1\act w_1\plus\cdots\plus \alpha_r\act w_r=\alpha'_1\act w_1\plus\cdots\plus \alpha'_r\act w_r \implies \alpha_1=\alpha'_1,\ldots,\alpha_r=\alpha'_r$.
+  \item $(v_1,\ldots,v_r)$は$\KK$上一次独立.
+  \item $\alpha_1\act w_1\plus\cdots\plus \alpha_r\act v_r=\alpha'_1\act v_1\plus\cdots\plus \alpha'_r\act v_r \implies \alpha_1=\alpha'_1,\ldots,\alpha_r=\alpha'_r$.
   \end{enumerate}
 \end{prop}
 \begin{proof}
 \begin{align*}
-v&=\nu_{(w_1,\ldots,w_r)}(\begin{pmatrix}a_1\\\vdots\\a_n\end{pmatrix}), &
-v'&=\nu_{(w_1,\ldots,w_r)}(\begin{pmatrix}a'_1\\\vdots\\a'_n\end{pmatrix}) 
+v&=\nu_{(v_1,\ldots,v_r)}(\begin{pmatrix}a_1\\\vdots\\a_n\end{pmatrix}), &
+v'&=\nu_{(v_1,\ldots,v_r)}(\begin{pmatrix}a'_1\\\vdots\\a'_n\end{pmatrix}) 
 \end{align*}
-である. $\nu_{(w_1,\ldots,w_r)}$が単射であることから, すぐわかる.
+である. $\nu_{(v_1,\ldots,v_r)}$が単射であることから, すぐわかる.
 \end{proof}
 
 \begin{definition}
   $(V,\plus,\act,0_V)$を$\KK$線形空間とし,
-  $w_1,\ldots,w_r\in V$とする.
+  $v_1,\ldots,v_r\in V$とする.
   次の条件を満たすとき,
-  組$(w_1,\ldots,w_r)$は$V$の生成系であるという.
+  組$(v_1,\ldots,v_r)$は$V$の生成系であるという.
   \begin{enumerate}
   \item
     すべての$v\in V$に対して次が成り立つ:
     \begin{enumerate}
     \item
-    $\alpha_1\act w_1\plus \cdots \alpha_r\act w_r=v$
+    $\alpha_1\act v_1\plus \cdots \alpha_r\act v_r=v$
     を満たす$\alpha_1,\ldots,\alpha_r\in\KK$ が存在する.
     \end{enumerate}
   \end{enumerate}
 \end{definition}
 \begin{prop}
   $(V,\plus,\act,0_V)$を$\KK$線形空間とし,
-  $w_1,\ldots,w_r\in V$とする.
+  $v_1,\ldots,v_r\in V$とする.
   このとき以下は同値:
   \begin{enumerate}
-  \item $(w_1,\ldots,w_r)$は$V$の生成系である.
-  \item $V=\Braket{w_1,\ldots,w_r}_\KK$.
-  \item 線形写像 $\nu_{(w_1,\ldots,w_r)}\colon \KK^r \to V$
+  \item $(v_1,\ldots,v_r)$は$V$の生成系である.
+  \item $V=\Braket{v_1,\ldots,v_r}_\KK$.
+  \item 線形写像 $\nu_{(v_1,\ldots,v_r)}\colon \KK^r \to V$
     が全射.
   \end{enumerate}
 \end{prop}
@@ -2772,13 +2772,13 @@ v'&=\nu_{(w_1,\ldots,w_r)}(\begin{pmatrix}a'_1\\\vdots\\a'_n\end{pmatrix})
 
 \begin{prop}
   $V, U$を$\KK$線形空間とし,
-  $(w_1,\ldots,w_r)$は$V$の生成系であるとする.
+  $(v_1,\ldots,v_r)$は$V$の生成系であるとする.
   線形写像$\varphi\colon V\to U$,
   $\psi\colon V\to U$に対し,
   以下は同値:
   \begin{enumerate}
   \item $\psi=\varphi$.
-  \item すべての$i$に対し,  $\psi(w_i)=\varphi(w_i)$.
+  \item すべての$i$に対し,  $\psi(v_i)=\varphi(v_i)$.
   \end{enumerate}
 \end{prop}
 
@@ -2786,26 +2786,26 @@ v'&=\nu_{(w_1,\ldots,w_r)}(\begin{pmatrix}a'_1\\\vdots\\a'_n\end{pmatrix})
 
 \begin{definition}
   $V$を$\KK$線形空間とし,
-  $w_1,\ldots,w_r\in V$とする.
+  $v_1,\ldots,v_r\in V$とする.
   次の条件を満たすとき,
-  組$(w_1,\ldots,w_r)$は$V$の基底であるという.
+  組$(v_1,\ldots,v_r)$は$V$の基底であるという.
   \begin{enumerate}
-  \item $(w_1,\ldots,w_r)$は一次独立.
-  \item $(w_1,\ldots,w_r)$は$V$の生成系.
+  \item $(v_1,\ldots,v_r)$は一次独立.
+  \item $(v_1,\ldots,v_r)$は$V$の生成系.
   \end{enumerate}
 \end{definition}
 \begin{prop}
   $V$を$\KK$線形空間とし,
-  $w_1,\ldots,w_r\in V$とする.
+  $v_1,\ldots,v_r\in V$とする.
   このとき以下は同値:
   \begin{enumerate}
-  \item $(w_1,\ldots,w_r)$は$V$の基底である.
-  \item 線形写像 $\nu_{(w_1,\ldots,w_r)}\colon \KK^r\to V$
+  \item $(v_1,\ldots,v_r)$は$V$の基底である.
+  \item 線形写像 $\nu_{(v_1,\ldots,v_r)}\colon \KK^r\to V$
     が同型写像.
   \end{enumerate}
 \end{prop}
 \begin{remark}
-  $D=(v_1,\ldots,v_r)$が$V$の基底であるとすると,
+  $D=(e_1,\ldots,e_r)$が$V$の基底であるとすると,
   $\mu_D$は同型写像であり,
   $D=(\mu_D(\ee^{(r)}_1)),\ldots,\mu_D(\ee^{(r)}_r)))$である.
   逆に, 同型線形写像$\varphi\colon \KK^r\to V$が与えられたとき,
@@ -2817,11 +2817,11 @@ v'&=\nu_{(w_1,\ldots,w_r)}(\begin{pmatrix}a'_1\\\vdots\\a'_n\end{pmatrix})
 \end{remark}
 
 \begin{prop}
-  $(w_1,\ldots,w_r)$を$V$の基底とする.
+  $(e_1,\ldots,e_r)$を$V$の基底とする.
   $v\in V$とするとき,
-  $v$は$w_1,\ldots,w_r$の線型結合として一意に書き表せる.
+  $v$は$e_1,\ldots,e_r$の線型結合として一意に書き表せる.
   つまり,
-  $v=\alpha_1\act w_1\plus \ldots\plus \alpha_r\act w_r$
+  $v=\alpha_1\act e_1\plus \ldots\plus \alpha_r\act e_r$
   を満たす$\alpha_1,\ldots, \alpha_r\in\KK$がただ一組存在する.
 \end{prop}
 
@@ -2831,16 +2831,16 @@ v'&=\nu_{(w_1,\ldots,w_r)}(\begin{pmatrix}a'_1\\\vdots\\a'_n\end{pmatrix})
   次は同値である:
   \begin{enumerate}
   \item $\dim_\KK(V)=n$
-  \item $(v_1,\ldots,v_n)$が$V$の基底となるような$v_1,\ldots,v_n\in V$が取れる.
+  \item $(e_1,\ldots,e_n)$が$V$の基底となるような$e_1,\ldots,e_n\in V$が取れる.
   \end{enumerate}
 \end{lemma}
 
 \begin{cor}
   $V$を$\KK$線形空間とし,
-  $(w_1,\ldots,w_r)$も
-  $(v_1,\ldots,v_l)$も
+  $(e_1,\ldots,e_r)$も
+  $(e'_1,\ldots,e'_{r'})$も
   は$V$の基底であるとする.
-  このとき, $r=l=\dim_{\KK}(V)$.
+  このとき, $r=r'=\dim_{\KK}(V)$.
 \end{cor}
 
 
@@ -3039,15 +3039,15 @@ $r<n$とする.
 \begin{prop}
   $\KK$を体とし,
   $V$を$\KK$ベクトル空間とする.
-  $(v_1,\ldots, v_n)$,
-  $(w_1,\ldots, w_n)$が
+  $(e_1,\ldots, e_n)$,
+  $(e'_1,\ldots, e'_n)$が
   $V$の基底であるとする.
-$\Set{v_1,\ldots, v_n}\neq \Set{w_1,\ldots, w_n}$
+$\Set{e_1,\ldots, e_n}\neq \Set{e'_1,\ldots, e'_n}$
 とする.
 このとき, 次を満たす$i$, $j$が存在する.
 \begin{enumerate}
-\item $w_i \not\in \Set{v_1,\ldots,v_n}$.
-\item $(v_1,\ldots,v_{i-1},w_{j},v_{i+1},\ldots,v_n)$が$V$の基底.
+\item $e'_i \not\in \Set{e_1,\ldots,e_n}$.
+\item $(e_1,\ldots,e_{i-1},e'_{j},e_{i+1},\ldots,e_n)$が$V$の基底.
 \end{enumerate}
 \end{prop}
 \begin{proof}\end{proof}
@@ -3096,26 +3096,26 @@ $\Set{v_1,\ldots, v_n}\neq \Set{w_1,\ldots, w_n}$
 
 \begin{cor}
   $V$, $W$を$\KK$-線形空間とし,
-  $(v_1,\ldots,v_n)$を$V$の基底とする.
+  $(e_1,\ldots,e_n)$を$V$の基底とする.
   $\varphi\colon V\to W$,
   $\psi\colon V\to W$,
   を線形写像とする.
   \begin{enumerate}
   \item $\varphi=\psi$.
-  \item $\varphi(v_1)=\psi(v_1),\ldots,\varphi(v_n)=\psi(v_n)$.
+  \item $\varphi(e_1)=\psi(e_1),\ldots,\varphi(e_n)=\psi(e_n)$.
   \end{enumerate}
 \end{cor}
 \begin{proof}\end{proof}
 
 \begin{cor}
   $V$, $W$を$\KK$-線形空間とし,
-  $(v_1,\ldots,v_n)$を$V$の基底とする.
+  $(e_1,\ldots,e_n)$を$V$の基底とする.
   $w_i\in W$とする.
   このとき,
   $\KK$線形写像$\varphi\colon V\to W$
   次の条件を満たすものがただ一つ存在する:
   \begin{enumerate}
-  \item $\varphi(v_1)=w_1,\ldots,\varphi(v_n)=w_n$.
+  \item $\varphi(e_1)=w_1,\ldots,\varphi(e_n)=w_n$.
   \end{enumerate}
 \end{cor}
 \begin{proof}\end{proof}
@@ -3131,21 +3131,22 @@ $\Set{v_1,\ldots, v_n}\neq \Set{w_1,\ldots, w_n}$
 
 \begin{prop}
 \label{prop:basis:ext}
-$\KK$を体とし,
-  $W$をベクトル空間とし, $V$を$W$の部分空間とする.
-  $(v_1,\ldots,v_n)$を$V$の基底とする.
+  $\KK$を体とし,
+  $W$をベクトル空間とし,
+  $V$を$W$の部分空間とする.
+  $(e_1,\ldots,e_n)$を$V$の基底とする.
   このとき,
   $m\in \NN$,
   $w_1,\ldots,w_m\in W$で,
-  $(v_1,\ldots,v_n,w_1,\ldots,w_m)$が$W$の基底となるものが
+  $(e_1,\ldots,e_n,w_1,\ldots,w_m)$が$W$の基底となるものが
   存在する.  
 \end{prop}
 \begin{proof}\end{proof}
 \begin{remark}
 \Cref{prop:basis:ext}で得られる$W$の基底
-  $(v_1,\ldots,v_n,w_1,\ldots,w_m)$
+  $(e_1,\ldots,e_n,w_1,\ldots,w_m)$
   を,
-  $V$の基底$(v_1,\ldots,v_n)$を延長して得られる$W$の基底と呼ぶことがある.
+  $V$の基底$(e_1,\ldots,e_n)$を延長して得られる$W$の基底と呼ぶことがある.
 \end{remark}
 
 \begin{cor}
@@ -3169,10 +3170,10 @@ $\KK$を体とする.
 
 \begin{prop}
   $U$を$\KK$-線形空間とし, $V, W$を$U$の部分空間とする.
-  $(v_1,\ldots,v_n)$を$V$の基底,
+  $(e_1,\ldots,e_n)$を$V$の基底,
   $(w_1,\ldots,w_m)$を$W$の基底とする.
   $U=V\oplus W$と内部直和に分解されるとき,
-  $(v_1,\ldots,v_n,w_1,\ldots,w_m)$
+  $(e_1,\ldots,e_n,w_1,\ldots,w_m)$
   は$U$の基底である.
 \end{prop}
 \begin{proof}\end{proof}
@@ -3310,9 +3311,9 @@ $\Ker(\varpi)=V$である.
 \begin{theorem}
   \label{thm:dim:quotient}
   $V$を$U$の部分空間とする.
-  $v_1,\ldots, v_n,w_1,\ldots,w_m\in U$とし,
-  $(v_1,\ldots, v_n)$は$V$の基底,
-  $(v_1,\ldots, v_n,w_1,\ldots, w_m)$は$U$の基底であるとする.
+  $e_1,\ldots, e_n,w_1,\ldots,w_m\in U$とし,
+  $(e_1,\ldots, e_n)$は$V$の基底,
+  $(e_1,\ldots, e_n,w_1,\ldots, w_m)$は$U$の基底であるとする.
   このとき,
   \begin{align*}
     ([w_1]_V,\ldots, [w_m]_V)
@@ -3330,8 +3331,8 @@ $\Ker(\varpi)=V$である.
   これが同型写像であることを示す.
   \paragraph{全射性}
   $[u]_V\in U/V$とする.
-  $(v_1,\ldots, v_n,w_1,\ldots, w_m)$は$U$の基底であるので,
-  $u=\sum_{i}a_i\act v_i+\sum_{i}b_i \act w_i$
+  $(e_1,\ldots, e_n,w_1,\ldots, w_m)$は$U$の基底であるので,
+  $u=\sum_{i}a_i\act e_i\plus\sum_{i}b_i \act w_i$
   とかける.
   そこで,
   $w=\sum_{i}b_i \act w_i$
@@ -3353,11 +3354,11 @@ $\Ker(\varpi)=V$である.
   このとき,
   $[\sum_{i}b_i \act w_i]_V=[0_U]_V$
   であるので, $\sum_{i}b_i \act w_i\in V$である.
-  $(v_1,\ldots, v_n)$は$V$の基底であるから,
+  $(e_1,\ldots, e_n)$は$V$の基底であるから,
   $\sum_{i}b_i \act w_i=\sum_{i}a_i\act v_i$
   となる$a_i\in \KK$が存在するが,
   移項すると,
-  $-\sum_{i}a_i\act v_i+\sum_{i}b_i \act w_i=0_U$
+  $-\sum_{i}a_i\act e_i\plus\sum_{i}b_i \act w_i=0_U$
   となる.
   $(v_1,\ldots, v_n,w_1,\ldots, w_m)$は一次独立であるので,
   $a_1=\cdots=a_n=b_1=\cdots=b_m=0$.
@@ -3656,8 +3657,8 @@ $\nu_{(v_1,\ldots,v_n)}$は同型写像である.
 
 \begin{definition}
   $V$, $W$を$\KK$-線形空間とし,
-  $D=(v_1,\ldots,v_n)$,
-  $B=(w_1,\ldots,w_m)$とする.
+  $D=(e_1,\ldots,e_n)$を$V$の基底,
+  $B=(w_1,\ldots,w_m)$を$W$の基底とする.
   $\KK$-線形写像$\varphi\colon V\to W$に対し,
   $(\nu_B)^{-1}\circ \varphi\circ \nu_D$は,
   $\KK^n$から $\KK^m$への$\KK$-線形写像である.
@@ -3667,7 +3668,7 @@ $\nu_{(v_1,\ldots,v_n)}$は同型写像である.
 \end{definition}
 \begin{prop}
   $V$, $W$を$\KK$-線形空間とし,
-  $D=(v_1,\ldots,v_n)$を$V$の基底,
+  $D=(e_1,\ldots,e_n)$を$V$の基底,
   $B=(w_1,\ldots,w_m)$を$W$の基底とする.
   $\varphi\colon V\to W$を$\KK$-線形写像とし,
   $A\in\KK^{m\times n}$を$\varphi$の$D$, $B$に関する表現行列とする.
@@ -3681,12 +3682,12 @@ $\nu_{(v_1,\ldots,v_n)}$は同型写像である.
 
 \begin{prop}
   $V$, $W$を$\KK$-線形空間とし,
-  $D=(v_1,\ldots,v_n)$を$V$の基底,
+  $D=(e_1,\ldots,e_n)$を$V$の基底,
   $B=(w_1,\ldots,w_m)$を$W$の基底とする.
   $\varphi\colon V\to W$を$\KK$-線形写像とし,
   $A\in\KK^{m\times n}$を$\varphi$の$D$, $B$に関する表現行列とする.
   また,
-  $\varphi(v_j)=\sum_{i=1}^m a_{i,j} w_i$
+  $\varphi(e_j)=\sum_{i=1}^m a_{i,j} w_i$
   とする.
   このとき,
 \begin{align*}
@@ -3701,18 +3702,18 @@ $J=\Set{1,\ldots,m}$.
 
 \begin{prop}
   $V$, $W$を$\KK$-線形空間とし,
-  $D=(v_1,\ldots,v_n)$を$V$の基底,
+  $D=(e_1,\ldots,e_n)$を$V$の基底,
   $B=(w_1,\ldots,w_m)$を$W$の基底とする.
   $\varphi\colon V\to W$を$\KK$-線形写像とし,
   $A\in\KK^{m\times n}$を$\varphi$の$D$, $B$に関する表現行列とする.
 このとき,
 \begin{align*}
-  \varphi(v_j)=\sum_{i=1}^m a_{i,j}w_i
+  \varphi(e_j)=\sum_{i=1}^m a_{i,j}w_i
 \end{align*}
 である.
 つまり,
 \begin{align*}
-  \varphi(\sum_{j=1}^n x_j v_j)
+  \varphi(\sum_{j=1}^n x_j e_j)
   &=\sum_{i=1}^m a_{i,j}x_jw_i.
 \end{align*}
 \end{prop}
@@ -3721,7 +3722,7 @@ $J=\Set{1,\ldots,m}$.
 
 \begin{prop}
   $V$, $W$, $U$を$\KK$-線形空間とし,
-  $D=(v_1,\ldots,v_n)$を$V$の基底,
+  $D=(e_1,\ldots,e_n)$を$V$の基底,
   $B=(w_1,\ldots,w_m)$を$W$の基底,
   $C=(u_1,\ldots,u_l)$を$U$の基底
   とする.
@@ -3745,7 +3746,7 @@ $J=\Set{1,\ldots,m}$.
 
 \begin{prop}
   $V$, $W$を$\KK$-線形空間とし,
-  $D=(v_1,\ldots,v_n)$を$V$の基底,
+  $D=(e_1,\ldots,e_n)$を$V$の基底,
   $B=(w_1,\ldots,w_m)$を$W$の基底
   とする.
   $\varphi\colon V\to W$を$\KK$-線形写像とし,
@@ -3760,7 +3761,7 @@ $J=\Set{1,\ldots,m}$.
 
 \begin{prop}
   $V$, $W$を$\KK$-線形空間とし,
-  $D=(v_1,\ldots,v_n)$を$V$の基底,
+  $D=(e_1,\ldots,e_n)$を$V$の基底,
   $B=(w_1,\ldots,w_m)$を$W$の基底
   とする.
   $\varphi\colon V\to W$を$\KK$-線形写像とし,
@@ -3776,7 +3777,7 @@ $J=\Set{1,\ldots,m}$.
 \begin{prop}
   $\KK$を体とし,
   $V$, $W$を$\KK$-ベクトル空間とし,
-  $D=(v_1,\ldots,v_n)$を$V$の基底,
+  $D=(e_1,\ldots,e_n)$を$V$の基底,
   $B=(w_1,\ldots,w_m)$を$W$の基底
   とする.
   $\varphi\colon V\to W$を$\KK$-線形写像とし,
@@ -3824,17 +3825,17 @@ $J=\Set{1,\ldots,m}$.
 \begin{prop}
   \label{thm:trasmat:description}
   $V$を$n$次元$\KK$-線形空間とする.
-  $D=(v_1,\ldots, v_n)$,
-  $D'=(v'_1,\ldots, v'_n)$を$V$の基底とし,
+  $D=(e_1,\ldots, e_n)$,
+  $D'=(e'_1,\ldots, e'_n)$を$V$の基底とし,
   $T=(t_{i,j})_{i\in I, j\in I}\in\KK^{n\times n}$を$D'$から$D$への変換行列とする.
   このとき,
   \begin{align*}
-    v_j=\sum_{i=1}^n t_{i,j}v'_i.
+    e_j=\sum_{i=1}^n t_{i,j}e'_i.
   \end{align*}
   ただし, $I=\Set{1,\ldots, n} $.
   つまり,
   \begin{align*}
-    (v_1,\ldots, v_n)=(v'_1,\ldots, v'_n)T.
+    (e_1,\ldots, e_n)=(e'_1,\ldots, e'_n)T.
   \end{align*}
 \end{prop}
 \begin{proof}
@@ -3864,9 +3865,9 @@ $J=\Set{1,\ldots,m}$.
 
 \begin{prop}
   $V$を$n$次元$\KK$-線形空間とする.
-  $D=(v_1,\ldots, v_n),D'=(v'_1,\ldots, v'_n)$を$V$の基底とし,
+  $D=(e_1,\ldots, e_n),D'=(e'_1,\ldots, e'_n)$を$V$の基底とし,
   $T\in\KK^{n\times n}$を$D'$から$D$への変換行列とする.
-  $v_j=\sum_{i=1}^n t_{i,j}v'_i$とすると,
+  $e_j=\sum_{i=1}^n t_{i,j}e'_i$とすると,
   \begin{align*}
     T=(t_{i,j})_{i\in I, j\in I}.
   \end{align*}
@@ -3876,7 +3877,7 @@ $J=\Set{1,\ldots,m}$.
 
 \begin{prop}
   $V$を$n$次元$\KK$-線形空間とする.
-  $D=(v_1,\ldots, v_n),D'=(v'_1,\ldots, v'_n)$を$V$の基底とし,
+  $D=(e_1,\ldots, e_n),D'=(e'_1,\ldots, e'_n)$を$V$の基底とし,
   $T\in\KK^{n\times n}$を$D'$から$D$への変換行列とする.
   このとき, $T$は正則である.
 \end{prop}
@@ -3884,11 +3885,11 @@ $J=\Set{1,\ldots,m}$.
 
 \begin{prop}
   $V$を$n$次元$\KK$-線形空間とする.
-  $D'=(v'_1,\ldots, v'_n)$を$V$の基底とする.
+  $D'=(e'_1,\ldots, e'_n)$を$V$の基底とする.
   $T=(t_{i,j})_{i\in I, j\in I}$とし,
-  $v_j=\sum_{i=1}^n t_{i,j}v'_i$とする.
+  $e_j=\sum_{i=1}^n t_{i,j}e'_i$とする.
   $T$が正則なら,
-  $D=(v_1,\ldots, v_n)$は$V$の基底であり,
+  $D=(e_1,\ldots, e_n)$は$V$の基底であり,
   $D'$から$D$への変換行列は$T$である.
 \end{prop}
 \begin{proof}\end{proof}
@@ -3896,7 +3897,7 @@ $J=\Set{1,\ldots,m}$.
 
 \begin{prop}
   $V$を$n$次元$\KK$-線形空間とする.
-  $D=(v_1,\ldots, v_n),D'=(v'_1,\ldots, v'_n)$を$V$の基底とし,
+  $D=(e_1,\ldots, e_n),D'=(e'_1,\ldots, e'_n)$を$V$の基底とし,
   $T\in\KK^{n\times n}$を$D'$から$D$への変換行列とする.
   このとき, $T^{-1}$は$D$から$D'$への変換行列である.
 \end{prop}
@@ -4211,7 +4212,7 @@ $\sigma\in S_n$に対し,
 
 \begin{prop}
   $V$, $W$を$\KK$-線形空間とし,
-  $(v_1,\ldots,v_n)$は$V$の基底であるとする.
+  $(e_1,\ldots,e_n)$は$V$の基底であるとする.
   \begin{align*}
     F&\colon \underbrace{V\times V\times \cdots \times V}_n\to W\\
     F'&\colon \underbrace{V\times V\times \cdots \times V}_n\to W
@@ -4220,7 +4221,7 @@ $\sigma\in S_n$に対し,
   交代的な$n$重線形写像とする.
   このとき,
   \begin{align*}
-    F(v_1,\ldots,v_n)=F'(v_1,\ldots,v_n)
+    F(e_1,\ldots,e_n)=F'(e_1,\ldots,e_n)
     \implies
     F=F'.
   \end{align*}
@@ -4229,9 +4230,9 @@ $\sigma\in S_n$に対し,
 
 \begin{example}
   $V$を$\KK$-線形空間とし,
-  $B=(v_1,\ldots,v_n)$は$V$の基底であるとする.
+  $B=(e_1,\ldots,e_n)$は$V$の基底であるとする.
   \begin{align*}
-    u_j= a_{1,j}\act v_1\plus \cdots \plus a_{n,j}\act v_n
+    u_j= a_{1,j}\act e_1\plus \cdots \plus a_{n,j}\act e_n
   \end{align*}
   に対して,
   \begin{align*}
@@ -4558,10 +4559,10 @@ $\varphi(v_1+v_2)=\varphi_1(v_1)+\varphi_2(v_2)$
 $\varphi\colon V\to U$
 が定義できる.
 この線形写像$\varphi$を$\varphi_1\oplus \varphi_2$と書く.
-$D_1=(v_1,\ldots,v_n)$を$V_1$の基底,
-$D_2=(v'_1,\ldots,v'_{n'})$を$V_2$の基底,
+$D_1=(e_1,\ldots,e_n)$を$V_1$の基底,
+$D_2=(e'_1,\ldots,e'_{n'})$を$V_2$の基底,
 とすると,
-$D=(v_1,\ldots,v_n,v'_1,\ldots,v'_{n'})$は$V$の基底である.
+$D=(e_1,\ldots,e_n,e'_1,\ldots,e'_{n'})$は$V$の基底である.
 $B_1=(u_1,\ldots,u_m)$を$U_1$の基底,
 $B_2=(u'_1,\ldots,u'_{m'})$を$U_2$の基底
 とすると,
@@ -4621,7 +4622,7 @@ $\varphi$の$D$, $B$に関する表現行列はブロック対角である.
 表現行列に対する列基本変形は定義域の基底の取り換え,
 行基本変形は終域の基底の取り換えに対応していたので,
 線形写像$\varphi\colon V\to W$に対し,
-$V$の基底$D=(v_1,\ldots,v_n)$,
+$V$の基底$D=(e_1,\ldots,e_n)$,
 $W$の基底$B=(w_1,\ldots,W_m)$
 で,
 $\varphi$の$D$, $B$に関する表現行列が,
@@ -4631,9 +4632,9 @@ $\varphi$の$D$, $B$に関する表現行列が,
 となるものが取れる.
 このとき,
 \begin{align*}
-V_1&=\Braket{v_1}_\KK,
-&&\ldots,&V_r&=\Braket{v_r}_\KK,&
-V'&=\Braket{v_{r+1},\ldots,v_{n}}_\KK\\
+V_1&=\Braket{e_1}_\KK,
+&&\ldots,&V_r&=\Braket{e_r}_\KK,&
+V'&=\Braket{e_{r+1},\ldots,e_{n}}_\KK\\
 W_1&=\Braket{w_1}_\KK,
 &&\ldots,&W_r&=\Braket{w_r}_\KK,&
 W'&=\Braket{w_{r+1},\ldots,w_{n}}_\KK
@@ -4644,7 +4645,7 @@ $W=W_1\oplus\cdots\oplus W_r\oplus W'$,
 であり,
 \begin{align*}
 \shazo{\varphi_i}{V_i}{W_i}
-{cv_i}{cw_i}
+{ce_i}{cw_i}
 &&
 \shazo{\varphi'}{V'}{W'}
 {v}{0_W}
@@ -4697,16 +4698,16 @@ $V=V_1\oplus \cdots \oplus V_k$と内部直和に分解されているとする.
 $\varphi$のこの基底に関する表現行列はブロック対角となる.
 特に$\dim_\KK(V)=n$で, 
 $V=V_1\oplus \cdots V_n$と1次元部分空間$V_i$の内部直和に分解されているならば,
-$v_i\in V_i\setminus \Set{0_V}$とすると,
-$B=(v_1,\ldots,v_n)$は$V$の基底となり,
+$e_i\in V_i\setminus \Set{0_V}$とすると,
+$B=(e_1,\ldots,e_n)$は$V$の基底となり,
 この基底$B$に関する
 $\varphi$の表現行列は対角行列となる.
 表現行列が,
 \begin{align*}
 \begin{pmatrix}\lambda_1&&\\&\ddots&\\&&\lambda_n\end{pmatrix}
 \end{align*}
-となっているとき, $\varphi(v_i)=\lambda_i\act v_i$となるので,
-$v_i$は固有値$\lambda_i$に属する固有ベクトルである.
+となっているとき, $\varphi(e_i)=\lambda_i\act e_i$となるので,
+$e_i$は固有値$\lambda_i$に属する固有ベクトルである.
 
 \begin{lemma}
   $V$を$\KK$線形空間とし,
@@ -4872,14 +4873,14 @@ $A,B\in\KK^{n\times n}$とし,
 \begin{definition}
 $V$を$\KK$-線形空間とし,
 $\varphi\colon V\to V$を$\KK$-線形変換とする.
-$V$の基底$B=(v_1,\ldots,v_n)$が以下の条件を満たすとき,
+$V$の基底$B=(e_1,\ldots,e_n)$が以下の条件を満たすとき,
 $\varphi$は$V$によって(上半)三角化されるという:
 \begin{enumerate}
 \item
 $i\in\Set{1,\ldots,n}$に対し,
 以下を満たす$a_{i,j}\in\KK$がとれる:
 \begin{align*}
-\varphi(v_j)=\sum_{i\colon i\leq j }a_{i,j}\act v_i.
+\varphi(e_j)=\sum_{i\colon i\leq j }a_{i,j}\act e_i.
 \end{align*}
 \end{enumerate}
 \end{definition}
