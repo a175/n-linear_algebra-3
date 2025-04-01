@@ -354,7 +354,14 @@ X_1\times \cdots \times X_n
 と定義し, $X_1,\ldots,X_n$の直積と呼ぶ.
 \end{definition}
 
-
+\begin{definition}
+$X$を集合とする.
+$X$に含まれる元の総数が整数であるとき,
+$X$は有限集合であるという.
+また, 元の総数を$\numof{X}$で表す.
+有限集合ではないとき,
+$X$は無限集合であるという.
+\end{definition}
 \subsection{写像}
 $X$, $Y$を集合とする.
 このとき写像とは何かを説明するとき,
@@ -674,7 +681,10 @@ $a_i\neq 1$となる$a_i$達の積を$\sum_{i\in I} a_i$で表す.
 \end{remark}
 
 \section{行列や数ベクトル}
-%\subsection{行列に関する用語と記号}
+以下は,
+行列や数ベクトルに関する基礎的な事項である.
+
+\subsection{行列に関する用語と記号}
 $\KK$を体とし,
 $M=\Set{1,\ldots,m}$,
 $N=\Set{1,\ldots,n}$とする.
@@ -745,6 +755,15 @@ $(0)_{i\in \Set{1,\ldots,m}, j\in \Set{1,\ldots,n}}$
 対角成分がすべて1である対角行列を単位行列と呼ぶ.
 特に, $m$次正方行列である単位行列を$E_m$で表す.
 
+$c$が逆数をもつとき,
+$F(i;c)$を$(i,i)$成分は$c$, それ以外の対角成分は$1$, , 他は$0$という正方行列とする.
+$i\neq j$であるとき,
+$G(i,j;a)$を$(i,j)$成分は$c$, 対角成分は$1$, 他は$0$という正方行列とする.
+$i\neq j$であるとき,
+$H(i,j;a)$を$(i,i)$成分と$(j,j)$成分は$0$, それ以外の対角成分は$1$,
+$(i,j)$成分と$(j,i)$成分は$1$,
+他は$0$という正方行列とする.
+これらを基本行列と呼ぶ.
 
 \begin{definition}
 $M=\Set{1,\ldots,m}$とする.
@@ -761,7 +780,7 @@ i,j\in M, i<j \implies a_{i,j}=0.
 \end{definition}
 
 
-%\subsection{行列の演算}
+\subsection{行列の演算}
 行列や数ベクトルに対する演算を紹介する.
 \begin{definition}
 行列$A=(a_{i,j})_{i\in M, j\in N}$,
@@ -810,23 +829,35 @@ $B=(b_{i,j})_{i\in M, j\in M}$
 \transposed{(AB)}&=\transposed{B}\transposed{A}.
 \end{align*}
 \end{prop}
-\section{連立一次方程式と行列式}
-\subsection{行基本変形と列基本変形}
-基本行列, 行基本変形と列基本変形, 階数, 斉次連立一次方程式.
-
 
 
 \begin{definition}
-$m$次正方行列$A$, $B$が,
-以下を満たすとき, $B$は$A$の逆行列であるという:
-\begin{enumerate}
-\item $AB=E_m$.
-\item $BA=E_m$.
-\end{enumerate}
-$A$の逆行列が存在するとき, $A$は正則であるという.
-正則行列$A$に対し$A$の逆行列は唯一つ存在するので,
-それを$A^{-1}$と書く.
+$A$, $B$を$n$次正方行列とする.
+$AB=E_n$かつ$BA=E_n$であるとき,
+$B$は$A$の逆行列であるという.
+$A$の逆行列が存在するとき,
+$A$は正則であるといい,
+そうでないとき, $A$は非正則であるという.
 \end{definition}
+\begin{prop}
+$A$が正則であるとする.
+$B$も$B'$も$A$の逆行列ならば, 
+$B=B'$
+\end{prop}
+\begin{definition}
+正則行列$A$の逆行列を$A^{-1}$であらわす.
+\end{definition}
+
+\begin{prop}
+$n$次正則行列$A, B$に対し, 次が成り立つ:
+\begin{enumerate}
+\item $AB$も正則で, $(AB)^{-1}=B^{-1}A^{-1}$.
+\item $\transposed{A}$も正則で, $(\transposed{A})^{-1}=\transposed{(A^{-1})}$.
+\item $A^n$も正則で, $(A^{n})^{-1}=(A^{-1})^n$.
+\end{enumerate}
+\end{prop}
+
+\subsection{行基本変形と列基本変形}
 
 
 
@@ -850,9 +881,136 @@ a_{i,1}& a_{i,2}&\cdots &a_{i,n}
 を$A$の$j$行目と呼ぶ.
 
 
+基本行列を左から掛けることを行基本変形と呼ぶ.
+つまり, 次の操作を行基本変形と呼ぶ:
+\begin{enumerate}
+\item $F(i;c)A$. $i$行目を$c$倍する. (ただし, $c$は逆数を持つとする.)
+\item $G(i,j;s)A$. $i$行目に$j$行目の$a$倍を加える. (ただし, $i\neq j$.)
+\item $H(i,j)A$. $i$行目と$j$行目を入れ替える. (ただし, $i\neq j$.)
+\end{enumerate}
+基本行列を右から掛けることを行基本変形と呼ぶ.
+次の操作を列基本変形と呼ぶ:
+\begin{enumerate}
+\item $AF(i;c)$. $i$列目を$c$倍する. (ただし, $c$は逆数を持つとする.)
+\item $AG(i,j;s)$. $j$列目に$i$列目の$a$倍を加える. (ただし, $i\neq j$.)
+\item $AH(i,j)$. $i$列目と$j$列目を入れ替える. (ただし, $i\neq j$.)
+\end{enumerate}
+基本行列は正則であり,
+行基本変形や列基本変形によって$A$の正則性は変わらない.
+
+
+すべての成分が$0$である行を零行, そうでない行を非零行と一時的によぶことにする.
+$A$に行基本変形を行い, なるべく非零行を少ない形に変形する.
+このときの非零行の行数を$A$の階数と呼び$\rank(A)$で表す.
+$n$次正方行列$A$に対して,
+$\rank(A)=n$であることと, $A$が正則であることは同値である.
+
+
+次の条件を満たす行列$A=(a_{i,j})_{i=1,\ldots,m,j=1,\ldots,n}$を
+行被役階段行列と呼ぶ:
+\begin{enumerate}
+\item 次をみたす$p_1<\cdots <p_r$が存在する, ただし, $r=\rank(A)$:
+\begin{enumerate}
+\item $i=1,\ldots,r$に対し
+\begin{enumerate}
+\item $a_{i,p_i}=1$.
+\item $j<p_i$ならば, $a_{i,j}=0$.
+\end{enumerate}
+\item $r+1,r+2,\ldots$行目の成分はすべて$0$
+\end{enumerate}
+\end{enumerate}
+行基本変形を行うことで,
+どんな行列$A$も
+行被役階段行列に変形できる.
+また,
+得られる行被役階段行列は$A$のみに依存し,
+その変形手順によらない.
+
+次の条件を満たす行列$A=(a_{i,j})_{i=1,\ldots,m,j=1,\ldots,n}$を
+列被役階段行列と呼ぶ:
+\begin{enumerate}
+\item 次をみたす$p_1<\cdots <p_r$が存在する, ただし, $r=\rank(A)$:
+\begin{enumerate}
+\item $j=1,\ldots,r$に対し
+\begin{enumerate}
+\item $a_{p_j,j}=1$.
+\item $i<p_j$ならば, $a_{i,j}=0$.
+\end{enumerate}
+\item $r+1,r+2,\ldots$列目の成分はすべて$0$
+\end{enumerate}
+\end{enumerate}
+列基本変形を行うことで,
+どんな行列$A$も
+列被役階段行列に変形できる.
+また,
+得られる列被役階段行列は$A$のみに依存し,
+その変形手順によらない.
+
+
+
+$A$を$(m,n)$行列とし,
+$\zzero=O_{m,1}$とする.
+未知数$\xx$に関する方程式$A\xx=\zzero$を,
+$A$を係数行列とする斉次連立一次方程式と呼ぶ.
+$\Set{\vv|A\vv=\zzero}$を
+$A\xx=\zzero$の解の空間と呼ぶ.
+$A\xx=\zzero$の解の空間は,
+$n-\rank(A)$個の変数を使って記述することができるが,
+$n-\rank(A)$を解の自由度と呼ぶ.
+どんな$A$に対しても,
+$\zzero$は斉次連立一次方程式の解の空間の元である.
+$A$が正則行列なら, 自由度は$0$であり,
+その解の空間は$\Set{\zzero}$である.
+具体的な行列$A$に対し,
+$A\xx=\zzero$の解の空間を求めるには,
+$A$を行基本変形で行被役階段行列に変形すると求めやすい.
+
 
 \subsection{行列式}
+$M_n$を$n$次正方行列をすべて集めた集合とする.
+このとき, $M_n$から$\KK$への写像を考える.
 
+$\Set{1,\ldots,n}$から$\Set{1,\ldots,n}$への全単射をすべて集めた集合を$S_n$とおく.
+$\sigma\in S_n$に対し,
+\begin{align*}
+\Inv(\sigma)&=\Set{(i,j)|i<j, \sigma(i)>\sigma(j)}\\
+\sgn(\sigma)&=(-1)^{\numof{\Inv(\sigma)}}
+\end{align*}
+とし, $\sgn(\sigma)$を$\sigma$の符号と呼ぶ.
+$n$次正方行列$A=(a_{i,j})_{i,j}\in M_n$に対し,
+\begin{align*}
+D_n^{(1)}=\sum_{\sigma\in S_n} \sgn(\sigma)a_{1,\sigma(1)}\cdots a_{n,\sigma(n)}
+\end{align*}
+とおく.
+
+次に, 
+$n$次正方行列$A=(a_{i,j})_{i,j}\in M_n$に対し,
+$A$の$1$行目と$k$列目を忘れて得られる$(n-1)$次正方行列を$A^{(1,k)}$とし,
+\begin{align*}
+D_n^{(2)}
+&=
+\begin{cases}
+\sum_{j=1}^{n} (-1)^{1+j}a_{1,j}D_{n-1}^{(2)}(A^{(1,k)}) & (n>1)\\
+a_{1,1}&(n=1)
+\end{cases}
+\end{align*}
+とおく.
+
+$D^{(3)}_n\colon M_n \to \KK$は次の条件を満たすとする:
+\begin{enumerate}
+\item $A$, $A'$, $A''\in M_n$は$i$行目を除いて等しいとする. このとき以下が成り立つ:
+\begin{enumerate}
+\item $A'$の$i$行目を$c$倍したものが$A$の$i$行目と等しいならば, $D^{(3)}(A)=c D^{(3)}(A')$.
+\item $A'$の$i$行目と$A''$の$i$行目を足したものが$A$の$i$行目と等しいならば, $D^{(3)}(A)=D^{(3)}(A')+D^{(3)}(A'')$.
+\end{enumerate}
+\item $i\neq i'$とする.  $A\in M_n$の$i$行目と$i'$行目が等しいならば$D^{(3)}(A)=0$.
+\item $D(E_n)=1$.
+\end{enumerate}
+
+このとき, $D^{(1)}_n=D^{(2)}_n=D^{(3)}_n$である.
+$D^{()}(A)$を$A$の行列式と呼び, $\det(A)$で表す.
+$A\in M_n$に対し,
+$\det(A)$が逆数を持つことと, $A$が正則であることは同値である.
 
 \sectionX{章末問題}
 
