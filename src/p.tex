@@ -1042,7 +1042,7 @@ $\det(A)$が逆数を持つことと, $A$が正則であることは同値であ
     \item $a+b=b+a$.
     \item $(a+b)+c=a+(b+c)$.
     \item $a+\zzero=a$.
-    \item $a+(-1 a)=a$.
+    \item $a+(-1 a)=\zzero$.
     \item $(\alpha\beta)a=\alpha(\beta a)$.
     \item $1a=a$.
     \item $\alpha(a+b)=\alpha a+\alpha b$.
@@ -1062,6 +1062,20 @@ $\det(A)$が逆数を持つことと, $A$が正則であることは同値であ
   \begin{enumerate}
     \item $a,b\in V\implies \varphi(a+b)=\varphi(a)+\varphi(b)$.
     \item $\alpha\in\KK, a\in V\implies \varphi(\alpha a)=\alpha\varphi(a)$.
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  $\KK$を体とし, $V$を$\KK$を成分とする$(2,1)$行列の集合とする.
+  $A$を$\KK$を成分とする$(2,2)$行列とし,
+  \begin{align*}
+    \shazo{\varphi}{V}{V}{x}{Ax}
+  \end{align*}
+  とする. $A$が正則であるとする.
+  このとき, 以下の条件を満たす線形写像$\psi\colon V\to V$が存在することを示せ:
+  \begin{enumerate}
+    \item $\varphi\circ \psi=\id_V$.
+    \item $\psi\circ \varphi=\id_V$.
   \end{enumerate}
 \end{quiz}
 
@@ -2070,6 +2084,17 @@ $\dim_\CC(\CC)=1$.
 \sectionX{章末問題}
 \begin{quiz}
   %\solvelater{quiz:1:1}
+  $\KK$を体とし,
+  $V$を$\KK$を成分とする$(3,1)$行列の集合とし,
+  $W$を$\KK$を成分とする$(2,1)$行列の集合とする.
+  このとき, 以下は$\KK$-線形空間であることを示せ:
+  \begin{align*}
+    \Set{x\in V|Ax=\zzero}.
+  \end{align*}
+\end{quiz}
+
+\begin{quiz}
+  %\solvelater{quiz:1:1}
   次が通常の和とスカラー倍で$\KK$線形空間となることを示せ:
   \begin{align*}
     \Set{\begin{pmatrix}x\\x\end{pmatrix}|x\in\KK}
@@ -2801,7 +2826,30 @@ $\KK$を体とし,
 
 \sectionX{章末問題}
 \begin{quiz}
-  %\solvelater{quiz:1:1}
+  列ベクトル表示された
+  $(m,n)$行列
+  $A=(\aaa_1|\cdots|\aaa_n)$
+  を考える.
+  このとき, 以下を(連立方程式の解の自由度に帰着させることで)示せ:
+  \begin{enumerate}
+  \item
+    $\rank(A)\geq m$ならば,
+   が成り立つ:
+   \begin{enumerate}
+   \item $\xx\in\KK^m$とする.
+     このとき, $\xx=c_1\aaa_1+\cdots+c_n\aaa_n$を満たす
+     $c_1,\ldots,c_n\in\KK$が存在する.
+   \end{enumerate}
+  \item
+    $\rank(A)< n$ならば,
+   が成り立つ:
+   \begin{enumerate}
+   \item 
+     このとき, $\xx=c_1\aaa_1+\cdots+c_n\aaa_n=\zzero$かつ
+     $(c_1,\ldots,c_n)\neq (0,\ldots,0)$を満たす
+     $c_1,\ldots,c_n\in\KK$が存在する.
+   \end{enumerate}
+  \end{enumerate}
 \end{quiz}
 
 
