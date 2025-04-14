@@ -1245,11 +1245,11 @@ $x$がベクトルであるとは,
   $(a_i)_{i\in \NN}$
   で表す.
   \begin{align*}
-    \KK^\NN = \Set{(a_i)_{i\in \NN}|a_i\in \KK}
+    \ell(\KK) = \Set{(a_i)_{i\in \NN}|a_i\in \KK}
   \end{align*}
   とおく.
   次の和とスカラー倍で, $(0)_{i\in \NN}$を零元とする$\KK$-線形空間:
-  $\alpha \in\KK$, $(a_i)_{i\in \NN},(b_i)_{i\in \NN}\in \KK^\NN$に対し,
+  $\alpha \in\KK$, $(a_i)_{i\in \NN},(b_i)_{i\in \NN}\in \ell(\KK)$に対し,
   \begin{align*}
     (a_i)_{i\in \NN}+(b_i)_{i\in \NN} &= (a_i+b_i)_{i\in \NN},\\
     \alpha (a_i)_{i\in \NN} &= (\alpha a_i)_{i\in \NN}.
@@ -1625,13 +1625,13 @@ $\KK$-線形空間であるいう:
 \begin{example}
   $\varphi$を次の写像とする:
   \begin{align*}
-    \shazo{\varphi}{\KK^\NN}{\KK^\NN}
+    \shazo{\varphi}{\ell(\KK)}{\ell(\KK)}
     {(a_i)_{i\in \NN}=(a_0,a_1,a_2,\ldots)}{(a_{i+1})_{i\in \NN}=(a_1,a_2,a_3,\ldots)}.
   \end{align*}
   このとき, $\varphi$は$\KK$-線形である.
   $\psi$を次の写像とする:
   \begin{align*}
-    \shazo{\varphi}{\KK^\NN}{\KK^\NN}
+    \shazo{\varphi}{\ell(\KK)}{\ell(\KK)}
     {(a_0,a_1,a_2,\ldots)}{(0,a_0,a_1,\ldots)}.
   \end{align*}
   このとき, $\psi$は$\KK$-線形である.
@@ -1955,12 +1955,12 @@ $A\in\KK^{m\times n}$とし,
 \end{example}
 
 \begin{example}
-  $\NN$から$\KK$への写像を集めた集合を$V$,
-  $\NN$で添字付された数列を集めた集合を$W$とする.
+  $\NN$から$\KK$への写像を集めた集合を$\KK^\NN$,
+  $\NN$で添字付された数列を集めた集合を$\ell(\KK)$とする.
   どちらも$\KK$-線形空間であった.
   $\varphi$を以下で定義する:
   \begin{align*}
-    \shazo{\varphi}{V}{W}{f}{(f(i))_{i\in \NN}}.
+    \shazo{\varphi}{\KK^\NN}{\ell(\KK)}{f}{(f(i))_{i\in \NN}}.
   \end{align*}
   $\varphi$は$\KK$-線形写像である.
   逆に,
@@ -1977,17 +1977,17 @@ $A\in\KK^{m\times n}$とし,
   で定め,
   次の写像を考える:
   \begin{align*}
-    \shazo{\psi}{W}{V}{a}{f_a}.
+    \shazo{\psi}{\ell(\KK)}{\KK^\NN}{a}{f_a}.
   \end{align*}
   つまり$\psi$以下で定義する.
   \begin{align*}
-    \shazo{\psi}{W}{V}{a=(a_{i})_{i\in \NN}}{\left(\shazo{f_a}{\NN}{\KK}{i}{a_{i}}\right)}.
+    \shazo{\psi}{\ell(\KK)}{\KK^\NN}{a=(a_{i})_{i\in \NN}}{\left(\shazo{f_a}{\NN}{\KK}{i}{a_{i}}\right)}.
   \end{align*}
   このとき$\psi$も$\KK$-線形写像であり,
-  $\varphi\circ\psi=\id_{W}$,
-  $\psi\circ\varphi=\id_{V}$である.
+  $\varphi\circ\psi=\id_{\ell(\KK)}$,
+  $\psi\circ\varphi=\id_{\KK^\NN}$である.
   よって$\varphi$は同型写像であり,
-  $V\simeq W$.
+  $\KK^\NN\simeq \ell(\KK)$.
 \end{example}
 
 同型写像などについていくつか補足する.
@@ -2258,41 +2258,41 @@ $(V,\plus ,\act,0_U)$が$\KK$-線形空間であるための条件で非自明�
 \begin{example}
   $\KK$が$\CC$や$\RR$のときには,
   数列の極限を考えることができる.  
-  数列をすべて集めた集合$\KK^{\NN}$は$\KK$線形空間であった.
+  数列をすべて集めた集合$\ell(\KK)$は$\KK$線形空間であった.
   $p>0$に対し,
   \begin{align*}
-    \ell^p=\Set{(a_i)_{i\in\NN}\in \KK^{\NN}|\sum_i |a_i|^p < \infty}
+    \ell^p=\Set{(a_i)_{i\in\NN}\in \ell(\KK)|\sum_i |a_i|^p < \infty}
   \end{align*}
-  とおくと, $\ell^p$は$\KK^{\NN}$の部分空間.
+  とおくと, $\ell^p$は$\ell(\KK)$の部分空間.
   \begin{align*}
-    \ell^\infty=\Set{(a_i)_{i\in\NN}\in \KK^{\NN}|\sup \Set{\left|a_i\right||i\in \NN} < \infty}
+    \ell^\infty=\Set{(a_i)_{i\in\NN}\in \ell(\KK)|\sup \Set{\left|a_i\right||i\in \NN} < \infty}
   \end{align*}
-  とおくと, $\ell^\infty$は$\KK^{\NN}$の部分空間.
+  とおくと, $\ell^\infty$は$\ell(\KK)$の部分空間.
   \begin{align*}
-    c&=\Set{(a_i)_{i\in\NN} \in \KK^{\NN}| \lim_{i\to\infty} a_i \in\KK}\\
-    c_0&=\Set{(a_i)_{i\in\NN} \in \KK^{\NN}| \lim_{i\to\infty} a_i =0}\\
+    c&=\Set{(a_i)_{i\in\NN} \in \ell(\KK)| \lim_{i\to\infty} a_i \in\KK}\\
+    c_0&=\Set{(a_i)_{i\in\NN} \in \ell(\KK)| \lim_{i\to\infty} a_i =0}\\
   \end{align*}
-  とおくと, $c$, $c_0$は$\KK^{\NN}$の部分空間.
+  とおくと, $c$, $c_0$は$\ell(\KK)$の部分空間.
   %$c_0$は$c$の部分空間でもある.
 \end{example}
 \begin{proof}\end{proof}
 
 \begin{example}
-  数列をすべて集めた集合$\KK^{\NN}$は$\KK$線形空間であった.
+  数列をすべて集めた集合$\ell(\KK)$は$\KK$線形空間であった.
   \begin{align*}
-    c_{00}&=\Set{(a_i)_{i\in\NN} \in \KK^{\NN} | \#\Set{i| a_i \neq 0} < 0}
+    c_{00}&=\Set{(a_i)_{i\in\NN} \in \ell(\KK) | \#\Set{i| a_i \neq 0} < 0}
   \end{align*}
-  とおくと, $c_{00}$は$\CC^{\NN}$の部分空間である.
+  とおくと, $c_{00}$は$\ell(\CC)$の部分空間である.
   
   文字$x$を用いて各$i\in\NN$に対し形式的な記号$x^i$を用意し,
-  数列$(a_i)_{i\in\NN} \in \KK^{\NN}$を
+  数列$(a_i)_{i\in\NN} \in \ell(\KK)$を
   $\sum_{i\in \NN} a_ix^i$
   と書くことにする.
   $\sum_{i\in \NN} a_ix^i$は,
   不定元$x$に関する形式的冪級数とよばれる.
   不定元$x$に関する形式的冪級数をすべて集めた集合を,
   $\KK[[x]]$と書く.
-  $i>n$ならば$a_i=0$となるような数列$(a_i)_{i\in\NN} \in \KK^{\NN}$
+  $i>n$ならば$a_i=0$となるような数列$(a_i)_{i\in\NN} \in \ell(\KK)$
   に対しては,
   $\sum_{i=0}^{n} a_ix^i$
   とか
@@ -2311,7 +2311,7 @@ $(V,\plus ,\act,0_U)$が$\KK$-線形空間であるための条件で非自明�
   多項式や形式的冪級数に現れる不定元$x$は単なる文字であって,
   代入を目的とした変数ではない.
   $x^i$は数列における位置を表すための記号であり,
-  $\KK[[x]]$の元と$\KK^{\NN}$の元は表記が違うだけで同じものである.
+  $\KK[[x]]$の元と$\ell(\KK)$の元は表記が違うだけで同じものである.
   $x^i$は$(\underbrace{0,\ldots,0}_{i},1,0,0,\ldots)$という数列を表しており,
   $j\neq i$なら$x^i$と$x^j$は区別される.
   したがって,
@@ -2355,8 +2355,8 @@ $(V,\plus ,\act,0_U)$が$\KK$-線形空間であるための条件で非自明�
   {x}{x^2}
   \end{align*}
   で定義される多項式関数とすると$f=g$である.
-  一方, 多項式$x\in\KK[x]$は数列$(0,1,0,\ldots)\in\KK^\NN$であり,
-  多項式$x^2\in\KK[x]$は数列$(0,0,1,0,\ldots)\in\KK^\NN$であるので,
+  一方, 多項式$x\in\KK[x]$は数列$(0,1,0,\ldots)\in\ell(\KK)$であり,
+  多項式$x^2\in\KK[x]$は数列$(0,0,1,0,\ldots)\in\ell(\KK)$であるので,
   この2つは区別され, $x\neq x^2$である.
 \end{remark}
 
