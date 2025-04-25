@@ -1595,6 +1595,18 @@ $\KK$-線形空間であるいう:
   を満たすことととして定義することもある.
 \end{remark}
 
+線形写像の定義から次がすぐわかる.
+\begin{prop}
+  $(V,\plus,\act,0_V)$, $(W,\pplus,\aact,0_W)$を$\KK$-線形空間とし,
+  $\varphi\colon V\to W$を$\KK$-線形写像とする.
+  このとき,
+  \begin{enumerate}
+    \item $\varphi(0_V)=0_W$.
+    \item $\varphi(-x)=-\varphi(x)$.
+  \end{enumerate}
+\end{prop}
+\begin{proof}\end{proof}
+
 \begin{remark}
   $\varphi$は$(V,\plus,\act)$から$(W,\pplus,\aact)$への$\KK$-線形写像であることを,
   写像$\varphi$は$\KK$-線形であるということもある.
@@ -1654,7 +1666,7 @@ $\KK$-線形空間であるいう:
   これは$\RR$-線形写像ではない.
   $\phi$を次の写像とする:
   \begin{align*}
-    \shazo{\phi}{\RR}{\RR}{x}{x^2}.
+    \shazo{\phi}{\RR}{\RR}{x}{x^3}.
   \end{align*}
   これは$\RR$-線形写像ではない.
 \end{example}
@@ -1686,6 +1698,15 @@ $\KK$-線形空間であるいう:
     {(a_0,a_1,a_2,\ldots)}{(0,a_0,a_1,\ldots)}.
   \end{align*}
   このとき, $\psi$は$\KK$-線形である.
+\end{example}
+
+\begin{example}
+  $\pi_k$を次の写像とする:
+  \begin{align*}
+    \shazo{\varphi}{\ell(\KK)}{\KK}
+    {(a_0,a_1,a_2,\ldots)}{a_k}.
+  \end{align*}
+  このとき, $\pi_k$は$\KK$-線形である.
 \end{example}
 
 \begin{example}
@@ -1764,18 +1785,9 @@ $\KK$-線形空間であるいう:
 \begin{proof}\end{proof}
 
 
-線形写像の性質をいくつか紹介する.
-\begin{prop}
-  $(V,\plus,\act,0_V)$, $(W,\pplus,\aact,0_W)$を$\KK$-線形空間とし,
-  $\varphi\colon V\to W$を$\KK$-線形写像とする.
-  このとき,
-  \begin{enumerate}
-    \item $\varphi(0_V)=0_W$.
-    \item $\varphi(-x)=-\varphi(x)$.
-  \end{enumerate}
-\end{prop}
-\begin{proof}\end{proof}
 
+
+数ベクトル空間上の線形写像の性質をいくつか紹介する.
 \begin{prop}
 \label{prop:linmap:kn:1}
 線形写像
