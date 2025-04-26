@@ -1388,6 +1388,16 @@ $V$と$W$の
 \addindex{直和!外部---}%
 %\Defit{直和}%
 と呼ぶ.
+
+$V_1,\ldots, V_n$という$n$個の$\KK$線形空間が与えられたとき,
+\begin{align*}
+V_1\boxplus \cdots \boxplus V_n = \Set{(v_1,\ldots,v_n)|v_i\in V_i}
+\end{align*}
+とおくと,
+$V\boxplus W$と同様に,
+$\KK$線形空間である.
+これを, 
+$V_1,\ldots, V_n$の外部直和と呼ぶ.
 \end{example}
 \begin{remark}
 外部直和を$\oplus$で表し
@@ -1592,7 +1602,7 @@ $\KK$-線形空間であるいう:
   $(V,\plus,\act)$, $(W,\pplus,\aact)$を$\KK$-線形空間とする.
   $\varphi$を$V$から$W$への写像とする.
   $\varphi$が以下の条件を満たすとき,
-  $\varphi$は$(V,\plus,\act)$から$(W,\pplus,\aact)$への$\KK$-線形写像であるという:
+  $\varphi$は$(V,\plus,\act)$から$(W,\pplus,\aact)$への$\KK$-\defit{線形写像}であるという:
   \begin{enumerate}
     \item $v,u\in V\implies \varphi(v\plus u)=\varphi(v)\pplus\varphi(u)$.
     \item $\alpha\in \KK, u\in V\implies \varphi(\alpha\act v)=\alpha\aact\varphi(v)$.
@@ -1609,6 +1619,11 @@ $\KK$-線形空間であるいう:
   を満たすことととして定義することもある.
 \end{remark}
 
+\begin{remark}
+  $\varphi$は$(V,\plus,\act)$から$(W,\pplus,\aact)$への$\KK$-線形写像であることを,
+  写像$\varphi$は$\KK$-線形であるということもある.
+\end{remark}
+
 線形写像の定義から次がすぐわかる.
 \begin{prop}
   $(V,\plus,\act,0_V)$, $(W,\pplus,\aact,0_W)$を$\KK$-線形空間とし,
@@ -1619,12 +1634,12 @@ $\KK$-線形空間であるいう:
     \item $\varphi(-x)=-\varphi(x)$.
   \end{enumerate}
 \end{prop}
-\begin{proof}\end{proof}
-
-\begin{remark}
-  $\varphi$は$(V,\plus,\act)$から$(W,\pplus,\aact)$への$\KK$-線形写像であることを,
-  写像$\varphi$は$\KK$-線形であるということもある.
-\end{remark}
+\begin{proof}
+$v\in V$とすると,
+$\varphi(0_V)=\varphi(0\act v)=0\aact \varphi(v)=0_W$.
+また,
+$\varphi(-x)=\varphi(-1\act x)=-1\aact \varphi(x)=-\varphi(x)$.
+\end{proof}
 
 線形写像の例をいくつか挙げる.
 
@@ -1663,7 +1678,7 @@ $\KK$-線形空間であるいう:
   \end{align*}
   この写像は$\KK$-線形である.
   $A\in \KK^{n\times n}$に対し,
-  $\tr(A)$を$A$のトレースと呼ぶ.
+  $\tr(A)$を$A$の\defit{トレース}と呼ぶ.
 \end{example}
 
 \begin{example}
@@ -1887,7 +1902,7 @@ $A\in\KK^{m\times n}$とし,
   $V$, $W$を$\KK$-線形空間とする.
   以下の条件を満たす
   $\varphi\colon V\to W$を,
-  $V$から$W$への($\KK$-線形空間としての)同型写像と呼ぶ:
+  $V$から$W$への($\KK$-線形空間としての)\defit{同型写像}と呼ぶ:
   \begin{enumerate}
   \item $\varphi\colon V\to W$は$\KK$-線形写像.
   \item 以下の条件を満たす$\KK$-線形写像$\psi\colon W \to V$が存在する:
@@ -1900,7 +1915,7 @@ $A\in\KK^{m\times n}$とし,
 \begin{definition}
   $V$, $W$を$\KK$-線形空間とする.
   $V$から$W$への($\KK$-線形空間としての)同型写像が存在するとき,
-  $V$と$W$は($\KK$-線形空間として)同型であるといい,  
+  $V$と$W$は($\KK$-線形空間として)\defit{同型}であるといい,  
   $V\simeq W$と書く.
 \end{definition}
 
@@ -2129,14 +2144,14 @@ $A\in\KK^{m\times n}$とし,
 \end{prop}
 \begin{proof}\end{proof}
 
-\begin{lemma}
+\begin{example}
    $m,n\in\NN$に対し以下は同値:
   \begin{enumerate}
   \item $m=n$.
   \item $\KK^m \simeq \KK^n$
   \end{enumerate}
-\end{lemma}
-\begin{example}
+\end{example}
+\begin{proof}
   $m=n$のとき, $\KK^n=\KK^m$であるので, 同型である.
 
   $m\neq n$のとき, $\KK^n$と$\KK^m$は同型ではないことを示す.
@@ -2153,21 +2168,21 @@ $A\in\KK^{m\times n}$とし,
   $\mu_A$は同型写像ではない.
   どんな線形写像$\mu_A\colon \KK^n \to \KK^m$も同型写像にはならないので,
   $\KK^n$と$\KK^m$は同型ではない.
-\end{example}
+\end{proof}
 
 \begin{definition}
-次を満たすとき$\KK$線形空間$V$の次元は$n$であるといい,
+次を満たすとき$\KK$線形空間$V$の\defit{次元}は$n$であるといい,
 $\dim_\KK(V)=n$と書く:
 \begin{enumerate}
 \item $\KK^n\simeq V$.
 \end{enumerate}
 また,
 このとき,
-$V$は有限次元であるともいい, $\dim_\KK(V)<\infty$と書くこともある.
+$V$は\defit{有限次元}であるともいい, $\dim_\KK(V)<\infty$と書くこともある.
 \end{definition}
 
 \begin{definition}
-次を満たすとき$\KK$線形空間$V$は無限次元であるといい,
+次を満たすとき$\KK$線形空間$V$は\defit{無限次元}であるといい,
 $\dim_\KK(V)=\infty$と書く:
 \begin{enumerate}
 \item $n\in \NN$ならば, 次が成り立つ:
@@ -2203,6 +2218,18 @@ $\dim_\CC(\CC)=1$.
   \end{enumerate}
 \end{prop}
 
+\begin{remark}
+次元という用語は,
+ベクトル空間に対する用語であり, その元であるベクトルに対する用語ではない.
+$\RR^2$は$2$次元であるとは言うが,
+例えば,
+\begin{align*}
+\begin{pmatrix}a\\b\end{pmatrix}
+\end{align*}
+のことを$2$次元であるとは言わない.
+通常$2$つの成分からなる数ベクトルであるということを言い表すのには,
+$2$項数ベクトルという用語を用いる.
+\end{remark}
 
 \sectionX{章末問題}
 \begin{quiz}
@@ -2210,6 +2237,8 @@ $\dim_\CC(\CC)=1$.
   $\KK$を体とし,
   $V$を$\KK$を成分とする$(3,1)$行列の集合とし,
   $W$を$\KK$を成分とする$(2,1)$行列の集合とする.
+  $A$を$\KK$を成分とする$(2,3)$行列とし,
+  $\zzero=O_{2,1}$とする.
   このとき, 以下は$\KK$-線形空間であることを示せ:
   \begin{align*}
     \Set{x\in V|Ax=\zzero}.
@@ -2238,7 +2267,7 @@ $\dim_\CC(\CC)=1$.
 \begin{definition}
   $(U,\plus,\act,0_U)$を$\KK$-線形空間とする.
   以下の条件を満たすとき,
-  $V$を$U$の部分空間 (部分$\KK$-線形空間)と呼ぶ:
+  $V$を$U$の\defit{部分空間} (部分$\KK$-線形空間)と呼ぶ:
   \begin{enumerate}
   \item $V\subset U$.
   \item $(V,\plus,\act,0_U)$が$\KK$-線形空間.
@@ -2316,7 +2345,7 @@ $(V,\plus ,\act,0_U)$が$\KK$-線形空間であるための条件で非自明�
   $(U,\plus ,\act,0_U)$を$\KK$-線形空間とする.
   $U$は$U$の部分空間である.
   $\Set{0_U}$は$U$の部分空間である.
-  この2つを$U$の自明な部分空間と呼ぶ.
+  この2つを$U$の\defit{自明な部分空間}と呼ぶ.
 \end{example}
 
 \begin{example}
@@ -2357,21 +2386,23 @@ $(V,\plus ,\act,0_U)$が$\KK$-線形空間であるための条件で非自明�
 
 
 \begin{example}
+  ここでは,
+  $\KK$を$\CC$または$\RR$とする.
   $\KK$が$\CC$や$\RR$のときには,
   数列の極限を考えることができる.  
   数列をすべて集めた集合$\ell(\KK)$は$\KK$線形空間であった.
   $p>0$に対し,
   \begin{align*}
-    \ell^p=\Set{(a_i)_{i\in\NN}\in \ell(\KK)|\sum_i |a_i|^p < \infty}
+    \ell^p(\KK)=\Set{(a_i)_{i\in\NN}\in \ell(\KK)|\sum_i |a_i|^p < \infty}
   \end{align*}
-  とおくと, $\ell^p$は$\ell(\KK)$の部分空間.
+  とおくと, $\ell^p(\KK)$は$\ell(\KK)$の部分空間.
   \begin{align*}
-    \ell^\infty=\Set{(a_i)_{i\in\NN}\in \ell(\KK)|\sup \Set{\left|a_i\right||i\in \NN} < \infty}
+    \ell^\infty(\KK)=\Set{(a_i)_{i\in\NN}\in \ell(\KK)|\sup \Set{\left|a_i\right||i\in \NN} < \infty}
   \end{align*}
-  とおくと, $\ell^\infty$は$\ell(\KK)$の部分空間.
+  とおくと, $\ell^\infty(\KK)$は$\ell(\KK)$の部分空間.
   \begin{align*}
-    c&=\Set{(a_i)_{i\in\NN} \in \ell(\KK)| \lim_{i\to\infty} a_i \in\KK}\\
-    c_0&=\Set{(a_i)_{i\in\NN} \in \ell(\KK)| \lim_{i\to\infty} a_i =0}\\
+    c(\KK)&=\Set{(a_i)_{i\in\NN} \in \ell(\KK)| \lim_{i\to\infty} a_i \in\KK}\\
+    c_0(\KK)&=\Set{(a_i)_{i\in\NN} \in \ell(\KK)| \lim_{i\to\infty} a_i =0}\\
   \end{align*}
   とおくと, $c$, $c_0$は$\ell(\KK)$の部分空間.
   %$c_0$は$c$の部分空間でもある.
@@ -2381,16 +2412,16 @@ $(V,\plus ,\act,0_U)$が$\KK$-線形空間であるための条件で非自明�
 \begin{example}
   数列をすべて集めた集合$\ell(\KK)$は$\KK$線形空間であった.
   \begin{align*}
-    c_{00}&=\Set{(a_i)_{i\in\NN} \in \ell(\KK) | \#\Set{i| a_i \neq 0} < 0}
+    c_{00}(\KK)&=\Set{(a_i)_{i\in\NN} \in \ell(\KK) | \#\Set{i| a_i \neq 0} < 0}
   \end{align*}
-  とおくと, $c_{00}$は$\ell(\CC)$の部分空間である.
+  とおくと, $c_{00}$は$\ell(\KK)$の部分空間である.
   
   文字$x$を用いて各$i\in\NN$に対し形式的な記号$x^i$を用意し,
   数列$(a_i)_{i\in\NN} \in \ell(\KK)$を
   $\sum_{i\in \NN} a_ix^i$
   と書くことにする.
   $\sum_{i\in \NN} a_ix^i$は,
-  不定元$x$に関する形式的冪級数とよばれる.
+  不定元$x$に関する\defit{形式的冪級数}とよばれる.
   不定元$x$に関する形式的冪級数をすべて集めた集合を,
   $\KK[[x]]$と書く.
   $i>n$ならば$a_i=0$となるような数列$(a_i)_{i\in\NN} \in \ell(\KK)$
@@ -2401,11 +2432,11 @@ $(V,\plus ,\act,0_U)$が$\KK$-線形空間であるための条件で非自明�
   とか
   $a_0+a_1x_1+\cdots+a_nx^n$
   の様に書くこともあり,
-  不定元$x$に関する多項式とよばれる.
+  不定元$x$に関する\defit{多項式}とよばれる.
   不定元$x$に関する多項式をすべて集めた集合を,
   $\KK[x]$と書く.
-  $\KK[[x]]$は形式的冪級数環,
-  $\KK[x]$は多項式環と呼ばれる.
+  $\KK[[x]]$は\defit{形式的冪級数環},
+  $\KK[x]$は\defit{多項式環}と呼ばれる.
 \end{example}
 \begin{proof}\end{proof}
 \begin{remark}
@@ -2425,7 +2456,7 @@ $(V,\plus ,\act,0_U)$が$\KK$-線形空間であるための条件で非自明�
   {x}{a_0+a_1x+\cdots+a_nx^n}
   \end{align*}
   という写像を考えることができる.
-  このような写像を$n$次の多項式関数と呼ぶ.
+  このような写像を$n$次の\defit{多項式関数}と呼ぶ.
   多項式関数すべてを集めた集合を$V$と置くと,
   $V$は$\KK^\KK$の部分空間である.
   例えば$\KK$が有限集合なら,
@@ -2462,6 +2493,15 @@ $(V,\plus ,\act,0_U)$が$\KK$-線形空間であるための条件で非自明�
 \end{remark}
 
 \begin{example}
+$\RR$から$\RR$への関数全体$\RR^\RR$は$\RR$-線形空間であった.
+また, 連続関数全体$C^0$, $n$回連続微分可能な関数全体$C^n$,
+任意の有限回微分可能な関数全体$C^\infty$も$\RR$-線形空間であった.
+これらはどれも$\RR^\RR$の部分空間である.
+また$n,m\in \NN$に対し, $C^\infty$は$C^n$の部分空間であり,
+$n<m$なら$C^m$は$C^n$の部分空間である.
+\end{example}
+
+\begin{example}
   $V$を$\KK$-線形空間とする.
   $V$から$\KK$への写像をすべて集めた集合
   $\KK^V$は$\KK$線形空間であった.
@@ -2469,7 +2509,7 @@ $(V,\plus ,\act,0_U)$が$\KK$-線形空間であるための条件で非自明�
     V^\ast =\Set{f\colon V\to \KK\text{: 線形写像} }
   \end{align*}
   とおく. これは$\KK^V$の部分空間.
-  $V^\ast$を$\KK$-線形空間$V$の双対空間と呼ぶ.
+  $V^\ast$を$\KK$-線形空間$V$の\defit{双対空間}と呼ぶ.
 \end{example}
 \begin{proof}\end{proof}
 
@@ -3011,7 +3051,7 @@ $\KK^n$の標準基底と呼ぶ.
   次の条件を満たすとき,
   組$(v_1,\ldots,v_r)$が$\KK$上一次独立であるという:
   \begin{enumerate}
-  \item $\alpha_1\act v_1\plus\cdots\plus \alpha_r\act v_r=\zzero \implies \alpha_1=\cdots=\alpha_r=0$.
+  \item $\alpha_1\act v_1\plus\cdots\plus \alpha_r\act v_r=0_V \implies \alpha_1=\cdots=\alpha_r=0$.
   \end{enumerate}
   $(v_1,\ldots,v_r)$が$\KK$上一次独立でないとき,
   $(v_1,\ldots,v_r)$が$\KK$上一次従属であるという.
