@@ -50,6 +50,7 @@
 基本的には扱わない.
 例えば, 双対空間$V^\ast$は線形空間の例としては取り上げる可能性があるが,
 有限次元ベクトル空間において$(V^\ast)^\ast$と$V$がcanonicalな同型をもつことなどは扱わない.
+直交補空間なども扱わない.
 また, ジョルダン標準形に関すること(最小多項式の求め方など)なども,
 基本的には扱わない.
 
@@ -2343,6 +2344,17 @@ $(V,\plus ,\act,0_U)$が$\KK$-線形空間であるための条件で非自明�
   \end{enumerate}
 \end{lemma}
 
+\begin{remark}
+$U$を$\KK$-線形空間とし,
+$W\subset U$を$U$の部分空間とする.
+$V\subset W$とすると,
+$V\subset W\subset U$となっている.
+このとき, 以下は同値である:
+\begin{enumerate}
+\item $V$は$W$の部分空間.
+\item $V$は$U$の部分空間.
+\end{enumerate}
+\end{remark}
 \section{部分空間の例}
 \subsection{部分空間の具体例}
 \label{sec:subspace:example}
@@ -2449,7 +2461,8 @@ $(V,\plus ,\act,0_U)$が$\KK$-線形空間であるための条件で非自明�
   代入を目的とした変数ではない.
   $x^i$は数列における位置を表すための記号であり,
   $\KK[[x]]$の元と$\ell(\KK)$の元は表記が違うだけで同じものである.
-  $x^i$は$(\underbrace{0,\ldots,0}_{i},1,0,0,\ldots)$という数列を表しており,
+  $x^i$は$(\underbrace{0,\ldots,0}_{i},1,0,0,\ldots)=(\delta_{i,n})_{n\in\NN}$ (ただし, $\delta$はクロネッカーの$\delta$)
+  という数列を表しており,
   $j\neq i$なら$x^i$と$x^j$は区別される.
   したがって,
   $\KK[[x]]$や$\KK[x]$には無限個の元が含まれている.
@@ -2530,218 +2543,10 @@ $n<m$なら$C^m$は$C^n$の部分空間である.
 \begin{proof}\end{proof}
 
 
-\subsection{部分空間から得られる部分空間}
-
-\begin{example}
-  \begin{align*}
-    V&=\Set{\begin{pmatrix}a\\b\\0\end{pmatrix}|a,b\in\KK}\\
-    W&=\Set{\begin{pmatrix}0\\a\\b\end{pmatrix}|a,b\in\KK}
-  \end{align*}
-  とする.
-  このとき, $V$も$W$も$\KK^3$の部分空間である.
-  \begin{align*}
-    V\cap W&=\Set{\begin{pmatrix}0\\a\\0\end{pmatrix}|a\in\KK}\\
-  \end{align*}
-  となっており, $V\cap W$も$\KK^3$の部分空間である.
-\end{example}
-\begin{proof}\end{proof}
-
-\begin{example}
-  $U$を$\KK$-線形空間とする.
-  $V, W$を$U$の部分空間とする.
-  このとき, $V\cap W$は$U$の部分空間.
-\end{example}
-\begin{proof}\end{proof}
-
-
-\begin{example}
-  $U$を$\KK$-線形空間とする.
-  $I$を集合とし,
-  $i\in I$に対し, $V_i$を$U$の部分空間とする.
-  このとき, $\bigcap_{i\in I}V_i$は$U$の部分空間である.
-\end{example}
-\begin{proof}\end{proof}
-
-
-\begin{example}
-  \label{subspace:nonexample:cup}
-  \begin{align*}
-    V&=\Set{\begin{pmatrix}a\\0\end{pmatrix}|a\in\KK}\\
-    W&=\Set{\begin{pmatrix}0\\a\end{pmatrix}|a\in\KK}
-  \end{align*}
-  とする.
-  このとき, $V$も$W$も$\KK^2$の部分空間である.
-  \begin{align*}
-    \begin{pmatrix}1\\0\end{pmatrix},
-    \begin{pmatrix}0\\1\end{pmatrix}\in V\cup W
-  \end{align*}
-  であるが,
-  \begin{align*}
-    \begin{pmatrix}1\\0\end{pmatrix}+
-    \begin{pmatrix}0\\1\end{pmatrix}=\begin{pmatrix}1\\1\end{pmatrix}\not\in V\cup W
-  \end{align*}
-  となっており, $V\cup W$は$U$の部分空間ではない.
-\end{example}
-\begin{proof}\end{proof}
-
-\begin{example}
-  $U$を$\KK$-線形空間とする.
-  $V, W$を$U$の部分空間とする.
-  \begin{enumerate}
-    \item $V\subset W$なら$V\cup W=W$であるので, $V\cup W$は$U$の部分空間.
-    \item $W\subset V$なら$V\cup W=V$であるので, $V\cup W$は$U$の部分空間.
-    \item $V$と$W$に包含関係がないとき, $V\cup W$は$U$の部分空間ではない. 
-  \end{enumerate}
-\end{example}
-\begin{proof}
-  $V$と$W$に包含関係が無いとする.
-  $v\in V\setminus W$, $w\in W\setminus V$
-  とし, $u=v+w$とおく.
-  $u\in V$とすると, $v\in V$であるから, $u-v\in V$となるが,
-  $u-v=w\not\in V$に矛盾する.
-  $u\in W$とすると, $w\in W$であるから, $u-w\in W$となるが,
-  $u-w=v\not\in W$に矛盾する.
-  よって, $u\not\in V\cup W$となるので, $V\cup W$は部分空間ではない.
-\end{proof}
-
-
-
-\begin{example}
-  \begin{align*}
-    V&=\Set{\begin{pmatrix}a\\0\\0\end{pmatrix}|a\in\KK}\\
-    W&=\Set{\begin{pmatrix}0\\a\\0\end{pmatrix}|a\in\KK}
-  \end{align*}
-  とする.
-  このとき, $V$も$W$も$\KK^3$の部分空間である.
-  \begin{align*}
-    U=\Set{v+w|v\in V, w\in W}
-  \end{align*}
-  とすると,
-  \begin{align*}
-    U&=\Set{\begin{pmatrix}a\\b\\0\end{pmatrix}|a,b\in\KK}\\
-  \end{align*}
-  となっており, $U$も$\KK^3$の部分空間である.
-\end{example}
-\begin{proof}\end{proof}
-
-\begin{example}
-  $(U,\plus ,\act,0_V)$を$\KK$-線形空間とする.
-  $V, W$を$U$の部分空間とする.
-  このとき,
-  \begin{align*}
-    V+W=\Set{v\plus w|v\in V,w\in W}
-  \end{align*}
-  とおく.
-  このとき, $V+W$は$U$の部分空間.
-  $V+W$を$V$と$W$の和空間と呼ぶことがある.
-\end{example}
-\begin{proof}\end{proof}
-\begin{prop}
-  $(U,\plus ,\act,0_V)$を$\KK$-線形空間とし,
-  $V, W$を$U$の部分空間とする.
-  \begin{align*}
-    \SSS=\Set{U'|\text{$U'$は$U$の部分空間,} V\cup W \subset U'}
-  \end{align*}
-  とおく.  
-  \begin{align*}
-    U_0 = \bigcap_{U'\in\SSS} U'
-  \end{align*}
-  とする.  また, $\SSS$の中で包含関係で極小なものを$U_1$とする.
-  このとき,
-  \begin{align*}
-    U_0=U_1=V+W.
-  \end{align*}
-\end{prop}
-\begin{proof}
-\end{proof}
-\begin{remark}
-  $V, W$を$U$の部分空間とするとき,
-  $V+W$は$V$と$W$の両方を含む最小の部分空間である.
-  また$V\cap W$は$V$と$W$の両方に含まれる最大の部分空間である.
-\end{remark}
-
-
-\begin{definition}
-  $U$を$\KK$-線形空間とし,
-  $V$, $W$を$U$の部分空間とする.
-  次の条件を満たすとき,
-  $U$は$V$と$W$の(内部)直和に分解できるという.
-  \begin{enumerate}
-  \item $U=V+W$.
-  \item $V\cap W=\Set{0_U}$.
-  \end{enumerate}
-  $U$が$V$と$W$の(内部)直和に分解できることを,
-  $U=V\oplus W$と書き表す.
-  また$V$や$W$のことを$U$の直和因子と呼ぶことがある.
-\end{definition}
-\begin{example}
-  $U=\KK^3$とし,
-  \begin{align*}
-    V&=\Set{\begin{pmatrix}x\\y\\0\end{pmatrix}|x,y\in\KK}&
-    W&=\Set{\begin{pmatrix}0\\0\\z\end{pmatrix}|z\in\KK}&
-    W'&=\Set{\begin{pmatrix}0\\y\\z\end{pmatrix}|y,z\in\KK}
-  \end{align*}
-  とする.
-  $U=V+W$であり, $U=V+W'$でもある.
-  $V\cap W=\Set{\zzero_3}$であるので,
-  $U$は$V$と$W$の(内部)直和に分解できる.
-  つまり, $U=V\oplus W$である.
-  一方$V\cap W'\neq \Set{\zzero_3}$であるので,
-  $V$と$W'$には(内部)直和に分解できない.
-\end{example}
-
-\begin{prop}
-  $U=V\oplus W$であるとき,
-  $v,v'\in V$,
-  $w,w'\in W$に対し, 以下は同値:
-  \begin{enumerate}
-  \item $v\plus w=v'\plus w'$.
-  \item $v=v'$, $w=w'$.
-  \end{enumerate}
-\end{prop}
-\begin{proof}
-  \paragraph{$v\plus w=v'\plus w'\implies v=v', w=w'$}
-  $v\plus w=v'\plus w'$であるので,
-  $-v'\plus v=-w\plus w'$.
-  左辺は$V$の元, 右辺は$W$の元であるから,
-  これらは, $V\cap W$の元.
-  よって, $0_U$である.
-  $-v'\plus v=0_U$であるので, $v=v'$.
-  $-w'\plus w=0_U$であるので, $w=w'$.
-  
-  \paragraph{$v=v', w=w'\implies v\plus w=v'\plus w'$}
-  明らか.
-\end{proof}
-
-
-$U$が$U=V_1\oplus W_1$と内部直和に分解され,
-$W_1$が$V_2\oplus W_2$と内部直和に分解され,
-$W_2$が$V_3\oplus W_3$と内部直和に分解され,
-ということが繰り返された状況を考える.
-つまり,
-$U=V_1\oplus (V_2\oplus \cdots \oplus(V_{l-1}\oplus V_l))$
-と分解されていることを考える.
-\begin{definition}
-$U=V_1\oplus (V_2\oplus \cdots \oplus(V_{l-1}\oplus V_l))$
-と内部直和に分解されているとき,
-$U$は$U=V_1\oplus V_2\oplus \cdots \oplus V_l$
-と(内部)直和に分解されると言う.
-\end{definition}
-\begin{prop}
-  $(U,\plus,\ast,0_U)$を$\KK$-線形空間とし, $V_i\subset U$を$U$の部分空間とし,
-  $U=V_1+\cdots+ V_l$を満たすとする.
-  このとき, 以下は同値である:
-  \begin{enumerate}
-  \item $U=V_1\oplus \cdots \oplus V_l$と内部直和に分解される.
-  \item 全ての$i$に対して,
-    \begin{align*}
-      V_i \cap (V_1+\cdots+ V_{i-1}+V_{i+1}+\cdots+ V_{l})=\Set{0_U}.
-    \end{align*}
-  \end{enumerate}
-\end{prop}
-
 \subsection{線形写像から得られる部分空間}
-
+\label{sec:subspace:mor}
+ここでは,
+線形写像が与えられたときに定義できる部分空間について紹介する.
 \begin{definition}
   $(V,\plus,\act,0_V)$,
   $(W,\pplus,\aact,0_W)$を
@@ -2752,8 +2557,8 @@ $U$は$U=V_1\oplus V_2\oplus \cdots \oplus V_l$
     \Ker(\varphi)&=\Set{x\in V|\varphi(x)=0_V  },\\
     \Img(\varphi)&=\Set{\varphi(x)|x\in V}
   \end{align*}
-  とおく. $\Ker(\varphi)$を$\varphi$のKernel,
-  $\Img(\varphi)$を$\varphi$のImageと呼ぶ.
+  とおく. $\Ker(\varphi)$を$\varphi$の\defit{核}\Defit{Kernel},
+  $\Img(\varphi)$を$\varphi$の\defit{像}\Defit{Image}と呼ぶ.
 \end{definition}
 \begin{prop}
   $(V,\plus,\act,0_V)$,
@@ -2788,6 +2593,8 @@ $U$は$U=V_1\oplus V_2\oplus \cdots \oplus V_l$
   $\Braket{w_1,\ldots,w_r}_{\KK}$
   は,
   $w_1,\ldots,w_r$を含む最小の$V$の部分空間である.
+  また, 
+  $\Braket{w_1,\ldots,w_r}_{\KK}=\Set{a_1\act w_1\plus\cdots a_r\act w_r|a_i\in\KK}$である.
 \end{remark}
 \begin{proof}\end{proof}
 
@@ -2928,8 +2735,295 @@ $\KK$を体とし,
 \end{prop}
 \begin{proof}\end{proof}
 
+\subsection{部分空間から得られる部分空間}
+\label{sec:subspace:sub}
+
+\begin{example}
+  \begin{align*}
+    V&=\Set{\begin{pmatrix}a\\b\\0\end{pmatrix}|a,b\in\KK}\\
+    W&=\Set{\begin{pmatrix}0\\a\\b\end{pmatrix}|a,b\in\KK}
+  \end{align*}
+  とする.
+  このとき, $V$も$W$も$\KK^3$の部分空間である.
+  \begin{align*}
+    V\cap W&=\Set{\begin{pmatrix}0\\a\\0\end{pmatrix}|a\in\KK}\\
+  \end{align*}
+  となっており, $V\cap W$も$\KK^3$の部分空間である.
+\end{example}
+\begin{proof}\end{proof}
+
+\begin{example}
+  $U$を$\KK$-線形空間とする.
+  $V, W$を$U$の部分空間とする.
+  このとき, $V\cap W$は$U$の部分空間.
+\end{example}
+\begin{proof}\end{proof}
+
+
+\begin{example}
+  $U$を$\KK$-線形空間とする.
+  $I$を集合とし,
+  $i\in I$に対し, $V_i$を$U$の部分空間とする.
+  このとき, $\bigcap_{i\in I}V_i$は$U$の部分空間である.
+\end{example}
+\begin{proof}\end{proof}
+
+
+\begin{example}
+  \label{subspace:nonexample:cup}
+  \begin{align*}
+    V&=\Set{\begin{pmatrix}a\\0\end{pmatrix}|a\in\KK}\\
+    W&=\Set{\begin{pmatrix}0\\a\end{pmatrix}|a\in\KK}
+  \end{align*}
+  とする.
+  このとき, $V$も$W$も$\KK^2$の部分空間である.
+  \begin{align*}
+    \begin{pmatrix}1\\0\end{pmatrix},
+    \begin{pmatrix}0\\1\end{pmatrix}\in V\cup W
+  \end{align*}
+  であるが,
+  \begin{align*}
+    \begin{pmatrix}1\\0\end{pmatrix}+
+    \begin{pmatrix}0\\1\end{pmatrix}=\begin{pmatrix}1\\1\end{pmatrix}\not\in V\cup W
+  \end{align*}
+  となっており, $V\cup W$は$U$の部分空間ではない.
+\end{example}
+\begin{proof}\end{proof}
+
+\begin{example}
+  $U$を$\KK$-線形空間とする.
+  $V, W$を$U$の部分空間とする.
+  \begin{enumerate}
+    \item $V\subset W$なら$V\cup W=W$であるので, $V\cup W$は$U$の部分空間.
+    \item $W\subset V$なら$V\cup W=V$であるので, $V\cup W$は$U$の部分空間.
+    \item $V$と$W$に包含関係がないとき, $V\cup W$は$U$の部分空間ではない. 
+  \end{enumerate}
+\end{example}
+\begin{proof}
+  $V$と$W$に包含関係が無いとする.
+  $v\in V\setminus W$, $w\in W\setminus V$
+  とし, $u=v+w$とおく.
+  $u\in V$とすると, $v\in V$であるから, $u-v\in V$となるが,
+  $u-v=w\not\in V$に矛盾する.
+  $u\in W$とすると, $w\in W$であるから, $u-w\in W$となるが,
+  $u-w=v\not\in W$に矛盾する.
+  よって, $u\not\in V\cup W$となるので, $V\cup W$は部分空間ではない.
+\end{proof}
+
+
+
+\begin{example}
+  \begin{align*}
+    V&=\Set{\begin{pmatrix}a\\0\\0\end{pmatrix}|a\in\KK}\\
+    W&=\Set{\begin{pmatrix}0\\a\\0\end{pmatrix}|a\in\KK}
+  \end{align*}
+  とする.
+  このとき, $V$も$W$も$\KK^3$の部分空間である.
+  \begin{align*}
+    U=\Set{v+w|v\in V, w\in W}
+  \end{align*}
+  とすると,
+  \begin{align*}
+    U&=\Set{\begin{pmatrix}a\\b\\0\end{pmatrix}|a,b\in\KK}\\
+  \end{align*}
+  となっており, $U$も$\KK^3$の部分空間である.
+\end{example}
+\begin{proof}\end{proof}
+
+\begin{example}
+  $(U,\plus ,\act,0_V)$を$\KK$-線形空間とする.
+  $V, W$を$U$の部分空間とする.
+  このとき,
+  \begin{align*}
+    V+W=\Set{v\plus w|v\in V,w\in W}
+  \end{align*}
+  とおく.
+  このとき, $V+W$は$U$の部分空間.
+  $V+W$を$V$と$W$の和空間と呼ぶことがある.
+\end{example}
+\begin{proof}\end{proof}
+\begin{prop}
+  $(U,\plus ,\act,0_V)$を$\KK$-線形空間とし,
+  $V, W$を$U$の部分空間とする.
+  \begin{align*}
+    \SSS=\Set{U'|\text{$U'$は$U$の部分空間,} V\cup W \subset U'}
+  \end{align*}
+  とおく.  
+  \begin{align*}
+    U_0 = \bigcap_{U'\in\SSS} U'
+  \end{align*}
+  とする.  また, $\SSS$の中で包含関係で極小なものを$U_1$とする.
+  このとき,
+  \begin{align*}
+    U_0=U_1=V+W.
+  \end{align*}
+\end{prop}
+\begin{proof}
+\end{proof}
+\begin{remark}
+  $V, W$を$U$の部分空間とするとき,
+  $V+W$は$V$と$W$の両方を含む最小の部分空間である.
+  また$V\cap W$は$V$と$W$の両方に含まれる最大の部分空間である.
+\end{remark}
+
+\begin{prop}
+\label{prop:directsum:inner:outer}
+  $(U,\plus ,\act,0_V)$を$\KK$-線形空間とし,
+$V$, $W$をその部分空間とする.
+\begin{align*}
+\shazo{\varphi}{V\boxplus W}{U}
+{(v,w)}{v\plus w}
+\end{align*}
+とすると, $\varphi$は$\KK$-線形写像である.
+このとき, 以下が成り立つ:
+\begin{enumerate}
+\item $\Img(\varphi)=V+W$.
+\item $\Ker(\varphi)=\Set{(u,-u) | u\in V\cap W}\simeq V\cap W$.
+\end{enumerate}
+\end{prop}
+\begin{proof}
+定義より,
+\begin{align*}
+\Img(\varphi)&=\Set{\varphi((v,w))|(v,w)\in V\boxplus W}\\
+&=\Set{\varphi((v,w))|v\in V, w\in W}\\
+&=\Set{v\plus w|v\in V, w\in W}\\
+&=V+W.
+\end{align*}
+
+次に$\Ker(\varphi)=\Set{(u,-u) | u\in V\cap W}$を示す.
+$(v,w)\in \Ker(\varphi)$とする.
+このとき,
+\begin{align*}
+\varphi((v,w))&=0_U,\\
+v+w&=0_U.
+\end{align*}
+したがって, $v=-w$である.
+左辺は$V$の元, 右辺は$W$の元であるので,
+$v=-w\in V\cap W$である.
+よって, $(v,w)=(v,-v)\in \Set{(u,-u) | u\in V\cap W}$である.
+逆に$(u,-u)\in \Set{(u,-u) | u\in V\cap W}$をとると,
+$\varphi((u,-u))=u\plus (-u)=0_U$であるので,
+$(u,-u)\in\Ker(\varphi)$.
+また,
+\begin{align*}
+\shazo{\psi}{V\cap W}{\Set{(u,-u) | u\in V\cap W}}
+{u}{(u,-u)}
+\end{align*}
+とすれば, 定義から明らかに同型写像である.
+\end{proof}
+
+\begin{cor}
+$U$を
+$\KK$-線形空間とし,
+$V$, $W$をその部分空間とする.
+また, $0_U$を$U$の零元とする.
+このとき, 以下は同値:
+\begin{enumerate}
+\item $V\boxplus W \simeq V+W$.
+\item $V\cap W=\Set{0_U}$.
+\end{enumerate}
+\end{cor}
+\begin{proof}
+\Cref{prop:directsum:inner:outer}より,
+\begin{align*}
+\shazo{\varphi}{V\boxplus W}{V+W}
+{(v,w)}{v\plus w}
+\end{align*}
+は全射である.
+また,
+$\varphi$が単射であることと
+$\Ker(\varphi)=\Set{(0_U,0_U)}$
+となることは同値である.
+\Cref{prop:directsum:inner:outer}より,
+$\Ker(\varphi)=\Set{(0_U,0_U)}$
+と
+$V\cap W=\Set{0_U}$
+は同値である.
+\end{proof}
+
+
+\begin{definition}
+  $U$を$\KK$-線形空間とし,
+  $V$, $W$を$U$の部分空間とする.
+  次の条件を満たすとき,
+  $U$は$V$と$W$の(内部)直和に分解できるという.
+  \begin{enumerate}
+  \item $U=V+W$.
+  \item $V\cap W=\Set{0_U}$.
+  \end{enumerate}
+  $U$が$V$と$W$の(内部)直和に分解できることを,
+  $U=V\oplus W$と書き表す.
+  また$V$や$W$のことを$U$の直和因子と呼ぶことがある.
+\end{definition}
+\begin{example}
+  $U=\KK^3$とし,
+  \begin{align*}
+    V&=\Set{\begin{pmatrix}x\\y\\0\end{pmatrix}|x,y\in\KK}&
+    W&=\Set{\begin{pmatrix}0\\0\\z\end{pmatrix}|z\in\KK}&
+    W'&=\Set{\begin{pmatrix}0\\y\\z\end{pmatrix}|y,z\in\KK}
+  \end{align*}
+  とする.
+  $U=V+W$であり, $U=V+W'$でもある.
+  $V\cap W=\Set{\zzero_3}$であるので,
+  $U$は$V$と$W$の(内部)直和に分解できる.
+  つまり, $U=V\oplus W$である.
+  一方$V\cap W'\neq \Set{\zzero_3}$であるので,
+  $V$と$W'$には(内部)直和に分解できない.
+\end{example}
+
+\begin{prop}
+  $U=V\oplus W$であるとき,
+  $v,v'\in V$,
+  $w,w'\in W$に対し, 以下は同値:
+  \begin{enumerate}
+  \item $v\plus w=v'\plus w'$.
+  \item $v=v'$, $w=w'$.
+  \end{enumerate}
+\end{prop}
+\begin{proof}
+  \paragraph{$v\plus w=v'\plus w'\implies v=v', w=w'$}
+  $v\plus w=v'\plus w'$であるので,
+  $-v'\plus v=-w\plus w'$.
+  左辺は$V$の元, 右辺は$W$の元であるから,
+  これらは, $V\cap W$の元.
+  よって, $0_U$である.
+  $-v'\plus v=0_U$であるので, $v=v'$.
+  $-w'\plus w=0_U$であるので, $w=w'$.
+  
+  \paragraph{$v=v', w=w'\implies v\plus w=v'\plus w'$}
+  明らか.
+\end{proof}
+
+
+$U$が$U=V_1\oplus W_1$と内部直和に分解され,
+$W_1$が$V_2\oplus W_2$と内部直和に分解され,
+$W_2$が$V_3\oplus W_3$と内部直和に分解され,
+ということが繰り返された状況を考える.
+つまり,
+$U=V_1\oplus (V_2\oplus \cdots \oplus(V_{l-1}\oplus V_l))$
+と分解されていることを考える.
+\begin{definition}
+$U=V_1\oplus (V_2\oplus \cdots \oplus(V_{l-1}\oplus V_l))$
+と内部直和に分解されているとき,
+$U$は$U=V_1\oplus V_2\oplus \cdots \oplus V_l$
+と(内部)直和に分解されると言う.
+\end{definition}
+\begin{prop}
+  $(U,\plus,\ast,0_U)$を$\KK$-線形空間とし, $V_i\subset U$を$U$の部分空間とし,
+  $U=V_1+\cdots+ V_l$を満たすとする.
+  このとき, 以下は同値である:
+  \begin{enumerate}
+  \item $U=V_1\oplus \cdots \oplus V_l$と内部直和に分解される.
+  \item 全ての$i$に対して,
+    \begin{align*}
+      V_i \cap (V_1+\cdots+ V_{i-1}+V_{i+1}+\cdots+ V_{l})=\Set{0_U}.
+    \end{align*}
+  \end{enumerate}
+\end{prop}
+
 
 \section{部分空間ではない例}
+\label{sec:subspace:non}
 
 \begin{example}
   \Cref{subspace:nonexample:cup}では,

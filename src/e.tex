@@ -795,4 +795,255 @@ $M=\Set{\mu_A|A\in\KK^{m\times n}}$
   \end{enumerate}
 \end{quiz}
 
+\section{\Cref{sec:subspace:mor,sec:subspace:sub,sec:subspace:non}の後の問題}
+主に, 核, 像, 共通部分, 和空間などを知っていれば,
+解けるであろう問題.
 
+\subsection{問題A}
+\begin{quiz}
+  列ベクトル表示された
+  $(m,n)$行列
+  $A=(\aaa_1|\cdots|\aaa_n)$
+  を考える.
+  このとき, 以下を(連立方程式の解の自由度に帰着させることで)示せ:
+  \begin{enumerate}
+  \item
+    $\rank(A)\geq m$ならば,
+   次が成り立つ:
+   \begin{enumerate}
+   \item $\bbb\in\KK^m$とする.
+     このとき, $\bbb=c_1\aaa_1+\cdots+c_n\aaa_n$を満たす
+     $c_1,\ldots,c_n\in\KK$が存在する.
+   \end{enumerate}
+  \item
+    $\rank(A)< n$ならば,
+   次が成り立つ:
+   \begin{enumerate}
+   \item 
+     $c_1\aaa_1+\cdots+c_n\aaa_n=\zzero$かつ
+     $(c_1,\ldots,c_n)\neq (0,\ldots,0)$を満たす
+     $c_1,\ldots,c_n\in\KK$が存在する.
+   \end{enumerate}
+  \end{enumerate}
+\end{quiz}
+
+\subsection{問題B}
+
+\begin{quiz}
+  \begin{align*}
+    \aaa=\begin{pmatrix}a_1\\\vdots\\a_n\end{pmatrix},\quad
+    \bbb=\begin{pmatrix}b_1\\\vdots\\b_n\end{pmatrix}\in\RR^n
+  \end{align*}
+  に対し,
+  \begin{align*}
+    B(\aaa,\bbb)=\sum_{i=1}^n a_ib_i
+  \end{align*}
+  とする.
+  つまり, $B(\aaa,\bbb)$を$\aaa$と$\bbb$の内積とする.
+  $V$を$\RR^n$の部分空間とし,
+  \begin{align*}
+    W=\Set{\aaa\in \RR^n|\bbb\in V\implies B(\aaa,\bbb)=0}
+  \end{align*}
+  とおく.
+  このとき,
+  以下の命題の真偽を判定し証明を与えよ:
+  \begin{enumerate}
+  \item
+    $W$は$\RR^n$の部分空間である.
+  \item
+    $\RR^n=V\oplus W$と内部直和に分解できる.
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}  
+  \begin{align*}
+    \aaa=\begin{pmatrix}a_1\\a_2\end{pmatrix},\quad
+    \bbb=\begin{pmatrix}b_1\\b_2\end{pmatrix}\in\CC^2
+  \end{align*}
+  に対し,
+  \begin{align*}
+    B(\aaa,\bbb)= a_1 \overline{b_1}+ a_2 \overline{b_2}
+  \end{align*}
+  とする.
+  ただし, $\overline{x}$は$x$の複素共軛を表す.
+  $V$を$\CC^2$の部分空間とし,
+  \begin{align*}
+    W=\Set{\aaa\in \CC^2|\bbb\in V\implies B(\aaa,\bbb)=0}
+  \end{align*}
+  とおく.
+  このとき,
+  以下の命題の真偽を判定し証明を与えよ:
+  \begin{enumerate}
+  \item
+    $W$は$\CC^2$の部分空間である.
+  \item
+    $\CC^2=V\oplus W$と内部直和に分解できる.    
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}  
+  \begin{align*}
+    \aaa=\begin{pmatrix}a_1\\a_2\end{pmatrix},\quad
+    \bbb=\begin{pmatrix}b_1\\b_2\end{pmatrix}\in\CC^2
+  \end{align*}
+  に対し,
+  \begin{align*}
+    B(\aaa,\bbb)= a_1 b_1+ a_2 b_2
+  \end{align*}
+  とする.
+  $V$を$\CC^2$の部分空間とし,
+  \begin{align*}
+    W=\Set{\aaa\in \CC^2|\bbb\in V\implies B(\aaa,\bbb)=0}
+  \end{align*}
+  とおく.
+  このとき,
+  以下の命題の真偽を判定し証明を与えよ:
+  \begin{enumerate}
+  \item
+    $W$は$\CC^2$の部分空間である.
+  \item
+    $\CC^2=V\oplus W$と内部直和に分解できないこともある.    
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  $\aaa,\bbb\in\RR^n$に対し,
+  $\Braket{\aaa,\bbb}$を$\aaa$と$\bbb$の内積とする.
+  $\|\aaa\|^2=\Braket{\aaa,\aaa}=1$を満たす
+  $\aaa\in\RR^n$に対し,
+  \begin{align*}
+    \shazo{\varphi_{\aaa}}{\RR^n}{\RR^n}
+    {\xx}{\xx-\braket{\aaa,\xx}\aaa}
+  \end{align*}
+  とおく.
+  このとき,
+  以下の命題の真偽を判定し証明を与えよ:
+  $\Ker(\varphi_{\aaa})=\Set{c\aaa|c\in \RR}$.
+\end{quiz}
+
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+  $U$を$\KK$-線形空間とし,
+  $I$を集合とする.
+  $i\in I$に対し, $V_i$を$U$の部分空間とする.
+  このとき,
+  $\bigcap_{i\in I}V_i$は$U$の部分空間である.
+\end{quiz}
+
+
+\begin{quiz}
+  $U$を$\KK$-線形空間とする.
+  $i\in \NN$に対し,
+  $V_i$を$U$の部分空間とし,
+  $V_{i}\subset V_{i+1}$
+  を満たしているとする.
+  $V=\bigcup_{i\in \NN}V_i$
+  とおく.
+  このとき,
+  $V$は$U$の部分空間である.
+\end{quiz}
+
+\begin{quiz}
+  $U$を$\KK$-線形空間とし,
+  $v_1,\ldots, v_r \in U$とする.
+  \begin{align*}
+    V=\Set{a_1v_1+\cdots +a_rv_r|a_i\in \KK}    
+  \end{align*}
+  とおく. また,
+  \begin{align*}
+    \SSS=\Set{W|v_1,\ldots,v_r \in W, \text{$W$は$U$の部分空間}}    
+  \end{align*}
+  とし,
+  \begin{align*}
+    W_0=\bigcap_{W\in\SSS}W
+  \end{align*}
+  とおく.
+  このとき,
+  次の命題の真偽を判定し証明を与えよ:
+  \begin{enumerate}
+  \item $V=W_0$.
+  \item $W\in \SSS \implies V\subset W$.
+  \end{enumerate}
+\end{quiz}
+
+
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+  $U$を$\KK$-線形空間とし,
+  $V_1, V_2$を$U$の部分空間とする.
+  \begin{align*}
+    V=\Set{v_1+v_2|v_1\in V_1,v_2\in V_2}    
+  \end{align*}
+  とおく.
+  また,
+  \begin{align*}
+    \SSS=\Set{W|V_1\cup V_2 \subset W, \text{$W$は$U$の部分空間}}    
+  \end{align*}
+  とし,
+  \begin{align*}
+    W_0=\bigcap_{W\in\SSS}W
+  \end{align*}
+  とおく.
+  このとき,
+  次の命題の真偽を判定し証明を与えよ:
+  \begin{enumerate}
+  \item $V=W_0$.
+  \item $W\in \SSS \implies V\subset W$.
+  \end{enumerate}
+\end{quiz}
+
+
+\begin{quiz}
+  $U$を$\KK$-線形空間とし,
+  $i\in\NN$に対し,
+  $v_i \in U$とする.
+  \begin{align*}
+    V_r=\Set{a_1v_1+\cdots +a_rv_r|a_i\in \KK}    
+  \end{align*}
+  とし,
+  \begin{align*}
+    V=\bigcup_{r\in\NN}V_r
+  \end{align*}
+  とおく. また,
+  \begin{align*}
+    \SSS=\Set{W|\Set{v_i|i\in \NN}\subset W, \text{$W$は$U$の部分空間}}    
+  \end{align*}
+  とし,
+  \begin{align*}
+    W_0=\bigcap_{W\in\SSS}W
+  \end{align*}
+  とおく.
+  このとき,
+  次の命題の真偽を判定し証明を与えよ:
+  \begin{enumerate}
+  \item $V=W_0$.
+  \item $W\in \SSS \implies V\subset W $.
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+  $U$を$\KK$-線形空間とし,
+  $I$を集合とする.
+  $i\in \NN$に対し,
+  $V_i$を$U$の部分空間とする.
+  \begin{align*}
+    V=\bigcup_{i\in \NN}(V_0+V_1+\cdots+V_i)
+  \end{align*}
+  とおく.
+  また,
+  \begin{align*}
+    \SSS=\Set{W|\bigcup_{i\in\NN}V_i \subset W, \text{$W$は$U$の部分空間}}    
+  \end{align*}
+  とし,
+  \begin{align*}
+    W_0=\bigcap_{W\in\SSS}W
+  \end{align*}
+  とおく.
+  このとき,
+  次の命題の真偽を判定し証明を与えよ:
+  \begin{enumerate}
+  \item $V=W_0$.
+  \item $W\in \SSS \implies V\subset W$.
+  \end{enumerate}
+\end{quiz}
