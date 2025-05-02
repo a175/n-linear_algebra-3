@@ -1,0 +1,798 @@
+
+\chapter{練習問題}
+
+ここでは,
+練習問題を挙げてある.
+本原稿を前から順番に読み進める場合に,
+どのあたりまで読んだら解けるかという目安ごとに,
+問題を分けてある.
+問題Aは, 次につながる問題であるので,
+読んだ直後に目を通すとよいと思う.
+
+中には, 本質的には同じ問題が何度も出てくることもある.
+
+\section{\Cref{chap:prelim}の後の問題}
+主に集合と写像, 体, それから行列に関する基本的な事項について知っていれば,
+解けるであろう問題.
+%\section{1/15回目: \schoolCalender{1}}
+% 講義: 集合と写像, 体.
+% \subsection{レポート課題 (締め切り: \schoolCalender{2})}
+\subsection{問題A}
+\begin{quiz}
+  $\KK$を体とし, $V$を$\KK$を成分とする$(2,1)$行列の集合とする.
+  つまり,
+  \begin{align*}
+    V=\Set{\begin{pmatrix}a_1\\a_2\end{pmatrix}|a_1,a_2\in \KK}
+  \end{align*}
+  とする. 通常の和とスカラー倍を考える.  つまり,
+  \begin{align*}
+    a&=\begin{pmatrix}a_1\\a_2\end{pmatrix}\in V,&  b&=\begin{pmatrix}b_1\\b_2\end{pmatrix} \in V,
+    &\alpha\in\KK&
+  \end{align*}
+  に対し,
+  \begin{align*}
+    a+b&=\begin{pmatrix}a_1+b_1\\a_2+b_2\end{pmatrix}\in V, & \alpha a=\begin{pmatrix}\alpha a_1\\\alpha a_2\end{pmatrix} \in V
+  \end{align*}
+  とする. また,
+  \begin{align*}
+  \zzero=
+  \begin{pmatrix}
+    0\\0
+  \end{pmatrix}
+  \end{align*}
+  とする.
+
+  このとき, $\alpha,\beta,1,-1\in\KK$, $a,b,c\in V$に対し, 以下を示せ:
+  \begin{enumerate}
+    \item 
+    \begin{enumerate}
+    \item $a+b=b+a$.
+    \item $(a+b)+c=a+(b+c)$.
+    \item $a+\zzero=a$.
+    \item
+      $a+(-1 a)=\zzero$.
+    \end{enumerate}
+  \item
+    \begin{enumerate}
+    \item $(\alpha\beta)a=\alpha(\beta a)$.
+    \item $1a=a$.
+    \end{enumerate}
+  \item
+    \begin{enumerate}
+    \item $\alpha(a+b)=\alpha a+\alpha b$.
+    \item $(\alpha+\beta)a=\alpha a+\beta a$.
+    \end{enumerate}
+  \end{enumerate}
+\end{quiz}
+
+
+
+\subsection{問題B}
+$\KK$を体とし, $\KK$の元を成分とする行列について考える.
+
+\begin{quiz}
+  次の命題の真偽を判定し, 証明を与えよ:
+  \begin{enumerate}
+  \item
+    $A$, $B$がともに正則な$n$次正方行列である
+    とする.
+    このとき, $AB$も正則で, その逆行列は$B^{-1}A^{-1}$.
+  \item
+    $A$を正則な$n$次正方行列とする.
+    このとき, $\transposed{A}$も正則で, その逆行列は$\transposed{(A^{-1})}$.
+  \item
+    $A$を正則な$n$次正方行列とし,
+    $c$は逆数を持つ$\KK$の元とする.
+    このとき, $cA$も正則で, その逆行列は$\frac{1}{c}A^{-1}$.
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  次の命題の真偽を判定し, 証明を与えよ:
+  \begin{enumerate}
+  \item
+    単位行列$E_n$は正則で, その逆行列は$E_n$.
+  \item
+    $A$は正則であるとする.
+    このとき,
+    $A^{-1}$は正則で, その逆行列は$A$.
+  \end{enumerate}
+\end{quiz}
+
+
+\begin{quiz}
+  次の命題の真偽を判定し, 証明を与えよ:
+  \begin{enumerate}
+  \item
+    $A$, $B$がともに正則な$n$次正方行列である
+    とする.
+    このとき, $A+B$は正則であるとは限らない.
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  $v$, $w$を$(2,1)$-行列 (2項数ベクトル) とし,
+  $A$を2次正方行列とする.
+  $v$, $w$を並べて得られる2次正方行列を$P=(v|w)$とおく.
+  $Av=\lambda v$, $Aw=\mu w$を満たす$\lambda,\mu\in\KK$が存在するとする.
+  このとき,
+  次の命題の真偽を判定し, 証明を与えよ:
+  \begin{enumerate}
+  \item $AP=PD$, ただし,
+    \begin{align*}
+      D=\begin{pmatrix}\lambda&0\\0&\mu\end{pmatrix}.
+    \end{align*}
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  $A$を$(m,n)$行列とし,
+  $V$を$(n,1)$行列 ($n$項数ベクトル)を集めた集合とする.
+  \begin{align*}
+    \KKK=\Set{\xx\in V | A\xx=\zzero}
+  \end{align*}
+  とする.
+  このとき,
+  次の命題の真偽を判定し, 証明を与えよ:
+  \begin{enumerate}
+  \item
+    $\aaa,\bbb\in\KKK \implies\aaa+\bbb\in\KKK$.
+  \item
+    $\aaa\in\KKK, \alpha\in\KK \implies \alpha\aaa\in\KKK$.
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  $A$を$(m,n)$行列とし,
+  $\bbb$を$(m,1)$行列($m$項数ベクトル)とする.
+  $V$を$(n,1)$行列 ($n$項数ベクトル)を集めた集合とし,
+  \begin{align*}
+    \KKK=\Set{\xx\in V | A\xx=\zzero}
+  \end{align*}
+  とする.
+  $\vv\in V$が
+  $A\vv =\bbb$を満たすとする.
+  \begin{align*}
+    \FFF&=\Set{\xx\in V | A\xx=\bbb}\\
+    \FFF'&=\Set{\vv+\aaa | \aaa\in \KKK}
+  \end{align*}
+  とする.
+  
+  このとき,
+  次の命題の真偽を判定し, 証明を与えよ:
+  \begin{enumerate}
+  \item
+    $\FFF=\FFF'$.
+  \end{enumerate}
+   
+\end{quiz}
+
+
+\begin{quiz}
+  次の行列が正則かどうか判定し正則なら逆行列を求めよ:
+  \begin{enumerate}
+  \item
+    $A=
+    \begin{pmatrix}
+      1&1&0&1\\
+      1&-1&1&2\\
+      1&1&1&4\\
+      1&-1&1&8
+    \end{pmatrix}$.
+  \end{enumerate}
+\end{quiz}
+
+
+\section{\Cref{sec:linspace:def}の後の問題}
+主に線形空間の定義を知っていれば解けるであろう問題.
+%\endinput
+%\newpage
+%\section{2/15回目: \schoolCalender{2}}
+% 講義: 線形空間の定義と例.
+%\subsection{レポート課題 (締め切り: \schoolCalender{3})}
+\subsection{問題A}
+\begin{quiz}
+  %\solvelater{quiz:0:1}
+  $\KK$を体とし, $V$を$\KK$を成分とする$(2,1)$行列の集合とする.
+  このとき, $V$は$\KK$線形空間であった.
+  $A$を$\KK$を成分とする$(2,2)$行列とし,
+  \begin{align*}
+    \shazo{\varphi}{V}{V}{x}{Ax}
+  \end{align*}
+  とする.
+  このとき, 以下を示せ:
+  \begin{enumerate}
+    \item $a,b\in V\implies \varphi(a+b)=\varphi(a)+\varphi(b)$.
+    \item $\alpha\in\KK, a\in V\implies \varphi(\alpha a)=\alpha\varphi(a)$.
+  \end{enumerate}
+  (ただし, 行列の演算に関する基本的な性質は既知としてよい.)
+\end{quiz}
+
+\subsection{問題B}
+
+\begin{quiz}
+  $V$を$\KK$-線形空間とする.
+  $o,o'\in V$が以下を満たすとする:
+  \begin{enumerate}
+    \item $x\in V \implies  o+x=x+o=x$.
+    \item $x\in V \implies  o'+x=x+o'=x$.
+  \end{enumerate}
+  このとき, $o=o'$となることを示せ.
+\end{quiz}
+
+\begin{quiz}
+  $0_V$を
+  $\KK$-線形空間$V$の零元(零ベクトル)とする.
+  $a\in V$とする.
+  このとき, $x,x'\in V$が以下を満たすとする:
+  \begin{enumerate}
+    \item $a+x=x+a=0_V$.
+    \item $a+x'=x'+a=0_V$.
+  \end{enumerate}
+  このとき, $x=x'$となることを示せ.
+\end{quiz}
+
+\begin{quiz}
+  $\KK$を体とし,
+  $V$を$\KK$ベクトル空間とする.
+  $V$の零元を$0_V$とする.
+  $v\in V$, $\alpha\in \KK$に対し次が成り立つことを示せ:
+  \begin{enumerate}
+    \item $\alpha v=0_V\implies \alpha=0$ または$v=0_V$.
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  $V$, $W$を
+  $\KK$-線形空間とする.
+  このとき,
+  $V$と$W$の外部直和$V\boxplus W$が
+  $\KK$-線形空間であることを示せ.
+\end{quiz}
+
+\begin{quiz}
+  $V=\Set{x\in\RR|x>0}$とする.
+  $x,y\in V$に対し,
+  $x \pplus y =x\cdot y$
+  とし,
+  $x\in V$, $a\in \RR$に対し,
+  $a\aact x=x^a$とする.
+  このとき,
+  $V$は和$\pplus$とスカラー倍$\aact$で
+  $\RR$線形空間であることを示せ.
+\end{quiz}
+
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+  \begin{enumerate}
+  \item $\CC$は通常の和と積で$\RR$線形空間である.
+  \item $\RR$は通常の和と積で$\CC$線形空間ではない.
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+$\NN$で添字付けられた数列$a_0, a_1,\ldots$を$(a_i)_{i\in \NN}$で表す.
+  $\ell(\KK) = \Set{(a_i)_{i\in \NN}|a_i\in \KK}$とする.
+  $\alpha\in \KK$, $(a_i)_{i\in \NN},(b_i)_{i\in \NN}\in \ell(\KK)$
+  に対し和を
+  $(a_i)_{i\in \NN}+(b_i)_{i\in \NN} = (a_i+b_i)_{i\in \NN}$で定義し,
+  $\alpha\in \KK$, $(a_i)_{i\in \NN}\in \ell(\KK)$
+  に対しスカラー倍を
+  $\alpha (a_i)_{i\in \NN} = (\alpha a_i)_{i\in \NN}$
+  で定義する.
+  このとき, $\ell(\KK)$は
+  この和とスカラー倍で$\KK$-線形空間となることを示せ.
+\end{quiz}
+
+\begin{quiz}
+  $S$を集合とし, $V$を$\KK$-線形空間とする.
+  $V^S= \Set{f\colon S \to V \text{; 写像}}$とおく.
+  $\alpha\in\KK$, $f,g\in V^S$に対し,
+  和$f+g\in V^S$とスカラー倍$\alpha f\in V^S$を以下で定める:
+  $x\in S$に対し,
+  \begin{align*}
+    (f+g)(x) &= f(x)+g(x),\\
+    (\alpha f)(x) &= \alpha.(f(x)).
+  \end{align*}
+  このとき,
+  $\KK^S$はこの和とスカラー倍で
+  $\KK$-線形空間となることを示せ.
+\end{quiz}
+
+
+
+\section{\Cref{sec:linmap:def}のあとの問題}
+主に線形写像の定義を知っていれば解けるであろう問題.
+%\endinput
+%\newpage
+%\section{3/15回目: \schoolCalender{3}}
+% 講義: 線形写像の定義と例.
+%\subsection{レポート課題 (締め切り: \schoolCalender{4})}
+\subsection{問題A}
+\begin{quiz}
+  $\KK$を体とし, $V$を$\KK$を成分とする$(2,1)$行列の集合とする.
+  $A$を$\KK$を成分とする$(2,2)$行列とし,
+  \begin{align*}
+    \shazo{\varphi}{V}{V}{x}{Ax}
+  \end{align*}
+  とする. $A$が正則であるとする.
+  このとき, 以下の条件を満たす線形写像$\psi\colon V\to V$が存在することを示せ:
+  \begin{enumerate}
+    \item $\varphi\circ \psi=\id_V$.
+    \item $\psi\circ \varphi=\id_V$.
+  \end{enumerate}
+\end{quiz}
+\begin{quiz}
+  $\KK$を体とし,
+  $V$を$\KK$を成分とする$(3,1)$行列のなす$\KK$-線形空間とし,
+  $W$を$\KK$を成分とする$(2,1)$行列のなす$\KK$-線形空間とする.
+  $A$を$\KK$を成分とする$(3,2)$行列とし,
+  $\zzero$を$W$の零元とする.
+  このとき, 次は$\KK$-線形空間であることを示せ:
+  \begin{align*}
+    \Set{x\in V|Ax=\zzero}.
+  \end{align*}
+\end{quiz}
+
+\subsection{問題B}
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+  $A\in \KK^{n\times n}$とし,
+  $\varphi$を次の写像とする:
+  \begin{align*}
+    \shazo{\varphi_A}{\KK^{n\times n}}{\KK^{n\times n}}{X}{AX-XA}.
+  \end{align*}
+  このとき, $\varphi_A$は$\KK$-線形である.
+\end{quiz}
+
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+  $I=\Set{1,2,\ldots, n}$する.
+  $\tr$を次の写像とする:
+  \begin{align*}
+    \shazo{\tr}{\KK^{n\times n}}{\KK}{(a_{i,j})_{i\in I, j\in I}}{\sum_{i\in I}a_{i,i}}.
+  \end{align*}
+  この写像は$\KK$-線形である.
+\end{quiz}
+
+
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+  $V$を$\KK$-線形空間とする.
+  $a\in A$, $b\in V$とする.
+  $\varphi$を次の写像とする:
+  \begin{align*}
+    \shazo{\varphi}{V}{V}{x}{ax+b}.
+  \end{align*}
+  このとき,
+  $\varphi$が線形写像であることと$b$が$V$の零元であることは同値.
+\end{quiz}
+
+\begin{quiz}
+  $\varphi$を次の写像とする:
+  \begin{align*}
+    \shazo{\varphi}{\CC}{\CC}{z}{\overline{z}},
+  \end{align*}
+  ただし, 
+  $x,y\in\RR$に対し$\overline{x+y\sqrt{-1}}=x-y\sqrt{-1}$, つまり,
+  $\overline{z}$は$z$の複素共軛とする.
+  以下の命題の真偽を判定し証明を与えよ:
+  \begin{enumerate}
+  \item $\varphi$は$\RR$-線形である.
+  \item $\varphi$は$\CC$-線形ではない.
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+  $V$を$\KK$線形空間とし,
+  $w_1,\ldots,w_r\in V$とする.
+    \begin{align*}
+      \shazo{\nu_{(w_1,\ldots,w_r)}}{\KK^r}{V}
+      {\begin{pmatrix}a_1\\\vdots\\a_r\end{pmatrix}}{a_1 w_1+\cdots+ a_r w_r}
+    \end{align*}
+    は$\KK$-線形写像である.
+\end{quiz}
+
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+  $V$, $W$
+  を$\KK$線形空間とし,
+  $W$の零元を$0_W$とする.
+    \begin{align*}
+      \shazo{\underline{0_W}}{V}{W}
+      {x}{0_W}
+    \end{align*}
+  は$\KK$-線形写像である.
+\end{quiz}
+
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+  $V$を$\KK$-線形空間とする.
+  恒等写像$\id_V$は$\KK$-線形である.
+\end{quiz}
+
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+  $V$, $U$, $W$を$\KK$-線形空間とし,
+  $\varphi\colon V\to U$,
+  $\psi\colon U\to W$を$\KK$-線形写像とする.
+  このとき, $\psi\circ\varphi\colon V\to W$は$\KK$-線形写像である.
+\end{quiz}
+
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+  $V$, $W$を$\KK$-線形空間とし,
+  $\varphi\colon V \to W$を線形写像とする.
+  $\varphi$が全単射なら,
+  その逆写像
+  $\varphi^{-1}$
+  も線形写像である.
+\end{quiz}
+
+\begin{quiz}
+  \label{quiz:hom:sc}
+  次の命題の真偽を判定し証明を与えよ:
+  $V$, $V$を$\KK$-線形空間とし,
+  $\varphi\colon V\to W$を線形写像とする.
+  このとき, $\alpha \in \KK$に対し,
+  \begin{align*}
+  \shazo{\alpha\varphi}{V}{W}
+  {x}{\alpha (\varphi(x))}
+  \end{align*}
+  は$V$から$W$への線形写像.
+\end{quiz}
+
+\begin{quiz}
+  \label{quiz:hom:sum}
+  次の命題の真偽を判定し証明を与えよ:
+  $V$, $W$を$\KK$-線形空間とし,
+  $\varphi\colon V\to W$,
+  $\psi\colon V\to W$
+  を線形写像とする.
+  このとき, 
+  \begin{align*}
+  \shazo{\varphi+\psi}{V}{W}
+  {x}{\varphi(x) + \psi(x)}
+  \end{align*}
+  は$V$から$W$への線形写像.
+\end{quiz}
+
+\begin{quiz}
+  $V$, $W$を$\KK$-線形空間とし,
+  $0_V$, $0_W$をそれぞれの零元とする.
+  $\varphi\colon V\to W$を$\KK$-線形写像とする.
+  次の命題の真偽を判定し証明を与えよ:
+  \begin{enumerate}
+    \item $\varphi(0_V)=0_W$.
+    \item $\varphi(-x)=-\varphi(x)$.
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+  $A\in \KK^{m\times n}$に対し,
+  $\mu_A$を次の写像とする:
+  \begin{align*}
+    \shazo{\mu_A}{\KK^n}{\KK^m}{w}{Aw}.
+  \end{align*}
+$H=\Set{\varphi\colon \KK^n\to\KK^m\text{; 線形写像}}$,
+$M=\Set{\mu_A|A\in\KK^{m\times n}}$
+  とするとき, $H=M$.
+\end{quiz}
+
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+  $\aaa,\bbb\in\RR^n$に対し,
+  $\Braket{\aaa,\bbb}$を$\aaa$と$\bbb$の内積とする.
+  $\aaa\in\RR^n$に対し
+  \begin{align*}
+    \shazo{\varphi_{\aaa}}{\RR^n}{\RR}
+    {\xx}{\braket{\aaa,\xx}}
+  \end{align*}
+  は$\RR$-線形写像である.
+\end{quiz}
+
+\begin{quiz}
+  $\aaa,\bbb\in\RR^n$に対し,
+  $\Braket{\aaa,\bbb}$を$\aaa$と$\bbb$の内積とする.
+  $\|\aaa\|^2=\Braket{\aaa,\aaa}=1$を満たす
+  $\aaa\in\RR^n$に対し,
+  \begin{align*}
+    \shazo{\varphi_{\aaa}}{\RR^n}{\RR^n}
+    {\xx}{\braket{\aaa,\xx}\aaa}
+  \end{align*}
+  とおく.
+  以下の命題の真偽を判定し証明を与えよ:
+  \begin{enumerate}
+  \item $\varphi_{\aaa}$は$\RR$-線形写像である.
+  \item $\varphi_{\aaa}\circ \varphi_{\aaa}=\varphi_{\aaa}$.
+  \end{enumerate}
+\end{quiz}
+\begin{quiz}
+  $\aaa,\bbb\in\RR^n$に対し,
+  $\Braket{\aaa,\bbb}$を$\aaa$と$\bbb$の内積とする.
+  $\|\aaa\|^2=\Braket{\aaa,\aaa}=1$を満たす
+  $\aaa\in\RR^n$に対し,
+  \begin{align*}
+    \shazo{\varphi_{\aaa}}{\RR^n}{\RR^n}
+    {\xx}{\xx-\braket{\aaa,\xx}\aaa}
+  \end{align*}
+  とおく.
+  以下の命題の真偽を判定し証明を与えよ:
+  \begin{enumerate}
+  \item $\varphi_{\aaa}$は$\RR$-線形写像である.
+  \item $\varphi_{\aaa}\circ \varphi_{\aaa}=\varphi_{\aaa}$.
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  $\aaa,\bbb\in\RR^n$に対し,
+  $\Braket{\aaa,\bbb}$を$\aaa$と$\bbb$の内積とする.
+  $\|\aaa\|^2=\Braket{\aaa,\aaa}=1$を満たす
+  $\aaa\in\RR^n$に対し,
+  \begin{align*}
+    \shazo{\varphi_{\aaa}}{\RR^n}{\RR^n}
+    {\xx}{\xx-2\braket{\aaa,\xx}\aaa}
+  \end{align*}
+  とおく.
+  以下の命題の真偽を判定し証明を与えよ:
+  \begin{enumerate}
+  \item $\varphi_{\aaa}$は$\RR$-線形写像である.
+  \item $\varphi_{\aaa}\circ \varphi_{\aaa}=\id_{\RR^n}$.
+  \end{enumerate}
+\end{quiz}
+
+
+
+
+\section{\Cref{sec:iso:def,sec:subspace:def,sec:subspace:example}の後の問題}
+主に同型写像の定義, 部分空間の定義を知っていれば解けるであろう問題.
+%\endinput
+%\newpage
+%\section{4/15回目: \schoolCalender{4}}
+% 講義: 同型写像の定義と例. 部分空間の定義と例(1). 
+%\subsection{レポート課題 (締め切り: \schoolCalender{5})}
+\subsection{問題A}
+\begin{quiz}
+  %\solvelater{quiz:1:1}
+  \begin{align*}
+    V&=\Set{\begin{pmatrix}x\\x\\0\end{pmatrix}|x\in \KK}&
+    V'&=\Set{\begin{pmatrix}0\\x\\x\end{pmatrix}|x\in \KK}
+  \end{align*}
+  とする.
+  \begin{enumerate}
+    \item $V\cap V'$を求めよ.
+    \item $\Set{v+v'|v\in V,v'\in V}$は$\KK^3$の部分線形空間であることを示せ.
+    \item $V\cup V'$は$\KK^3$の部分線形空間では無いことを示せ.
+  \end{enumerate}
+\end{quiz}
+
+
+
+\subsection{問題B}
+
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+  $[n]=\Set{1,\ldots,n}$とし,
+  $\KK^{[n]}=\Set{f\colon [n]\to \KK}$とする.
+  \begin{align*}
+    \aaa=\begin{pmatrix}a_1\\\vdots\\a_n\end{pmatrix}\in
+    \KK^{n}=\Set{\begin{pmatrix}x_1\\\vdots\\x_n\end{pmatrix}|x_i\in\KK}
+  \end{align*}
+  に対し,
+  \begin{align*}
+    \shazo{f}{[n]}{\KK}{i}{a_i}
+  \end{align*}
+  とする.  
+  $\varphi$を次の写像とする:
+  \begin{align*}
+    \shazo{\varphi}{\KK^{n}}{\KK^{[n]}}{\aaa}{f_{\aaa}}.
+  \end{align*}
+  このとき, $\varphi$は同型写像である.
+\end{quiz}
+
+\begin{quiz}
+  $[k]=\Set{1,\ldots,k}$とする.
+  次の命題の真偽を判定し証明を与えよ:
+  \begin{enumerate}
+  \item
+    $\KK^{m\times n}\simeq \KK^{[m]\times [n]}$.
+  \item
+    $\KK^\NN\simeq \ell(\KK)$.
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  $V=\Set{x\in\RR|x>0}$とする.
+  $x,y\in V$に対し,
+  $x \pplus y =x\cdot y$
+  とし,
+  $x\in V$, $a\in \RR$に対し,
+  $a\aact x=x^a$とする.
+  このとき,
+  $V$は和$\pplus$とスカラー倍$\aact$で
+  $\RR$線形空間であった.
+  また$\RR$は通常の和と積で$\RR$線形空間であった.
+  次の命題の真偽を判定し証明を与えよ:
+  $\RR\simeq V$.
+\end{quiz}
+
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+  $A\in \KK^{m\times n}$に対し,
+  $\mu_A$を次の写像とする:
+  \begin{align*}
+    \shazo{\mu_A}{\KK^n}{\KK^m}{w}{Aw}.
+  \end{align*}
+  このとき,
+  \begin{align*}
+    \shazo{\varphi}{\KK^{m\times n}}{\Hom_{\KK}(\KK^n,\KK^m)}
+    {A}{\mu_A}
+  \end{align*}
+  は同型写像である.
+\end{quiz}
+
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+  $V$, $W$を$\KK$線形空間とし,
+  $\varphi\colon V\to W$を同型写像とする.
+  $c\in\KK$が逆数を持つとする.
+  このとき,
+  $c\varphi\colon V\to W$は同型写像.
+\end{quiz}
+
+\begin{quiz}
+  $V$, $W$, $U$を$\KK$線形空間とする.
+  次の命題の真偽を判定し証明を与えよ:
+  \begin{enumerate}
+  \item
+    $\id_V\colon V\to V$は同型写像.
+  \item
+    $\varphi\colon V\to W$が同型写像なら
+    $\varphi^{-1}\colon W\to V$も同型写像.
+  \item
+    $\varphi\colon V\to W$, $\psi\colon W \to U$がともに同型写像なら
+    $\psi\circ\varphi\colon V\to U$も同型写像.
+  \end{enumerate}
+\end{quiz}
+
+
+
+\begin{quiz}
+  $\zeta = e^{\frac{2\pi\sqrt{-1}}{n}}=\cos(\frac{2\pi}{n})+\sin(\frac{2\pi}{n})\sqrt{-1}\in \CC$とする.
+  $V=\Set{\sum_{i=0}^{n-1}a_i \zeta^i|a_i\in \QQ}$とする.
+  このとき, $V$は通常の和と積で
+  $\QQ$-線形空間であることを示せ.
+\end{quiz}
+
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+  \begin{enumerate}
+  \item $\Set{\begin{pmatrix}x\\2x \end{pmatrix} | x\in\RR}$は,
+    $\RR^2$の部分空間である.
+  \item $\Set{\begin{pmatrix}x\\x+2 \end{pmatrix} | x\in\RR}$は,
+    $\RR^2$の部分空間ではない.
+  \item $\Set{\begin{pmatrix}x\\x^2 \end{pmatrix} | x\in\RR}$は,
+    $\RR^2$の部分空間ではない.
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  (\Cref{quiz:hom:sc,quiz:hom:sum}と本質的に同じ)
+  次の命題の真偽を判定し証明を与えよ:
+  $V$, $W$を$\KK$-線形空間とする.
+  このとき, $\Hom_{\KK}(V,W)$は$W^V$の部分$\KK$-線形空間である.
+\end{quiz}
+
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+  $V$を漸化式$a_i=a_{i-1}+a_{i-2}$で定義される数列全体の集合, つまり,
+  \begin{align*}
+    V=\Set{(a_i)_{i\in \NN}\in \ell(\KK)|
+      \begin{array}{c}
+        a_0,a_1\in\KK\\
+        i>1\implies a_{i}-a_{i-1}-a_{i-2}=0
+      \end{array}
+    }
+  \end{align*}
+  とする.
+  $V$は$\ell(\RR)$の部分空間である.
+\end{quiz}
+
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+  \begin{align*}
+    V=\Set{(a_i)_{i\in \NN}\in \ell(\RR)|\text{次を満たす$n$が存在する: }i>n\implies a_i=0}
+  \end{align*}
+  とする.
+  $V$は$\ell(\RR)$の部分空間である.
+\end{quiz}
+
+\begin{quiz}
+  $X\subset\RR$に対し,
+  次の条件を満たす$M$を$X$の上界と呼ぶ: $x\in X\implies x<M$.
+  $X$の上界が存在することを,
+  $\sup(X)<\infty$と書く.
+  また,
+  次の条件を満たす$m$を$X$の下界と呼ぶ: $x\in X\implies m<x$.
+  $X$の下界が存在することを,
+  $\inf(X)>-\infty$と書く.
+  \begin{align*}
+    V=\Set{(a_i)_{i\in \NN}\in \ell(\RR)|
+      \begin{array}{l}
+        \sup\Set{a_i|i\in\NN}<\infty\\
+        \inf\Set{a_i|i\in\NN}>-\infty
+      \end{array}
+    }
+  \end{align*}
+  とする.
+  $V$は$\ell(\RR)$の部分空間であることを,
+  $\sup(X)<\infty$, $\inf(X)>-\infty$の定義に基づき証明せよ.
+\end{quiz}
+
+\begin{quiz}
+  $(a_i)_{i\in\NN}$が次の条件をみたすとき, $\lim_{i\to\infty}a_i =0$と書く:
+  \begin{quote}
+    $\varepsilon > 0$ ならば,
+      次の条件を満たす$N\in \NN$が存在する:
+      \begin{align*}
+        n>N \implies -\varepsilon < a_n<\varepsilon.
+      \end{align*}
+  \end{quote}
+  このとき,
+  \begin{align*}
+    V=\Set{(a_i)_{i\in \NN}\in \ell(\RR)|\lim_{i\to\infty}a_i = 0}
+  \end{align*}
+  とする.
+  $V$は$\ell(\RR)$の部分空間であることを,
+  $\lim_{i\to\infty}a_i =0$の定義に基づき証明せよ.
+\end{quiz}
+
+
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+  $U$を$\KK$-線形空間とする.
+  $V\subset U$に対し,
+  以下の2つは同値である:
+  \begin{enumerate}
+  \item 次の$2$条件を満たす:
+    \begin{enumerate}
+    \item $v,w\in V$, $a,b\in \KK\implies av+bw\in V$.
+    \item $0_U\in V$.
+    \end{enumerate}
+  \item 次の$2$条件を満たす:
+    \begin{enumerate}
+    \item $v,w\in V$, $a,b\in \KK\implies av+bw\in V$.
+    \item $V\neq \emptyset$.
+    \end{enumerate}
+  \end{enumerate}
+\end{quiz}
+
+\newcommand{\Mod}[1]{\mathrel{\underset{#1}{\equiv}}}
+\begin{quiz}
+  $U$を$\KK$-線形空間とし, $V$を$U$の部分空間とする.
+  $u,u'\in U$に対し,
+  $u-u'\in V$となることを$u\Mod{V} u'$と書くことにする.
+  このとき,
+  次の命題の真偽を判定し証明を与えよ:
+  \begin{enumerate}
+  \item $u\in U \implies u \Mod{V} u$.
+  \item $u,u'\in U, u \Mod{V} u' \implies u' \Mod{V} u$.    
+  \item $u,u',u''\in U, u \Mod{V} u', u' \Mod{V} u'' \implies u \Mod{V} u''$.
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  $U$を$\KK$-線形空間とし, $V$を$U$の部分空間とする.
+  $u,u'\in U$に対し,
+  $u-u'\in V$となることを$u\Mod{V} u'$と書くことにする.
+  このとき,
+  次の命題の真偽を判定し証明を与えよ:
+  \begin{enumerate}
+  \item $u,u', w,w'\in U, u \Mod{V} u', w \Mod{V} w' \implies u+w \Mod{V} u'+w'$.
+  \item $c\in \KK,u,u'\in U, u \Mod{V} u'\implies cu \Mod{V} cu'$.
+  \end{enumerate}
+\end{quiz}
+
+
