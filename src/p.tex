@@ -924,7 +924,7 @@ $\rank(A)=n$であることと, $A$が正則であることは同値である.
 
 
 次の条件を満たす行列$A=(a_{i,j})_{i=1,\ldots,m,j=1,\ldots,n}$を
-行被役階段行列と呼ぶ:
+被役行階段行列と呼ぶ:
 \begin{enumerate}
 \item 次をみたす$p_1<\cdots <p_r$が存在する, ただし, $r=\rank(A)$:
 \begin{enumerate}
@@ -938,13 +938,13 @@ $\rank(A)=n$であることと, $A$が正則であることは同値である.
 \end{enumerate}
 行基本変形を行うことで,
 どんな行列$A$も
-行被役階段行列に変形できる.
+被役行階段行列に変形できる.
 また,
 得られる行被役階段行列は$A$のみに依存し,
 その変形手順によらない.
 
 次の条件を満たす行列$A=(a_{i,j})_{i=1,\ldots,m,j=1,\ldots,n}$を
-列被役階段行列と呼ぶ:
+被役列階段行列と呼ぶ:
 \begin{enumerate}
 \item 次をみたす$p_1<\cdots <p_r$が存在する, ただし, $r=\rank(A)$:
 \begin{enumerate}
@@ -958,9 +958,9 @@ $\rank(A)=n$であることと, $A$が正則であることは同値である.
 \end{enumerate}
 列基本変形を行うことで,
 どんな行列$A$も
-列被役階段行列に変形できる.
+被役列階段行列に変形できる.
 また,
-得られる列被役階段行列は$A$のみに依存し,
+得られる被役列階段行列は$A$のみに依存し,
 その変形手順によらない.
 
 
@@ -980,7 +980,7 @@ $A$が正則行列なら, 自由度は$0$であり,
 その解の空間は$\Set{\zzero}$である.
 具体的な行列$A$に対し,
 $A\xx=\zzero$の解の空間を求めるには,
-$A$を行基本変形で行被役階段行列に変形すると求めやすい.
+$A$を行基本変形で被役行階段行列に変形すると求めやすい.
 
 
 \subsection{行列式}
@@ -1121,6 +1121,7 @@ $\det(A)$が逆数を持つことと, $A$が正則であることは同値であ
 
 
 \chapter{線形空間と線形写像}
+\label{chap:linspace:linmap}
 本稿全体を通し,
 特に断らなければ,
 $(\KK,+,\cdot,0,1)$を体とする.
@@ -1893,8 +1894,8 @@ $A\in\KK^{m\times n}$とし,
 \end{align*}
 とする.
 \begin{enumerate}
-\item $\varphi$は単射ならば$\rank(A)=n$.
-\item $\varphi$が全射ならば$\rank(A)=m$.
+\item $\mu_A$が単射ならば$\rank(A)=n$.
+\item $\mu_A$が全射ならば$\rank(A)=m$.
 \end{enumerate}
 \end{prop}
 \begin{proof}\end{proof}
@@ -2267,6 +2268,7 @@ $2$項数ベクトルという用語を用いる.
 \end{quiz}
 
 \chapter{部分空間}
+\label{chap:subspace}
 \section{部分空間の定義}
 \label{sec:subspace:def}
 \begin{definition}
