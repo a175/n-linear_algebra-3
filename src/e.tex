@@ -543,7 +543,24 @@ $M=\Set{\mu_A|A\in\KK^{m\times n}}$
   \end{enumerate}
 \end{quiz}
 
-
+\begin{quiz}
+\begin{align*}
+  \aaa=\begin{pmatrix}a_1\\\vdots\\a_n\end{pmatrix}\in\RR^n
+\end{align*}
+に対し,
+\begin{align*}
+  \psi(\aaa)&=\frac{1}{n}\sum_{i=1}^n a_i\\
+  \phi(\aaa)&=\frac{1}{n}\sum_{i=1}^n (a_i - \psi(\aaa))^2\\
+  \varphi(\aaa)&=\sqrt{\phi(\aaa)}
+\end{align*}
+このとき,
+以下の命題の真偽を判定し証明を与えよ:
+\begin{enumerate}
+  \item $\psi\colon \RR^n\to \RR$は$\RR$線形写像である.
+  \item $\phi\colon \RR^n\to \RR$は$\RR$線形写像ではない.
+  \item $\varphi\colon \RR^n\to \RR$は$\RR$線形写像ではない.
+\end{enumerate}
+\end{quiz}
 
 
 \section{\Cref{sec:iso:def,sec:subspace:def,sec:subspace:example}の後の問題}
@@ -679,6 +696,14 @@ $M=\Set{\mu_A|A\in\KK^{m\times n}}$
 \end{quiz}
 
 \begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+  \begin{align*}
+    V=\Set{\begin{pmatrix}x_1\\x_2\end{pmatrix}\in\RR^2|x_1x_2>0}
+  \end{align*}
+  は$\RR^2$の部分空間ではない.
+\end{quiz}
+
+\begin{quiz}
   (\Cref{quiz:hom:sc,quiz:hom:sum}と本質的に同じ)
   次の命題の真偽を判定し証明を与えよ:
   $V$, $W$を$\KK$-線形空間とする.
@@ -748,7 +773,6 @@ $M=\Set{\mu_A|A\in\KK^{m\times n}}$
   $V$は$\ell(\RR)$の部分空間であることを,
   $\lim_{i\to\infty}a_i =0$の定義に基づき証明せよ.
 \end{quiz}
-
 
 \begin{quiz}
   次の命題の真偽を判定し証明を与えよ:
@@ -828,6 +852,137 @@ $M=\Set{\mu_A|A\in\KK^{m\times n}}$
 \end{quiz}
 
 \subsection{問題B}
+
+
+
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+  $U$を$\KK$-線形空間とし,
+  $V,V', W$を$U$の部分空間とする.
+  このとき,
+  $(V+V')\cap W=(V\cap W)+(V'\cap W)$となるとは限らない.
+\end{quiz}
+
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+  $U$を$\KK$-線形空間とし,
+  $V,V', W$を$U$の部分空間とする.
+  このとき,
+  $(V\cap V')+ W=(V+W)\cap (V'+W)$となるとは限らない.
+\end{quiz}
+
+
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+  $U$を$\KK$-線形空間とし,
+  $V,W$を$U$の部分空間とする.
+  このとき,
+  \begin{align*}
+    \tilde V&=\Set{(v,-v)\in U\boxplus U|v\in V} \\
+    \check W&=\Set{(w,0_U)\in U\boxplus U|w\in W} \\
+    \hat U&=\Set{(0_U,u)\in U\boxplus U|u\in U}
+  \end{align*}
+  とおく.
+  また,
+  \begin{align*}
+    \check X &= (\tilde V + \check W) \cap \hat U \\
+    X&=\Set{x|(0_U,x) \in\check X}
+  \end{align*}
+  とする.
+  このとき, $X=V\cap W$.
+\end{quiz}
+
+\begin{quiz}
+  $V$, $W$を$\KK$-線形空間とし,
+  $\varphi\colon V\to W$を$\KK$線形写像とする.
+  このとき,
+  以下の命題の真偽を判定し証明を与えよ:
+  \begin{enumerate}
+  \item
+    $V$の部分空間$V'$に対し,
+    $W'=\Set{\varphi(x)\in W|x\in V'}$は$W$の部分空間である.
+  \item
+    $W$の部分空間$W''$に対し,
+    $V''=\Set{x\in V|\varphi(x)\in W''}$は$V$の部分空間である.
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  $\varphi\colon \RR[x]\to \RR[x]$を,
+  $x^n \in \KK[x]$に対して$nx^{n-1}$を対応させる$\RR$-線形写像,
+  つまり, 多項式$f\in\RR[x]$に対し$f$の微分を対応させる写像とする.
+  このとき, $\Img(\varphi)$と$\Ker(\varphi)$を求めよ.
+\end{quiz}
+
+\begin{quiz}
+  $V$を$\KK$-線形空間とし,
+  $\varphi\colon V\to V$を$\KK$線形写像とする.
+  $\varphi^{i}=\underbrace{\varphi\circ\cdots\circ\varphi}_{i}$とし,
+  $\varphi^{0}=\id_V$とする.
+  このとき,
+  以下の命題の真偽を判定し証明を与えよ:
+  \begin{enumerate}
+    \item $i\in\NN$に対し, $\Ker(\varphi^i)\subset \Ker(\varphi^{i+1})$.
+    \item $\Ker(\varphi^N) =\Ker(\varphi^{N+1})$かつ$i\geq N\implies \Ker(\varphi^i) =\Ker(\varphi^{i+1})$.
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  $V$を$\KK$-線形空間とし,
+  $\varphi\colon V\to V$を$\KK$線形写像とする.
+  $\varphi^{i}=\underbrace{\varphi\circ\cdots\circ\varphi}_{i}$とし,
+  $\varphi^{0}=\id_V$とする.
+  このとき,
+  以下の命題の真偽を判定し証明を与えよ:
+  \begin{enumerate}
+    \item $i\in\NN$に対し, $\Img(\varphi^i)\supset \Img(\varphi^{i+1})$.
+    \item $\Img(\varphi^N) =\Img(\varphi^{N+1})$かつ$i\geq N\implies \Img(\varphi^i) =\Img(\varphi^{i+1})$.
+  \end{enumerate}
+\end{quiz}
+
+
+\begin{quiz}
+  $V$, $W$を$\KK$-線形空間とし,
+  $\varphi\colon V\to W$を$\KK$線形写像とする.
+  \begin{align*}
+    F&=\Set{(v,\varphi(v))\in V\boxplus W| v\in V }\\
+    K&=\Set{(x,y) \in F | y=0_W}
+  \end{align*}
+  とおく.
+  また
+  \begin{align*}
+    \shazo{\pi_1}{V\boxplus W}{V}
+          {(v,w)}{v}
+          &&
+    \shazo{\pi_2}{V\boxplus W}{V}
+          {(v,w)}{w}
+  \end{align*}
+  とする.
+  このとき,
+  以下の命題の真偽を判定し証明を与えよ:
+  \begin{enumerate}
+  \item
+    $F$は$V\boxplus W$の部分空間である.
+  \item
+    $\Ker(\varphi)=\Set{\varphi_1(a) | a\in K}$.
+  \item
+    $\Img(\varphi)=\Set{\varphi_2(a) | a\in F}$.
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  $V$, $W$, $V'$, $W'$を$\KK$-線形空間とする.
+  $\varphi\colon V\to V'$,
+  $\phi\colon W\to W'$を同型写像とし,
+  $\psi\colon V\to W$を$\KK$-線形写像とする.
+  $\psi'=\phi\circ\psi\circ\varphi^{-1}$とおく.
+  このとき,
+  以下の命題の真偽を判定し証明を与えよ:
+  \begin{enumerate}
+  \item $\Ker(\psi')\simeq\Ker(\psi)$.
+  \item $\Img(\psi')\simeq\Img(\psi)$.
+  \end{enumerate}
+\end{quiz}
 
 \begin{quiz}
   \begin{align*}
@@ -1057,3 +1212,195 @@ $M=\Set{\mu_A|A\in\KK^{m\times n}}$
   \item $W\in \SSS \implies V\subset W$.
   \end{enumerate}
 \end{quiz}
+
+
+\begin{quiz}
+  $V$と$W$を$\KK$-線形空間とし,
+  $0_V$を$V$の零元,
+  $0_W$を$W$の零元とする.
+  $V\boxplus W=\Set{(v,w)|v\in V,w\in W}$とし,
+  \begin{align*}
+    \shazo{\pi}{V\boxplus W}{V}
+    {(v,w)}{v}&&
+    \shazo{\iota}{V}{V\boxplus W}
+    {v}{(v,0_W)}\\
+    \shazo{\varpi}{V\boxplus W}{W}
+    {(v,w)}{w}&&
+    \shazo{\nu}{W}{V\boxplus W}
+    {w}{(0_V,w)}
+  \end{align*}
+  とする.
+  以下の命題の真偽を判定し証明を与えよ:
+  \begin{enumerate}
+  \item
+    $U$を$\KK$-線形空間とし,
+    $\varphi\colon U\to V$,
+    $\phi\colon U\to W$
+    を$\KK$-線形写像とする.
+    このとき,
+    $\psi\colon U\to V\boxplus W$で以下の条件を満たすものが,
+    ただ一つ存在する:
+    \begin{align*}
+      \varphi&=\pi\circ\psi\\
+      \phi&=\varpi\circ\psi.
+    \end{align*}
+  \item
+    $U$を$\KK$-線形空間とし,
+    $\varphi\colon V\to U$,
+    $\phi\colon W\to U$
+    を$\KK$-線形写像とする.
+    このとき,
+    $\psi\colon V\boxplus W\to U$で以下の条件を満たすものが,
+    ただ一つ存在する:
+    \begin{align*}
+      \varphi&=\psi\circ\iota\\
+      \phi&=\psi\circ\nu.
+    \end{align*}
+  \end{enumerate}
+\end{quiz}
+
+
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+  $I$を集合とし, $i\in I$に対し$V_i$を$0_{i}$を零元とする$\KK$-線形空間とする.
+  $i \in I$に対し$v_i\in V_i$とする列を$(v_i)_{i\in I}$で表し,
+  \begin{align*}
+    \prod_{i\in I} V_i &=\Set{(v_i)_{i\in I}|v_i\in V_i}\\
+    \bigoplus_{i\in I} V_i &=\Set{(v_i)_{i\in I} \in \prod_{i\in I} V_i|\#\Set{i\in I|v_i\neq 0_{i}}<\infty}
+  \end{align*}
+  とおく.
+  $\prod_{i\in I} V_i$は次の和とスカラー倍で$\KK$-線形空間である:
+  $(v_i)_{i\in I}+(w_i)_{i\in I}=(v_i+w_i)_{i\in I}$,
+  $c(v_i)_{i\in I}=(cv_i)_{i\in I}$.
+  このとき,
+  $\bigoplus_{i\in I} V_i$は$\prod_{i\in I} V_i$の部分空間である.
+\end{quiz}
+
+
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+  $I$を集合とし, $i\in I$に対し$V_i$を$0_{i}$を零元とする$\KK$-線形空間とする.
+  $i \in I$に対し$v_i\in V_i$とする列を$(v_i)_{i\in I}$で表し,
+  \begin{align*}
+    \prod_{i\in I} V_i &=\Set{(v_i)_{i\in I}|v_i\in V_i}
+%    \bigoplus_{i\in I} V_i &=\Set{(v_i)_{i\in I} \in \prod_{i\in I} V_i|\#\Set{i\in I|v_i\neq 0_{i}}<\infty}
+  \end{align*}
+  とおく.
+  \begin{align*}
+    \shazo{\pi_i}{\prod_{i\in I} V_i}{V_i}
+    {(v_i)_{i\in I}}{v_i}
+  \end{align*}
+
+  次の命題の真偽を判定し証明を与えよ:
+  \begin{enumerate}
+  \item
+    $U$を$\KK$-線形空間とし,
+    $i\in I$に対し
+    $\varphi_i\colon U\to V_i$
+    を$\KK$-線形写像とする.
+    このとき,
+    $\psi\colon U\to \prod_{i\in I} V_i$で以下の条件を満たすものが,
+    ただ一つ存在する:
+    \begin{align*}
+      i\in I\implies \varphi&=\pi_i\circ\psi
+    \end{align*}
+  \end{enumerate}
+\end{quiz}
+
+
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+  $I$を集合とし, $i\in I$に対し$V_i$を$0_{i}$を零元とする$\KK$-線形空間とする.
+  $i \in I$に対し$v_i\in V_i$とする列を$(v_i)_{i\in I}$で表し,
+  \begin{align*}
+    \prod_{i\in I} V_i &=\Set{(v_i)_{i\in I}|v_i\in V_i}\\
+    \bigoplus_{i\in I} V_i &=\Set{(v_i)_{i\in I} \in \prod_{i\in I} V_i|\#\Set{i\in I|v_i\neq 0_{i}}<\infty}
+  \end{align*}
+  とおく.
+  $i\in I$,
+  $v\in V_i$に対し,
+  \begin{align*}
+    \delta_{i,j}v=
+    \begin{cases}
+      v & (j=i)\\
+      0_j& (j\neq i)
+    \end{cases}
+  \end{align*}
+  と書くことにする.
+  \begin{align*}
+    \shazo{\nu_i}{V_i}{\bigoplus_{i\in I} V_i}
+    {v}{(\delta_{i,j}v_i)_{j\in I}}
+  \end{align*}
+  とするとき,
+  次の命題の真偽を判定し証明を与えよ:
+  \begin{enumerate}
+  \item
+    $U$を$\KK$-線形空間とし,
+    $i\in I$に対し
+    $\varphi_i\colon  V_i \to U$
+    を$\KK$-線形写像とする.
+    このとき,
+    $\psi\colon \bigoplus_{i\in I} V_i\to U$で以下の条件を満たすものが,
+    ただ一つ存在する:
+    \begin{align*}
+      i\in I\implies \varphi_i&=\psi\circ\nu_i
+    \end{align*}
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+  $U$を$\KK$-線形空間とする.
+  $i\in \NN$に対し,
+  $V_i$を$U$の部分空間とし,
+  $V_{i}\subset V_{i+1}$
+  を満たしているとする.
+  \begin{align*}
+    \shazo{\nu_i}{V_i}{\bigcup_{i\in \NN}V_i}
+    {v}{v}
+  \end{align*}
+  とするとき,
+  次の命題の真偽を判定し証明を与えよ:
+  \begin{enumerate}
+  \item
+    $U$を$\KK$-線形空間とし,
+    $i\in I$に対し
+    $\varphi_i\colon  V_i \to U$
+    を$\KK$-線形写像とする.
+    このとき,
+    $\psi\colon \bigcup_{i\in \NN} V_i\to U$で以下の条件を満たすものが,
+    ただ一つ存在する:
+    \begin{align*}
+      i\in \NN\implies \varphi_i&=\psi\circ\nu_i
+    \end{align*}
+  \end{enumerate}
+\end{quiz}
+
+
+%% \begin{quiz}
+%% \begin{align*}
+%%   \aaa=\begin{pmatrix}a_1\\\vdots\\a_n\end{pmatrix}\in\RR^n
+%% \end{align*}
+%% に対し,
+%% \begin{align*}
+%%   \psi(\aaa)&=\frac{1}{n}\sum_{i=1}^n a_i\\
+%%   \phi(\aaa)&=\frac{1}{n}\sum_{i=1}^n (a_i - \psi(\aaa))^2\\
+%%   \varphi(\aaa)&=\sqrt{\phi(\aaa)}
+%% \end{align*}
+%% このとき,
+%% 以下の命題の真偽を判定し証明を与えよ:
+%% \begin{enumerate}
+%%   \item $\psi\colon \RR^n\to \RR$は$\RR$線形写像である.
+%%   \item $\phi\colon \RR^n\to \RR$は$\RR$線形写像ではない.
+%%   \item $\varphi\colon \RR^n\to \RR$は$\RR$線形写像ではない.
+%% \end{enumerate}
+%% \end{quiz}
+
+%% \begin{quiz}
+%%   次の命題の真偽を判定し証明を与えよ:
+%%   \begin{align*}
+%%     V=\Set{(a_i)_{i\in \NN}\in \ell(\RR)|\text{次を満たす$n$が存在する: }i>n\implies a_i=0}
+%%   \end{align*}
+%%   とする.
+%%   $V$は$\ell(\RR)$の部分空間である.
+%% \end{quiz}
