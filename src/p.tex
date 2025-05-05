@@ -996,7 +996,7 @@ $\sigma\in S_n$に対し,
 とし, $\sgn(\sigma)$を$\sigma$の符号と呼ぶ.
 $n$次正方行列$A=(a_{i,j})_{i,j}\in M_n$に対し,
 \begin{align*}
-D_n^{(1)}=\sum_{\sigma\in S_n} \sgn(\sigma)a_{1,\sigma(1)}\cdots a_{n,\sigma(n)}
+D_n^{(1)}(A)=\sum_{\sigma\in S_n} \sgn(\sigma)a_{1,\sigma(1)}\cdots a_{n,\sigma(n)}
 \end{align*}
 とおく.
 
@@ -1004,7 +1004,7 @@ D_n^{(1)}=\sum_{\sigma\in S_n} \sgn(\sigma)a_{1,\sigma(1)}\cdots a_{n,\sigma(n)}
 $n$次正方行列$A=(a_{i,j})_{i,j}\in M_n$に対し,
 $A$の$1$行目と$k$列目を忘れて得られる$(n-1)$次正方行列を$A^{(1,k)}$とし,
 \begin{align*}
-D_n^{(2)}
+D_n^{(2)}(A)
 &=
 \begin{cases}
 \sum_{j=1}^{n} (-1)^{1+j}a_{1,j}D_{n-1}^{(2)}(A^{(1,k)}) & (n>1)\\
@@ -4171,7 +4171,7 @@ $\nu_{(v_1,\ldots,v_n)}$は同型写像である.
 \end{align*}
 ただし,
 $I=\Set{1,\ldots,m}$,
-$J=\Set{1,\ldots,m}$.
+$J=\Set{1,\ldots,n}$.
 \end{prop}
 \begin{proof}\end{proof}
 
@@ -4520,6 +4520,7 @@ $\varphi$の$D$に関する表現行列と呼ぶ.
 
 
 \chapter{行列式}
+\label{chap:det}
 \section{交代的多重線形写像}
 \begin{definition}
   $(V,\plus,\act)$, $(W,\pplus,\aact)$を$\KK$-線形空間とする.
@@ -4812,6 +4813,7 @@ $\sigma\in S_n$に対し,
 \end{quiz}
 
 \chapter{固有空間と固有値}
+\label{chap:eigen}
 \section{固有空間}
 
 $V$を$\KK$-線形空間とし,

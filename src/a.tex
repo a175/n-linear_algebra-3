@@ -1187,3 +1187,123 @@ $\aaa_j$を$B$の線型結合として表した際の係数を求めればよい
   \end{enumerate}
 \end{description}
 \end{algorithm}
+
+
+\section{\Cref{chap:det}に関連すること}
+$n$次正方行列$A=(a_{i,k})_{i\in I,j\in I}$の行列式$\det(A)$を計算する際には,
+行列式を対称群で展開した式
+\begin{align*}
+\det(A)=\sum_{\sigma\in S_n} \sgn(\sigma)a_{1,\sigma(1)}\cdots a_{n,\sigma(n)}
+\end{align*}
+を用いて計算することは少ない.
+例えば, 三角行列であれば定義に従って計算すると対角成分の積のみが現れるが,
+一般には項がたくさん現れるため効率的ではない.
+
+例えば,
+$A$の$l$行目と$k$行目を忘れることで得られる$(n-1)$-次正方行列が$\pi_{l,k}(A)$とすると以下が成り立つので,
+これを利用してサイズの小さい正方行列の行列式に帰着させる:
+\begin{theorem}
+  \label{thm:det:row:expansion}
+  $a_{i,j}$が$(i,j)$-成分である
+    $n$次正方行列$A$に対し,
+    \begin{align*}
+      \det(A)&=
+      \sum_{j=1}^{n}
+      (-1)^{t+j}a_{t,j}\det(\pi_{t,j}(A)).
+    \end{align*}
+\end{theorem}
+\begin{theorem}
+  \label{thm:det:col:expansion}
+  $a_{i,j}$が$(i,j)$-成分である
+    $n$次正方行列$A$に対し,
+    \begin{align*}
+      \det(A)&=\sum_{i=1}^{n}
+      (-1)^{i+t}a_{i,t}\det(\pi_{i,t}(A)).
+    \end{align*}
+\end{theorem}
+
+また,
+基本変形に対して以下のように振る舞うので,
+これを利用する:
+\begin{theorem}
+  $A$を$n$次正方行列とする.
+  \begin{enumerate}
+  \item 
+
+    $A$の$t$行目を$\alpha$倍して得られる行列を$A'$とすると,
+    $\det(A')=\alpha \det(A)$.
+  \item 
+    $A$の$t$行目に$s$行目の$\alpha$倍を加えて得られる行列を$A'$とすると,
+    $\det(A')=\det(A)$.
+  \item 
+    $A$の$t$行目と$s$行目を入れ替えて得られる行列を$A'$とすると,
+    $\det(A')=-\det(A)$.
+  \end{enumerate}
+\end{theorem}
+\begin{theorem}
+  $A$を$n$次正方行列とする.
+  \begin{enumerate}
+  \item 
+    $A$の$t$列目を$\alpha$倍して得られる行列を$A'$とすると,
+    $\det(A')=\alpha \det(A)$.
+  \item 
+    $A$の$t$列目に$s$列目の$\alpha$倍を加えて得られる行列を$A'$とすると,
+    $\det(A')=\det(A)$.
+  \item 
+    $A$の$t$列目と$s$列目を入れ替えて得られる行列を$A'$とすると,
+    $\det(A')=-\det(A)$.
+  \end{enumerate}
+\end{theorem}
+
+
+\section{\Cref{chap:eigen}に関連すること}
+$n$次正方行列$A$の固有空間や固有値を求める方法について考える.
+
+固有値$\lambda$が与えられたとき,
+その固有空間は
+\begin{align*}
+  \Set{\xx\in \KK^n|A\xx=\lambda\xx}
+\end{align*}
+であるが, これは$\tilde A=A-\lambda E_n$と書けば,
+$\xx$に関する方程式
+$\tilde A \xx=\zzero_n$
+の解空間$\Ker(\mu_{\tilde A})$である.
+したがって, $\tilde A$に行基本変形をするなどして,
+生成系を(いつでも)計算することができる.
+
+次に$A$の固有値を求める方法について考える.
+$\lambda$が$A$の固有値であるということは,
+\begin{align*}
+  \Set{\xx\in \KK^n|A\xx=\lambda\xx}\supsetneq \Set{\zzero_n}
+\end{align*}
+を満たすということであった.
+言い換えると,
+$(A-\lambda E_n)\xx=\zzero_n$という斉次連立方程式が非自明な解をもつということであるから,
+$A-\lambda E_n$が退化する$\lambda$を求めることになる.
+したがって,
+$\lambda$に関する方程式
+$\det(A-\lambda E_n)=0$
+を解けばよい.
+
+固有値と固有空間を求めるには
+一般には以下のように行うことになる:
+\begin{enumerate}
+\item
+  $x$に関する$n$次方程式
+  $\det(A-x E_n)=0$
+  を解き,
+  その解を$\lambda_1,\ldots,\lambda_k$とする.
+\item $i=1,\ldots,k$に対し以下を行う:
+  \begin{enumerate}
+  \item
+    $\xx$に関する斉次連立一次方程式
+    $(A-\lambda_i E_n)\xx=\zzero_n$
+    を解く.
+  \end{enumerate}
+\end{enumerate}
+ただし,
+$\det(A-x E_n)=0$
+は$n$次方程式であるため一般には解くのは難しい上, 解けるとも限らない.
+
+
+
