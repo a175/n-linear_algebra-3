@@ -1257,7 +1257,12 @@ $A$の$l$行目と$k$行目を忘れることで得られる$(n-1)$-次正方行
 
 
 \section{\Cref{chap:eigen}に関連すること}
-$n$次正方行列$A$の固有空間や固有値を求める方法について考える.
+$n$次正方行列$A\in\KK^{n\times n}$の
+固有空間や固有値を求める方法について考える.
+
+固有ベクトルの候補$\vv\in \KK^n$が与えられたとき,
+$\vv\in \KK^n$が固有ベクトルであることを示すのは簡単である.
+単に, $A\vv$を計算し$\vv$の定数倍になっていることをいうだけで良い.
 
 固有値$\lambda$が与えられたとき,
 その固有空間は
@@ -1307,3 +1312,59 @@ $\det(A-x E_n)=0$
 
 
 
+\section{\Cref{chap:diagonalize}に関連すること}
+$n$次正方行列$A\in\KK^{n\times n}$の
+対角化に関する計算について考える.
+
+一般には対角化できるとは限らない.
+行列$A$が対角化かのうであることと,
+次の条件を満たす$v_i$が取れることは同値である:
+\begin{enumerate}
+\item $(\vv_1,\ldots,\vv_n)$が一次独立
+\item  各$v_j$は$A$の固有ベクトル
+\end{enumerate}
+また, このような$v_i$が取れたとき,
+$P=(\vv_1|\cdots|\vv_n)$とおくと,
+$P^{-1}AP$は固有値を並べた対角行列となる.
+したがって, 行列の対角化をするには固有ベクトルを求めればよい.
+この計算方法についてはすでに述べた通りである.
+
+行列を対角化できると,
+例えば行列の冪の計算が簡単になる.
+一般の行列の積は成分が複雑に変化するが,
+対角行列の積は, 対応する対角成分の積を取るだけである.
+つまり,
+\begin{align*}
+D=\begin{pmatrix}\lambda_1&&\\&\ddots&\\&&\lambda_n\end{pmatrix}
+\end{align*}
+とすると,
+\begin{align*}
+D^k=\begin{pmatrix}\lambda_1^k&&\\&\ddots&\\&&\lambda_n^k\end{pmatrix}
+\end{align*}
+である,
+$D=P^{-1}AP$ならば,
+\begin{align*}
+  D^k=(P^{-1}AP)^k=P^{-1}A^kP
+\end{align*}
+であるので,
+\begin{align*}
+  A=PD^kP^{-1}
+\end{align*}
+となるので, 単純に$A^k$を計算するよりも簡単になる.
+
+また, $n$次正方複素行列に対する指数関数$\exp$を
+\begin{align*}
+\exp(A)=\sum_{k=0}\frac{1}{k!}A^k
+\end{align*}
+で定義する.
+ただし, ここでは$A^0=E_n$とする.
+この指数関数に関しても,
+$D=P^{-1}AP$ならば,
+\begin{align*}
+  \exp(A)&=\sum_{k=0}\frac{1}{k!}A^k\\
+  &=\sum_{k=0}\frac{1}{k!}PD^kP^{-1}\\
+  &=P(\sum_{k=0}\frac{1}{k!}D^k)P^{-1}\\
+  &=P(\sum_{k=0}\begin{pmatrix}\frac{1}{k!}\lambda_1^k&&\\&\ddots&\\&&\frac{1}{k!}\lambda_n^k\end{pmatrix})P^{-1}\\
+  &=P\begin{pmatrix}e^{\lambda_1}&&\\&\ddots&\\&&e^{\lambda_n}\end{pmatrix}P^{-1}
+\end{align*}
+と書ける.
