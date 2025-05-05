@@ -293,7 +293,7 @@ $A$から行基本変形で得られる被役行階段行列を計算するこ�
     \begin{enumerate}
     \item $\bbb_j$を次で定義する:
       \begin{align*}
-        \bbb_j = \ee_j - \sum_{\aaa=(a_i)_{i\in J}\in\bar A}a_j \ee_{\lp(\aaa)}.
+        \bbb_j = \ee^{(m)}_j - \sum_{\aaa=(a_i)_{i\in J}\in\bar A}a_j \ee^{(m)}_{\lp(\aaa)}.
         \end{align*}
     \end{enumerate}
   \item $\Set{\bbb_j|j\in \check J}$を出力し終了.
@@ -385,7 +385,7 @@ $\KK^m$の部分空間
   \end{align*}
 \end{prop}
 アルゴリズムとして書くなら以下のようになる:
-\begin{algorithm}\makebox{}
+\begin{algorithm}\label{alg:intersection}\makebox{}
 \begin{description}
 \item[Input]
   有限集合$A,B\subset \KK^m$
@@ -668,8 +668,8 @@ $\reduce(A)\subset A$ではない.
 
 \section{\Cref{chap:quotient}に関連すること}
 
-$X\subset\KK^n$を被役列階段行列とする.
-このとき, $\aaa\in\KK^n$に対し,
+$X\subset\KK^m$を被役列階段行列とする.
+このとき, $\aaa\in\KK^m$に対し,
 $\reduce(\aaa,X)$が閉じた式で書けることを
 \Cref{rem:reduce:proj}では見た.
 この表示から
@@ -685,8 +685,8 @@ $\reduce(\aaa,X)$が閉じた式で書けることを
 \end{align*}
 とし,
 $\Set{j_1,\ldots,j_r}=\hat I$とおくと,
-$\Img(\varphi)=\Braket{\ee_{j_1},\ldots,\ee_{j_r}}_{\KK}$である.
-また, $\reduce(\ee_{j_k},X)=\ee_{j_k}$であるので,
+$\Img(\varphi)=\Braket{\ee^{(m)}_{j_1},\ldots,\ee^{(m)}_{j_r}}_{\KK}$である.
+また, $\reduce(\ee^{(m)}_{j_k},X)=\ee^{(m)}_{j_k}$であるので,
 $\varphi\circ\varphi=\varphi$である.
 
 
@@ -724,8 +724,466 @@ $\aaa\in\KK^n$に対し$\reduce(\aaa,X)$を対応させる写像が$\KK$-線形�
 $\check I=\Set{\lp(\bbb)|\bbb\in X}$,
 $\hat I=\Set{1,\ldots,m}\setminus\check I$とし,
 $\Set{j_1,\ldots,j_r}=\hat I$とおくと,
-$([\ee_{j_1}]_V,\ldots,[\ee_{j_r}]_V)$は,
+$([\ee^{(m)}_{j_1}]_V,\ldots,[\ee^{(m)}_{j_r}]_V)$は,
 $\KK^m/V$の基底である.
 
 
 
+\section{\Cref{chap:repmat}に関連すること}
+$\KK^n$の部分空間から
+$\KK^m$の部分空間への線形写像の計算についてここでは考える.
+
+\begin{prop}
+  \label{prop:linmap:calc:elm}
+  $V$, $W$を$\KK$線形空間とし,
+  $\varphi\colon V\to W$を$\KK$線形写像とする.
+  \begin{align*}
+    \tilde V &=\Set{(v,0_W)\in V\boxplus W|v\in V}\\
+    \tilde W &=\Set{(0_V,w)\in V\boxplus W|w\in W}\\
+    F&=\Set{(v,-\varphi(v))\in V\boxplus W|v\in V}
+  \end{align*}
+  とする.
+  このとき,
+  $\tilde V$,
+  $\tilde W$,
+  $F$は
+  $V\boxplus W$
+  の部分空間である.
+  また,
+  $(v,0_W)\in \tilde V$,
+  $(0_V,w)\in\tilde W$,
+  $(x,y)\in F$が
+  $(v,0_W)+(x,y)=(0_V,w)$
+  を満たすならば,
+  $w=\varphi(v)$である.
+\end{prop}
+このことから次がわかる.
+\begin{prop}
+  \label{prop:linmap:calc:img}
+  $V$, $W$を$\KK$線形空間とし,
+  $\varphi\colon V\to W$を$\KK$線形写像とする.
+  $V'$を$V$の部分空間,
+  $W'$を$W$の部分空間とする.
+  \begin{align*}
+    \tilde V &=\Set{(v,0_W)\in V\boxplus W|v\in V}\\
+    \tilde V' &=\Set{(v,0_W)\in V\boxplus W|v\in V'}\\
+    \tilde W &=\Set{(0_V,w)\in V\boxplus W|w\in W}\\
+    \tilde W' &=\Set{(0_V,w)\in V\boxplus W|w\in W'}\\
+    F&=\Set{(v,-\varphi(v))\in V\boxplus W|v\in V}
+  \end{align*}
+  とおく.
+  \begin{align*}
+    X&=(\tilde W'+F)\cap \tilde V\\
+    Y&=(\tilde V'+F)\cap \tilde W
+  \end{align*}
+  とすると,
+  \begin{align*}
+    \Set{(x,0_W)|\varphi(x)\in W'}&=X,\\
+    \Set{(0_V,\varphi(x))|x\in V'}&=Y.
+  \end{align*}
+\end{prop}
+\begin{cor}
+  $V$, $W$を$\KK$線形空間とし,
+  $\varphi\colon V\to W$を$\KK$線形写像とする.
+  \begin{align*}
+    \tilde V &=\Set{(v,0_W)\in V\boxplus W|v\in V}\\
+    F&=\Set{(v,-\varphi(v))\in V\boxplus W|v\in V}
+  \end{align*}
+  とおく.
+  \begin{align*}
+    X&=F\cap \tilde V
+  \end{align*}
+  とすると,
+  \begin{align*}
+    \Set{(x,0_W)|x\in\Ker(\varphi)}&=X.
+  \end{align*}
+\end{cor}
+\begin{remark}
+  $V$, $W$を$\KK$線形空間とし,
+  $\varphi\colon V\to W$を$\KK$線形写像とする.
+  $V=\Braket{\aaa_1,\ldots,\aaa_n}_{\KK}$,
+  $W=\Braket{\bbb_1,\ldots,\bbb_m}_{\KK}$,
+  であるとき,
+  \begin{align*}
+    \Set{(v,0_W)\in V\boxplus W|v\in V}
+    &=\Braket{(\aaa_1,0_W),\ldots,(\aaa_n,0_W)}_{\KK}\\
+    \Set{(0_V,w)\in V\boxplus W|w\in W}
+    &=\Braket{(0_V,\bbb_m),\ldots,(0_V,\bbb_m)}_{\KK}\\
+    \Set{(v,-\varphi(v))\in V\boxplus W|v\in V}
+    &=\Braket{(\aaa_1,\varphi(\aaa_1)),\ldots,(\aaa_n,\varphi(\aaa_n))}_{\KK}.
+  \end{align*}  
+\end{remark}
+\begin{remark}
+  $V$, $W$を$\KK$-線形空間とし, $\varphi\colon V\to W$を$\KK$-線形写像とする.
+  また
+  \begin{align*}
+    \tilde V &=\Set{(v,0_W)\in V\boxplus W|v\in V}\\
+    \tilde W &=\Set{(0_V,w)\in V\boxplus W|w\in W}\\
+    F&=\Set{(v,-\varphi(v))\in V\boxplus W|v\in V}
+  \end{align*}
+  とする.
+  $V$と
+  $\tilde V\subset V\boxplus W$は同型であり, $V$を$\tilde V$と同一視することで,
+  $V\boxplus W$の部分空間と思うことができる.
+  同様に$W$と
+  $\tilde W\subset V\boxplus W$は同型であり, $W$を$\tilde W$と同一視することで,
+  $V\boxplus W$の部分空間と思うことができる. 
+  商空間
+  $V\boxplus W/F$について考える.
+  $[(v,0_W)]_F-[\varphi(0_V,\varphi(v)))]_F=[(v,-\varphi(v))]_F=[(0_V,0_W)]_F$
+  であるので,
+  $[(v,0_W)]_F=[\varphi(0_V,\varphi(v)))]_F$である.
+  つまり,
+  $V\boxplus W/F$
+  においては, $v\in V$と$\varphi(v)\in W$が同一視される.
+  したがって, $v,v'\in V$が$\varphi(v)=\varphi(v')$を満たしているなら,
+  $V\boxplus W/F$においては等しいものとして扱われる.
+  実際,
+  $[(v,0_W)]_F=[\varphi(0_V,\varphi(v)))]_F=[(v',0_W)]_F$である.  
+\end{remark}
+
+これらを用い,
+$\KK^n$の部分空間$V$から
+$\KK^m$の部分空間$W$への線形写像$\varphi$
+を計算することを, 以下では考える.
+特に,
+$V=\Braket{\aaa_1,\ldots,\aaa_r}_{\KK}$とし,
+$\bbb_i=\varphi(\aaa_i)$が与えられているものとして計算方法について考える.
+
+まず, 与えられた$\vv\in V$に対し$\varphi(\vv)$を与える方法について考える.
+定義に従うと,
+$\vv=x_1\aaa_1+\cdots+x_r\aaa_r$という$x_i$に関する連立方程式をとき,
+$\varphi(\vv)=x_1\varphi(\aaa_1)+\cdots+x_r\varphi(\aaa_r)=x_1\bbb_1+\cdots+x_r\bbb_r$
+を計算すればよいことがわかる.
+一方\Cref{prop:linmap:calc:elm}に基づき,
+以下のように計算することもできる:
+\begin{algorithm}\makebox{}
+\begin{description}
+\item[Input]
+$\aaa_1,\ldots,\aaa_r\in \KK^n$,
+$\bbb_1,\ldots,\bbb_r\in \KK^m$,
+$\vv\in \KK^n$.
+\item[Proceedure]\makebox{}
+  \begin{enumerate}
+  \item $F=\Set{\begin{pmatrix}\aaa_1\\-\bbb_1\end{pmatrix},\ldots,\begin{pmatrix}\aaa_r\\-\bbb_r\end{pmatrix}}$とする.
+  \item $\bar F=\reduce(F)$とする.
+  \item $\bar \vv=\reduce(\begin{pmatrix}\vv\\\zzero_m\end{pmatrix},\bar F)$とする.
+  \item $\xx\in\KK^n$, $\yy\in\KK^m$を$\begin{pmatrix}\xx\\\yy\end{pmatrix}=\bar \vv$となるものとする.
+  \item
+    $\xx= \zzero_n$なら次を行う:
+    \begin{enumerate}
+    \item $\yy$を出力し終了.
+    \end{enumerate}
+    そうでないなら次を行う:
+    \begin{enumerate}
+    \item エラー($\vv\not\in\Braket{\aaa_1,\ldots,\aaa_r}_{\KK}$)として終了.
+    \end{enumerate}
+  \end{enumerate}
+\end{description}
+\end{algorithm}
+
+$V$の部分空間$V'=\Braket{\vv_1,\ldots,\vv_l}_{\KK}$に対し,
+$\varphi$の$V'$への制限$\varphi|_{V'}$の像
+$\Img(\varphi|_{V'})=\Set{\varphi(\vv)|\vv\in V'}$の生成系を求めることを考える.
+$\varphi(\vv_i)$を計算し,
+$(\varphi(\vv_1),\ldots,\varphi(\vv_l))$
+とすることでも求められるが,
+\Cref{prop:linmap:calc:img}に基づき,
+以下のように計算することもできる:
+\begin{algorithm}\makebox{}
+\begin{description}
+\item[Input]
+$\aaa_1,\ldots,\aaa_r\in \KK^n$,
+$\bbb_1,\ldots,\bbb_r\in \KK^m$,
+$\vv_1,\ldots,\vv_l\in \KK^n$.
+\item[Proceedure]\makebox{}
+  \begin{enumerate}
+  \item $F=\Set{\begin{pmatrix}\aaa_1\\-\bbb_1\end{pmatrix},\ldots,\begin{pmatrix}\aaa_r\\-\bbb_r\end{pmatrix}}$とする.
+  \item $V'=\Set{\begin{pmatrix}\vv_1\\\zzero_m\end{pmatrix},\ldots,\begin{pmatrix}\vv_l\\\zzero_m\end{pmatrix}}$とする.
+  \item $\bar X=\reduce(F\cup V')$とする.
+  \item $Y=\Set{\yy|\begin{pmatrix}\zzero_m\\\yy\end{pmatrix}\in \bar X}$とする.
+  \item $Y$を出力し終了.
+  \end{enumerate}
+\end{description}
+\end{algorithm}
+
+次に, 与えられた$\ww\in W$に対し
+$\varphi(\vv)=\ww$を満たす$\vv\in V$を与える方法について考える.
+定義に従うと,
+$\ww=x_1\bbb_1+\cdots+x_r\bbb_r$という$x_i$に関する連立方程式をとき,
+$\vv=x_1\aaa_1+\cdots+x_r\aaa_r$
+を計算すればよいことがわかる.
+この連立方程式の解空間を求めれば,
+$\varphi(\vv)=\ww$を満たす$\vv\in V$をすべて求めることができる.
+一方
+$\varphi(\vv)=\ww$を満たす$\vv\in V$を一つ与えれば良いのであれば,
+\Cref{prop:linmap:calc:elm}に基づき,
+以下のように計算することもできる:
+\begin{algorithm}\makebox{}
+\begin{description}
+\item[Input]
+$\aaa_1,\ldots,\aaa_r\in \KK^n$,
+$\bbb_1,\ldots,\bbb_r\in \KK^m$,
+$\ww\in \KK^m$.
+\item[Proceedure]\makebox{}
+  \begin{enumerate}
+  \item $B=\Set{\begin{pmatrix}-\bbb_1\\\aaa_1\end{pmatrix},\ldots,\begin{pmatrix}-\bbb_r\\\aaa_r\end{pmatrix}}$とする.
+  \item $\bar B=\reduce(B)$とする.
+  \item $\bar \ww=\reduce(\begin{pmatrix}\ww\\\zzero_n\end{pmatrix},\bar B)$とする.
+  \item $\xx\in\KK^n$, $\yy\in\KK^m$を$\begin{pmatrix}\yy\\\xx\end{pmatrix}=\bar \ww$となるものとする.
+  \item
+    $\yy= \zzero_m$なら次を行う:
+    \begin{enumerate}
+    \item $\xx$を出力し終了.
+    \end{enumerate}
+    そうでないなら次を行う:
+    \begin{enumerate}
+    \item エラー($\ww\not\in\Braket{\bbb_1,\ldots,\bbb_r}_{\KK}$)として終了.
+    \end{enumerate}
+  \end{enumerate}
+\end{description}
+\end{algorithm}
+$\ww\in W$が$\ww\in\Braket{\bbb_1,\ldots,\bbb_r}_{\KK}$
+であるとき,
+$\ww=x_1\bbb_1+\cdots+x_r\bbb_r$
+をみたす$x_i$がとれるはずである.
+この$x_i$を具体的に求めるには,
+$x_i$に関する連立方程式を解けば良い.
+具体的には,
+$(\bbb_1|\cdots|\bbb_r)\xx=\ww$
+を解けばよく, これは計算可能である.
+一方, これは,
+$\nu_{(\bbb_1,\ldots,\bbb_r)}\colon \KK^r \to W$を考えると,
+$\nu_{(\bbb_1,\ldots,\bbb_r)}(\xx)=\ww$となる$\xx$を求めるという問題である.
+このような$\xx$を一つ与えれば良いのであれば,
+$\nu_{(\bbb_1,\ldots,\bbb_r)}(\ee^{(r)}_i)=\bbb_i$
+であるので,
+以下のように求めることができる;
+\begin{algorithm}\makebox{}
+\begin{description}
+\item[Input]
+  $\bbb_1,\ldots,\bbb_r\in \KK^m$,
+  $\ww\in\KK^m$.
+\item[Proceedure]\makebox{}
+  \begin{enumerate}
+  \item $B=\Set{\begin{pmatrix}-\bbb_1\\\ee^{(r)}_1\end{pmatrix},\ldots,\begin{pmatrix}-\bbb_r\\\ee^{(r)}_r\end{pmatrix}}$とする.
+  \item $\bar B=\reduce(B)$とする.
+  \item $\bar \ww=\reduce(\begin{pmatrix}\ww\\\zzero_r\end{pmatrix},\bar B)$とする.
+  \item $\xx\in\KK^r$, $\yy\in\KK^m$を$\begin{pmatrix}\yy\\\xx\end{pmatrix}=\bar \ww$となるものとする.
+  \item
+    $\yy= \zzero_m$なら次を行う:
+    \begin{enumerate}
+    \item $\xx$を出力し終了.
+    \end{enumerate}
+    そうでないなら次を行う:
+    \begin{enumerate}
+    \item エラー($\ww\not\in\Braket{\bbb_1,\ldots,\bbb_r}_{\KK}$)として終了.
+    \end{enumerate}
+  \end{enumerate}
+\end{description}
+\end{algorithm}
+
+
+
+$W$の部分空間$W'=\Braket{\ww_1,\ldots,\ww_l}_{\KK}$に対し,
+$\Set{\vv\in V|\varphi(\vv)\in W'}$の生成系を求めることを考える.
+これは, 例えば次のように求めることができる:
+$\Ker(\varphi)$の元は,
+$\zzero_m=x_1\bbb_1+\cdots+x_r\bbb_r$という$x_i$に関する斉次連立方程式をとき,
+$\vv=x_1\aaa_1+\cdots+x_r\aaa_r$
+とおけば得られる.
+したがって,
+$\zzero_m=x_1\bbb_1+\cdots+x_r\bbb_r$という$x_i$に関する斉次連立方程式の解空間
+の生成系を求めれば,
+$\Ker(\varphi)$の生成系が与えられる.
+これを$(\uu_1,\ldots,\uu_k)$とする.
+また$\varphi(\vv_i)=\ww_i$を満たす$\vv_i\in V$を各$i$に対し求める.
+これらを合わせ
+$(\uu_1,\ldots,\uu_k,\vv_1,\ldots,\vv_l)$
+とすると$\Set{\vv\in V|\varphi(\vv)\in W'}$の生成系である.
+一方,
+\Cref{prop:linmap:calc:img}に基づき,
+以下のように計算することもできる:
+\begin{algorithm}\makebox{}
+\begin{description}
+\item[Input]
+$\aaa_1,\ldots,\aaa_r\in \KK^n$,
+$\bbb_1,\ldots,\bbb_r\in \KK^m$,
+$\ww_1,\ldots,\ww_l\in \KK^m$.
+\item[Proceedure]\makebox{}
+  \begin{enumerate}
+  \item $B=\Set{\begin{pmatrix}-\bbb_1\\\aaa_1\end{pmatrix},\ldots,\begin{pmatrix}-\bbb_r\\\aaa_r\end{pmatrix}}$とする.
+  \item $W'=\Set{\begin{pmatrix}\ww_1\\\zzero_n\end{pmatrix},\ldots,\begin{pmatrix}\ww_l\\\zzero_n\end{pmatrix}}$とする.
+  \item $\bar X=\reduce(B\cup W')$とする.
+  \item $X=\Set{\xx|\begin{pmatrix}\zzero_m\\\xx\end{pmatrix}\in \bar X}$とする.
+  \item $X$を出力し終了.
+  \end{enumerate}
+\end{description}
+\end{algorithm}
+$W'=\Set{\zzero_m}$のときには
+$\Ker(\varphi)=\Set{\vv\in V|\varphi(\vv)\in W'}$であるので,
+$\Ker(\varphi)$を次のように求めることもできる.
+\begin{algorithm}\makebox{}
+\begin{description}
+\item[Input]
+$\aaa_1,\ldots,\aaa_r\in \KK^n$,
+$\bbb_1,\ldots,\bbb_r\in \KK^m$.
+\item[Proceedure]\makebox{}
+  \begin{enumerate}
+  \item $B=\Set{\begin{pmatrix}-\bbb_1\\\aaa_1\end{pmatrix},\ldots,\begin{pmatrix}-\bbb_r\\\aaa_r\end{pmatrix}}$とする.
+  \item $\bar X=\reduce(B)$とする.
+  \item $X=\Set{\xx|\begin{pmatrix}\zzero_m\\\xx\end{pmatrix}\in \bar X}$とする.
+  \item $X$を出力し終了.
+  \end{enumerate}
+\end{description}
+\end{algorithm}
+
+$A=(\bbb_1|\cdots|\bbb_r)$とし,
+斉次連立一方程式$A\xx=\zzero_m$について考える.
+この解空間は, $A$を行基本変形をすることで求められる.
+一方$A\xx=\mu_A(\xx)=\nu_{(\bbb_1,\ldots,\bbb_r)}(\xx)$であるので,
+$A\xx=\zzero_m$の解空間は$\Ker(\nu_{(\bbb_1,\ldots,\bbb_r)})$である.
+したがって次の方法でも求められる:
+\begin{algorithm}\makebox{}
+\begin{description}
+\item[Input]
+$\bbb_1,\ldots,\bbb_r\in \KK^m$.
+\item[Proceedure]\makebox{}
+  \begin{enumerate}
+  \item $B=\Set{\begin{pmatrix}-\bbb_1\\\ee^{(r)}_1\end{pmatrix},\ldots,\begin{pmatrix}-\bbb_r\\\ee^{(r)}_r\end{pmatrix}}$とする.
+  \item $\bar X=\reduce(B)$とする.
+  \item $X=\Set{\xx|\begin{pmatrix}\zzero_m\\\xx\end{pmatrix}\in \bar X}$とする.
+  \item $X$を出力し終了.
+  \end{enumerate}
+\end{description}
+\end{algorithm}
+
+このことから, 以下のことがわかる:
+\begin{remark}
+$A\in\KK^{m\times n}$とし,
+\begin{align*}
+  \shazo{\mu_A}{\KK^n}{\KK^m}
+  {\xx}{A\xx}
+\end{align*}
+について考える.
+\begin{align*}
+\begin{pmatrix}E_n\\\hline A\end{pmatrix}
+\end{align*}
+は明らかに被役列階段行列であるので, その階数は$n$である.
+したがって,
+\begin{align*}
+\begin{pmatrix}A\\\hline E_n\end{pmatrix}
+\end{align*}
+の階数も$n$である.
+これに列基本変形を行って得られる
+被役列階段行列を$\tilde(A)=(\tilde\aaa_1|\ldots|\tilde\aaa_n)$とする.
+また, 各$j$に対し, $\yy_j\in\KK^m$と$\xx_j\in\KK^n$を
+\begin{align*}
+\begin{pmatrix}\yy_j\\\hline \xx_j\end{pmatrix}
+ =\aaa_j
+\end{align*}
+となるようにとる.
+$r=\rank(A)$とし,
+  $X=(\xx_{r+1}|\cdots|\xx_{n})$,
+  $X'=(\xx_{1}|\cdots|\xx_{r})$,
+  $Y=(\yy_1|\cdots|\yy_r)$
+とおくと,
+$X$は$A$に列基本変形を行って得られる被役列階段行列であり,
+\begin{align*}
+  \tilde A =
+  \left(
+  \begin{array}{c|c}Y&O_{m,n-r}\\\hline X'&X\end{array}
+    \right)
+\end{align*}
+と書ける.
+$(\yy_1,\ldots,\yy_r)$は$\Img(\mu_A)$の基底であり
+$(\xx_{r+1},\ldots,\yy_n)$は$\Ker(\mu_A)$の基底である.
+したがって,
+\begin{align*}
+  \dim_\KK(\Img(\mu_A))+\dim_\KK(\Ker(\mu_A))=\dim_\KK(\KK^n)
+\end{align*}
+が得られる.
+これは, 次元定理\Cref{thm:dimthm}の別証明である.
+\end{remark}
+
+\begin{remark}
+  $U$を$\KK$-線形空間とし, $V$, $W$をその部分空間とする.
+  このとき,
+  \Cref{prop:directsum:inner:outer}でみた通り,
+\begin{align*}
+\shazo{\varphi}{V\boxplus W}{U}
+{(v,w)}{v+w}
+\end{align*}
+とすると,
+$\Ker(\varphi)=\Set{(u,-u) | u\in V\cap W}$
+である.
+よって,
+$\Set{u|(u,u')\in \Ker(\varphi)}=V\cap W$である.
+これを利用して, $V\cap W$を求めることを考える.
+$V=\Braket{\vv_1,\ldots,\vv_r}_\KK$,
+$W=\Braket{\ww_1,\ldots,\ww_l}_\KK$
+であるとする.
+このとき,
+\begin{align*}
+  \begin{pmatrix}
+    -\vv_1&\cdots&-\vv_r&-\ww_1&\cdots&-\ww_l\\\hline
+    \vv_1&\cdots&\vv_r&\zzero&\cdots&\zzero\\\hline
+    \zzero&\cdots&\zzero&\ww_1&\cdots&\ww_l
+  \end{pmatrix}
+\end{align*}
+を列基本変形し,
+被役列階段行列に変形し, 最上段のブロックが$\zzero$である, 列ベクトルを抜き出し最上段のブロックを忘れることで
+$\Ker(\varphi)$の生成系が得られる.
+さらに, 最下段のブロックを忘れることで, $V\cap W$が得られる.
+今回の仮定の下では,
+被役列階段行列の計算において,
+最下段のブロックはあってもなくても本質的な影響がない.
+したがって, 予め最下段のブロックを忘れ,
+\begin{align*}
+  \begin{pmatrix}
+    -\vv_1&\cdots&-\vv_r&-\ww_1&\cdots&-\ww_l\\\hline
+    \vv_1&\cdots&\vv_r&\zzero&\cdots&\zzero
+  \end{pmatrix}
+\end{align*}
+から始めても同じ結果が得られる.
+このように計算したものが\Cref{alg:intersection}
+である.
+\end{remark}
+
+
+$\KK^n$の部分空間$V$の基底$D=(\vv_1,\ldots,\vv_r)$と
+$\KK^m$の部分空間$W$の基底$B=(\ww_1,\ldots,\ww_l)$が与えられており,
+各$j\in J$に対し,
+$\varphi(\vv_j)=\aaa_j$
+を与えることにより,
+$V$から$W$への線形写像$\varphi$が
+を与えられているとする.
+このとき$\varphi$の$D$, $B$に関する
+表現行列$A=(a_{i,j})_{i\in I,j\in J}$
+(ただし, $I=\Set{1,\ldots,r}$,
+$J=\Set{1,\ldots,r}$)
+を求める方法を考える.
+$a_{i,j}$は
+$\varphi(\vv_j)=\sum_{i=1}^m a_{i,j} \ww_i$
+を満たしているので,
+$\aaa_j$を$B$の線型結合として表した際の係数を求めればよい.
+これらは, すでに見た方法で計算可能である.
+まとめると以下のようになる:
+\begin{algorithm}\makebox{}
+\begin{description}
+\item[Input]
+  $\ww_1,\ldots,\ww_l\in \KK^m$,
+  $\aaa_1,\ldots,\aaa_r\in\KK^m$.
+\item[Proceedure]\makebox{}
+  \begin{enumerate}
+  \item $B=\Set{\begin{pmatrix}-\ww_1\\\ee^{(l)}_1\end{pmatrix},\ldots,\begin{pmatrix}-\ww_r\\\ee^{(l)}_l\end{pmatrix}}$とする.
+  \item $\bar B=\reduce(B)$とする.
+  \item $j=1,\ldots,r$に対し以下を行う
+  \begin{enumerate}
+  \item $\bar \aaa_j=\reduce(\begin{pmatrix}\aaa_j\\\zzero_l\end{pmatrix},\bar B)$とする.
+  \item $\xx_j\in\KK^l$, $\yy_j\in\KK^m$を$\begin{pmatrix}\yy_j\\\xx_j\end{pmatrix}=\bar \aaa_j$となるものとする.
+  \end{enumerate}
+  \item $A=(\xx_1|\cdots|\xx_l)$を出力し終了
+  \end{enumerate}
+\end{description}
+\end{algorithm}
