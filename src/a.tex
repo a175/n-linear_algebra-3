@@ -1190,6 +1190,8 @@ $\aaa_j$を$B$の線型結合として表した際の係数を求めればよい
 
 
 \section{\Cref{chap:det}に関連すること}
+\subsection{行列式の計算について}
+
 $n$次正方行列$A=(a_{i,k})_{i\in I,j\in I}$の行列式$\det(A)$を計算する際には,
 行列式を対称群で展開した式
 \begin{align*}
@@ -1255,6 +1257,171 @@ $A$の$l$行目と$k$行目を忘れることで得られる$(n-1)$-次正方行
   \end{enumerate}
 \end{theorem}
 
+\subsection{行列式と体積について}
+ここでは$\KK=\RR$とする.
+部分集合$X\subset\RR^n$のことを図形と呼び,
+その($n$次元)体積について考える.
+
+図形$X\subset \RR^n$と方向ベクトル$\vv\in\RR^n$に対し,
+\begin{align*}
+  X+\vv=\Set{\xx+\vv|\xx\in X}
+\end{align*}
+と,
+ここでは書く.
+$X+\vv$は$X$を$\vv$方向へ$X$を平行移動した図形である.
+平行移動では$X$の体積は変化しないので,
+$X+\vv$の体積は$X$の体積と等しい.
+
+線形変換$\varphi\colon \RR^n\to \RR^n$が与えられたとき,
+図形$X\subset \RR^n$に対し,
+\begin{align*}
+  \varphi(X)=\Set{\varphi(\xx)|\xx\in X}
+\end{align*}
+と, ここでは書く.
+$\varphi(X)$は$X$を$\varphi$によって変形した図形である.
+この変形により体積はどの様に変化するか考える.
+図形$X\subset \RR^n$と方向ベクトル$\vv\in\RR^n$に対し,
+\begin{align*}
+  \varphi(X+\vv)
+  &=\Set{\varphi(\xx+\vv)|\xx\in X}\\
+  &=\Set{\varphi(\xx)+\varphi(\vv)|\xx\in X}\\
+  &=\Set{\varphi(\xx)|\xx\in X}+\varphi(\vv)\\
+  &=\varphi(X)+\varphi(\vv)
+\end{align*}
+である.
+つまり,
+$X$を平行移動したものを$\varphi$で変形したものは,
+$X$を$\varphi$で変形したものを平行移動したものとなる.
+したがって,
+原点の付近での体積変化がわかれば全体の体積変化もわかる.
+とくに, 単位立方体の体積変化がわかれば十分である.
+以下では, 記号を用意した後,
+$\varphi$による単位立方体の体積変化について考える.
+とくに$\varphi$によって, 図形の体積が何倍となるかについて考える.
+
+$\aaa_1,\ldots,\aaa_n\in\RR^n$に対し,
+\begin{align*}
+  \Xi_n(\aaa_1,\ldots,\aaa_n)
+  =\Set{c_1\aaa_1+\cdots+c_n\aaa_n|0\leq c_i\leq 1}
+\end{align*}
+とおき,
+$\Xi_n(\aaa_1,\ldots,\aaa_n)$を
+$(\aaa_1,\ldots,\aaa_n)$で張られる$n$次元平行多面体と呼ぶことにする.
+とくに
+$\Xi_n(\ee^{(n)}_1,\ldots,\ee^{(n)}_n)$
+のことを単位立方体と呼ぶ.
+
+
+$\RR$線形写像$\varphi\colon \RR^n\to\RR^n$として
+$\mu_{(\aaa_1|\cdots|\aaa_n)}=\nu_{(\aaa_1,\ldots,\aaa_n)}$を考えると,
+単位立方体$\Xi_n(\ee^{(n)}_1,\ldots,\ee^{(n)}_n)$は,
+$\Xi_n(\aaa_1,\ldots,\aaa_n)$に変形される.
+例えば,
+\begin{align*}
+\aaa_1&=\begin{pmatrix}2\\1\end{pmatrix},&\aaa_2&=\begin{pmatrix}1\\2\end{pmatrix}
+\end{align*}
+について考える.
+$\mu_{(\aaa_1|\aaa_2)}$と
+$\mu_{(\aaa_2|\aaa_1)}$を比較してみると,
+\begin{align*}
+\mu_{(\aaa_1|\aaa_2)}(\Xi_2(\ee^{(2)}_1,\ee^{(2)}_2))&=\Xi_2(\aaa_1,\aaa_2),
+\mu_{(\aaa_2|\aaa_1)}(\Xi_2(\ee^{(2)}_1,\ee^{(2)}_2))&=\Xi_2(\aaa_2,\aaa_1)
+\end{align*}
+となるので, どちらも図形としては同じものに変更されている.
+しかし
+$\mu_{(\aaa_1|\aaa_2)}(\ee^{(2)}_1)$から$\mu_{(\aaa_1|\aaa_2)}(\ee^{(2)}_2)$へ測った`角度'は,
+$\mu_{(\aaa_2|\aaa_1)}(\ee^{(2)}_1)$から$\mu_{(\aaa_2|\aaa_1)}(\ee^{(2)}_2)$へ
+へ測った`角度'とは正反対になっている.
+したがって, 
+$\mu_{(\aaa_1|\aaa_2)}(\ee^{(2)}_1)$から見た図形の位置と,
+$\mu_{(\aaa_2|\aaa_1)}(\ee^{(2)}_1)$から見た図形の位置は,
+正反対となっているので,
+その体積も符号が反転していると思うのは, 自然である.
+そこで体積変化としては符号付きの体積を考えることにする.
+正方行列$A$の$j$列目と$j+1$列目を入れ替えた行列を$A'$とすると,
+$\mu_{A}$での体積変化の$-1$倍が
+$\mu_{A'}$での体積変化となる.
+
+$\Xi_n(\aaa_1,\ldots,\aaa_n)$の$n$次元体積は,
+底面の$n-1$次元体積に高さをかけたものとして求められる.
+このことを利用し,
+まず,
+あるベクトル$\aaa_j$を$\alpha>0$倍することを考える.
+底面
+$\Xi_{n-1}(\aaa_1,\ldots,\aaa_{j-1},\aaa_{j+1},\ldots,\aaa_n)$は変化せず,
+高さのみが$\alpha$倍されるので,
+$\Xi_{n-1}(\aaa_1,\ldots,\aaa_{j-1},\alpha\aaa_{j},\aaa_{j+1},\ldots,\aaa_n)$の$n$次元体積は
+$\Xi_{n-1}(\aaa_1,\ldots,\aaa_{j-1},\aaa_{j},\aaa_{j+1},\ldots,\aaa_n)$の$n$次元体積の$\alpha$倍となる.
+$\alpha<0$であれば,
+高さの方向が正反対になることを踏まえると, 次がわかる:
+正方行列$A$の$j$列目を$\alpha$倍した行列を$A'$とすると,
+$\mu_{A}$での体積変化の$\alpha$倍が
+$\mu_{A'}$での体積変化となる.
+
+次に,
+あるベクトル$\aaa_j$に対し別の行$\aaa_i$の$\alpha$倍を加えることを考える.
+このとき, 
+底面
+$\Xi_{n-1}(\aaa_1,\ldots,\aaa_{j-1},\aaa_{j+1},\ldots,\aaa_n)$は変化しない.
+$\aaa_i$は底面と平行なので,
+高さも変化しない.
+したがって,
+$\Xi_{n-1}(\aaa_1,\ldots,\aaa_{j-1},\aaa_{j}+\alpha\aaa_i,\aaa_{j+1},\ldots,\aaa_n)$の$n$次元体積は
+$\Xi_{n-1}(\aaa_1,\ldots,\aaa_{j-1},\aaa_{j},\aaa_{j+1},\ldots,\aaa_n)$の$n$次元体積と等しい.
+高さの方向が正反対になることを踏まえると, 次がわかる:
+$i\neq j$とする.
+正方行列$A$の$j$列目に$i$列目の$\alpha$倍を加えた行列を$A'$とすると,
+$\mu_{A}$での体積変化と
+$\mu_{A'}$での体積変化は等しい.
+
+
+$\dim_\RR(\Braket{\aaa_1,\ldots,\aaa_n}_\RR)<n$であるとき,
+$\Xi_n(\aaa_1,\ldots,\aaa_n)$は`高さ'のない図形であり,
+その$n$次元体積は$0$である.
+つまり, $(\aaa_1,\ldots,\aaa_n)$が一次従属なら
+$\Xi_n(\aaa_1,\ldots,\aaa_n)$の$n$次元体積は$0$である.
+特に, $i\neq j$かつ$\aaa_i=\aaa_j$となる$i,j$があるなら,
+$\Xi_n(\aaa_1,\ldots,\aaa_n)$の$n$次元体積は$0$である.
+したがって,
+正方行列$A$が$\rank(A)<n$ならば,
+$\mu_{A}$で変形すると体積は$0$倍される.
+
+また, $\mu_{E_n}=\id_{\RR^n}$であるので,
+$\mu_{E_n}$で図形は変化しない.
+したがって$\mu_{E_n}$で変形すると体積は$1$倍される.
+
+これらをまとめると, 以下の通り:
+\begin{enumerate}
+\item
+  $A=E_n$または$\rank(A)<n$の場合,
+  $\mu_A$によって図形の体積は$\det(A)$倍される.
+\item
+  正方行列$A$の$j$列目を$\alpha$倍した行列を$A'$とすると,
+  $\mu_{A}$で体積が$d$倍されるなら
+  $\mu_{A'}$で体積が$\alpha d$倍される.
+  また, $\alpha \det(A)=\det(A')$である.
+\item
+  $i\neq j$とする.
+  正方行列$A$の$j$列目に$i$列目の$\alpha$倍を加えた行列を$A'$とすると,
+  $\mu_{A}$で体積が$d$倍されるなら
+  $\mu_{A'}$で体積が$d$倍される.
+  また, $\det(A)=\det(A')$である.
+\item
+  正方行列$A$の$j$列目と$j+1$列目を入れ替えた行列を$A'$とすると,
+  $\mu_{A}$で体積が$d$倍されるなら
+  $\mu_{A'}$で体積が$-d$倍される.
+  また, $-\det(A)=\det(A')$である.
+\end{enumerate}
+これらのことから,
+$A\in\RR^{n\times n}$とすると,
+$\mu_{A}$により$n$次元体積が$\det(A)$倍されることがわかる.
+
+
+\begin{remark}
+  行列式は体積の変化と関連があるため,
+  他変数の積分での変数変換などにおいて現れる.
+\end{remark}
+
 
 \section{\Cref{chap:eigen}に関連すること}
 $n$次正方行列$A\in\KK^{n\times n}$の
@@ -1263,6 +1430,7 @@ $n$次正方行列$A\in\KK^{n\times n}$の
 固有ベクトルの候補$\vv\in \KK^n$が与えられたとき,
 $\vv\in \KK^n$が固有ベクトルであることを示すのは簡単である.
 単に, $A\vv$を計算し$\vv$の定数倍になっていることをいうだけで良い.
+
 
 固有値$\lambda$が与えられたとき,
 その固有空間は
@@ -1368,3 +1536,9 @@ $D=P^{-1}AP$ならば,
   &=P\begin{pmatrix}e^{\lambda_1}&&\\&\ddots&\\&&e^{\lambda_n}\end{pmatrix}P^{-1}
 \end{align*}
 と書ける.
+
+\begin{remark}
+  行列の羃や指数関数は,
+  漸化式で定義された数列の一般項を求めたり,
+  連立微分方程式の解を求めたりする場合に出てくる.
+\end{remark}
