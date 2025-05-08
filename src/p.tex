@@ -2184,17 +2184,6 @@ $\dim_\KK(V)=n$と書く:
 $V$は\defit{有限次元}であるともいい, $\dim_\KK(V)<\infty$と書くこともある.
 \end{definition}
 
-\begin{definition}
-次を満たすとき$\KK$線形空間$V$は\defit{無限次元}であるといい,
-$\dim_\KK(V)=\infty$と書く:
-\begin{enumerate}
-\item $n\in \NN$ならば, 次が成り立つ:
-\begin{enumerate}
-\item $\KK^n$から$V$への単射線形写像が存在する.
-\end{enumerate}
-\end{enumerate}
-\end{definition}
-
 \begin{example}
 $\KK^{m\times n}$と$\KK^{mn}$は同型であった.
 したがって,
@@ -2232,6 +2221,63 @@ $\RR^2$は$2$次元であるとは言うが,
 のことを$2$次元であるとは言わない.
 通常$2$つの成分からなる数ベクトルであるということを言い表すのには,
 $2$項数ベクトルという用語を用いる.
+\end{remark}
+
+
+$V$が有限次元でないということは,
+$V$と同型な$\KK^n$が存在しないということである.
+同型写像は全単射な線形写像であったので,
+全射性が成り立たない場合と単射性が成り立たない場合の$2$つの場合について,
+分けて用語を用意しておく.
+
+\begin{definition}
+次を満たすとき$\KK$線形空間$V$は\defit{無限次元}であるという.
+\begin{enumerate}
+\item $n\in \NN$ならば, 次が成り立つ:
+\begin{enumerate}
+\item $\KK^n$から$V$への単射線形写像が存在する.
+\end{enumerate}
+\end{enumerate}
+\end{definition}
+\begin{remark}
+一般に,
+\begin{align*}
+\shazo{\iota}{\KK^{n-1}}{\KK^{n}}
+{\begin{pmatrix}a_1\\\vdots\\a_{n-1}\end{pmatrix}}
+{\begin{pmatrix}a_1\\\vdots\\a_{n-1}\\0\end{pmatrix}}
+\end{align*}
+は単射であるので,
+$\varphi\colon\KK^n\to V$が単射であれば,
+$\varphi\circ\iota\colon\KK^{n-1}\to V$も単射である.
+\end{remark}
+
+\begin{definition}
+次を満たすとき$\KK$線形空間$V$は\defit{無限生成}であるという.
+\begin{enumerate}
+\item $n\in \NN$ならば, 次が成り立つ:
+\begin{enumerate}
+\item $\varphi\colon \KK^n\to V$が$\KK$=線形写像なら$\varphi$は全射ではない.
+\end{enumerate}
+\end{enumerate}
+\end{definition}
+\begin{remark}
+一般に,
+\begin{align*}
+\shazo{\pi}{\KK^{n+1}}{\KK^{n}}
+{\begin{pmatrix}a_1\\\vdots\\a_{n}\\a_{n+1}\end{pmatrix}}
+{\begin{pmatrix}a_1\\\vdots\\a_{n}\end{pmatrix}}
+\end{align*}
+は全射であるので,
+$\varphi\colon\KK^n\to V$が全射であれば,
+$\varphi\circ\pi\colon\KK^{n+1}\to V$も全射である.
+\end{remark}
+
+\begin{remark}
+体$\KK$上のベクトル空間$V$において,
+$V$が無限次元であることと,
+$V$が無限生成であることは同値である.
+無限次元であることを,
+$\dim_\KK(V)=\infty$と書く.
 \end{remark}
 
 \sectionX{章末問題}
