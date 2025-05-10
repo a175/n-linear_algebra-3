@@ -3195,12 +3195,17 @@ $\KK^n$の標準基底と呼ぶ.
   $(V,\plus,\act,0_V)$を$\KK$線形空間とし,
   $v_1,\ldots,v_r\in V$とする.
   次の条件を満たすとき,
-  組$(v_1,\ldots,v_r)$が$\KK$上一次独立であるという:
-  \begin{enumerate}
-  \item $\alpha_1\act v_1\plus\cdots\plus \alpha_r\act v_r=0_V \implies \alpha_1=\cdots=\alpha_r=0$.
+  組$(v_1,\ldots,v_r)$は$\KK$上一次独立であるという:
+\begin{enumerate}
+  \item 線形写像
+    \begin{align*}
+      \shazo{\nu_{(v_1,\ldots,v_r)}}{\KK^r}{V}
+      {\begin{pmatrix}a_1\\\vdots\\a_r\end{pmatrix}}{a_1\act v_1\plus\cdots\plus a_r\act v_r}
+    \end{align*}
+    が単射.
   \end{enumerate}
   $(v_1,\ldots,v_r)$が$\KK$上一次独立でないとき,
-  $(v_1,\ldots,v_r)$が$\KK$上一次従属であるという.
+  $(v_1,\ldots,v_r)$は$\KK$上一次従属であるという.
 \end{definition}
 
 \begin{prop}
@@ -3209,19 +3214,14 @@ $\KK^n$の標準基底と呼ぶ.
   このとき以下は同値:
   \begin{enumerate}
   \item $(v_1,\ldots,v_r)$は$\KK$上一次独立.
-  \item 線形写像
-    \begin{align*}
-      \shazo{\nu_{(v_1,\ldots,v_r)}}{\KK^r}{V}
-      {\begin{pmatrix}a_1\\\vdots\\a_r\end{pmatrix}}{a_1\act v_1\plus\cdots\plus a_r\act v_r}
-    \end{align*}
-    が単射.
+  \item $\alpha_1\act v_1\plus\cdots\plus \alpha_r\act v_r=0_V \implies \alpha_1=\cdots=\alpha_r=0$.
   \end{enumerate}
 \end{prop}
 
 \begin{remark}
   $D=(v_1,\ldots,v_r)$が一次独立であるとすると,
-  $\mu_D$は単射線形写像であり,
-  $D=(\mu_D(\ee^{(r)}_1),\ldots,\mu_D(\ee^{(r)}_r))$である.
+  $\nu_D$は単射線形写像であり,
+  $D=(\nu_D(\ee^{(r)}_1),\ldots,\mu_D(\ee^{(r)}_r))$である.
   逆に, 単射線形写像$\varphi\colon \KK^r\to V$が与えられたとき,
   $D=(\varphi(\ee^{(r)}_1),\ldots,\varphi(\ee^{(r)}_r))$は一次独立である.
   したがって,
@@ -3253,13 +3253,8 @@ v'&=\nu_{(v_1,\ldots,v_r)}(\begin{pmatrix}a'_1\\\vdots\\a'_n\end{pmatrix})
   次の条件を満たすとき,
   組$(v_1,\ldots,v_r)$は$V$の生成系であるという.
   \begin{enumerate}
-  \item
-    すべての$v\in V$に対して次が成り立つ:
-    \begin{enumerate}
-    \item
-    $\alpha_1\act v_1\plus \cdots \alpha_r\act v_r=v$
-    を満たす$\alpha_1,\ldots,\alpha_r\in\KK$ が存在する.
-    \end{enumerate}
+  \item 線形写像 $\nu_{(v_1,\ldots,v_r)}\colon \KK^r \to V$
+    が全射.
   \end{enumerate}
 \end{definition}
 \begin{prop}
@@ -3269,14 +3264,19 @@ v'&=\nu_{(v_1,\ldots,v_r)}(\begin{pmatrix}a'_1\\\vdots\\a'_n\end{pmatrix})
   \begin{enumerate}
   \item $(v_1,\ldots,v_r)$は$V$の生成系である.
   \item $V=\Braket{v_1,\ldots,v_r}_\KK$.
-  \item 線形写像 $\nu_{(v_1,\ldots,v_r)}\colon \KK^r \to V$
-    が全射.
+  \item
+    すべての$v\in V$に対して次が成り立つ:
+    \begin{enumerate}
+    \item
+    $\alpha_1\act v_1\plus \cdots \alpha_r\act v_r=v$
+    を満たす$\alpha_1,\ldots,\alpha_r\in\KK$ が存在する.
+    \end{enumerate}
   \end{enumerate}
 \end{prop}
 \begin{remark}
   $D=(v_1,\ldots,v_r)$が$V$の生成系であるとすると,
-  $\mu_D$は全射線形写像であり,
-  $D=(\mu_D(\ee^{(r)}_1),\ldots,\mu_D(\ee^{(r)}_r))$である.
+  $\nu_D$は全射線形写像であり,
+  $D=(\nu_D(\ee^{(r)}_1),\ldots,\nu_D(\ee^{(r)}_r))$である.
   逆に, 全射線形写像$\varphi\colon \KK^r\to V$が与えられたとき,
   $D=(\varphi(\ee^{(r)}_1),\ldots,\varphi(\ee^{(r)}_r))$は$V$の生成系である.
   したがって,
@@ -3321,9 +3321,9 @@ v'&=\nu_{(v_1,\ldots,v_r)}(\begin{pmatrix}a'_1\\\vdots\\a'_n\end{pmatrix})
 \end{prop}
 \begin{remark}
   $D=(e_1,\ldots,e_r)$が$V$の基底であるとすると,
-  $\mu_D$は同型写像であり,
-  $D=(\mu_D(\ee^{(r)}_1),\ldots,\mu_D(\ee^{(r)}_r))$である.
-  逆に, 同型線形写像$\varphi\colon \KK^r\to V$が与えられたとき,
+  $\nu_D$は同型写像であり,
+  $D=(\nu_D(\ee^{(r)}_1),\ldots,\nu_D(\ee^{(r)}_r))$である.
+  逆に, 同型写像$\varphi\colon \KK^r\to V$が与えられたとき,
   $D=(\varphi(\ee^{(r)}_1),\ldots,\varphi(\ee^{(r)}_r))$は$V$の基底である.
   したがって,
   $V$の基底を与えることと
@@ -3392,40 +3392,54 @@ $\KK$を体とし,
 したがって,
 $\KK^m$の基底は$m$次正則行列の分だけ選び方がある.
 \end{example}
-\begin{remark}
-BasisとBasis elementの違い.
-\end{remark}
-
 
 \begin{example}
   $(k,l)$成分は$1$でそれ以外の成分は$0$である
-  $\KK^{m\times n}$の元を$B_{k,l}$で表す.
-  $B_{k,l}$のことを行列単位\footnote{単位行列と用語が紛らわしいが混同しないこと}と呼ぶこともある.
+  $\KK^{m\times n}$の元を$B(k,l)$で表す.
+  $B(k,l)$のことを行列単位\footnote{単位行列と用語が紛らわしいが混同しないこと}と呼ぶこともある.
   このとき,
-  $B_{k,l}$を全て集めた
-  $(B_{1,1},\ldots,B_{1,n},B_{2,1},\ldots,B_{2,n},\ldots,B_{m,1},\ldots,B_{1,n})$は$\KK^{m\times n}$の基底である.
+  $B(k,l)$を全て集めた
+  $(B(1,1),\ldots,B(1,n),B(2,1),\ldots,B(2,n),\ldots,B(m,1),\ldots,B(m,n))$は
+  $\KK^{m\times n}$の基底である.
 \end{example}
 
 \begin{example}
-  $\CC$は$\RR$線形空間であった.
+  $\CC$は$\RR$線形空間であり,
+  $\dim_\RR(\CC) = 2$であった.
   $(1,\sqrt{-1})$は$\CC$の基底である.
-  したがって$\dim_\RR(\CC) = 2$である.
   また,
-  $\CC$は$\CC$線形空間でもあった.
-  $(1)$は$\CC$の基底である.
-  したがって$\dim_\CC(\CC) = 1$である.
+  $\CC$は$\CC$線形空間でもあり,
+  $\dim_\CC(\CC) = 1$であった.
+  $(1)$は$\CC$の基底である.  
 \end{example}
 
+\begin{remark}
+例えば, $\RR^2$の基底は,
+$B=(\ee^{(2)}_1,\ee^{(2)}_2)$の他にも,
+\begin{align*}
+B'=(\begin{pmatrix}1\\1\end{pmatrix},\begin{pmatrix}-1\\1\end{pmatrix})
+\end{align*}
+など色々ある,
+$\ee^{(2)}_1$は,
+$B'$には現れないように,
+ある特定の元を見ても,
+それが基底に含まれるかを判断することはできない.
+基底(Basis)とはベクトルの組$(e_1,\ldots,e_n)$のことであり,
+それぞれのベクトルのことを基底(Basis)とは呼ばない.
+ある基底に含まれている元であるということを表すために,
+basis elementという言い方をすることはある.
+\end{remark}
 
-\begin{example}
-  $V$を1次元$\KK$-線形空間であるとする.
-  $v\in V\setminus \Set{0_V}$とすると,
-  $(v)$は$V$の基底.
-\end{example}
-
-\begin{example}
-双対基底.  $\Hom$の基底.
-\end{example}
+\begin{note}
+$V$を$\KK$-線形空間とする.
+このとき,
+$V$の基底は,
+一般には複数ある.
+``$B$が$V$の基底である''
+といういう言い方をすると,
+``$B$のみが$V$の基底であり, $B$以外の$V$の基底ではない''
+という印象を与えることがあるので注意をする必要がある.
+\end{note}
 
 \subsection{生成系や一次独立な組の性質}
 \begin{prop}
@@ -3634,6 +3648,14 @@ $\Set{e_1,\ldots, e_n}\neq \Set{e'_1,\ldots, e'_n}$
   \end{enumerate}
 \end{cor}
 \begin{proof}\end{proof}
+
+
+\begin{example}
+双対基底.  $\Hom$の基底.
+$V^\ast\simeq V$.
+$(V^\ast)^\ast\simeq V$.
+\end{example}
+
 
 
 \section{基底の延長}
