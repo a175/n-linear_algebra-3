@@ -1405,3 +1405,325 @@ $M=\Set{\mu_A|A\in\KK^{m\times n}}$
 %%   とする.
 %%   $V$は$\ell(\RR)$の部分空間である.
 %% \end{quiz}
+
+\section{\Cref{sec:basis:standard,sec:basis:def,sec:basis:linmap}の後の問題}
+主に基底の定義, 生成系の定義, 一次独立性の定義を知っていれば
+解けるであろう問題.
+\subsection{問題A}
+\begin{quiz}
+  $U$を$\KK$線形空間であるとする.
+  $U=V\oplus V'$と内部直和に分解されているとする.
+  $(e_1,\ldots,e_n)$を$V$の基底とし,
+  $(e'_1,\ldots,e'_m)$を$V'$の基底とする.
+  このとき,
+  $(e_1,\ldots,e_n,e'_1,\ldots,e'_m)$
+  は$U$の基底であることを示せ.  
+\end{quiz}
+\begin{quiz}
+  $(V,0_V)$, $(W,0_W)$を$\KK$線形空間であるとする.
+  $(e_1,\ldots,e_n)$を$V$の基底とし,
+  $(e'_1,\ldots,e'_m)$を$W$の基底とする.
+  このとき,
+  $((e_1,0_W),\ldots,(e_n,0_W),(0_V,e'_1),\ldots,(0_V,e'_m))$
+  は外部直和$V\boxplus W$の基底であることを示せ.  
+\end{quiz}
+
+\subsection{問題B}
+
+
+\begin{quiz}
+  \begin{align*}
+    A=
+    \begin{pmatrix}
+      1&2&3&4&5\\
+      1&2&4&8&16\\
+      1&2&7&12&21
+    \end{pmatrix}
+  \end{align*}
+  とし,
+  \begin{align*}
+    \shazo{\mu_A}{\KK^5}{\KK^3}
+    {x}{Ax}
+  \end{align*}
+  を考える.
+  このとき,
+  $\Ker(\mu_A)$
+  および
+  $\Img(\mu_A)$
+  の基底を与えよ.
+\end{quiz}
+
+\begin{quiz}
+  \begin{align*}
+    \shazo{\varphi}{\KK^{n\times n}}{\KK}
+    {A}{\tr(A)}
+  \end{align*}
+  を考える.
+  このとき,
+  $\Ker(\varphi)$
+  および
+  $\Img(\varphi)$
+  の基底を与えよ.
+\end{quiz}
+
+\begin{quiz}
+  $\KK$を体とし,
+  \begin{align*}
+    V=
+    \Set{A\in\KK^{n\times n} | B\in \KK^{n\times n} \implies AB=BA}
+  \end{align*}
+  とする.
+  \begin{enumerate}
+  \item
+    次の命題の真偽を判定し証明を与えよ:
+    $V$は$\KK^{n\times n}$の部分空間である.
+  \item
+    $V$の基底を与えよ.
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+  $\RR$は$\QQ$上の線形空間であった.
+  $1,x\in\RR$に対し, 以下は同値である:
+  \begin{enumerate}
+  \item $(1,x)$は$\QQ$上一次独立である.
+  \item $x$は有理数である.
+  \end{enumerate}
+\end{quiz}
+
+
+\begin{quiz}
+  $V,W$を$\KK$-線形空間とし,
+  $v_1,\ldots,v_n\in V$とする.
+  $\varphi\colon V\to W$を$\KK$線形写像する.
+  このとき,
+  以下の命題の真偽を判定し証明を与えよ:
+  \begin{enumerate}
+  \item    
+    $(\varphi(v_1),\ldots,\varphi(v_n))$が一次独立ならば
+    $(v_1,\ldots,v_n)$も一次独立.
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+  $V,W$を$\KK$-線形空間とし,
+  $v_1,\ldots,v_n\in V$とする.
+  $\varphi\colon V\to W$を$\KK$線形写像する.
+  このとき,
+  $(\varphi(v_1),\ldots,\varphi(v_n))$が一次独立ならば
+  $(v_1,\ldots,v_n)$も一次独立.
+\end{quiz}
+
+\begin{quiz}
+  $V,W$を$\KK$-線形空間とし,
+  $v_1,\ldots,v_n\in V$とする.
+  $\varphi\colon V\to W$を$\KK$線形写像する.
+  このとき,
+  以下の命題の真偽を判定し証明を与えよ:
+  \begin{enumerate}
+  \item    
+    $(v_1,\ldots,v_n)$が一次独立かつ$\varphi$が単射ならば
+    $(\varphi(v_1),\ldots,\varphi(v_n))$も一次独立.
+  \item
+    $(v_1,\ldots,v_n)$が$V$の生成系かつ$\varphi$が全射ならば
+    $(\varphi(v_1),\ldots,\varphi(v_n))$
+    は$W$の生成系.
+%%   \item
+%%     $(v_1,\ldots,v_n)$が$V$の基底かつ$\varphi$が同型写像ならば
+%%     $(\varphi(v_1),\ldots,\varphi(v_n))$
+%%     は$W$の基底.
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+  $V,W$を$\KK$-線形空間とし,
+  $(v_1,\ldots,v_n)$を$V$の基底とする.
+  $\varphi\colon V\to W$を$\KK$線形写像する.
+  このとき, 以下は同値:
+  \begin{enumerate}
+  \item
+    $\varphi$は同型写像である.
+  \item
+    $(\varphi(v_1),\ldots,\varphi(v_n))$
+    は$W$の基底.
+  \end{enumerate}
+\end{quiz}
+
+
+\begin{quiz}
+$V$を$\KK$線形空間とし, $v_1,\ldots,v_n\in V$とする.
+  このとき,
+  以下の命題の真偽を判定し証明を与えよ:
+  \begin{enumerate}
+  \item
+    $(v_1,\ldots,v_n)$が一次独立で$i\neq j$ならば$(v_i,v_j)$は一次独立.
+  \item
+    どの$i,j$に対しても$(v_i,v_J)$が一次独立であったとしても,
+    $(v_1,\ldots,v_n)$が一次独立であるとは限らない.
+  \end{enumerate}
+\end{quiz}
+
+
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+  $V$を$\KK$線形空間とし, $n>0$とする.
+  以下は同値である:
+  \begin{enumerate}
+  \item $\dim_\KK(V)=n$
+  \item $(e_1,\ldots,e_n)$が$V$の基底となるような$e_1,\ldots,e_n\in V$が取れる.
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+  $V$を$\KK$線形空間とする.
+  $\sigma\in S_n$とし,
+  $B=(v_1,\ldots,v_n)$,
+  $B'=(v_{\sigma(1)},\ldots,v_{\sigma(n)})$
+  とする.
+  このとき, 以下は同値:
+  \begin{enumerate}
+  \item
+    $B$は$\KK$上一次独立.
+  \item
+    $B'$は$\KK$上一次独立.
+  \end{enumerate}
+\end{quiz}
+\begin{quiz}
+  $V$を$\KK$線形空間とする.
+  $v_i\in V$とし,
+  $(v_1,\ldots, v_r)$は$\KK$上一次独立であるとする.
+  このとき,
+  以下の命題の真偽を判定し証明を与えよ:
+  \begin{enumerate}
+  \item
+    $c\in\KK$が逆数を持つならば,
+    $(cv_1,\ldots, v_r)$は$\KK$上一次独立である.
+  \item
+    $c\in\KK$に対し,
+    $(v_1+cv_2,\ldots, v_r)$は$\KK$上一次独立である.
+  \end{enumerate}
+\end{quiz}
+
+
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+  $V$を$\KK$線形空間とする.
+  $\sigma\in S_n$とし,
+  $B=(v_1,\ldots,v_n)$,
+  $B'=(v_{\sigma(1)},\ldots,v_{\sigma(n)})$
+  とする.
+  このとき, 以下は同値:
+  \begin{enumerate}
+  \item
+    $B$は$V$の生成系である.
+  \item
+    $B'$は$V$の生成系である.
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  $V$を$\KK$線形空間とする.
+  $v_i\in V$とし,
+  $(v_1,\ldots, v_r)$は$V$の生成系であるとする.
+  このとき,
+  以下の命題の真偽を判定し証明を与えよ:
+  \begin{enumerate}
+  \item
+    $c\in\KK$が逆数を持つならば,
+    $(cv_1,\ldots, v_r)$は$V$の生成系である.
+  \item
+    $c\in\KK$に対し,
+    $(v_1+cv_2,\ldots, v_r)$は$V$の生成系である.
+  \end{enumerate}
+\end{quiz}
+
+
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+  $V$を$\KK$線形空間とする.
+  $v_i\in V$とし,
+  $(v_1,\ldots, v_r)$が$\KK$上一次独立であるとする.
+  このとき,
+  $(v_{1},\ldots, v_{k})$は$\KK$上一次独立.
+\end{quiz}
+
+
+
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+  $V$を$\KK$線形空間とする.
+  $v_i\in V$とし,
+  $(v_1,\ldots, v_r)$が$V$の生成系であるとする.
+  このとき,
+  $w_1,\ldots,w_l\in V$に対し,
+  $(v_{1},\ldots, v_{r},w_1,\ldots,w_l)$は$V$の生成系.
+\end{quiz}
+
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+  $U$を$\KK$線形空間とし,
+  $v_1,\ldots,v_n,w_1,\ldots,w_m \in U$とする.
+  このとき, 以下は同値:  
+  \begin{enumerate}
+  \item $\Set{v_1,\ldots,v_n}\subset \Braket{w_1,\ldots,w_m}_\KK$.
+  \item $\Braket{v_1,\ldots,v_n}_\KK\subset \Braket{w_1,\ldots,w_m}_\KK$.
+  \end{enumerate}
+\end{quiz}
+
+
+
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+  $\KK$を体とし,
+  $V$を$\KK$ベクトル空間とする.
+  $v_1,\ldots, v_r\in V$が次の条件を満たすとする:
+  \begin{enumerate}
+  \item $(v_1,\ldots, v_r)$は$\KK$上一次独立.
+  \item $v\in V\implies (v_1,\ldots, v_r,v)$は$\KK$上一次従属.
+  \end{enumerate}
+  このとき,
+  $(v_1,\ldots, v_r)$は$V$の基底.
+\end{quiz}
+
+
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+  $\KK$を体とし,
+  $V$を$\KK$ベクトル空間とする.
+  $v_1,\ldots, v_r\in V$が次の条件を満たすとする:
+  \begin{enumerate}
+  \item $(v_1,\ldots, v_r)$は$V$の生成系.
+  \item
+    $i\in \Set{1,\ldots,r}\implies (v_1,\ldots, v_{i-1},v_{i+1},\ldots,v_r)$
+    は$V$の生成系ではない.
+  \end{enumerate}
+  このとき,
+  $(v_1,\ldots, v_r)$は$V$の基底.
+\end{quiz}
+
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+$\KK$を体とし,
+  $V$を$\KK$ベクトル空間とする.
+  $(v_1,\ldots, v_r)$は$\KK$上一次独立であるとする.
+  $V\neq\Braket{v_1,\ldots, v_r}_\KK\neq \emptyset$とする.
+  このとき, $w\in V\setminus\Braket{v_1,\ldots, v_r}_\KK$に対し,
+  $(v_1,\ldots,v_{r},w)$は$\KK$上一次独立.
+\end{quiz}
+
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+$\KK$を体とし,
+  $V$を$\KK$ベクトル空間とする.
+  $(v_1,\ldots, v_r)$,
+  $(w_1,\ldots, w_n)$はどちらも,
+  $\KK$上一次独立であるとする.
+$r<n$とする.
+  このとき,
+$(v_1,\ldots,v_{r},w_{i})$が一次独立となる$i$が存在する.
+\end{quiz}
+

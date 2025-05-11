@@ -48,9 +48,10 @@
 ここでは, 
 内積に関わることは,
 基本的には扱わない.
-例えば, 双対空間$V^\ast$は線形空間の例としては取り上げる可能性があるが,
-有限次元ベクトル空間において$(V^\ast)^\ast$と$V$がcanonicalな同型をもつことなどは扱わない.
-直交補空間なども扱わない.
+例えば,
+%双対空間$V^\ast$は線形空間の例としては取り上げる可能性があるが,
+%有限次元ベクトル空間において$(V^\ast)^\ast$と$V$がcanonicalな同型をもつことなどは扱わない.
+直交補空間などは扱わない.
 また, ジョルダン標準形に関すること(最小多項式の求め方など)なども,
 基本的には扱わない.
 
@@ -312,7 +313,7 @@ $\XXX$の各元はそれ自身が集合であるが,
 このような集合のことを, 
 集合族と呼ぶことがある.
 
-集合族に対しても, 和集合や共通部分を考えることもある.
+集合族に対しても, 合併集合\footnote{$A\cup B$のことを和集合と呼ぶこともあるが, 和空間との混同を避けるため, ここでは合併集合という語を用いる.}や共通部分を考えることもある.
 \begin{definition}
 $\XXX$を集合族とする.
 $\bigcap_{X\in \XXX}X$を
@@ -2596,8 +2597,8 @@ $n<m$なら$C^m$は$C^n$の部分空間である.
 \begin{definition}
   $(V,\plus,\act,0_V)$,
   $(W,\pplus,\aact,0_W)$を
-  $\KK$-線形写像とし,
-  $\varphi\colon V\to W$を線形写像とする.
+  $\KK$-線形空間とし,
+  $\varphi\colon V\to W$を$\KK$-線形写像とする.
   このとき,
   \begin{align*}
     \Ker(\varphi)&=\Set{x\in V|\varphi(x)=0_V  },\\
@@ -2622,13 +2623,13 @@ $n<m$なら$C^m$は$C^n$の部分空間である.
 \begin{definition}
   $(V,\plus,\act,0_V)$を$\KK$線形空間とし,
   $w_1,\ldots,w_r\in V$とする.
-  線形写像
+  $\KK$-線形写像
     \begin{align*}
       \shazo{\nu_{(w_1,\ldots,w_r)}}{\KK^r}{V}
       {\begin{pmatrix}a_1\\\vdots\\a_r\end{pmatrix}}{a_1\act w_1+\cdots+a_r\act w_r}
     \end{align*}
   の像$\Img(\nu_{(w_1,\ldots,w_r)})$を,
-  $(w_1,\ldots,w_r)$で生成される$V$の部分空間と呼び,
+  $(w_1,\ldots,w_r)$で\defit{生成される$V$の部分空間}と呼び,
   $\Braket{w_1,\ldots,w_r}_{\KK}$
   で表す.  
 \end{definition}
@@ -2885,7 +2886,7 @@ $\KK$を体とし,
   \end{align*}
   とおく.
   このとき, $V+W$は$U$の部分空間.
-  $V+W$を$V$と$W$の和空間と呼ぶことがある.
+  $V+W$を$V$と$W$の\defit{和空間}と呼ぶことがある.
 \end{example}
 \begin{proof}\end{proof}
 \begin{prop}
@@ -2992,15 +2993,20 @@ $V\cap W=\Set{0_U}$
   $U$を$\KK$-線形空間とし,
   $V$, $W$を$U$の部分空間とする.
   次の条件を満たすとき,
-  $U$は$V$と$W$の(内部)直和に分解できるという.
+  $U$は$V$と$W$の\defit{(内部)直和に分解できる}\addindex{内部直和}\addindex{直和!内部---}という.
   \begin{enumerate}
   \item $U=V+W$.
   \item $V\cap W=\Set{0_U}$.
   \end{enumerate}
   $U$が$V$と$W$の(内部)直和に分解できることを,
   $U=V\oplus W$と書き表す.
-  また$V$や$W$のことを$U$の直和因子と呼ぶことがある.
+  また$V$や$W$のことを$U$の\defit{直和因子}と呼ぶことがある.
 \end{definition}
+\begin{remark}
+$\KK$-線形空間$U$が
+  $U=V\oplus W$と内部直和に分解されているとき,
+  $U$と外部直和$V\boxplus W$は同型である.
+\end{remark}
 \begin{example}
   $U=\KK^3$とし,
   \begin{align*}
@@ -3164,6 +3170,7 @@ $U$は$U=V_1\oplus V_2\oplus \cdots \oplus V_l$
 \chapter{生成系, 一次独立性, 基底}
 \label{chap:basis}
 \section{数ベクトル空間と標準基底}
+\label{sec:basis:standard}
 $\KK$を体とする.
 このとき$\KK^n$は$\KK$-線形空間であり,
 数ベクトル空間と呼んだ.
@@ -3174,7 +3181,7 @@ $\KK$を体とする.
 を$\ee^{(n)}_i$で表し,
 第$i$基本ベクトルと呼ぶ.
 これらの組 $(\ee^{(n)}_1,\ee^{(n)}_2,\ldots,\ee^{(n)}_n)$を
-$\KK^n$の標準基底と呼ぶ.
+$\KK^n$の\defit{標準基底}と呼ぶ.
 次のことが定義からわかる:
 \begin{enumerate}
   \item
@@ -3188,6 +3195,8 @@ $\KK^n$の標準基底と呼ぶ.
 
 
 \section{有限次元線形空間の基底}
+\label{sec:basis:def}
+
 \subsection{定義}
 
 
@@ -3195,7 +3204,7 @@ $\KK^n$の標準基底と呼ぶ.
   $(V,\plus,\act,0_V)$を$\KK$線形空間とし,
   $v_1,\ldots,v_r\in V$とする.
   次の条件を満たすとき,
-  組$(v_1,\ldots,v_r)$は$\KK$上一次独立であるという:
+  組$(v_1,\ldots,v_r)$は$\KK$上\defit{一次独立}であるという:
 \begin{enumerate}
   \item 線形写像
     \begin{align*}
@@ -3205,7 +3214,7 @@ $\KK^n$の標準基底と呼ぶ.
     が単射.
   \end{enumerate}
   $(v_1,\ldots,v_r)$が$\KK$上一次独立でないとき,
-  $(v_1,\ldots,v_r)$は$\KK$上一次従属であるという.
+  $(v_1,\ldots,v_r)$は$\KK$上\defit{一次従属}であるという.
 \end{definition}
 
 \begin{prop}
@@ -3251,11 +3260,13 @@ v'&=\nu_{(v_1,\ldots,v_r)}(\begin{pmatrix}a'_1\\\vdots\\a'_n\end{pmatrix})
   $(V,\plus,\act,0_V)$を$\KK$線形空間とし,
   $v_1,\ldots,v_r\in V$とする.
   次の条件を満たすとき,
-  組$(v_1,\ldots,v_r)$は$V$の生成系であるという.
+  組$(v_1,\ldots,v_r)$は$V$の\defit{生成系}であるという.
   \begin{enumerate}
   \item 線形写像 $\nu_{(v_1,\ldots,v_r)}\colon \KK^r \to V$
     が全射.
   \end{enumerate}
+  組$(v_1,\ldots,v_r)$は$V$の\defit{生成系}であることを,
+  組$(v_1,\ldots,v_r)$は$V$を\defit{生成する}ということもある.
 \end{definition}
 \begin{prop}
   $(V,\plus,\act,0_V)$を$\KK$線形空間とし,
@@ -3303,7 +3314,7 @@ v'&=\nu_{(v_1,\ldots,v_r)}(\begin{pmatrix}a'_1\\\vdots\\a'_n\end{pmatrix})
   $V$を$\KK$線形空間とし,
   $v_1,\ldots,v_r\in V$とする.
   次の条件を満たすとき,
-  組$(v_1,\ldots,v_r)$は$V$の基底であるという.
+  組$(v_1,\ldots,v_r)$は$V$の\defit{基底}であるという.
   \begin{enumerate}
   \item $(v_1,\ldots,v_r)$は一次独立.
   \item $(v_1,\ldots,v_r)$は$V$の生成系.
@@ -3439,6 +3450,17 @@ $V$の基底は,
 といういう言い方をすると,
 ``$B$のみが$V$の基底であり, $B$以外の$V$の基底ではない''
 という印象を与えることがあるので注意をする必要がある.
+``$B$が基底ならば, $B'$も基底である''
+というように,
+$B$と$B'$が対比されている場合に
+家庭の部分用いるのであれば,
+$B'$ではなく$B$の方がということを意図しているので問題ない.
+しかし,
+何か$B$に関する議論をしたあとで
+``したがって, $B$が基底である''
+というような言い方をすると,
+$B$のみが基底であって他(のすべての部分集合)は基底になりえない
+という印象を与える可能性がある.
 \end{note}
 
 \subsection{生成系や一次独立な組の性質}
@@ -3584,6 +3606,7 @@ $\Set{e_1,\ldots, e_n}\neq \Set{e'_1,\ldots, e'_n}$
 
 %%%%%%%%%%%%% Matroid property
 \section{線形写像と生成系, 一次独立性}
+\label{sec:basis:linmap}
 \begin{prop}
   $V$, $W$を$\KK$-線形空間とし,
   $\varphi\colon V\to W$を線形写像とする.
