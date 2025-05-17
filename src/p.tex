@@ -3602,83 +3602,7 @@ $\Set{e_1,\ldots, e_n}\neq \Set{e'_1,\ldots, e'_n}$
 \end{enumerate}
 \end{prop}
 \begin{proof}\end{proof}
-
-
 %%%%%%%%%%%%% Matroid property
-\section{線形写像と生成系, 一次独立性}
-\label{sec:basis:linmap}
-\begin{prop}
-  $V$, $W$を$\KK$-線形空間とし,
-  $\varphi\colon V\to W$を線形写像とする.
-  このとき以下は同値:
-  \begin{enumerate}
-  \item $\varphi$が単射.
-  \item $n\in \NN$, $v_1,\ldots,v_n\in V$,
-    $(v_1,\ldots,v_n)$が$\KK$上一次独立
-    $\implies (\varphi(v_1),\ldots,\varphi(v_n))$は$\KK$上一次独立.
-  \end{enumerate}
-\end{prop}
-\begin{proof}\end{proof}
-
-\begin{prop}
-  $V$, $W$を$\KK$-線形空間とし,
-  $\varphi\colon V\to W$を線形写像とする.
-  このとき以下は同値:
-  \begin{enumerate}
-  \item $\varphi$が全射.
-  \item $n\in \NN$, $v_1,\ldots,v_n\in V$,
-    $(v_1,\ldots,v_n)$が$V$の生成系
-    $\implies (\varphi(v_1),\ldots,\varphi(v_n))$は$W$の生成系.
-  \end{enumerate}
-\end{prop}
-\begin{proof}\end{proof}
-
-\begin{prop}
-  $V$, $W$を$\KK$-線形空間とし,
-  $(v_1,\ldots,v_n)$を$V$の生成系とする.
-  $\varphi\colon V\to W$,
-  $\psi\colon V\to W$,
-  を線形写像とする.
-  \begin{enumerate}
-  \item $\varphi=\psi$.
-  \item $\varphi(v_1)=\psi(v_1)$,\ldots,$\varphi(v_n)=\psi(v_n)$.
-  \end{enumerate}
-\end{prop}
-\begin{proof}\end{proof}
-
-\begin{cor}
-  $V$, $W$を$\KK$-線形空間とし,
-  $(e_1,\ldots,e_n)$を$V$の基底とする.
-  $\varphi\colon V\to W$,
-  $\psi\colon V\to W$,
-  を線形写像とする.
-  \begin{enumerate}
-  \item $\varphi=\psi$.
-  \item $\varphi(e_1)=\psi(e_1),\ldots,\varphi(e_n)=\psi(e_n)$.
-  \end{enumerate}
-\end{cor}
-\begin{proof}\end{proof}
-
-\begin{cor}
-  $V$, $W$を$\KK$-線形空間とし,
-  $(e_1,\ldots,e_n)$を$V$の基底とする.
-  $w_i\in W$とする.
-  このとき,
-  $\KK$線形写像$\varphi\colon V\to W$
-  次の条件を満たすものがただ一つ存在する:
-  \begin{enumerate}
-  \item $\varphi(e_1)=w_1,\ldots,\varphi(e_n)=w_n$.
-  \end{enumerate}
-\end{cor}
-\begin{proof}\end{proof}
-
-
-\begin{example}
-双対基底.  $\Hom$の基底.
-$V^\ast\simeq V$.
-$(V^\ast)^\ast\simeq V$.
-\end{example}
-
 
 
 \section{基底の延長}
@@ -3754,7 +3678,349 @@ $\KK$を体とする.
 \end{prop}
 \begin{proof}\end{proof}
 
+\section{線形写像と生成系, 一次独立性}
+\label{sec:basis:linmap}
 
+線形写像による
+一次独立系や生成系の像について,
+紹介する.
+\begin{prop}
+  $V$, $W$を$\KK$-線形空間とし,
+  $\varphi\colon V\to W$を線形写像とする.
+  このとき以下は同値:
+  \begin{enumerate}
+  \item $\varphi$が単射.
+  \item $n\in \NN$, $v_1,\ldots,v_n\in V$,
+    $(v_1,\ldots,v_n)$が$\KK$上一次独立
+    $\implies (\varphi(v_1),\ldots,\varphi(v_n))$は$\KK$上一次独立.
+  \end{enumerate}
+\end{prop}
+\begin{proof}\end{proof}
+
+\begin{prop}
+  $V$, $W$を$\KK$-線形空間とし,
+  $\varphi\colon V\to W$を線形写像とする.
+  このとき以下は同値:
+  \begin{enumerate}
+  \item $\varphi$が全射.
+  \item $n\in \NN$, $v_1,\ldots,v_n\in V$,
+    $(v_1,\ldots,v_n)$が$V$の生成系
+    $\implies (\varphi(v_1),\ldots,\varphi(v_n))$は$W$の生成系.
+  \end{enumerate}
+\end{prop}
+\begin{proof}\end{proof}
+
+\begin{prop}
+  $V$, $W$を$\KK$-線形空間とし,
+  $\varphi\colon V\to W$を線形写像とする.
+  このとき以下は同値:
+  \begin{enumerate}
+  \item $\varphi$が同型写像.
+  \item $n\in \NN$, $v_1,\ldots,v_n\in V$,
+    $(v_1,\ldots,v_n)$が$V$の基底
+    $\implies (\varphi(v_1),\ldots,\varphi(v_n))$は$W$の基底.
+  \item $V$の基底
+    $(v_1,\ldots,v_n)$で,
+    $(\varphi(v_1),\ldots,\varphi(v_n))$が$W$の基底となるものが
+    存在する.
+  \end{enumerate}
+\end{prop}
+\begin{proof}\end{proof}
+
+次に,
+生成系や一次独立系に対する振る舞いから,
+線形写像がどのくらい決まるのかについて紹介する.
+
+
+\begin{prop}
+  $V$, $W$を$\KK$-線形空間とし,
+  $(v_1,\ldots,v_n)$を$V$の生成系とする.
+  $\varphi\colon V\to W$,
+  $\psi\colon V\to W$,
+  を線形写像とする.
+  \begin{enumerate}
+  \item $\varphi=\psi$.
+  \item $\varphi(v_1)=\psi(v_1)$,\ldots,$\varphi(v_n)=\psi(v_n)$.
+  \end{enumerate}
+\end{prop}
+\begin{proof}\end{proof}
+
+\begin{remark}
+  $(v_1,\ldots,v_n)$を$V$の生成系であるとき,
+  $(\varphi(v_1),\ldots,\varphi(v_n))$の情報があれば,
+  線形写像$\varphi$を特定できる.
+  ただし,
+  $(\varphi(v_1),\ldots,\varphi(v_n))$は,
+  自由に$W$の組を選べるわけでは無い.
+  例えば,
+  \begin{align*}
+  (
+  \begin{pmatrix}1\\0\end{pmatrix},
+  \begin{pmatrix}0\\1\end{pmatrix},
+  \begin{pmatrix}1\\1\end{pmatrix}
+  )
+  \end{align*}
+  は
+  $\KK^3$
+  の生成系であるが,
+  $\KK$-線形写像
+  $\varphi\colon \KK^2\to\KK^3$
+  で
+  \begin{align*}
+  \varphi(\begin{pmatrix}1\\0\end{pmatrix})=\begin{pmatrix}1\\0\\0\end{pmatrix},
+  \varphi(\begin{pmatrix}0\\1\end{pmatrix})=\begin{pmatrix}0\\1\\0\end{pmatrix},
+  \varphi(\begin{pmatrix}1\\1\end{pmatrix})=\begin{pmatrix}0\\0\\1\end{pmatrix}
+  \end{align*}
+  を満たすものはない.
+  \begin{align*}
+  &\varphi(\begin{pmatrix}1\\0\end{pmatrix}+\begin{pmatrix}0\\1\end{pmatrix})=\varphi(\begin{pmatrix}1\\1\end{pmatrix})=\begin{pmatrix}0\\0\\1\end{pmatrix}
+  \\
+  &\neq \varphi(\begin{pmatrix}1\\0\end{pmatrix})+\varphi(\begin{pmatrix}0\\1\end{pmatrix})=
+\begin{pmatrix}1\\0\\0\end{pmatrix}+\begin{pmatrix}0\\1\\0\end{pmatrix}
+  =\begin{pmatrix}1\\1\\0\end{pmatrix}
+  \end{align*}
+  となり$\KK$-線形であることに矛盾してしまうからである.
+\end{remark}
+
+\begin{prop}
+  $V$, $W$を$\KK$-線形空間とし,
+  $v_1,\ldots,v_k\in V$,
+  $w_1,\ldots,w_k\in W$とする.
+  $V$を有限次元線形空間とし,
+  $(v_1,\ldots,v_k)$は$\KK$上一次独立とする.
+  このとき,
+  $\KK$-線形写像
+  $\varphi\colon V\to W$
+  で$\varphi(v_1)=w_1$,\ldots,$\varphi(v_k)=w_k$を満たすものが存在する.
+\end{prop}
+\begin{proof}
+  $(v_1,\ldots,v_k)$は$\KK$上一次独立であるので,
+  これを延長した$V$の基底$D=(v_1,\ldots,v_n)$について考える.
+  このとき,
+  \begin{align*}
+    \shazo{\nu_{D}}{\KK^n}{V}
+          {\begin{pmatrix}x_1\\\vdots\\x_n\end{pmatrix}}
+          {x_1\act v_1\plus \cdots\plus x_n\act v_n}
+ \end{align*}
+ は, 同型写像である.
+ したがって,
+ その逆写像$\nu_{D}^{-1}\colon V\to \KK^n$も線形写像である.
+ $w_{k+1}=\cdots=w_{n}=0_W$とし,
+ 線形写像
+  \begin{align*}
+    \shazo{\nu_{(w_1,\ldots,w_n)}}{\KK^n}{W}
+          {\begin{pmatrix}x_1\\\vdots\\x_n\end{pmatrix}}
+          {x_1\act w_1\plus \cdots\plus x_n\act w_n}
+ \end{align*}
+ を考えると,
+ これらの合成$\nu_{(w_1,\ldots,w_n)}\circ\nu_{D}^{-1}\colon V\to W$は
+ $\varphi(v_i)=w_i$を満たす線形写像である.
+\end{proof}
+\begin{remark}
+  $(v_1,\ldots,v_n)$が一次独立であるとき,
+  $(\varphi(v_1),\ldots,\varphi(v_n))$を
+  自由に$W$の組を選べる.
+  しかし,
+この条件だけからでは$\varphi$は唯一つに定まるわけではない.
+実際,
+  証明における$w_{k+1},\ldots, w_{n}$
+  は$W$の元であれば$0_W$である必要はない.
+\end{remark}
+
+\begin{cor}
+  $V$, $W$を$\KK$-線形空間とし,
+  $(e_1,\ldots,e_n)$を$V$の基底とする.
+  $w_i\in W$とする.
+  このとき,
+  $\KK$線形写像$\varphi\colon V\to W$
+  次の条件を満たすものがただ一つ存在する:
+  \begin{enumerate}
+  \item $\varphi(e_1)=w_1,\ldots,\varphi(e_n)=w_n$.
+  \end{enumerate}
+\end{cor}
+\begin{proof}\end{proof}
+
+$D=(v_1,\ldots,v_n)$を$V$の基底とし,
+$w_1,\ldots,w_n\in W$とする.
+このとき,
+$\nu^{D}_{(w_1,\ldots,w_n)}$
+を
+$\nu^{D}_{(w_1,\ldots,w_n)}(v_i)=w_i$
+を満たす$V$から$W$の$\KK$-線形写像とする.
+つまり,
+$\nu^{D}_{(w_1,\ldots,w_n)}=\nu_{(w_1,\ldots,w_n)}\circ\nu_{D}^{-1}$
+とする.
+\begin{prop}
+$V$を$\KK$-線形空間とし,
+$D$を$V$の基底とする.
+このとき,
+\begin{align*}
+\Hom_\KK(V,W)
+=
+\Set{\nu^{D}_{(w_1,\ldots,w_n)}|w_1,\ldots,w_n\in W}.
+\end{align*}
+\end{prop}
+\begin{proof}\end{proof}
+
+$D=(v_1,\ldots,v_n)$を$V$の基底とし,
+$B=(w_1,\ldots,w_n)$を$V$の基底とする.
+このとき,
+$\beta^{B,D}_{i,j}$
+を
+\begin{align*}
+\beta^{B,D}_{i,j}(v_k)=
+\begin{cases}
+w_i & (j=k)\\
+0_W & (j\neq k)
+\end{cases}
+\end{align*}
+を満たす$V$から$W$の$\KK$-線形写像とする.
+つまり,
+$B_{i,j}=(\underbrace{0_W,\ldots,0_W}_{j-1},w_i,0_W,\ldots,0_W)$とすると,
+$\beta^{B,D}_{i,j}=\nu^{D}_{B_{i,j}}$
+とかける.
+\begin{remark}
+行列単位$B(i,j)\in \KK^{m\times n}$を用い,
+$\beta^{B,D}_{i,j}(v_k)=\nu_B\circ \mu_{B(i,j)}\circ \nu_D^{-1}$
+とも書ける.
+\end{remark}
+\begin{prop}
+$V$を$n$次元$\KK$-線形空間とし,
+$D$を$V$の基底とする.
+$W$を$m$次元$\KK$-線形空間とし,
+$B$を$W$の基底とする.
+このとき,
+\begin{align*}
+(\beta^{B,D}_{1,1},\ldots,\beta^{B,D}_{1,n},
+\beta^{B,D}_{2,1},\ldots,\beta^{B,D}_{2,n},
+\ldots,
+\beta^{B,D}_{m,1},\ldots,\beta^{B,D}_{m,n})
+\end{align*}
+は$\Hom_\KK(V,W)$の基底である.
+\end{prop}
+\begin{proof}\end{proof}
+
+とくに,
+$W=\KK$のとき,
+\begin{align*}
+V^{\ast}=\Hom_\KK(V,\KK)
+\end{align*}
+とおき, 双対空間と呼んだ.
+次は双対空間について考える.
+
+$D=(v_1,\ldots,v_n)$を$V$の基底とし,
+$\varepsilon^{D}_j\colon V\to \KK$を
+\begin{align*}
+\varepsilon^{D}_j (v_k)
+=
+\begin{cases}
+1 & (j=k)\\
+0 & (j\neq k)
+\end{cases}
+\end{align*}
+をみたす$\KK$-線形写像とする.
+
+\begin{prop}
+$V$を$n$次元$\KK$-線形空間とし,
+$D$を$V$の基底とする.
+このとき,
+\begin{align*}
+(\varepsilon^{D}_1,\ldots,\varepsilon^{D}_n)
+\end{align*}
+は$V^\ast$の基底である.
+\end{prop}
+\begin{proof}\end{proof}
+\begin{definition}
+$V$を$n$次元$\KK$-線形空間とし,
+$D$を$V$の基底とする.
+$V^\ast$の基底
+\begin{align*}
+D^\ast=(\varepsilon^{D}_1,\ldots,\varepsilon^{D}_n)
+\end{align*}
+を基底$D$に関する\defit{双対基底}
+と呼ぶ.
+\end{definition}
+
+
+\begin{prop}
+$V$を$n$次元$\KK$-線形空間とし,
+$D$を$V$の基底とする.
+このとき,
+\begin{align*}
+(\varepsilon^{D}_1,\ldots,\varepsilon^{D}_n)
+\end{align*}
+は$V^\ast$の基底である.
+\end{prop}
+\begin{proof}\end{proof}
+\begin{prop}
+$V$を$n$次元$\KK$-線形空間とし,
+$D$を$V$の基底とする.
+このとき,
+$\nu^{D}_{D^\ast}\colon V\to V^\ast$は
+同型写像である.
+したがって, $V$と$V^\ast$は同型であり, $\dim_\KK(V)=\dim_\KK(V^\ast)=n$
+である.
+\end{prop}
+\begin{proof}\end{proof}
+
+\begin{cor}
+$V$を$n$次元$\KK$-線形空間とすると,
+$V\simeq (V^\ast)^\ast$.
+\end{cor}
+
+\begin{remark}
+$V$の基底$D$に対し,
+$\nu^{D}_{D^\ast}\colon V\to V^\ast$は
+同型写像である.
+この同型写像は,
+2つの$V$の基底$D,F$に対して,
+$\nu^{D}_{D^\ast}\neq \nu^{F}_{F^\ast}$となることがある.
+つまり
+$\nu^{D}_{D^\ast}$は基底$D$の選び方に依存して決まる同型写像である.
+
+一方, 実は,
+$V$から$(V^\ast)^\ast$への同型写像
+$\nu^{D^\ast}_{(D^\ast)^\ast}\circ\nu^{D}_{D^\ast}$
+は基底$D$の選び方に依存しない.
+つまり,
+2つの$V$の基底$D,F$に対して,
+$\nu^{D^\ast}_{(D^\ast)^\ast}\circ\nu^{D}_{D^\ast}=\nu^{F^\ast}_{(F^\ast)^\ast}\circ\nu^{F}_{(F)^\ast}$が常に成り立つ.
+実際
+$\nu^{D^\ast}_{(D^\ast)^\ast}\circ\nu^{D}_{D^\ast}$
+は,
+基底とは関係なく
+次の様に定義される写像$\Phi\colon V\to (V^\ast)^\ast$と一致している:
+$v\in V$とする.
+$\varphi\colon V\to\KK\in V^\ast$に対し,
+$\varphi(v)\in \KK$であるが,
+\begin{align*}
+\shazo{\epsilon_v}{V^\ast}{\KK}
+{\varphi}{\varphi(v)}
+\end{align*}
+とすると, これは$\KK$-線形写像である.
+つまり$\epsilon_v\in \Hom_{\KK}(V^\ast){\KK}=(V^\ast)^\ast$である.
+そこで,
+\begin{align*}
+\shazo{\Phi}{V}{(V^\ast)^\ast}
+{v}{\epsilon_v}
+\end{align*}
+を考える.
+これは$\KK$-線形写像であり,
+$\nu^{D^\ast}_{(D^\ast)^\ast}\circ\nu^{D}_{D^\ast}$
+に一致する.
+\end{remark}
+\begin{remark}
+$\Phi$は,
+基底の選び方に依らない.
+このことを言い表すのに,
+`$\Phi$はcanonialな同型を与える'
+という
+言い回しを用いることがある.
+
+基底や次元に関する情報を使わず,
+$\Phi$の定義から,
+$\Phi$が単射であることは証明することができる.
+\end{remark}
 
 
 
@@ -3974,6 +4240,19 @@ $\Ker(\varpi)=V$である.
   このとき, $\Phi([u]_V)=\varphi(u)$であるので,
   $\Phi$は全射である.
 \end{proof}
+
+\begin{cor}
+  $V$, $W$を$\KK$-線形空間とし,
+  $\varphi\colon V\to W$を線形写像とする.
+  このとき以下は同値:
+  \begin{enumerate}
+  \item $\varphi$が全射.
+  \item $n\in \NN$, $v_1,\ldots,v_n\in V$,
+    $(v_1,\ldots,v_n)$が$V$の生成系
+    $\implies (\varphi(v_1),\ldots,\varphi(v_n))$は$W$の生成系.
+  \end{enumerate}
+\end{cor}
+\begin{proof}\end{proof}
 
 \begin{cor}
 $U=V\oplus W$

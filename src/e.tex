@@ -1411,6 +1411,24 @@ $M=\Set{\mu_A|A\in\KK^{m\times n}}$
 解けるであろう問題.
 \subsection{問題A}
 \begin{quiz}
+  $V=\KK^2$, $W=\KK^3$, $A$, $B$を$(3,2)$行列とする.
+  \begin{align*}
+    \shazo{\varphi}{V}{W}
+    {x}{Ax} \\
+    \shazo{\psi}{V}{W}
+    {x}{Bx}
+ \end{align*}
+  とする.
+  また$(\ee_1,\ee_2)$を$V$の標準基底とする.
+  このとき, 以下は同値であることを示せ:
+  \begin{enumerate}
+  \item $\varphi=\psi$.
+  \item $A=B$.
+  \item $\varphi(\ee_1)=\psi(\ee_1)$, $\varphi(\ee_2)=\psi(\ee_2)$.
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
   $U$を$\KK$線形空間であるとする.
   $U=V\oplus V'$と内部直和に分解されているとする.
   $(e_1,\ldots,e_n)$を$V$の基底とし,
@@ -1429,8 +1447,6 @@ $M=\Set{\mu_A|A\in\KK^{m\times n}}$
 \end{quiz}
 
 \subsection{問題B}
-
-
 \begin{quiz}
   \begin{align*}
     A=
@@ -1725,5 +1741,337 @@ $\KK$を体とし,
 $r<n$とする.
   このとき,
 $(v_1,\ldots,v_{r},w_{i})$が一次独立となる$i$が存在する.
+\end{quiz}
+
+
+
+%
+\section{\cref{sec:basis:ext,sec:basis:linmap,}の後の問題}
+% 講義: 双対基底やHomの基底.  基底の延長.
+主に双対基底などについて知っていれば
+解けるであろう問題.
+\subsection{問題A}
+\begin{quiz}
+  $A\in\KK^{m\times n}$とし,
+  \begin{align*}
+    \shazo{\mu_A}{\KK^n}{\KK^m}
+    {x}{Ax}
+  \end{align*}
+  について考える.
+  $A$の階数を$r$とするとき以下を求めよ:
+  \begin{enumerate}
+  \item $\dim_\KK(\Ker(\mu_A))$を求めよ.
+  \item $\dim_\KK(\Img(\mu_A))$を求めよ.
+  \item $\dim_\KK(\Ker(\mu_A))+\dim_\KK(\Img(\mu_A))$を与えよ.
+  \end{enumerate}
+  ただし,
+  連立一次方程式の解の自由度に関する公式は用いてよい.
+  また,
+  被役(行)階段行列の行ベクトルから零ベクトルであるものを除いたものが,
+  一次独立であることや,
+  被役(列)階段行列の列ベクトルから零ベクトルであるものを除いたものが,
+  一次独立であること
+  も用いて良い.
+\end{quiz}
+
+
+
+\subsection{問題B}
+\begin{quiz}
+  $\KK^n$の標準基底$E=(\ee^{(n)}_1,\ldots,e^{(n)}_n)$に対し,
+  その双対基底$E^\ast=(\varepsilon_1^{E},\ldots,\varepsilon_m^{E})$
+  を考える.
+  このとき, 次を求めよ:
+  \begin{enumerate}
+    \item $\ee_j$に対し, $\varepsilon_i^{E}(\ee_j)$.
+    \item $\aaa=\begin{pmatrix}a_1\\\vdots\\a_n\end{pmatrix}$に対し$\varepsilon_i^{E}(\aaa)$:
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  $n$を$2$以上の整数とし,
+  $E=(\ee^{(n)}_1,\ldots,e^{(n)}_n)$を
+  $\KK^n$の標準基底の標準基底とする.
+  \begin{align*}
+    f_i =
+    \begin{cases}
+      \ee^{(n)}_i+\ee^{(n)}_{i+1} &(i<n)\\
+      \ee^{(n)}_1+\ee^{(n)}_n&(i=n)
+    \end{cases}
+  \end{align*}
+  とし,
+  $F=(f_1,\ldots,F_n)$とする.
+  このとき,
+  以下の命題の真偽を判定し証明を与えよ:  
+  \begin{enumerate}
+    \item $n$が奇数のとき, $F$は$\KK^n$の基底ではない.
+    \item $n$が偶数のとき, $F$は$\KK^n$の基底ではない.
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  $E=(\ee^{(3)}_1,\ldots,e^{(3)}_3)$を
+  $\KK^3$の標準基底の標準基底とする.
+  \begin{align*}
+    f_1 &=\ee^{(3)}_1+\ee^{(3)}_2\\
+    f_2 &=\ee^{(3)}_2+\ee^{(3)}_3\\
+    f_3 &=\ee^{(3)}_1+\ee^{(3)}_3
+  \end{align*}
+  とし, $F=(f_1,\ldots,F_3)$とする.
+  このとき,
+   \begin{enumerate}
+    \item $F$の双対基底$F^\ast=(\varepsilon_1^{F},\ldots,\varepsilon_3^{F})$
+      に対し, $\varepsilon_i^{F}(\ee_j)$を求めよ.
+    \item $F$の双対基底$F^\ast=(\varepsilon_1^{F},\ldots,\varepsilon_3^{F})$
+      と$\aaa=\begin{pmatrix}a_1\\\vdots\\a_n\end{pmatrix}$に対し,
+      $\varepsilon_i^{F}(\aaa)$を求めよ.
+   \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  $E=(\ee^{(n)}_1,\ldots,e^{(n)}_n)$を
+  $\KK^n$の標準基底の標準基底とする.
+  $f_i=\ee^{(n)}_1+\cdots+\ee^{(n)}_i$とし,
+  $F=(f_1,\ldots,f_n)$とする.
+  \begin{enumerate}
+    \item $F$は$\KK^n$の基底であることを示せ.
+    \item $F$の双対基底$F^\ast=(\varepsilon_1^{F},\ldots,\varepsilon_m^{F})$
+      に対し, $\varepsilon_i^{F}(\ee_j)$を求めよ.
+    \item $F$の双対基底$F^\ast=(\varepsilon_1^{F},\ldots,\varepsilon_m^{F})$
+      と$\aaa=\begin{pmatrix}a_1\\\vdots\\a_n\end{pmatrix}$に対し,
+      $\varepsilon_i^{F}(\aaa)$を求めよ.
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  $V$を$\KK$上の$n$次元数ベクトル空間とする.
+  つまり,
+  $V=\KK^{n \times 1}$とする.
+  また,
+  $H=\KK^{1 \times n}$とする.
+  $\vec{a}=(a_1,\ldots,a_n)\in H$に対し,
+  \begin{align*}
+    \shazo{\varphi_{\vec{a}}}{V}{\KK}
+          {\xx=\begin{pmatrix}x_1\\\vdots\\x_n\end{pmatrix}}
+          {\vec{a}\xx=\sum_{i=1}^na_ix_i}
+  \end{align*}
+  とする.
+  また,
+  \begin{align*}
+    \shazo{\varphi}{H}{V^\ast}
+          {\vec{a}}{\varphi_a}
+  \end{align*}
+  とする.
+  このとき,
+  以下の命題の真偽を判定し証明を与えよ:
+  \begin{enumerate}
+  \item
+    $\vec{a}$に対し,
+    $\varphi_{\vec{a}}\in V^\ast$である.
+    つまり
+    $\varphi_{\vec{a}}\colon V\to \KK$は
+    $\KK$-線形写像である.
+  \item
+    $\varphi\in \Hom_{\KK}(H,V^\ast)$である.
+    つまり
+    $\varphi\colon H\to V^\ast$は
+    $\KK$-線形写像である.
+  \end{enumerate}
+\end{quiz}
+\begin{quiz}
+  $V$を$\KK$上の$n$次元数ベクトル空間とする.
+  つまり,
+  $V=\KK^{n \times 1}$とする.
+  $\KK^n$の標準基底$E=(\ee^{(n)}_1,\ldots,\ee^{(n)}_m)$に対し,
+  その双対基底$E^\ast=(\varepsilon_1^{E},\ldots,\varepsilon_m^{E})$
+  を考える.
+  また,
+  $H=\KK^{1 \times n}$とする.
+  $\vec{a}=(a_1,\ldots,a_n)\in H$に対し,
+  \begin{align*}
+    \shazo{\varphi_{\vec{a}}}{V}{\KK}
+          {\xx=\begin{pmatrix}x_1\\\vdots\\x_n\end{pmatrix}}
+          {\sum_{i=1}^na_ix_i}
+  \end{align*}
+  とし,
+  $\KK$-線形写像
+  \begin{align*}
+    \shazo{\varphi}{H}{V^\ast}
+          {\vec{a}}{\varphi_a}
+  \end{align*}
+  について考える.
+  \begin{enumerate}
+  \item
+    $\varphi_{\vec{a}}\colon H\to V^\ast$は
+    同型写像であることを示せ.
+  \item
+    $\varphi_{\vec{a}}^{-1}(\varepsilon^{E}_i)$を求めよ.
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+  $V$と$W$を$\KK$線形空間であるとする.
+  $D=(v_1,\ldots,v_n)$を$V$の基底,
+  $B=(w_1,\ldots,w_m)$を$V$の基底とする.
+  $\beta^{B,D}_{i,j}$は,
+  \begin{align*}
+    \beta^{B,D}_{i,j} (v_j)=w_i
+  \end{align*}
+  を満たす
+  $\KK$-線形写像$\beta^{B,D}_{i,j}\colon V\to W$とする.
+  このとき,
+  \begin{align*}
+    (\beta^{B,D}_{1,1},\ldots,\beta^{B,D}_{1,n};\beta^{B,D}_{2,1},\ldots,\beta^{B,D}_{2,n};\ldots;\beta^{B,D}_{m,1},\ldots,\beta^{B,D}_{m,n})
+  \end{align*}
+  は$\Hom_\KK(V,W)$の生成系である.
+\end{quiz}
+
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+  $V$と$W$を$\KK$線形空間であるとする.
+  $D=(v_1,\ldots,v_n)$を$V$の基底,
+  $B=(w_1,\ldots,w_m)$を$V$の基底とする.
+  $\beta^{B,D}_{i,j}$は,
+  \begin{align*}
+    \beta^{B,D}_{i,j} (v_j)=w_i
+  \end{align*}
+  を満たす
+  $\KK$-線形写像$\beta^{B,D}_{i,j}\colon V\to W$とする.
+  このとき,
+  \begin{align*}
+    (\beta^{B,D}_{1,1},\ldots,\beta^{B,D}_{1,n};\beta^{B,D}_{2,1},\ldots,\beta^{B,D}_{2,n};\ldots;\beta^{B,D}_{m,1},\ldots,\beta^{B,D}_{m,n})
+  \end{align*}
+  は一次独立である.
+\end{quiz}
+
+\begin{quiz}
+  $V$と$W$を$\KK$線形空間であるとする.
+  $D=(v_1,\ldots,v_n)$を$V$の基底,
+  $B=(w_1,\ldots,w_m)$を$V$の基底とする.
+  $\beta^{B,D}_{i,j}\colon V\to W$,
+  $\nu_{B}\colon \KK^n\to V$,
+  $\nu_{D}\colon \KK^m\to W$,
+  は,
+  \begin{align*}
+    \beta^{B,D}_{i,j} (v_j)&=w_i,\\
+    \nu_{B}(\ee^{(n)}_i)&=v_i,\\
+    \nu_{D}(\ee^{(m)}_i)&=w_i,
+  \end{align*}
+  を満たす
+  $\KK$-線形写像とする.
+  また,
+  $A\in \KK^{m\times n}$に対し,
+  \begin{align*}
+    \shazo{\mu_A}{\KK^n}{\KK^m}
+    {x}{Ax}
+  \end{align*}
+  とし,
+  $B(i,j)\in \KK^{m\times n}$を行列単位とする.
+  このとき, 
+  以下の命題の真偽を判定し証明を与えよ:
+  \begin{enumerate}
+  \item $\nu_{B}\circ \mu_{B(i,j)} \circ \nu_{D}^{-1}$.
+  \item $\Hom_{\KK}(V,W)\simeq \KK^{m\times n}$.
+  \end{enumerate}
+\end{quiz}
+
+
+\begin{quiz}
+  $V$を$\KK$線形空間であるとし,
+  $D=(v_1,\ldots,v_n)$を$V$の基底とする.
+  $\varepsilon^{D}_i\colon V\to \KK$,
+  は,
+  \begin{align*}
+    \varepsilon^{D}_i(v_j)=
+    \begin{cases}
+      1&(i=j)\\
+      0&(i\neq j)
+    \end{cases}
+  \end{align*}
+  を満たす
+  $\KK$-線形写像とする.
+  $D^\ast=(\varepsilon^{D}_1,\ldots,\varepsilon^{D}_n)$
+  とする.
+  このとき, 
+  以下の命題の真偽を判定し証明を与えよ:
+  $D^\ast$は$V^\ast$の基底である.
+  つまり, 以下が成り立つ:
+  \begin{enumerate}
+  \item $D^\ast$は$V$の生成系である.
+  \item $D^\ast$は一次独立である.
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  $\RR^2$の基底$D=(v_1,v_2)$に対し,
+  $\varphi_D$を次の様に定義する:
+  $D^\ast=(\varepsilon^{D}_1,\ldots,\varepsilon^{D}_n)$を$D$の双対基底とし,
+  $\nu^{D}_{D^\ast}\colon V\to V^\ast$を
+  \begin{align*}
+    \nu^{D}_{D^\ast}(v_i)=\varepsilon^{D}_i
+  \end{align*}
+  を満たす$\KK$-線形写像とし,
+  $\varphi_D=\nu^{D}_{D^\ast}$とおく.
+
+  このとき, $\varphi_D\neq \varphi_{D'}$を満たす基底$\RR^2$の基底$D$, $D'$を与えよ.
+\end{quiz}
+
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+  $V$を$\KK$-線形空間とする.
+  $v\in V$に対し,
+  \begin{align*}
+    \shazo{\epsilon_v}{V^\ast}{\KK}
+    {\varphi}{\varphi(v)}
+  \end{align*}
+  とする.
+  このとき,
+  $\epsilon_v\in (V^\ast)^\ast$である.
+  つまり
+  $\epsilon_v\colon V^\ast \to \KK$は$\KK$-線形写像である.    
+\end{quiz}
+
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+  $V$を$\KK$-線形空間とする.
+  $v\in V$に対し,
+  \begin{align*}
+    \shazo{\epsilon_v}{V^\ast}{\KK}
+    {\varphi}{\varphi(v)}
+  \end{align*}
+  とする.
+  また, $\Phi$を,
+  \begin{align*}
+    \shazo{\Phi}{V}{(V^\ast)^\ast}
+    {v}{\epsilon_v}
+  \end{align*}
+  とする.
+  このとき, 
+  $\Phi\in\Hom_\KK( V, (V^\ast)^\ast)$
+  である.
+  つまり,
+  $\Phi\colon V\to (V^\ast)^\ast$
+  は線形写像である.    
+\end{quiz}
+
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+  $V$を$\KK$-線形空間とする.
+  $v\in V$に対し,
+  \begin{align*}
+    \shazo{\epsilon_v}{V^\ast}{\KK}
+    {\varphi}{\varphi(v)}
+  \end{align*}
+  とする.
+  また, $\Phi$を,
+  \begin{align*}
+    \shazo{\Phi}{V}{(V^\ast)^\ast}
+    {v}{\epsilon_v}
+  \end{align*}
+  とする.
+  このとき, 
+  $\Phi\colon V\to (V^\ast)^\ast$
+  は単射である.    
 \end{quiz}
 
