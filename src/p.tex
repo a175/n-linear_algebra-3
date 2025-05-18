@@ -1462,6 +1462,21 @@ $\alpha\act v+\beta\act w$
 \end{remark}
 
 \begin{remark}
+$(V,\plus,\act,0_V)$を$\KK$-線形空間とする.
+$v_1,\ldots,v_n \in V$に対し,
+$\sum_{i=1}^n v_i$を次で定義する:
+\begin{align*}
+\sum_{i=1}^n v_i
+=
+\begin{cases}
+\left(\sum_{i=1}^{-1} v_i\right)\plus v_n& (n>1)\\
+a_1&n=1.
+\end{cases}
+\end{align*}
+\end{remark}
+
+
+\begin{remark}
   $\KK$-線形空間の定義において,
   その条件の中に, $\KK$の割り算は現れない.
   したがって,
@@ -3167,7 +3182,7 @@ $U$は$U=V_1\oplus V_2\oplus \cdots \oplus V_l$
 \end{quiz}
 
 
-\chapter{生成系, 一次独立性, 基底}
+\chapter{生成系, 一次独立系, 基底}
 \label{chap:basis}
 \section{数ベクトル空間と標準基底}
 \label{sec:basis:standard}
@@ -3213,6 +3228,8 @@ $\KK^n$の\defit{標準基底}と呼ぶ.
     \end{align*}
     が単射.
   \end{enumerate}
+  $\KK$上一次独立である
+  組$(v_1,\ldots,v_r)$を\defit{一次独立系}と呼ぶこともある.
   $(v_1,\ldots,v_r)$が$\KK$上一次独立でないとき,
   $(v_1,\ldots,v_r)$は$\KK$上\defit{一次従属}であるという.
 \end{definition}
@@ -3463,7 +3480,7 @@ $B$のみが基底であって他(のすべての部分集合)は基底になり
 という印象を与える可能性がある.
 \end{note}
 
-\subsection{生成系や一次独立な組の性質}
+\subsection{生成系や一次独立系の性質}
 \begin{prop}
   $V$を$\KK$線形空間とする.
   $(0_V)$は一次従属.
@@ -3665,7 +3682,7 @@ $\KK$を体とする.
 \end{prop}
 \begin{proof}\end{proof}
 
-\section{線形写像と生成系, 一次独立性}
+\section{線形写像と生成系, 一次独立系}
 \label{sec:basis:linmap}
 
 線形写像による
@@ -4149,10 +4166,10 @@ $\Ker(\varpi)=V$である.
   \paragraph{全射性}
   $[u]_V\in U/V$とする.
   $(e_1,\ldots, e_n,w_1,\ldots, w_m)$は$U$の基底であるので,
-  $u=\sum_{i}a_i\act e_i\plus\sum_{i}b_i \act w_i$
+  $u=\sum_{i=1}^n a_i\act e_i\plus\sum_{i=1}^m b_i \act w_i$
   とかける.
   そこで,
-  $w=\sum_{i}b_i \act w_i$
+  $w=\sum_{i=1}^m b_i \act w_i$
   とおく.
   このとき$v=u-w$とおくと$v\in V$である.
   したがって, $[u]_V=[w]_V$である.
@@ -4160,8 +4177,8 @@ $\Ker(\varpi)=V$である.
   \begin{align*}
     [u]_V
     &=[w]_V\\
-    &=[\sum_{i}b_i \act w_i]_V\\
-    &=\sum_{i}b_i \act[ w_i]_V\\
+    &=[\sum_{i=1}^m b_i \act w_i]_V\\
+    &=\sum_{i=1}^m b_i \act[ w_i]_V\\
     &=\varphi(\begin{pmatrix}b_1\\\vdots\\b_m\end{pmatrix})\\
   \end{align*}
   \paragraph{単射性}
@@ -4169,13 +4186,13 @@ $\Ker(\varpi)=V$である.
   $\varphi(\begin{pmatrix}b_1\\\vdots\\b_m\end{pmatrix})=[0_U]_V$
   とする.
   このとき,
-  $[\sum_{i}b_i \act w_i]_V=[0_U]_V$
-  であるので, $\sum_{i}b_i \act w_i\in V$である.
+  $[\sum_{i=1}^m b_i \act w_i]_V=[0_U]_V$
+  であるので, $\sum_{i=1}^m b_i \act w_i\in V$である.
   $(e_1,\ldots, e_n)$は$V$の基底であるから,
-  $\sum_{i}b_i \act w_i=\sum_{i}a_i\act v_i$
+  $\sum_{i=1}^m b_i \act w_i=\sum_{i=1}^n a_i\act v_i$
   となる$a_i\in \KK$が存在するが,
   移項すると,
-  $-\sum_{i}a_i\act e_i\plus\sum_{i}b_i \act w_i=0_U$
+  $-\sum_{i=1}^n a_i\act e_i\plus\sum_{i=1}^m b_i \act w_i=0_U$
   となる.
   $(v_1,\ldots, v_n,w_1,\ldots, w_m)$は一次独立であるので,
   $a_1=\cdots=a_n=b_1=\cdots=b_m=0$.
@@ -5908,7 +5925,7 @@ $A$自体が対角化可能である.
 
 
 \chapter{余談}
-\section{無限次元ベクトル空間の基底と多項式環.}
+\section{無限次元ベクトル空間の基底.}
 
 \sectionX{章末問題}
 \begin{quiz}
