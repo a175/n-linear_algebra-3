@@ -1149,6 +1149,7 @@ $(\KK,+,\cdot,0,1)$を体とする.
   \begin{enumerate}
   \item 
     \begin{enumerate}
+      \label{def:vecsp:item:com}
     \item $u,w \in V\implies  u\plus w=w\plus u$.
     \item
       \label{def:vecsp:item:sum:ass}
@@ -1473,6 +1474,19 @@ $\sum_{i=1}^n v_i$を次で定義する:
 a_1&n=1.
 \end{cases}
 \end{align*}
+$n$限集合$I$の各$i$に対し, $a_i\in V$が与えられているとする.
+$I=\Set{j_1,\ldots,j_n}$とし,
+$\sum_{i\in I} v_i$を
+\begin{align*}
+\sum_{i\in I} v_i
+\sum_{k=1}^n v_{j_k}
+\end{align*}
+で定義する.
+和$\plus$は
+\Cref{def:vecsp:item:com}
+を満たすので,
+この定義は,
+$I=\Set{j_1,\ldots,j_n}$の選び方に依らない.
 \end{remark}
 
 
@@ -3277,13 +3291,14 @@ v'&=\nu_{(v_1,\ldots,v_r)}(\begin{pmatrix}a'_1\\\vdots\\a'_n\end{pmatrix})
   $(V,\plus,\act,0_V)$を$\KK$線形空間とし,
   $v_1,\ldots,v_r\in V$とする.
   次の条件を満たすとき,
-  組$(v_1,\ldots,v_r)$は$V$の\defit{生成系}であるという.
+  組$(v_1,\ldots,v_r)$は$V$を\defit{生成する}という.
   \begin{enumerate}
   \item 線形写像 $\nu_{(v_1,\ldots,v_r)}\colon \KK^r \to V$
     が全射.
   \end{enumerate}
-  組$(v_1,\ldots,v_r)$は$V$の\defit{生成系}であることを,
-  組$(v_1,\ldots,v_r)$は$V$を\defit{生成する}ということもある.
+  組$(v_1,\ldots,v_r)$が$V$を\defit{生成する}ことを,
+  組$(v_1,\ldots,v_r)$は$V$の\defit{生成系}である
+  ということもある.
 \end{definition}
 \begin{prop}
   $(V,\plus,\act,0_V)$を$\KK$線形空間とし,
@@ -3332,9 +3347,9 @@ v'&=\nu_{(v_1,\ldots,v_r)}(\begin{pmatrix}a'_1\\\vdots\\a'_n\end{pmatrix})
   $v_1,\ldots,v_r\in V$とする.
   次の条件を満たすとき,
   組$(v_1,\ldots,v_r)$は$V$の\defit{基底}であるという.
-  \begin{enumerate}
-  \item $(v_1,\ldots,v_r)$は一次独立.
-  \item $(v_1,\ldots,v_r)$は$V$の生成系.
+\begin{enumerate}
+  \item 線形写像 $\nu_{(v_1,\ldots,v_r)}\colon \KK^r\to V$
+    が同型写像.
   \end{enumerate}
 \end{definition}
 \begin{prop}
@@ -3343,8 +3358,11 @@ v'&=\nu_{(v_1,\ldots,v_r)}(\begin{pmatrix}a'_1\\\vdots\\a'_n\end{pmatrix})
   このとき以下は同値:
   \begin{enumerate}
   \item $(v_1,\ldots,v_r)$は$V$の基底である.
-  \item 線形写像 $\nu_{(v_1,\ldots,v_r)}\colon \KK^r\to V$
-    が同型写像.
+  \item 以下を満たす:
+  \begin{enumerate}
+    \item $(v_1,\ldots,v_r)$は一次独立.
+  \item $(v_1,\ldots,v_r)$は$V$の生成系.
+  \end{enumerate}
   \end{enumerate}
 \end{prop}
 \begin{remark}
@@ -4017,7 +4035,7 @@ $\nu^{D^\ast}_{(D^\ast)^\ast}\circ\nu^{D}_{D^\ast}$
 $\Phi$は,
 基底の選び方に依らない.
 このことを言い表すのに,
-`$\Phi$はcanonialな同型を与える'
+`$\Phi$はcanonicalな同型を与える'
 という
 言い回しを用いることがある.
 
@@ -4876,7 +4894,7 @@ $\varphi$の$D$に関する表現行列と呼ぶ.
   $\lambda \in \KK$に対し,
   \begin{align*}
     \shazo{\varphi}{V}{V}
-    {v}{\lambda v}
+    {v}{\lambda\act v}
   \end{align*}
   という$V$上の線形変換を考える.
   このとき, $\varphi$の表現行列は,
@@ -5194,7 +5212,7 @@ $\varphi\colon V\to V$を線形変換とする.
 このとき, $\lambda\in \KK$
 \begin{align*}
   \shazo{\lambda\id_V-\varphi}{V}{V}
-  {v}{\lambda v-\varphi(v)}
+  {v}{\lambda\act v-\varphi(v)}
 \end{align*}
 は線形変換である.
 \begin{definition}
@@ -5227,14 +5245,14 @@ $\varphi\colon V\to V$を線形変換とする.
   \begin{align*}
     E(\varphi,\lambda) &= \Ker( \lambda\id_V - \varphi)\\
     &= \Set{v\in V|(\lambda\id_V-\varphi)(v)=0_V}\\
-    &= \Set{v\in V|\lambda v-\varphi(v)  =0_V}\\
-    &= \Set{v\in V|\varphi(v) = \lambda v }
+    &= \Set{v\in V|\lambda\act v-\varphi(v)  =0_V}\\
+    &= \Set{v\in V|\varphi(v) = \lambda\act v }
   \end{align*}
   である.
   つまり, $v\in V\setminus\Set{0_V}$が
   固有値$\lambda$に属する$\varphi$の固有ベクトルであるというのは
   \begin{align*}
-    \varphi(v)=\lambda v
+    \varphi(v)=\lambda\act v
   \end{align*}
   を満たすということである.
   特に, $v\in E(\varphi,\lambda)$に対し, $\varphi(v)\in E(\varphi,\lambda)$
@@ -5925,7 +5943,355 @@ $A$自体が対角化可能である.
 
 
 \chapter{余談}
-\section{無限次元ベクトル空間の基底.}
+\section{無限次元線形空間の基底.}
+有限次元線形空間の基底については,
+\Cref{chap:basis}
+ですでに見た.
+ここでは,
+有限次元ではない場合について考える.
+そのため,
+無限個ベクトルからなる生成系や一次独立系について定義をする.
+線形空間の定義からは,
+有限個のベクトルの和は再帰的に定義できるが,
+無限個のベクトルの和は未定義である.
+そのため工夫が必要となる.
+
+$I$を集合とする.
+このとき,
+\begin{align*}
+\KK^{\oplus I}=\Set{(a_i)_{i\in I}|
+\begin{array}{c}
+i\in I\implies a_i\in \KK\\
+\#\Set{i\in I|a_i\neq 0} <\infty
+\end{array}
+}
+\end{align*}
+とおく.
+$\KK^{\oplus I}$は$\KK$線形空間である.
+$I=\Set{1,\ldots,n}$の場合には,
+$\KK^{\oplus I}=\KK^n$である.
+
+$(V,\plus,\act,0_V)$を$\KK$-線形空間であるとし,
+$i\in I$に対し, $v_i \in V$が与えられているとする.
+このとき,
+\begin{align*}
+\shazo{\nu_{(v_i)_{i\in I}}}
+{\KK^{\oplus I}}{V}
+{(a_i)_{i\in I}}
+{\sum_{i\in \Set{i\in I|a_i\neq 0}}a_i\act v_i}
+\end{align*}
+とする.
+$\Set{i\in I|a_i\neq 0}$は有限集合であるから,
+和は定義されており,
+$\KK$-線形写像となっている.
+また,
+線形写像 $\nu_{(v_i)_{i\in I}}\colon \KK^{\oplus I} \to V$の像を,
+$\Braket{v_i|i\in I}_{\KK}$
+と書き,
+$(v_i)_{i\in I}$で生成される$V$の部分空間と呼ぶ.
+
+\begin{prop}
+  $I$を集合,
+  $(V,\plus,\act,0_V)$を$\KK$線形空間とし,
+  $i\in I$に対し, $v_i\in V$が与えられているとする.
+  このとき,
+  \begin{align*}
+  \Braket{v_i|i\in I}_{\KK}
+  &=\bigcup_{n=1}^\infty
+  \bigcup_{\Set{i_1,\ldots,i_n}\subset I} \Braket{v_{i_1},\ldots,v_{i_n}}_{\KK}\\
+&=\Set{
+  \sum_{k=0}^{n} a_{k}\act v_{j_k}|
+  \begin{array}{c}
+  n\in \NN\\
+  k\in\Set{0,\ldots,n}\implies a_k \in \KK, j_k\in I
+\end{array}}  
+  \end{align*}
+  である.
+\end{prop}
+\begin{proof}\end{proof}
+\begin{example}
+$\KK[[x]]$は$\KK$線形空間であった.
+$\Braket{x^i|i\in \NN}$は,
+有限個の単項式の線型結合の集合である.
+つまり, 
+$\Braket{x^i|i\in \NN}=\KK[x]$
+である.
+\end{example}
+
+
+
+
+\begin{definition}
+  $I$を集合,
+  $(V,\plus,\act,0_V)$を$\KK$線形空間とし,
+  $i\in I$に対し, $v_i\in V$が与えられているとする.
+  次の条件を満たすとき,
+  組$(v_i)_{i\in I}$は$V$
+  を\defit{生成する}という.
+  \begin{enumerate}
+  \item
+  線形写像 $\nu_{(v_i)_{i\in I}}\colon \KK^{\oplus I} \to V$
+    が全射.
+  \end{enumerate}
+  組$(v_i)_{i\in I}$は$V$を\defit{生成する}ことを,
+  組$(v_i)_{i\in I}$は$V$の\defit{生成系}であるということもある.
+\end{definition}
+\begin{prop}
+  $I$を集合,
+  $(V,\plus,\act,0_V)$を$\KK$線形空間とし,
+  $i\in I$に対し, $v_i\in V$が与えられているとする.
+  このとき以下は同値:
+  \begin{enumerate}
+  \item $(v_i)_{i\in I}$は$V$の生成系である.
+  \item $V=\Braket{v_i|i\in I}$.
+  \item
+    すべての$v\in V$に対して次が成り立つ:
+    \begin{enumerate}
+    \item
+    $v\in \Braket{v_{i_1},\ldots,v_{i_r}}_\KK$
+    となる$r\in\NN$, $i_1,\ldots,i_r\in I$ が存在する.
+    \end{enumerate}
+  \item
+    すべての$v\in V$に対して次が成り立つ:
+    \begin{enumerate}
+    \item
+    $\alpha_1\act v_{i_1}\plus \cdots \alpha_r\act v_{i_r}=v$
+    を満たす$r\in\NN$, $i_1,\ldots,i_r\in I$, $\alpha_1,\ldots,\alpha_r\in\KK$ が存在する.
+    \end{enumerate}
+  \end{enumerate}
+\end{prop}
+
+\begin{example}
+$\KK[x]=\Braket{x^i|i\in \NN}$であるので,
+$(x^i)_{i\in \NN}$は
+$\KK[x]$の生成系である.
+しかし,
+$(x^i)_{i\in \NN}$は
+$\KK[[x]]$の生成系ではない.
+例えば$\sum_{i=0}^{\infty}x^i\in \KK[[x]]$
+であるが,
+これは
+$x^i$の有限個の和としては表せない.
+\end{example}
+
+
+\begin{definition}
+  $I$を集合,
+  $(V,\plus,\act,0_V)$を$\KK$線形空間とし,
+  $i\in I$に対し, $v_i\in V$が与えられているとする.
+  次の条件を満たすとき,
+  組$(v_i)_{i\in I}$は$\KK$上\defit{一次独立}であるという:
+\begin{enumerate}
+  \item 線形写像$\nu_{(v_i)_{i\in I}}\colon \KK^{\oplus I}\to V$
+    が単射.
+  \end{enumerate}
+  $\KK$上一次独立である
+  組$(v_i)_{i\in I}$を\defit{一次独立系}と呼ぶこともある.
+  $(v_i)_{i\in I}$が$\KK$上一次独立でないとき,
+  $(v_i)_{i\in I}$は$\KK$上\defit{一次従属}であるという.
+\end{definition}
+
+\begin{prop}
+  $I$を集合,
+  $(V,\plus,\act,0_V)$を$\KK$線形空間とし,
+  $i\in I$に対し, $v_i\in V$が与えられているとする.
+  このとき以下は同値:
+  \begin{enumerate}
+  \item $(v_i)_{i\in I}$は$\KK$上一次独立.
+  \item
+  $n \in\NN,
+  \Set{i_1,\ldots,i_n}\subset I
+  \implies
+  (v_{i_1},\ldots,v_{i_n})$は一次独立.
+  \end{enumerate}
+\end{prop}
+
+\begin{example}
+$\KK[[x]]$の元$x^i$について考える.
+$(x^i)_{i\in \NN}$は
+$\KK$上一次独立である.
+\end{example}
+
+
+\begin{definition}
+  $I$を集合,
+  $(V,\plus,\act,0_V)$を$\KK$線形空間とし,
+  $i\in I$に対し, $v_i\in V$が与えられているとする.
+  次の条件を満たすとき,
+  組$(v_i)_{i\in I}$は$V$の\defit{基底}であるという.
+  \begin{enumerate}
+  \item 線形写像 $\nu_{(v_i)_{i\in I}}\colon \KK^r\to V$
+    が同型写像.
+  \end{enumerate}
+\end{definition}
+\begin{prop}
+  $I$を集合,
+  $(V,\plus,\act,0_V)$を$\KK$線形空間とし,
+  $i\in I$に対し, $v_i\in V$が与えられているとする.
+  このとき以下は同値:
+  \begin{enumerate}
+  \item $(v_i)_{i\in I}$は$V$の基底である.
+  \item   以下を満たす:
+  \begin{enumerate}
+  \item $(v_i)_{i\in I}$は一次独立.
+  \item $(v_i)_{i\in I}$は$V$の生成系.
+  \end{enumerate}
+  \end{enumerate}
+\end{prop}
+
+\begin{example}
+$(x^i)_{i\in \NN}$は
+$\KK[x]$の基底である.
+しかし,
+$\KK[[x]]$の基底ではない.
+\end{example}
+\begin{remark}
+$\delta$を
+\begin{align*}
+\delta_{i,j}=
+\begin{cases}
+1&(i=j)\\
+0&(i\neq j),
+\end{cases}
+\end{align*}
+つまり,
+クロネッカーの$\delta$とし,
+$\ee^I_{j}\in \KK^{\oplus I}$を
+$\ee^I_{j}=(\delta_{i,j})_{i\in I}$
+で定義する.
+このとき,
+$(\ee^I_{j})_{j\in I}$
+は,
+$(\KK^{\oplus I})^\ast$
+の基底である.
+\end{remark}
+
+次に, 双対空間について考える.
+\begin{prop}
+$(v_i)_{i\in I}$を
+$\KK$線形空間
+$(V,\plus,\act,0_V)$の
+基底とする.
+このとき,
+$\varphi,\psi\in \KK^{\oplus I}$に対し,
+以下は同値である:
+\begin{enumerate}
+\item $\varphi=\psi$.
+\item $i\in I\implies \varphi(v_i)=\psi(v_i)$.
+\end{enumerate}
+\end{prop}
+
+$i\in I$に対し,
+\begin{align*}
+\shazo{\pi_{i}}{\KK^{\oplus I}}{\KK}
+{(a_i)_{i\in I}}{a_i}
+\end{align*}
+とすると, $\KK$-線形写像である.
+
+\begin{remark}
+$\pi_i\in (\KK^{\oplus I})^\ast$であり,
+$(\pi_i)_{i\in I}$は一次独立である.
+しかし,
+$I$が無限集合のとき, 
+$(\pi_i)_{i\in I}$は$(\KK^{\oplus I})^\ast$の生成系ではない.
+たとえば,
+各$(a_i)_{i\in I}\in \KK^{\oplus I}$に対し,
+$\Set{i\in I| a_i\neq 0}$
+は有限集合なので,
+$\sum_{i\in I}a_i$が意味を持つので,
+\begin{align*}
+\shazo{\varphi}{\KK^{\oplus I}}{\KK}
+{(a_i)_{i\in I}}{\sum_{i\in I}a_i}
+\end{align*}
+という写像が定義できる.
+このとき,
+$\varphi\in (\KK^{\oplus I})^\ast$
+ではあるが,
+有限個の$\pi_i$たちの和として$\varphi$を書くことはできない.
+\end{remark}
+
+$D=(v_i)_{i\in I}$が$V$の基底であるとき,
+$\varepsilon^D_{i}\colon V\to \KK$
+を,
+$\varepsilon^D_{i}=\pi_i\circ \nu_{D}^{-1}$
+で定義する.
+つまり,
+\begin{align*}
+\varepsilon^D_{i}(v_k)=
+\begin{cases}
+1&(i=k)\\
+0&(i\neq k)
+\end{cases}
+\end{align*}
+を満たす$V^\ast$の元である.
+\begin{prop}
+  $(V,\plus,\act,0_V)$を$\KK$線形空間とし,
+  $(v_i)_{i\in I}$は$V$の基底であるとする.
+  このとき
+  $(\varepsilon^{D}_{i})_{i\in I}$は一次独立である.
+\end{prop}
+\begin{proof}\end{proof}
+
+
+\begin{prop}
+$(V,\plus,\act,0_V)$を$\KK$線形空間とする.
+$v\in V$,
+$\varphi\colon V\to\KK\in V^\ast$に対し,
+\begin{align*}
+\shazo{\epsilon_v}{V^\ast}{\KK}
+{\varphi}{\varphi(v)}
+\end{align*}
+とし,
+\begin{align*}
+\shazo{\Phi}{V}{(V^\ast)^\ast}
+{v}{\epsilon_v}
+\end{align*}
+とする.
+このとき, $\Phi$は単射.
+\end{prop}
+\begin{proof}\end{proof}
+
+\begin{remark}
+$(\ee^I_{j})_{j\in I}$
+は,
+$(\KK^{\oplus I})^\ast$
+の基底であった.
+したがって,
+$\varphi\in (\KK^{\oplus I})^\ast$は,
+$\varphi(\ee^I_{j})$の情報だけで決まってしまう.
+したがって,
+$\varphi\in (\KK^{\oplus I})^\ast$に対し,
+\begin{align*}
+\shazo{v_{\varphi}}{I}{\KK}
+{i}{\varphi(\ee^I_{j})}
+\end{align*}
+と$v_\varphi$を定義すると,
+\begin{align*}
+\shazo{\Phi}{\KK^{\oplus I}}{\KK^I}
+{\varphi}{v_{\varphi}}
+\end{align*}
+という写像が定義できるが,
+これが同型写像となる.
+つまり$(\KK^{\oplus I})^\ast\simeq \KK^I$である.
+$v\in \KK^I$は,
+$(v(i))_{i\in I}$と同一視できるので,
+次が成り立っていることになる:
+\begin{align*}
+\Set{(a_i)_{i\in I}|
+\begin{array}{c}
+i\in I\implies a_i\in \KK\\
+\#\Set{i\in I|a_i\neq 0} <\infty
+\end{array}
+}^\ast
+\simeq
+\Set{(a_i)_{i\in I}|
+\begin{array}{c}
+i\in I\implies a_i\in \KK
+\end{array}
+}
+\end{align*}
+\end{remark}
+
 
 \sectionX{章末問題}
 \begin{quiz}
