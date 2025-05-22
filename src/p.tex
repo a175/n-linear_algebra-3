@@ -3270,6 +3270,9 @@ $\KK^n$の\defit{標準基底}と呼ぶ.
   は同じことである.
 \end{remark}
 
+一次独立であることは,
+係数の比較による同一性判定が可能であること同値である.
+
 \begin{prop}
   $(V,\plus,\act,0_V)$を$\KK$線形空間とし,
   $v_1,\ldots,v_r\in V$とする.
@@ -3286,6 +3289,43 @@ v'&=\nu_{(v_1,\ldots,v_r)}(\begin{pmatrix}a'_1\\\vdots\\a'_n\end{pmatrix})
 \end{align*}
 である. $\nu_{(v_1,\ldots,v_r)}$が単射であることから, すぐわかる.
 \end{proof}
+
+$\Braket{v_1,\ldots,v_r}_\KK$は,
+$v_1,\ldots,v_r$の線型結合を集めた集合であったので,
+一次従属性は, 以下の様にも言い換えられる:
+\begin{lemma}
+  $(V,\plus,\act,0_V)$を$\KK$線形空間とし,
+  $v_1,\ldots,v_r\in V$とする.
+  このとき以下は同値:
+  \begin{enumerate}
+  \item $(v_1,\ldots,v_r)$は$\KK$上一次従属.
+  \item
+  次を満たす
+  $\alpha\in\KK\setminus\Set{0}$, $i\in\Set{1,\ldots,r}$が存在する:
+  \begin{enumerate}
+  \item $\alpha\act v_i \in \Braket{v_1,\ldots,v_{i-1},v_{i+1},\ldots,v_{r}}$.
+  \end{enumerate}
+  \end{enumerate}
+\end{lemma}
+\begin{proof}\end{proof}
+とくに, $\alpha^{-1}$を書けることで,
+係数を$1$にすると次がわかる:
+\begin{prop}
+ $\KK$を体とし,
+  $(V,\plus,\act,0_V)$を$\KK$-ベクトル空間とし,
+  $v_1,\ldots,v_r\in V$とする.
+  このとき以下は同値:
+  \begin{enumerate}
+  \item $(v_1,\ldots,v_r)$は$\KK$上一次従属.
+  \item
+  次を満たす
+  $i\in\Set{1,\ldots,r}$が存在する:
+  \begin{enumerate}
+  \item $v_i \in \Braket{v_1,\ldots,v_{i-1},v_{i+1},\ldots,v_{r}}$.
+  \end{enumerate}
+  \end{enumerate}
+\end{prop}
+\begin{proof}\end{proof}
 
 \begin{definition}
   $(V,\plus,\act,0_V)$を$\KK$線形空間とし,
