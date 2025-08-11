@@ -2062,3 +2062,580 @@ $(v_1,\ldots,v_{r},w_{i})$が一次独立となる$i$が存在する.
   は単射である.    
 \end{quiz}
 
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+  $V$, $W$を$\KK$-線形空間とする.
+  $\varphi\colon V\to W$を
+  $\KK$-線形写像とする.
+  $f\in W^\ast$ならば,
+  $f\circ \varphi\in V^\ast$.
+\end{quiz}
+
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+  $V$, $W$を$\KK$-線形空間とする.
+  $\KK$-線形写像
+  $\varphi\colon V\to W$に対し,
+  \begin{align*}
+    \shazo{\Phi}{W^\ast}{V^\ast}
+    {f}{f\circ \varphi}
+  \end{align*}
+  とおく.
+  このとき,
+  $\Phi$は$\KK$線形写像.
+  つまり,
+   $\Phi \in \Hom_{\KK}(W^\ast,{V^\ast})$.
+\end{quiz}
+
+
+\section{\Cref{chap:quotient}の後の問題}
+主に次元定理について知っていれば解けるであろう問題.
+
+\subsection{問題A}
+% 講義: 次元定理
+%% \begin{quiz}
+%%   列ベクトル表示された
+%%   $n$次正方行列
+%%   $A=(\aaa_1|\cdots|\aaa_n)$
+%%   を考える.
+%%   このとき, 以下が同値であることを示せ:
+%%   \begin{enumerate}
+%%   \item $A$が正則である.
+%%   \item $(\aaa_1,\ldots,\aaa_n)$が$\KK^n$の基底である.
+%%    \end{enumerate}
+%% \end{quiz}
+
+
+\begin{quiz}
+  $\CC$は$\RR$-線形空間であり,
+  \begin{align*}
+    \shazo{\nu}{\RR^2}{\CC}
+    {\begin{pmatrix}x\\y\end{pmatrix}}{x+y\sqrt{-1}}
+  \end{align*}
+  は同型写像であった.
+  $\theta\in \RR$とし,
+  $c=\cos(\theta)+\sin(\theta)\sqrt{-1}$とする.
+  このとき, 
+  \begin{align*}
+    \shazo{\varphi}{\CC}{\CC}
+    {z}{cz}
+  \end{align*}
+  とおく.
+  \begin{enumerate}
+  \item
+    $\aaa=\begin{pmatrix}x\\y\end{pmatrix}$ に対し,
+    $(\nu^{-1}\circ\varphi\circ\nu)(\aaa)$を求めよ.
+  \item
+    $(\nu^{-1}\circ\varphi\circ\nu)(\ee^{(2)}_1)$,
+    $(\nu^{-1}\circ\varphi\circ\nu)(\ee^{(2)}_2)$
+    を求めよ.
+  \item
+    次の条件を満たす
+    $A\in \RR^{2\times 2}$
+    を求めよ:
+    \begin{align*}
+      \aaa=\begin{pmatrix}x\\y\end{pmatrix}\in \RR^2
+      \implies
+      \nu(A\aaa)=\varphi(x+y\sqrt{-1}).
+    \end{align*}
+  \end{enumerate}
+\end{quiz}
+
+
+\subsection{問題B}
+
+\begin{quiz}
+  $A$を次の行列とする:
+  \begin{align*}
+    A=
+    \begin{pmatrix}
+      1&1&2&2&3&3&4&4\\
+      1&2&3&4&5&6&7&8\\
+      1&2&2&3&3&4&4&5
+    \end{pmatrix}
+  \end{align*}
+  $\KK$線形写像
+  \begin{align*}
+    \shazo{\mu_A}{\KK^8}{\KK^3}
+    {x}{Ax}
+  \end{align*}
+  に対し, $\dim_\KK(\Img(\mu_A))$を求めよ.
+\end{quiz}
+
+\begin{quiz}
+  $V$を$3$次以下の$\RR$係数多項式を集めた集合とする.
+  このとき,
+  $f\in V$に対し, その微分$\frac{d}{dx}f$を対応させる
+  $\RR$線形写像を$\varphi$とおく. つまり
+  \begin{align*}
+    \shazo{\varphi}{V}{V}
+    {f(x)}{\frac{d}{dx}f}.
+  \end{align*}
+  このとき,
+  $\dim_\KK(\Img(\varphi))$,
+  $\dim_\KK(\Ker(\varphi))$
+  を求めよ.
+\end{quiz}
+
+
+\begin{quiz}
+  $V$, $W$を$\KK$-線形空間とし,
+  $\varphi\colon V\to W$を$\KK$-線形写像とする.
+  このとき,
+  以下の命題の真偽を判定し証明を与えよ:
+  \begin{enumerate}
+  \item $\dim_\KK(\Img(\varphi))\leq \dim_\KK(W)$
+  \item $\dim_\KK(\Img(\varphi))\leq \dim_\KK(V)$
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  $V$, $W$, $U$を$\KK$-線形空間とし,
+  $\varphi\colon V\to W$,
+  $\psi\colon W\to U$を$\KK$-線形写像とする. 
+ このとき,
+  以下の命題の真偽を判定し証明を与えよ:
+  \begin{enumerate}
+  \item $\dim_\KK(\Img(\psi\circ\varphi))\leq \dim_\KK(\Img(\varphi))$
+  \item $\dim_\KK(\Img(\psi\circ\varphi))\leq \dim_\KK(\Img(\psi))$
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  $A=(\aaa_1|\cdots|\aaa_n)\in \KK^{m\times n}$, $B=(\bbb_1|\cdots|\bbb_l)\in\KK^{n\times l}$とする.
+  \begin{align*}
+    \shazo{\mu_B}{\KK^{n}}{\KK^{l}}
+    {x}{Bx}
+  \end{align*}
+  とし, $\ccc_j=\mu_A(\aaa_j)$とする.
+  このとき,
+  以下の命題の真偽を判定し証明を与えよ:
+  \begin{enumerate}
+  \item $\dim_\KK(\Braket{\ccc_1,\ldots,\ccc_n}_\KK)\leq \dim_\KK(\Braket{\aaa_1,\ldots,\aaa_n}_\KK)$.
+  \item $\dim_\KK(\Braket{\ccc_1,\ldots,\ccc_n}_\KK)\leq \dim_\KK(\Braket{\bbb_1,\ldots,\bbb_l}_\KK)$.
+  \end{enumerate}
+\end{quiz}
+
+\section{\Cref{sec:repmat:enumesp,sec:repmat:linmap}の後の問題}
+主に, 表現行列の定義がわかっていれば解ける問題.
+
+\subsection{問題 A}
+\begin{quiz}
+  $\aaa=\ee^{(3)}_1+\ee^{(3)}_2\in\RR^3$とする.
+  $\aaa$と$\zzero_3$を通る直線を$L$とする.
+  $L$を軸として, $\aaa$から$\zzero_3$を見たときに半時計回りになる向きに,
+  $\xx\in\RR^3$を, $\theta$だけ回転させた点を$\varphi(\xx)$とおく.
+  このとき,
+  \begin{align*}
+    \shazo{\varphi}{\RR^3}{\RR^3}{\xx}{\varphi(\xx)}
+  \end{align*}
+  は線形写像である.
+  $\bbb=\ee^{(3)}_1-\ee^{(3)}_2$,
+  $\ccc=\sqrt{2}\ee{(3)}_3$とすると,
+  $(\aaa,\bbb,\ccc)$は$\RR^3$の基底である.
+  \begin{enumerate}
+    \item $\varphi$の$(\aaa,\bbb,\ccc)$, $(\aaa,\bbb,\ccc)$に関する表現行列を求めよ.
+    \item $\varphi$の$(\ee^{(3)}_1,\ee^{(3)}_2,\ee^{(3)}_3)$, $(\ee^{(3)}_1,\ee^{(3)}_2,\ee^{(3)}_3)$に関する表現行列を求めよ.
+  \end{enumerate}
+\end{quiz}
+%(行列式の回).
+\subsection{問題 B}
+\begin{quiz}
+  $z\in\CC$に対し, $\overline z$で$z$の複素共軛を表す.
+  \begin{enumerate}
+  \item $\RR$-線形空間としての$\CC$の基底を(1組)与えよ.
+  \item 次の$\RR$-線形変換$\varphi$に対し, 前問の基底に関する表現行列を与えよ:
+    \begin{align*}
+      \shazo{\varphi}{\CC}{\CC}
+      {z}{\overline{z}}.
+    \end{align*}
+  \item 次の$\RR$-線形変換$\varphi$に対し, 前問の基底に関する表現行列を与えよ:
+    \begin{align*}
+      \shazo{\varphi}{\CC}{\CC}
+      {z}{\frac{\overline{z}+z}{2}}.
+    \end{align*}
+  \item $a,b\in\RR$とする.
+    次の$\RR$-線形変換$\varphi$に対し, 前問の基底に関する表現行列を与えよ:
+    \begin{align*}
+      \shazo{\varphi}{\CC}{\CC}
+      {z}{a\overline{z}+bz}.
+    \end{align*}
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+    $x,y\in\RR$とし,
+    $\alpha=x+y\sqrt{-1}$とする.
+    次の$\RR$-線形変換$\varphi$の表現行列を与えよ:
+    \begin{align*}
+      \shazo{\varphi}{\CC}{\CC}
+      {z}{\alpha z}.
+    \end{align*}
+\end{quiz}
+
+
+\begin{quiz}
+  $\CC^2$は$\CC$-線形空間でもあるが,
+  $\RR$-線形空間でもある.
+  \begin{enumerate}
+  \item
+    $\CC^2$の$\RR$-線形空間としての基底を1組与え,
+    $\dim_\RR(\CC^2)$を与えよ.
+  \item
+    $a,a',b,b',c,c'\in \RR$とし,
+    $\alpha=a+a'\sqrt{-1}$,
+    $\beta=b+b'\sqrt{-1}$,
+    $\gamma=c+c'\sqrt{-1}$とする.
+    \begin{align*}
+      A=
+      \begin{pmatrix}
+        \alpha&\beta\\
+        0&\gamma 
+      \end{pmatrix}
+    \end{align*}
+    とする.
+  全問で与えた基底に関する,
+  次の$\RR$-線形変換$\varphi$の表現行列を与えよ:
+  \begin{align*}
+    \shazo{\varphi}{\CC^2}{\CC^2}
+    {\xx}{A\xx}.
+  \end{align*}
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  $V_n=\Set{f\in \KK[x] |\deg(x) \leq n}\cup\Set{0}$
+  とおく.\footnote{$0\neq f=\sum_{i=0}^n a_n x^n \in \KK[x]$に対し, $\deg(f)=\max\Set{i|a_i \neq 0}$とする.}
+  \begin{enumerate}
+    \item
+      $V_n$は$\KK[x]$の部分空間であることを示せ.
+    \item
+      $\dim_\KK (V_n)$を求めよ.
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  $V_n=\Set{f\in \KK[x] |\deg(x) \leq n}\cup\Set{0}$
+  とおく.
+  基底を与え,
+  その基底に関する,
+  次の線形写像$\varphi$の表現行列を与えよ:
+  \begin{align*}
+    \shazo{\varphi}{V_3}{V_4}
+    {f}{(1+x)f}.
+  \end{align*}
+\end{quiz}
+
+\begin{quiz}
+  $V_n=\Set{f\in \KK[x] |\deg(x) \leq n}\cup\Set{0}$
+  とおく.
+  基底を与え,
+  その基底に関する,
+  次の線形変換$\varphi$の表現行列を与えよ:
+  \begin{align*}
+    \shazo{\varphi}{V_3}{V_3}
+    {f}{\frac{d}{dx}f}.
+  \end{align*}
+  ただし, $\frac{d}{dx}f$は$f$の微分を表す.
+\end{quiz}
+
+\begin{quiz}
+  $V_n=\Set{f\in \KK[x] |\deg(x) \leq n}\cup\Set{0}$
+  とおく.
+  基底を与え,
+  その基底に関する,
+  次の線形変換$\varphi$の表現行列を与えよ:
+  \begin{align*}
+    \shazo{\varphi}{V_3}{V_3}
+    {f}{x\frac{d}{dx}f}.
+  \end{align*}
+  ただし, $\frac{d}{dx}f$は$f$の微分を表す.
+\end{quiz}
+
+
+
+
+\begin{quiz}
+  $\KK$-線形空間$\KK^{2\times 2}$について考える.
+  \begin{align*}
+    A=\begin{pmatrix} a&b\\c&d\end{pmatrix}
+  \end{align*}
+  とする.
+  \begin{enumerate}
+  \item
+    $\KK$-線形空間$\KK^{2\times 2}$の基底を与えよ.
+  \item
+  その基底に関する次の$\KK$線形変換$\varphi$の行現行列を与えよ:
+  \begin{align*}
+    \shazo{\varphi}{\KK^2}{\KK^2}
+    {X}{AX}.
+  \end{align*}
+  \item
+  その基底に関する次の$\KK$線形変換$\psi$の行現行列を与えよ:
+  \begin{align*}
+    \shazo{\psi}{\KK^2}{\KK^2}
+    {X}{XA}.
+  \end{align*}
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  $\KK$-線形空間$\KK^{2\times 2}$について考える.
+  \begin{align*}
+    A=\begin{pmatrix} a&b\\c&d\end{pmatrix}
+  \end{align*}
+  とする.
+    $\KK$-線形空間$\KK^{2\times 2}$の基底を与え,
+  その基底に関する次の$\KK$線形変換$\varphi$の行現行列を与えよ:
+  \begin{align*}
+    \shazo{\varphi}{\KK^2}{\KK^2}
+    {X}{AX-XA}.
+  \end{align*}
+\end{quiz}
+
+\begin{quiz}
+  $A\in \KK^{m\times n}$に対し,
+  $\transposed{A}$で$A$の転置を表す.
+  \begin{enumerate}
+  \item
+  $\KK$-線形空間$\KK^{2\times 2}$の基底を与え,
+  その基底に関する次の$\KK$線形変換$\varphi$の行現行列を与えよ:
+  \begin{align*}
+    \shazo{\varphi}{\KK^{2\times 2}}{\KK^{2\times 2}}
+    {X}{\transposed{X}}.
+  \end{align*}
+\item
+  $\KK$-線形空間$\KK^{3\times 2}$, $\KK^{2\times 3}$の基底をそれぞれ与え,
+  その基底に関する次の$\KK$線形変換$\varphi$の行現行列を与えよ:
+  \begin{align*}
+    \shazo{\varphi}{\KK^{2\times 3}}{\KK^{3\times 2}}
+    {X}{\transposed{X}}.
+  \end{align*}
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  $\RR$-線形空間
+  $\RR^4$について考える.
+  $\aaa\in\RR$の第$i$成分を$a_i$,
+  $\bbb\in\RR$の第$i$成分を$b_i$とするとき,  
+  $\braket{\aaa,\bbb}=\sum_{i=1}^4a_ib_i$とする.
+  \begin{align*}
+    \ccc=
+  \begin{pmatrix}
+   a\\b\\c\\d
+  \end{pmatrix}
+  \end{align*}
+  とする.
+  このとき,
+  $\RR^4$と$\RR$の基底を与え,
+  その基底に関する次の$\RR$-線形写像$\varphi$の表現行列を与えよ:
+  \begin{align*}
+    \shazo{\varphi}{\RR^4}{\RR}
+    {\xx}{\Braket{\aaa,\xx}}.
+  \end{align*}
+\end{quiz}
+
+\begin{quiz}
+  $e_0,\ldots,e_4\in \RR^\RR$を
+  \begin{align*}
+    &\shazo{e_0}{\RR}{\RR}{x}{1}
+    \\
+    &\shazo{e_1}{\RR}{\RR}{x}{\cos(x)}
+    \\
+    &\shazo{e_2}{\RR}{\RR}{x}{\sin(x)}
+    \\
+    &\shazo{e_3}{\RR}{\RR}{x}{\cos(2x)}
+    \\
+    &\shazo{e_4}{\RR}{\RR}{x}{\sin(2x)}
+  \end{align*}
+  とし,
+  $V=\Braket{e_0,e_1,\ldots,e_4}_\RR$とする,
+  \begin{enumerate}
+  \item $(e_0,e_1,\ldots,e_4)$は$V$の基底であることを示せ.
+  \item 次の$\RR$-線形変換の$(e_0,e_1,\ldots,e_4)$に関する
+    表現行列を求めよ:
+    \begin{align*}
+    \shazo{\varphi}{V}{V}
+      {f}{\frac{d}{dx}f}.
+    \end{align*}
+    ただし$\frac{d}{dx}f$は関数$f$の導関数を表す.
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  $n=4$,
+  $m=4$とする.
+  $V$を$(e_1,\ldots,e_n)$を基底とする$\KK$-線形空間とする.
+  $W$を$(f_1,\ldots,f_m)$を基底とする$\KK$-線形空間とする.
+  次の図形において,
+  $k$と書かれた矢印が
+  $e_i$から$e_j$に向かって引かれている
+  (つまり$e_i\xrightarrow{k} e_j$となっている)
+  とき,
+  $v_k=e_i-e_j$とおく:
+  \begin{align*}
+    \begin{picture}(40,40)
+      \put(0,0){\makebox(0,0){1}}
+      \put(40,0){\makebox(0,0){2}}
+      \put(40,40){\makebox(0,0){3}}
+      \put(0,40){\makebox(0,0){4}}
+      \put(5,0){\vector(1,0){30}}
+      \put(40,5){\vector(0,1){30}}
+      \put(35,40){\vector(-1,0){30}}
+      \put(0,35){\vector(0,-1){30}}
+      \put(20,-5){\makebox(0,0){1}}
+      \put(45,20){\makebox(0,0){2}}
+      \put(20,45){\makebox(0,0){3}}
+      \put(-5,20){\makebox(0,0){4}}
+    \end{picture}
+  \end{align*}
+  線形写像$\varphi\colon W\to V$を
+  $\varphi(f_i)=v_i$で定義する.
+  \begin{enumerate}
+  \item $\varphi$の$(f_1,\ldots,f_m)$, $(e_1,\ldots,e_n)$に関する表現行列を求めよ.
+  \item $\Img(\varphi)$の基底を求めよ.
+  \item $\Ker(\varphi)$の基底を求めよ.
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  $n=4$,
+  $m=5$とする.
+  $V$を$(e_1,\ldots,e_n)$を基底とする$\KK$-線形空間とする.
+  $W$を$(f_1,\ldots,f_m)$を基底とする$\KK$-線形空間とする.
+  次の図形において,
+  $k$と書かれた矢印が
+  $e_i$から$e_j$に向かって引かれている
+  (つまり$e_i\xrightarrow{k} e_j$となっている)
+  とき,
+  $v_k=e_i-e_j$とおく:
+  \begin{align*}
+    \begin{picture}(40,40)
+      \put(0,0){\makebox(0,0){1}}
+      \put(40,0){\makebox(0,0){2}}
+      \put(40,40){\makebox(0,0){3}}
+      \put(0,40){\makebox(0,0){4}}
+      \put(5,0){\vector(1,0){30}}
+      \put(40,5){\vector(0,1){30}}
+      \put(35,40){\vector(-1,0){30}}
+      \put(0,35){\vector(0,-1){30}}
+      \put(4,4){\vector(1,1){32}}
+      \put(20,-5){\makebox(0,0){1}}
+      \put(45,20){\makebox(0,0){2}}
+      \put(20,45){\makebox(0,0){3}}
+      \put(-5,20){\makebox(0,0){4}}
+      \put(23,17){\makebox(0,0){5}}
+    \end{picture}
+  \end{align*}
+  線形写像$\varphi\colon W\to V$を
+  $\varphi(f_i)=v_i$で定義する.
+  \begin{enumerate}
+  \item $\varphi$の$(f_1,\ldots,f_m)$, $(e_1,\ldots,e_n)$に関する表現行列を求めよ.
+  \item $\Img(\varphi)$の基底を求めよ.
+  \item $\Ker(\varphi)$の基底を求めよ.
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  $n=4$,
+  $m=2$とする.
+  $V$を$(e_1,\ldots,e_n)$を基底とする$\KK$-線形空間とする.
+  $W$を$(f_1,\ldots,f_m)$を基底とする$\KK$-線形空間とする.
+  次の図形において,
+  $k$と書かれた矢印が
+  $e_i$から$e_j$に向かって引かれている
+  (つまり$e_i\xrightarrow{k} e_j$となっている)
+  とき,
+  $v_k=e_i-e_j$とおく:
+  \begin{align*}
+    \begin{picture}(40,40)
+      \put(0,0){\makebox(0,0){1}}
+      \put(40,0){\makebox(0,0){2}}
+      \put(40,40){\makebox(0,0){3}}
+      \put(0,40){\makebox(0,0){4}}
+      \put(5,0){\vector(1,0){30}}      
+      %\put(35,40){\vector(-1,0){30}}
+      %\put(0,35){\vector(0,-1){30}}
+      \put(40,5){\vector(0,1){30}}
+      %\put(4,4){\vector(1,1){32}}
+      \put(20,-5){\makebox(0,0){1}}
+      \put(45,20){\makebox(0,0){2}}
+      %\put(20,45){\makebox(0,0){3}}
+      %\put(-5,20){\makebox(0,0){4}}
+      %\put(23,17){\makebox(0,0){5}}
+    \end{picture}
+  \end{align*}
+  線形写像$\varphi\colon W\to V$を
+  $\varphi(f_i)=v_i$で定義する.
+  \begin{enumerate}
+  \item $\varphi$の$(f_1,\ldots,f_m)$, $(e_1,\ldots,e_n)$に関する表現行列を求めよ.
+  \item $\Img(\varphi)$の基底を求めよ.
+  \item $\Ker(\varphi)$の基底を求めよ.
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  次の$\RR$-線形写像$\varphi$の標準基底による表現行列を与えよ:
+  \begin{align*}
+    \shazo{\varphi}{\RR^3}{\RR^2}
+    {\begin{pmatrix}x\\y\\z\end{pmatrix}}{2x+4y\\x+5z}
+  \end{align*}
+\end{quiz}
+
+\begin{quiz}
+  次を満たす$\RR$-線形写像$\varphi\colon \RR^2\to \RR^3$の標準基底による表現行列を与えよ:
+  \begin{align*}
+    \varphi(\begin{pmatrix}1\\1\end{pmatrix})=\begin{pmatrix}2\\4\\6\end{pmatrix}
+    \varphi(\begin{pmatrix}1\\-1\end{pmatrix})=\begin{pmatrix}1\\3\\7\end{pmatrix}
+  \end{align*}
+\end{quiz}
+
+\begin{quiz}
+  $\xx\in \RR^2$に対し,
+  $\xx$を
+  $2$次元ユークリッド空間$\RR^2$において原点を中心に$\theta$だけ回転させた点
+  $\xx'$に対応させる変換は,
+  $\RR$-線形変換である.
+  この線形変換の表示基底に関する表現行列を求めよ.
+\end{quiz}
+
+\begin{quiz}
+  $\aaa\in\RR^3$を
+  \begin{align*}
+    \aaa=\begin{pmatrix}1\\0\\0\end{pmatrix}
+  \end{align*}
+  とする.
+  $\xx\in \RR^3$に対し,
+  $\xx$を
+  $3$次元ユークリッド空間$\RR^2$において$x$軸
+  (つまり原点と$\aaa$を通る直線)
+  を軸に$\theta$だけ回転させた点
+  $\xx'$
+  (つまり,
+  原点から$\aaa$を見たときに時計回りになる方向に$\theta$だけ回転させた点$\xx'$)
+  に対応させる変換は,
+  $\RR$-線形変換である.
+  この線形変換の表示基底に関する表現行列を求めよ.
+\end{quiz}
+
+\begin{quiz}
+  $\aaa\in\RR^3$を
+  \begin{align*}
+    \aaa=\begin{pmatrix}1\\1\\1\end{pmatrix}
+  \end{align*}
+  とする.
+  $\xx\in \RR^3$に対し,
+  $\xx$を
+  $3$次元ユークリッド空間$\RR^2$において
+  原点と$\aaa$を通る直線
+  を軸に$\theta$だけ回転させた点
+  $\xx'$
+  (つまり,
+  原点から$\aaa$を見たときに時計回りになる方向に$\theta$だけ回転させた点$\xx'$)
+  に対応させる変換は,
+  $\RR$-線形変換である.
+  この線形変換の表示基底に関する表現行列を求めよ.
+\end{quiz}
+
+

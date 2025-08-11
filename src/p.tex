@@ -54,7 +54,11 @@
 直交補空間などは扱わない.
 また, ジョルダン標準形に関すること(最小多項式の求め方など)なども,
 基本的には扱わない.
-
+商空間については,
+次元定理を説明する際に一応定義はしているものの,
+基本的には取り扱わない.
+同値関係などを持ち出すことなく,
+最短で導入し, 最短で忘却する方針で記述してある.
 
 1年生前期に開講される線形代数I
 の履修を前提とする.
@@ -4321,8 +4325,9 @@ $\Ker(\varpi)=V$である.
 
 
 \begin{cor}
-$U=V\oplus W$
-  であるとき, $U/V\simeq W$.
+$\KK$-線形空間$U$が
+$U=V\oplus W$と内部直和に分解するとき,
+  $U/V\simeq W$.
 \end{cor}
 \begin{proof}
 $U=V\oplus W$であるので,
@@ -4439,6 +4444,7 @@ $U=V\oplus W$であるので,
 \chapter{表現行列}
 \label{chap:repmat}
 \section{数ベクトル空間上の線形写像}
+\label{sec:repmat:enumesp}
 $\KK^n$から$\KK^m$への$\KK$-線形写像について考える.
 %% \begin{lemma}
 %%   $\varphi\colon \KK^n\to \KK^m$,
@@ -4566,6 +4572,7 @@ $A\in\KK^{m\times n}$に対して,
 
 
 \section{表現行列}
+\label{sec:repmat:linmap}
 $(V,\plus,\act)$を$\KK$-線形空間とし, $v_1,\ldots,v_n\in V$とする.
 このとき,
 \begin{align*}
@@ -4585,21 +4592,33 @@ $\nu_{(v_1,\ldots,v_n)}$は同型写像である.
   $(\nu_B)^{-1}\circ \varphi\circ \nu_D$は,
   $\KK^n$から $\KK^m$への$\KK$-線形写像である.
   $\mu_A=(\nu_B)^{-1}\circ \varphi\circ \nu_D$
-  を満たす$A\in\KK^{m\times n}$を$\varphi$の$D$, $B$に関する
-  表現行列と呼ぶ.
+  を満たす$A\in\KK^{m\times n}$を
+  $D$, $B$に関する$\varphi$の
+ \defit{表現行列}と呼ぶ.
 \end{definition}
-\begin{prop}
+\begin{remark}
+  $D$, $B$に関する$\varphi$の表現行列$A$の定義に現れる写像に対する条件を
+  可換図式で表すと以下のようになる:
+  \begin{align*}
+  \begin{tikzcd}[ampersand replacement=\&]
+  \KK^n \arrow[r, "\mu_{A}", dotted] \arrow[d, "\nu_{D}"] \& \KK^m  \\
+  V \arrow[r, "\varphi"] \& W \arrow[u,"\nu_B^{-1}"]
+  \end{tikzcd}
+  \end{align*}
+\end{remark}
+\begin{lemma}
   $V$, $W$を$\KK$-線形空間とし,
   $D=(e_1,\ldots,e_n)$を$V$の基底,
   $B=(w_1,\ldots,w_m)$を$W$の基底とする.
-  $\varphi\colon V\to W$を$\KK$-線形写像とし,
-  $A\in\KK^{m\times n}$を$\varphi$の$D$, $B$に関する表現行列とする.
-このとき,
-\begin{align*}
-  \varphi=\nu_B\circ \mu_A\circ (\nu_{D})^{-1}
-\end{align*}
-である.
-\end{prop}
+  $\varphi\colon V\to W$を$\KK$-線形写像と
+  $A\in\KK^{m\times n}$に対し,
+  以下は同値:
+\begin{enumerate}
+\item   $\mu_A=(\nu_B)^{-1}\circ \varphi\circ \nu_D$.
+\item   $\nu_B\circ \mu_A=\circ \varphi\circ \nu_D$.
+\item   $\nu_B\circ \mu_A \circ \nu_D^{-1}=\circ \varphi$.
+\end{enumerate}
+\end{lemma}
 \begin{proof}\end{proof}
 
 \begin{prop}
@@ -4659,7 +4678,7 @@ $J=\Set{1,\ldots,n}$.
 \begin{enumerate}
   \item $\varphi+\varphi'$の$B$, $D$に関する表現行列は$F+F'$.
   \item $\alpha\varphi$の$B$, $D$に関する表現行列は$\alpha F$.
-  \item $\psi\varphi'$の$B$, $C$に関する表現行列は$GF$.
+  \item $\psi\circ\varphi'$の$B$, $C$に関する表現行列は$GF$.
 \end{enumerate}
 \end{prop}
 \begin{proof}\end{proof}
@@ -4675,8 +4694,17 @@ $J=\Set{1,\ldots,n}$.
   $A\in\KK^{m\times n}$を$\varphi$の$D$, $B$に関する表現行列とする.
   このとき,
 \begin{enumerate}
-  \item $\Img(\varphi)=\Set{\nu_B(\xx) |\xx\in \Img(\mu_A)}$.
-  \item $\Ker(\varphi)=\Set{\nu_D(\xx) |\xx\in \Ker(\mu_A)}$.
+  \item
+  $\Img(\mu_A)$と
+  $\Img(\varphi)$は$\nu_B$で同型.
+  特に,
+  $\Set{\nu_B(\xx) |\xx\in \Img(\mu_A)}=\Img(\varphi)$.
+  \item
+  $\Ker(\varphi)$と
+  $\Ker(\mu_A)$は
+  $\nu_D$で同型.
+  特に,
+  $\Set{\nu_D(\xx) |\xx\in \Ker(\mu_A)}=\Ker(\varphi)$.
 \end{enumerate}
 \end{prop}
 \begin{proof}\end{proof}
