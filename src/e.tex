@@ -2639,3 +2639,621 @@ $(v_1,\ldots,v_{r},w_{i})$が一次独立となる$i$が存在する.
 \end{quiz}
 
 
+\section{}
+%\section{10/15回目: \schoolCalender{10}}
+%\subsection{レポート課題 (締め切り: \schoolCalender{11})}
+\begin{quiz}
+  \begin{align*}
+    A=
+    \begin{pmatrix}
+      1&1&1\\
+      1&1&1\\
+      1&1&1
+    \end{pmatrix}
+  \end{align*}
+  とする.
+  \begin{enumerate}
+  \item 次の$v$に対し, $Av=cv$となる$c$が存在することを示せ:
+    \begin{align*}
+      v=\begin{pmatrix}1\\1\\1\end{pmatrix}
+    \end{align*}
+  \item 次の$v$に対し, $Av=cv$となる$c$が存在することを示せ:
+    \begin{align*}
+      v=\begin{pmatrix}1\\-1\\0\end{pmatrix}
+    \end{align*}
+  \item 次の$v$に対し, $Av=cv$となる$c$が存在することを示せ:
+    \begin{align*}
+      v=\begin{pmatrix}0\\1\\-1\end{pmatrix}
+    \end{align*}
+  \item 次の$v$に対し, $Av=cv$となる$c$が存在しないことを示せ:
+    \begin{align*}
+      v=\begin{pmatrix}1\\0\\0\end{pmatrix}
+    \end{align*}
+  \end{enumerate}
+\end{quiz}
+
+\subsection{問題}
+
+
+\begin{quiz}
+  \begin{align*}
+    A=
+    \begin{pmatrix}
+      1&1&1&1\\
+      1&2&3&4\\
+      2&3&4&5
+    \end{pmatrix}
+  \end{align*}
+  とし,
+  \begin{align*}
+    \shazo{\mu_A}{\KK^4}{\KK^3}
+    {x}{Ax}
+  \end{align*}
+  とする.
+  また,
+  \begin{align*}
+    \shazo{\varphi}{\KK^4}{\Img(\mu_A)}
+    {x}{\mu_A(x)}
+  \end{align*}
+  とする.
+  基底を自分で与え,
+  その基底に関する$\varphi$の表現行列を求めよ.
+\end{quiz}
+
+\begin{quiz}
+  \begin{align*}
+    A=
+    \begin{pmatrix}
+      1&1&1\\
+      1&4&7\\
+      2&5&6\\
+      2&3&4
+    \end{pmatrix}
+  \end{align*}
+  とし,
+  \begin{align*}
+    \shazo{\mu_A}{\KK^3}{\KK^4}
+    {x}{Ax}
+  \end{align*}
+  とする.
+  また,
+  \begin{align*}
+    V=\Braket{
+      \begin{pmatrix}1\\1\\1\end{pmatrix},
+      \begin{pmatrix}1\\2\\3\end{pmatrix},
+      \begin{pmatrix}2\\3\\4\end{pmatrix},
+    }_{\KK}
+  \end{align*}
+  とし,
+  \begin{align*}
+    \shazo{\varphi}{V}{\KK^4}
+    {x}{\mu_A(x)}
+  \end{align*}
+  とする.
+  基底を自分で与え,
+  その基底に関する$\varphi$の表現行列を求めよ.
+\end{quiz}
+
+\begin{quiz}
+  $\sigma\in S_n$とする.
+  \begin{align*}
+    \shazo{\varphi}{\KK^n}{\KK^n}
+    {\begin{pmatrix}x_1\\\vdots\\v_n\end{pmatrix}}{\begin{pmatrix}x_{\sigma(n)}\\\vdots\\v_{\sigma(n)}\end{pmatrix}}
+  \end{align*}
+  とする.
+  $\KK^n$の標準基底に関する$\varphi$の表現行列を求めよ.
+\end{quiz}
+
+\begin{quiz}
+  $V$を$4$次以下の実係数多項式全体のなす$\RR$-線形空間とする.
+  $\varphi$を次の線形変換とする:
+  \begin{align*}
+    \shazo{\varphi}{V}{V}
+    {f}{x\frac{d}{dx}f}
+  \end{align*}
+  ただし$\frac{d}{dx}f$は$f$の微分を表す.
+  \begin{enumerate}
+  \item $V$の基底を与え, $\varphi$の表現行列を与えよ.
+  \item $\varphi$が同型写像か判定し証明を与えよ.
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  $n$次元$\KK$線形空間$U$が,
+  $U=V\oplus W$と内部直和に分解しているとする.
+  線形変換
+  $\varphi\colon U\to U$
+  が
+  $v\in V$に対して
+  $\varphi(v)=v$,
+  $w\in W$に対して
+  $\varphi(w)=w$
+  を満たしているとする.
+  基底を自分で与え,
+  その基底に関する$\varphi$の表現行列を求めよ. 
+\end{quiz}
+
+
+\begin{quiz}
+  $\CC$は$\RR$-線形空間であった.
+  $V$を$3$次以下の実多項式全体のなす$\RR$-線形空間とする.
+  $\alpha=1+\sqrt{-1}$とし,
+  $\varphi$を次の線形変換とする:
+  \begin{align*}
+    \shazo{\varphi}{V}{\CC}
+          {f}{f|_{x=\alpha}},
+  \end{align*}
+  ただし$f|_{x=\alpha}$は$f$に現れる不定元$x$を$\alpha$に置き換えて得られる
+  複素数を表す.
+  基底を自分で与え,
+  その基底に関する$\varphi$の表現行列を求めよ. 
+\end{quiz}
+
+\begin{quiz}
+    $V$を$n$次元$\KK$-線形空間とし,
+  $D$を$V$の基底とする.
+  $W$を$m$次元$\KK$-線形空間とし,
+  $B$を$W$の基底とする.
+  $\varphi\in \Hom_\KK(V,W)$に対し,
+  $D$, $B$に関する$\varphi$の表現行列を$A_\varphi$とかくことにする.
+  \begin{align*}
+    \shazo{\Phi}{\Hom_\KK(V,W)}{\KK^{m\times n}}
+    {\varphi}{A_\varphi}
+  \end{align*}
+  とする.
+  このとき,
+  以下の命題の真偽を判定し証明を与えよ:
+  \begin{enumerate}
+  \item これは同型写像である.
+  \end{enumerate}
+\end{quiz}
+
+
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+  $V$を$n$次元$\KK$-線形空間とし,
+  $W$を$m$次元$\KK$-線形空間とする.
+  $\varphi\colon V\to W$を$\KK$-線形写像であるとする.
+  このとき,
+  $\varphi$の
+  表現行列が
+  \begin{align*}
+    \left(
+    \begin{array}{c|c}
+      E_r|O_{r,n-r}\\\hline
+      O_{m-r}|O_{m-r,n-r}
+    \end{array}
+    \right)
+  \end{align*}
+  となるような
+  $V$, $W$の基底が存在する.
+\end{quiz}
+
+\begin{quiz}
+  $V$, $V'$を$n$次元$\KK$-線形空間とし,
+  $W$, $W'$を$m$次元$\KK$-線形空間とする.
+  $\varphi\colon V\to V'$を同型写像,
+  $\phi\colon W\to W'$を同型写像とする.
+  $\KK$-線形写像
+  $\psi\colon V\to W$,
+  $\psi'\colon V'\to W'$が
+  $\psi'\circ\varphi=\phi\circ\psi$
+  を満たしているとする.
+  $D=(v_1,\ldots,v_n)$を$V$の基底,
+  $B=(w_1,\ldots,w_m)$を$W$の基底とし,
+  $D$, $B$に関する$\psi$の表現行列を$A$とする.
+  このとき,
+  以下の命題の真偽を判定し証明を与えよ:
+  \begin{enumerate}
+  \item $D'=(\varphi(v_1),\ldots,\varphi(v_n))$は$V'$の基底.
+  \item $B'=(\phi(w_1),\ldots,\phi(w_m))$は$V'$の基底.
+  \item $\psi'$は$D'$, $B'$に関する表現行列は$A$.
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+  $V$を$\KK$-線形空間とする.
+  $D=(v_1,\ldots,v_n)$,
+  $B=(w_1,\ldots,w_n)$を$V$の基底とする.
+  次が成り立つとき, $D$から$B$への基底の変換行列は上半三角行列である:
+  \begin{align*}
+    k\in\Set{1,\ldots,n}\implies \Braket{v_1,\ldots,v_k}_\KK=\Braket{w_1,\ldots,w_k}_\KK.
+  \end{align*}
+\end{quiz}
+
+\begin{quiz}
+  $V$, $W$を$\KK$-線形空間とする.
+  \begin{align*}
+    \shazo{F}{V\times V}{W}
+    {(v,u)}{F(v,u)}
+  \end{align*}
+  が以下の条件を満たしているとする:
+  \begin{align*}
+    v, v', u \in V,\ c, c'\in \KK &\implies F(cv+c'v',u)=cF(v,u)+c'F(v',u).\\
+    v, u, u' \in V,\ c, c'\in \KK &\implies F(v,cu+c'u')=cF(v,u')+c'F(v,u').\\
+    v, u \in V,\ v=u &\implies F(v,u)=0_W.
+  \end{align*}
+  このとき, 次の命題の真偽を判定し証明を与えよ:
+  \begin{align*}
+    v, u \in V &\implies F(v,u)=-F(v,u).
+  \end{align*}
+\end{quiz}
+
+\begin{quiz}
+  $\KK$を体とし$1+1\neq 0$とする.
+  $V$, $W$を$\KK$-線形空間とする.
+  \begin{align*}
+    \shazo{F}{V\times V}{W}
+    {(v,u)}{F(v,u)}
+  \end{align*}
+  が以下の条件を満たしているとする:
+  \begin{align*}
+    v, v', u \in V,\ c, c'\in \KK &\implies F(cv+c'v',u)=cF(v,u)+c'F(v',u).\\
+    v, u, u' \in V,\ c, c'\in \KK &\implies F(v,cu+c'u')=cF(v,u')+c'F(v,u').\\
+    v, u \in V &\implies F(v,u)=-F(v,u).
+  \end{align*}
+  このとき, 次の命題の真偽を判定し証明を与えよ:
+  \begin{align*}
+    v, u \in V,\ v=u &\implies F(v,u)=0_W.
+  \end{align*}
+\end{quiz}
+
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+  $V$, $W$, $U$を$\KK$-線形空間とする.
+  \begin{align*}
+    \shazo{F}{V\times V}{W}
+    {(v,u)}{F(v,u)}
+  \end{align*}
+  多重線形かつ交代的であるとする.
+  $\varphi\colon W\to U$を$\KK$線形写像とする.
+  このとき, $\varphi\circ F$は
+    多重線形かつ交代的である.
+\end{quiz}
+
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+  $V$, $W$, $U$を$\KK$-線形空間とする.
+  \begin{align*}
+    \shazo{F}{V\times V}{W}
+    {(v,u)}{F(v,u)}
+  \end{align*}
+  多重線形かつ交代的であるとする.
+  $\varphi\colon U\to V$を$\KK$線形写像とする.
+  このとき,
+  \begin{align*}
+    \shazo{F'}{U\times U}{W}
+    {(v,u)}{F(\varphi(v),\varphi(u))}
+  \end{align*}
+  は
+  多重線形かつ交代的である.
+\end{quiz}
+
+%\endinput
+%\newpage
+\section{}
+%\section{11/15回目: \schoolCalender{11}}
+%\subsection{レポート課題 (締め切り: \schoolCalender{12})}
+\begin{quiz}
+  \begin{align*}
+    A=
+    \begin{pmatrix}
+      1&1&1\\
+      1&1&1\\
+      1&1&1
+    \end{pmatrix}
+  \end{align*}
+  とし, $\CC^3$上の線形変換
+  \begin{align*}
+    \shazo{\mu_A}{\CC^3}{\CC^3}
+    {\xx}{A\xx}
+  \end{align*}
+  を考える. また,
+  \begin{align*}
+    u&=\begin{pmatrix}1\\1\\1\end{pmatrix}&
+    v&=\begin{pmatrix}1\\-1\\0\end{pmatrix}&
+    w&=\begin{pmatrix}0\\1\\-1\end{pmatrix}
+  \end{align*}
+  とする.
+  \begin{enumerate}
+  \item $u,v,w$は$A$の固有ベクトルであることを示せ.
+  \item 列ベクトル表示された行列$P=(u|v|w)$は正則であることを示せ.
+  \item 基底$(u,v,w)$に関する$\mu_A$の表現行列を求めよ.
+  \end{enumerate}
+\end{quiz}
+
+\subsection{問題}
+\begin{quiz}
+  $A\in \CC^{4\times 4}$を次の行列とする:
+  \begin{align*}
+    A=
+    \begin{pmatrix}
+      1&2&1&2\\
+      2&1&2&1\\
+      1&2&1&2\\
+      2&1&2&1\\
+    \end{pmatrix}
+  \end{align*}
+  以下の命題の真偽を判定し証明を与えよ:
+  \begin{enumerate}
+  \item 次のベクトルが$A$の固有ベクトルである:
+      $\begin{pmatrix}1\\1\\1\\1\end{pmatrix}$
+  \item 次のベクトルが$A$の固有ベクトルではない:
+      $\begin{pmatrix}1\\2\\3\\4\end{pmatrix}$
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  $A\in \CC^{4\times 4}$を次の行列とする:
+  \begin{align*}
+    A=
+    \begin{pmatrix}
+      1&2&3&4\\
+      0&1&2&3\\
+      0&0&1&2\\
+      0&0&0&1\\
+    \end{pmatrix}
+  \end{align*}
+  $A$の固有空間をすべて求めよ.
+\end{quiz}
+
+
+\begin{quiz}
+  $V$を$3$次以下の$\RR$係数多項式を集めた集合とする.
+  このとき,
+  $f\in V$に対し, その微分$\frac{d}{dx}f$を対応させる
+  $\RR$-線形変換を$\varphi$とおく. つまり
+  \begin{align*}
+    \shazo{\varphi}{V}{V}
+    {f(x)}{\frac{d}{dx}f}.
+  \end{align*}
+  このとき,
+  $\varphi$の固有空間を求めよ.
+\end{quiz}
+
+\begin{quiz}
+  $V_n=\Set{f\in \KK[x] |\deg(x) \leq n}\cup\Set{0}$
+  とおく.
+  次の$\RR$-線形変換$\varphi$の固有空間を求めよ:
+  \begin{align*}
+    \shazo{\varphi}{V_3}{V_3}
+    {f}{x\frac{d}{dx}f}.
+  \end{align*}
+  ただし, $\frac{d}{dx}f$は$f$の微分を表す.
+\end{quiz}
+
+\begin{quiz}
+  次の$\RR$-線形変換$\varphi$の固有空間を求めよ:
+  \begin{align*}
+    \shazo{\varphi}{\CC}{\CC}
+    {z}{\overline{z}}.
+  \end{align*}
+  ただし, $\overline{z}$は$z$の複素共軛を表す.
+\end{quiz}
+
+\begin{quiz}
+  $\aaa=(a_i)_{i}, \bbb=(b_i)_i \in \RR^5$に対し,
+  $\Braket{\aaa,\bbb}=\sum_{i=1}^na_ib_i$とする.
+  \begin{align*}
+    \ccc=\frac{1}{\sqrt 5}\begin{pmatrix}1\\1\\1\\1\\1\end{pmatrix}
+  \end{align*}  
+  次の$\RR$-線形変換$\varphi$の固有空間を求めよ:
+  \begin{align*}
+    \shazo{\varphi}{\RR}{\RR}
+    {\xx}{\Braket{\ccc,\xx}\ccc}.
+  \end{align*}
+\end{quiz}
+
+
+
+\begin{quiz}
+  $\varphi\colon V\to V$を全単射な$\KK$-線形変換とする.
+  以下の命題の真偽を判定し証明を与えよ:
+  \begin{enumerate}
+  \item
+      $0$は$\varphi$の固有値ではない.
+  \item
+  $\lambda$が$\varphi$の固有値であるとき,
+    $\lambda^{-1}$は$\varphi^{-1}$の固有値である.
+  \end{enumerate}
+\end{quiz}
+
+
+\begin{quiz}
+  以下の線形変換の固有空間を求めよ:
+  \begin{enumerate}
+  \item $\CC$-線形変換$\varphi$:
+    \begin{align*}
+      \shazo{\varphi}{\CC^3}{\CC^3}
+      {\xx}{\begin{pmatrix}0&-1&0\\1&0&0\\0&0&0\end{pmatrix}}
+    \end{align*}
+  \item $\RR$-線形変換$\psi$:
+    \begin{align*}
+      \shazo{\psi}{\RR^3}{\RR^3}
+      {\xx}{\begin{pmatrix}0&-1&0\\1&0&0\\0&0&0\end{pmatrix}}
+    \end{align*}
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  以下の線形変換の固有空間を求めよ:
+  \begin{enumerate}
+  \item $\CC$-線形変換$\varphi$:
+    \begin{align*}
+      \shazo{\varphi}{\CC^3}{\CC^3}
+      {\xx}{\begin{pmatrix}0&2&0\\1&0&0\\0&0&0\end{pmatrix}}
+    \end{align*}
+  \item $\RR$-線形変換$\psi$:
+    \begin{align*}
+      \shazo{\psi}{\RR^3}{\RR^3}
+      {\xx}{\begin{pmatrix}0&2&0\\1&0&0\\0&0&0\end{pmatrix}}
+    \end{align*}
+  \item $\QQ$-線形変換$\psi$:
+    \begin{align*}
+      \shazo{\phi}{\QQ^3}{\QQ^3}
+      {\xx}{\begin{pmatrix}0&2&0\\1&0&0\\0&0&0\end{pmatrix}}
+    \end{align*}
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+  $A\in\KK^{n\times n}$に対し,
+  $0$が$A$の固有値であることと,
+  $\rank(A)<n$は同値である.
+  また,
+  $A$の固有値$0$に属する固有空間の次元は,
+  $n-\rank(A)$である.
+\end{quiz}
+
+\begin{quiz}
+  $\zzero_n\neq \aaa=A\in\KK^{n\times 1}=\KK^n$,
+  $B\in\KK^{1\times n}$とし,
+  $C=AB\in\KK^{n\times n}$, $(\lambda)=BA$とする.
+  このとき,
+  \begin{enumerate}
+  \item $\aaa$は固有値$\lambda$に属する$C$の固有ベクトルである.
+  \item 固有値$0$に属する$A$の固有空間の次元を求めよ.
+  \item $A$の固有値をすべて求めよ.
+  \end{enumerate}
+\end{quiz}
+
+
+
+\section{}
+%\section{12/15回目: \schoolCalender{12}}
+%\subsection{レポート課題 (締め切り: \schoolCalender{13})}
+%(次回小テストのため) レポート課題は出題しません.
+レポート課題はありません.
+
+\subsection{問題}
+\begin{quiz}
+  次の命題の真偽を判定し証明を与えよ:
+  $V$を$3$次以下の$\RR$係数多項式を集めた集合とする.
+  このとき,
+  $f\in V$に対し, その微分$\frac{d}{dx}f$を対応させる
+  $\RR$-線形変換を$\varphi$とおく. つまり
+  \begin{align*}
+    \shazo{\varphi}{V}{V}
+    {f(x)}{\frac{d}{dx}f}.
+  \end{align*}
+  このとき,
+  $\varphi$は対角化可能ではない.
+\end{quiz}
+
+\begin{quiz}
+  $V_n=\Set{f\in \KK[x] |\deg(x) \leq n}\cup\Set{0}$
+  とおく.
+  \begin{align*}
+    \shazo{\varphi}{V_3}{V_3}
+    {f}{x\frac{d}{dx}f}.
+  \end{align*}
+  ただし, $\frac{d}{dx}f$は$f$の微分を表す.
+  $\varphi$の表現行列が対角行列となるような$V_3$の基底と,
+  そのときの表現行列を求めよ.
+\end{quiz}
+
+\begin{quiz}
+  次の$\RR$-線形変換$\varphi$について考える:
+  \begin{align*}
+    \shazo{\varphi}{\CC}{\CC}
+    {z}{\overline{z}}.
+  \end{align*}
+  ただし, $\overline{z}$は$z$の複素共軛を表す.
+  $\varphi$の表現行列が対角行列となるような$V_3$の基底と,
+  そのときの表現行列を求めよ.
+\end{quiz}
+
+\begin{quiz}
+  $\aaa=(a_i)_{i}, \bbb=(b_i)_i \in \RR^5$に対し,
+  $\Braket{\aaa,\bbb}=\sum_{i=1}^na_ib_i$とする.
+  \begin{align*}
+    \ccc=\frac{1}{\sqrt 5}\begin{pmatrix}1\\1\\1\\1\\1\end{pmatrix}
+  \end{align*}  
+  次の$\RR$-線形変換$\varphi$について考える:
+  \begin{align*}
+    \shazo{\varphi}{\RR}{\RR}
+    {\xx}{\Braket{\ccc,\xx}\ccc}.
+  \end{align*}
+  $\varphi$の表現行列が対角行列となるような$V_3$の基底と,
+  そのときの表現行列を求めよ.
+\end{quiz}
+
+
+\begin{quiz}
+  次の$\RR$-線形変換$\varphi$について考える:
+  \begin{align*}
+    \shazo{\varphi}{\RR^3}{\RR^3}
+    {\begin{pmatrix}x_1\\x_2\\x_3\end{pmatrix}}{\begin{pmatrix}x_2\\x_1\\x_3\end{pmatrix}}.
+  \end{align*}
+  $\varphi$の表現行列が対角行列となるような$V_3$の基底と,
+  そのときの表現行列を求めよ.
+\end{quiz}
+
+\begin{quiz}
+  $A=\transposed{A}$を満たす行列を対称行列,
+  $A=-\transposed{A}$を満たす行列を交代行列と呼ぶ.
+  次の$\RR$-線形変換$\varphi$について考える:
+  \begin{align*}
+    \shazo{\varphi}{\RR^{3\times 3}}{\RR^{3\times 3}}
+    {A}{\transposed{A}}.
+  \end{align*}
+  \begin{enumerate}
+  \item $A\in \RR^{3\times 3}$とする. このとき, $A=B+C$を満たす対称行列$B$と交代行列$C$がただ1組存在することを示せ.
+  \item
+      $\varphi$の表現行列が対角行列となるような$\RR^{3\times 3}$の基底と,
+  そのときの表現行列を求めよ.
+  \end{enumerate}
+
+\end{quiz}
+
+
+\begin{quiz}
+  \begin{align*}
+    A=\begin{pmatrix}0&1\\-1&0\end{pmatrix}
+  \end{align*}
+  とする.
+  \begin{enumerate}
+  \item 複素行列$A$を対角化せよ.
+  \item 実行列$A$は対角化可能ではないことを示せ.
+  \end{enumerate}
+\end{quiz}
+
+\begin{quiz}
+  複素行列
+  \begin{align*}
+    J=\begin{pmatrix}0&1&0&\cdots&0&0  \\0&0&1&\\0&0&0&\\&&&\ddots&\ddots\\0&0&0&\cdots&0&1\\0&0&0&0&\cdots&0\end{pmatrix}
+  \end{align*}
+  は対角化可能ではないことを示せ.
+\end{quiz}
+
+\begin{quiz}
+  $V$を$n$次元$\KK$-線形空間とし
+  $\varphi\colon V\to V$を$\KK$上の線形変換とする.
+  $\varphi\circ \varphi = \varphi$を満たすとき,
+  $\varphi$は対角化可能であることを示せ.
+\end{quiz}
+
+\begin{quiz}
+  $\aaa\in\KK^{n\times 1}$とし,
+  $A=\aaa\cdot\transposed{\aaa}$とする.
+  このとき,
+  $A$は対角化可能であることを示せ.
+\end{quiz}
+
+
+\begin{quiz}
+  次で定義されるベクトルの列$(\xx_n)_{n\in\NN}$の一般項を求めよ:
+  \begin{align*}
+    \xx_n &=
+    \begin{cases}
+      A\xx_n & (n>0)\\
+      \begin{pmatrix}1\\0\end{pmatrix} & (n=)
+    \end{cases}
+    &
+    A&=\begin{pmatrix}1&1\\1&0\end{pmatrix}.
+  \end{align*}
+\end{quiz}
+
+
