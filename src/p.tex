@@ -28,7 +28,7 @@
 \item 線形写像，
 \item 行列式，
 \item 固有値$\cdot$固有ベクトル,
-\item 行列の対角化
+\item 行列の対角化.
 \end{enumerate}
 
 授業題目は, `本格的な線形代数学 その1'となっており,
@@ -3703,13 +3703,18 @@ $\Set{e_1,\ldots, e_n}\neq \Set{e'_1,\ldots, e'_n}$
   $V$を$U$の部分空間とする.
   このとき,  $\dim_\KK(V) \leq \dim_\KK(U)$.
 \end{prop}
-\begin{proof}\end{proof}
+\begin{proof}
+$D=(v_1,\ldots,v_n)$を$V$の基底とする.
+このとき,
+$v_i\in U$であり$D$は$\KK$上一次独立であるから,
+$n\leq \dim_\KK(U)$.
+\end{proof}
 
 
 \begin{prop}
 \label{prop:basis:ext}
   $\KK$を体とし,
-  $U$をベクトル空間とし,
+  $U$を有限次元$\KK$-ベクトル空間とし,
   $V$を$U$の部分空間とする.
   $(e_1,\ldots,e_n)$を$V$の基底とする.
   このとき,
@@ -3744,7 +3749,12 @@ $\KK$を体とする.
   このとき, $U$の部分空間$W$で,
   $U=V\oplus W$と内部直和に$U$を分解するものがある.
 \end{prop}
-\begin{proof}\end{proof}
+\begin{proof}$(v_1,\ldots,v_n)$を$V$の基底とする.
+これを延長し$(v_1,\ldots,v_n,w_1,\ldots,w_m)$
+を$U$の基底とする.
+このとき, $W=\Braket{w_1,\ldots,w_m}_\KK$とおくと,
+$U=V+W$かつ$V\cap W=\Set{0_U}$.
+\end{proof}
 
 \begin{prop}
   $U$を$\KK$-線形空間とし,
@@ -3755,6 +3765,13 @@ $\KK$を体とする.
   $(e_1,\ldots,e_n,w_1,\ldots,w_m)$
   は$U$の基底である.
 \end{prop}
+\begin{proof}\end{proof}
+
+\begin{cor}
+  $U$を$\KK$-線形空間とする.
+  $U=V\oplus W$と内部直和に分解されるとき,
+  $\dim_\KK(U)=\dim_\KK(V)\oplus \dim_\KK(W)$.
+\end{cor}
 \begin{proof}\end{proof}
 
 \section{線形写像と生成系, 一次独立系}
@@ -3809,14 +3826,13 @@ $\KK$を体とする.
 次に,
 生成系や一次独立系に対する振る舞いから,
 線形写像がどのくらい決まるのかについて紹介する.
-
-
 \begin{prop}
   $V$, $W$を$\KK$-線形空間とし,
   $(v_1,\ldots,v_n)$を$V$の生成系とする.
   $\varphi\colon V\to W$,
   $\psi\colon V\to W$,
   を線形写像とする.
+  このとき以下は同値:
   \begin{enumerate}
   \item $\varphi=\psi$.
   \item $\varphi(v_1)=\psi(v_1)$,\ldots,$\varphi(v_n)=\psi(v_n)$.
@@ -4001,6 +4017,10 @@ $\varepsilon^{D}_j\colon V\to \KK$を
 \end{cases}
 \end{align*}
 をみたす$\KK$-線形写像とする.
+$D=(v_1,\ldots,v_n)$は$V$の基底であるので,
+$v\in V$は, $v=a_1\act v_1\plus \cdots \plus a_n\act v_n$
+と書ける. このとき,
+$\varepsilon^{D}_j(v)=a_j$である.
 
 \begin{prop}
 $V$を$n$次元$\KK$-線形空間とし,
@@ -4012,6 +4032,8 @@ $D$を$V$の基底とする.
 は$V^\ast$の基底である.
 \end{prop}
 \begin{proof}\end{proof}
+
+
 \begin{definition}
 $V$を$n$次元$\KK$-線形空間とし,
 $D$を$V$の基底とする.
@@ -4148,13 +4170,32 @@ $v\in V$ならば, $[v]_V=V$.
 定義から明白.
 \end{proof}
 \begin{lemma}
-$u,v\in U$に対し, 以下は同値:
+$u,u'\in U$に対し, 以下は同値:
 \begin{enumerate}
-\item $[u]_V=[v]_V$.
-\item $u-v \in V$.
+\item
+\label{item:quotientclass:1}
+$[u]_V=[u']_V$.
+\item
+\label{item:quotientclass:2}
+$u\plus (-u') \in V$.
 \end{enumerate}
 \end{lemma}
-\begin{proof}\end{proof}
+\begin{proof}
+\paragraph{\Cref{item:quotientclass:1}$\implies$\Cref{item:quotientclass:2}.}
+$u=u+0_V\in [u]_V = [u']_V$であるので,
+$u\in [u']_V$. よって, $u=v\plus u'$を満たす$v\in V$がとれる.
+このとき, $u\plus (-u')=v\in V$.
+
+\paragraph{\Cref{item:quotientclass:2}$\implies$\Cref{item:quotientclass:1}.}
+$v=u\plus (-u')$とおくと, $v\in V$である.
+\subparagraph{$[u]_V\subset [u']_V$.}
+$x\in [u]_V$とする.
+このとき, $x=u\plus v'$をみたす$v'\in V$がある.
+$x=u+v'=v\plus u'\plus v'=u'\plus (v\plus v')$.
+よって$u\in [u']_V$.
+\subparagraph{$[u]_V\supset [u']_V$.}
+同様に示すことができる.
+\end{proof}
 
 \begin{lemma}
 \label{lem:quotientspace:well:def}
@@ -4164,7 +4205,19 @@ $u,v\in U$に対し, 以下は同値:
   \item $[u]_V=[u']_V \implies [\alpha\act u]_V=[\alpha\act u']_V$.
   \end{enumerate}
 \end{lemma}
-\begin{proof}\end{proof}
+\begin{proof}
+$u-u',w-w'\in V$とする.
+このとき,
+$u\plus w-(u'\plus w')=(u-u')\plus (w-w')\in V$.
+よって,
+$[u\plus w]_V=[u'\plus w']_V$
+
+$u-u'\in V$とする.
+このとき,
+$a\act u\plus-(a\act u')=a\act (u-u')\in V$.
+よって,
+$[a\act u]_V=[a\act u']_V$.
+\end{proof}
 
 \begin{align*}
   U/V=\Set{[u]_V|u\in U}
