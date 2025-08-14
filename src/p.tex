@@ -1838,25 +1838,84 @@ $f\in C^n$に対しその導関数$f'$を対応させる写像
 
 
 \begin{example}
-  $V$, $U$, $W$を$\KK$-線形空間とし,
+  $(V,\plus,\act)$, $(U,\pplus,\aact)$, $(W,\Plus,\Act)$を$\KK$-線形空間とし,
   $\varphi\colon V\to U$,
   $\psi\colon U\to W$を$\KK$-線形写像とする.
   このとき, $\psi\circ\varphi\colon V\to W$は$\KK$-線形写像である.
 \end{example}
-\begin{proof}\end{proof}
+\begin{proof}
+$v,v'\in V$とする.
+このとき,
+\begin{align*}
+(\psi\circ\varphi)(v\plus v')
+&=\psi(\varphi(v\plus v'))\\
+&=\psi(\varphi(v)\pplus \varphi(v'))\\
+&=\psi(\varphi(v))\Plus \psi(\varphi(v')),\\
+&=(\psi\circ\varphi)(v)\Plus (\psi\circ\varphi)(v').
+\end{align*}
+$v\in V$, $\alpha\in\KK$とする.
+このとき,
+\begin{align*}
+(\psi\circ\varphi)(\alpha\act v')
+&=\psi(\varphi(\alpha\act v'))\\
+&=\psi(\alpha\aact \varphi(v'))\\
+&=\alpha\Act \psi(\varphi(v'))\\
+&=\alpha\Act (\psi\circ\varphi)(v').
+\end{align*}
+\end{proof}
 
 \begin{example}
-  $V$, $W$を$\KK$-線形空間とし,
+  $(V,\plus,\act)$, $(W,\pplus,\aact)$を$\KK$-線形空間とし,
   $\varphi\colon V\to W$は全単射であるとする.
   $\varphi$が$\KK$-線形なら,
   逆写像$\varphi^{-1}$は
   $W$から
   $V$への$\KK$-線形写像.
 \end{example}
-\begin{proof}\end{proof}
+\begin{proof}
+$w,w'\in W$とする.
+このとき,
+$\varphi^{-1}(w), \varphi^{-1})(w')\in V$であり,
+$\varphi$が$\KK$-線形写像であるので,
+\begin{align*}
+\varphi(\varphi^{-1}(w)\plus \varphi^{-1})(w'))
+&=\varphi(\varphi^{-1}(w))\pplus \varphi(\varphi^{-1})(w'))\\
+&=(\varphi\circ\varphi^{-1})(w)\pplus (\varphi\circ\varphi^{-1})(w')\\
+&=\id_{W}(w)\pplus \id_{W}(w')\\
+&=w\pplus w'.
+\end{align*}
+したがって,
+\begin{align*}
+\varphi^{-1}(w\pplus w')
+&=\varphi^{-1}(\varphi(\varphi^{-1}(w)\plus \varphi^{-1})(w'))\\
+&=(\varphi^{-1}\circ\varphi)(\varphi^{-1}(w)\plus \varphi^{-1})(w'))\\
+&=\id_V(\varphi^{-1}(w)\plus \varphi^{-1})(w'))\\
+&=\varphi^{-1}(w)\plus \varphi^{-1}(w').
+\end{align*}
+
+$w\in W$, $\alpha\in \KK$とする.
+このとき,
+$\varphi^{-1}(w)\in V$であり,
+$\varphi$が$\KK$-線形写像であるので,
+\begin{align*}
+\varphi(\alpha\act\varphi^{-1}(w))
+&=\alpha\aact\varphi(\varphi^{-1}(w))\\
+&=\alpha\aact(\varphi\circ\varphi^{-1})(w))\\
+&=\alpha\aact\id_W(w)\\
+&=\alpha\aact w.
+\end{align*}
+したがって,
+\begin{align*}
+\varphi^{-1}(\alpha\aact w)
+&=\varphi^{-1}(\varphi(\alpha\act\varphi^{-1}(w)))\\
+&=(\varphi^{-1}\circ\varphi)(\alpha\act\varphi^{-1}(w)))\\
+&=\id_V(\alpha\act\varphi^{-1}(w)))\\
+&=\alpha\act\varphi^{-1}(w).
+\end{align*}
+\end{proof}
 
 \begin{example}
-  $V$, $(W,\pplus,\aact,0_W)$を$\KK$-線形空間とし,
+  $(V,\plus,\act,0_V)$, $(W,\pplus,\aact,0_W)$を$\KK$-線形空間とし,
   $\varphi\colon V\to W$を線形写像とする.
   このとき, $\alpha \in \KK$に対し,
   \begin{align*}
@@ -1865,10 +1924,39 @@ $f\in C^n$に対しその導関数$f'$を対応させる写像
   \end{align*}
   は$V$から$W$への線形写像.
 \end{example}
-\begin{proof}\end{proof}
+\begin{proof}
+$v,v'\in V$とする.
+このとき,
+\begin{align*}
+(\alpha\varphi)(v\plus v')
+&=\alpha\aact \varphi(v\plus v')\\
+&=\alpha\aact (\varphi(v)\pplus \varphi(v'))\\
+&=\alpha\aact\varphi(v)\pplus \alpha\aact\varphi(v'),
+\\
+(\alpha\varphi)(v)\pplus (\alpha\varphi)(v')
+&=(\alpha\aact\varphi(v))\pplus (\alpha\aact\varphi(v'))\\
+&=\alpha\aact\varphi(v)\pplus \alpha\aact\varphi(v').
+\end{align*}
+
+$v\in V$, $\beta\in \KK$とする.
+このとき,
+\begin{align*}
+(\alpha\varphi)(\beta\act v)
+&=\alpha\aact \varphi(\beta\act v)\\
+&=\alpha\aact (\beta\aact\varphi(v))\\
+&=(\alpha\beta)\aact\varphi(v),
+\\
+\beta\aact(\alpha\varphi)(v)
+&=\beta\aact(\alpha\aact\varphi(v))\\
+&=(\beta\alpha)\aact\varphi(v)\\
+&=(\alpha\beta)\aact\varphi(v).
+\end{align*}
+\end{proof}
 
 \begin{example}
-  $V$, $(W,\pplus,\aact,0_W)$を$\KK$-線形空間とし,
+  $(V,\plus,\act,0_V)$,
+  $(W,\pplus,\aact,0_W)$を
+  $\KK$-線形空間とし,
   $\varphi\colon V\to W$,
   $\psi\colon V\to W$
   を線形写像とする.
@@ -1879,7 +1967,33 @@ $f\in C^n$に対しその導関数$f'$を対応させる写像
   \end{align*}
   は$V$から$W$への線形写像.
 \end{example}
-\begin{proof}\end{proof}
+\begin{proof}
+$v,v'\in V$とする.
+このとき,
+\begin{align*}
+(\varphi+\psi)(v\plus v')
+&=\varphi(v\plus v') \pplus \psi(v\plus v')\\
+&=(\varphi(v)\pplus \varphi(v')) \pplus (\psi(v)\pplus \psi(v'))\\
+&=\varphi(v)\pplus \psi(v)  \pplus \varphi(v')\pplus \psi(v'),
+\\
+(\varphi+\psi)(v)\plus (\varphi+\psi)(v')
+&=
+(\varphi(v)\pplus\psi(v))\plus (\varphi(v')\pplus\psi(v'))\\
+&=\varphi(v)\pplus \psi(v)  \pplus \varphi(v')\pplus \psi(v').
+\end{align*}
+
+$v\in V$, $\alpha\in\KK$とする.
+このとき,
+\begin{align*}
+(\varphi+\psi)(\alpha\act v)
+&=\varphi(\alpha\act v) \pplus \psi(\alpha\act v)\\
+&=\alpha\aact \varphi(v) \pplus \alpha\aact\psi( v),
+\\
+\alpha\aact(\varphi+\psi)(v)
+&=\alpha\aact(\varphi(v)\pplus\psi(v))\\
+&=\alpha\aact\varphi(v)\pplus\alpha\aact\psi(v)).
+\end{align*}
+\end{proof}
 
 
 
@@ -1892,11 +2006,34 @@ $\varphi\colon \KK^n \to \KK^m$,
 $\psi\colon \KK^n \to \KK^m$
 に対し, 以下は同値:
 \begin{enumerate}
-\item $\varphi=\psi$
-\item すべての$i$に対し, $\varphi(\ee^{(n)}_i)=\psi(\ee^{(n)}_i)$
+\item
+\label{prop:linemap:kn:1:item:1}
+$\varphi=\psi$.
+\item
+\label{prop:linemap:kn:1:item:2}
+すべての$i$に対し, $\varphi(\ee^{(n)}_i)=\psi(\ee^{(n)}_i)$.
 \end{enumerate}
 \end{prop}
-\begin{proof}\end{proof}
+\begin{proof}
+\paragraph{\ref{prop:linemap:kn:1:item:1} $\implies$ \ref{prop:linemap:kn:1:item:2}}
+写像が等しいことの定義から明らか.
+
+\paragraph{\ref{prop:linemap:kn:1:item:2} $\implies$ \ref{prop:linemap:kn:1:item:1}}
+$\aaa\in \KK^n$とする.
+$\aaa$の第$i$成分を$a_i$とすると,
+$\aaa=\sum_{i=1}^n a_i\ee_i^{(n)}$である.
+したがって,
+\begin{align*}
+\varphi(\aaa)
+&=\varphi(\sum_{i=1}^n a_i\ee_i^{(n)})\\
+&=\sum_{i=1}^n a_i\varphi(\ee_i^{(n)}),
+\\
+\psi(\aaa)
+&=\psi(\sum_{i=1}^n a_i\ee_i^{(n)})\\
+&=\sum_{i=1}^n a_i\psi(\ee_i^{(n)})\\
+&=\sum_{i=1}^n a_i\varphi(\ee_i^{(n)}).
+\end{align*}
+\end{proof}
 
 \begin{prop}
 \label{prop:linmap:kn:2}
@@ -1905,12 +2042,25 @@ $\psi\colon \KK^n \to \KK^m$
   とする.
   このとき, $\mu_A$を次の写像とする:
   \begin{align*}
-    \shazo{\mu_A}{\KK^m}{\KK^n}{w}{Aw}.
+    \shazo{\mu_A}{\KK^m}{\KK^n}{\xx}{A\xx}.
   \end{align*}
   このとき, $\mu_A$は$\KK$-線形であり,
    $\mu_A(\ee^{(n)}_j)=\aaa_j$である.
 \end{prop}
-\begin{proof}\end{proof}
+\begin{proof}
+$\xx,\xx'\in \KK^n$とする.
+このとき,
+\begin{align*}
+\mu_A(\xx+\xx')=A(\xx+\xx')=A\xx+A\xx'=\mu_A(\xx)+\mu_A(\xx').
+\end{align*}
+また,
+$\xx\in\KK^n$, $\alpha\in\KK$とすると,
+\begin{align*}
+\mu_A(\alpha\xx)=A(\alpha\xx)=\alpha A\xx=\alpha\mu_A(\xx).
+\end{align*}
+また$A\ee^{(n)}_j$は$A$の$j$列目に等しいので,
+   $\mu_A(\ee^{(n)}_j)=\aaa_j$である.
+\end{proof}
 
 \begin{remark}
 \Cref{prop:linmap:kn:1,prop:linmap:kn:2}
