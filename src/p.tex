@@ -2318,16 +2318,63 @@ $A\in\KK^{m\times n}$とし,
   $V$と$W$は$\KK$-線形空間として同一視できる.
 \end{remark}
 
+
 \begin{prop}
   $V$, $W$, $U$を$\KK$-線形空間とする.
   このとき, 以下が成り立つ:
   \begin{enumerate}
-  \item $V\simeq V$.
-  \item $V\simeq W \implies W\simeq V$.
-  \item $V\simeq U, U\simeq W \implies V\simeq W$.
+  \item
+\label{prop:isoisequiv:1}
+$V\simeq V$.
+  \item
+  \label{prop:isoisequiv:2}
+  $V\simeq W \implies W\simeq V$.
+  \item
+\label{prop:isoisequiv:3}
+$V\simeq U, U\simeq W \implies V\simeq W$.
   \end{enumerate}
 \end{prop}
-\begin{proof}\end{proof}
+\begin{proof}
+\paragraph{\Cref{prop:isoisequiv:1}}
+$\id_V\colon V\to V$は$V$から$V$への線形写像であり,
+$\id_V\circ \id_V=\id_V$であるので,
+$V$から$V$への同型写像である.
+
+\paragraph{\Cref{prop:isoisequiv:2}}
+$\varphi\colon V\to W$が$V$から$W$への同型写像であるとし,
+$\psi\colon W\to V$は,
+$\psi\circ \varphi =\id_V$,
+$\varphi\circ \psi =\id_W$
+を満たす線形写像であるとする.
+このとき,
+$\psi\colon W\to V$に対し,
+$\varphi\colon V\to W$は,
+$\varphi\circ \psi =\id_W$,
+$\psi\circ \varphi =\id_V$
+を満たす線形写像であるので,
+$\psi$は$W$から$V$への同型写像である.
+
+\paragraph{\Cref{prop:isoisequiv:3}}
+$\varphi\colon V\to W$,
+$\varphi'\colon W\to U$
+が同型写像であるとする.
+$\psi$を
+$\psi\circ \varphi=\id_V$,
+$\varphi\circ\psi =\id_W$
+を満たす線形写像,
+$\psi'$を
+$\psi'\circ \varphi'=\id_W$,
+$\varphi'\circ\psi' =\id_U$
+を満たす線形写像とする.
+合成$\varphi'\circ\varphi\colon V\to U$
+は$V$から$U$への線形写像である.
+さらに,
+$\psi\circ\psi'\colon U\to V$は線形写像であり,
+$\psi\circ\psi'\circ\varphi'\circ\varphi=\psi\circ \id_W \circ\varphi=\psi\circ\circ\varphi=\id_V$,
+$\varphi'\circ\varphi\circ\psi\circ\psi'=\varphi'\circ\id_W\circ\psi'=\varphi'\circ\psi'=\id_U$
+を満たすので,
+$V$から$U$への同型写像である.
+\end{proof}
 
 \begin{prop}
   $V$, $W$を$\KK$-線形空間とし, $\varphi\colon V\to W$を$\KK$-線形写像とする.
