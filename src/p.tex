@@ -1819,7 +1819,8 @@ $f\in C^n$に対しその導関数$f'$を対応させる写像
 \end{example}
 
 \begin{example}
-  $V$
+\label{prop:zeromapislinear}
+  $(V,\plus,\act,0_V)$,
   $(W,\pplus,\aact,0_W)$
   を$\KK$線形空間とする.
     \begin{align*}
@@ -1828,7 +1829,21 @@ $f\in C^n$に対しその導関数$f'$を対応させる写像
     \end{align*}
   は$\KK$-線形写像である.
 \end{example}
+\begin{proof}
+$v,v'\in V$とする.
+このとき,
+\begin{align*}
+\underline{0_W}(v\plus v')&=0_W,\\
+\underline{0_W}(v)\pplus \underline{0_W}(v')&=0_W\pplus 0_W=0_W.\\
+\end{align*}
 
+$v\in V$, $\alpha\in\KK$とする.
+このとき,
+\begin{align*}
+\underline{0_W}(\alpha\act v)&=0_W,\\
+\alpha\aact \underline{0_W}(v)&=\alpha\aact 0_W=0_W.\\
+\end{align*}
+\end{proof}
 
 \begin{example}
   $V$を$\KK$-線形空間とする.
@@ -1865,6 +1880,7 @@ $v\in V$, $\alpha\in\KK$とする.
 \end{proof}
 
 \begin{example}
+\label{prop:invislinear}
   $(V,\plus,\act)$, $(W,\pplus,\aact)$を$\KK$-線形空間とし,
   $\varphi\colon V\to W$は全単射であるとする.
   $\varphi$が$\KK$-線形なら,
@@ -1915,6 +1931,7 @@ $\varphi$が$\KK$-線形写像であるので,
 \end{proof}
 
 \begin{example}
+\label{prop:scalarprodislinear}
   $(V,\plus,\act,0_V)$, $(W,\pplus,\aact,0_W)$を$\KK$-線形空間とし,
   $\varphi\colon V\to W$を線形写像とする.
   このとき, $\alpha \in \KK$に対し,
@@ -1954,6 +1971,7 @@ $v\in V$, $\beta\in \KK$とする.
 \end{proof}
 
 \begin{example}
+\label{prop:sumislinear}
   $(V,\plus,\act,0_V)$,
   $(W,\pplus,\aact,0_W)$を
   $\KK$-線形空間とし,
@@ -2377,14 +2395,33 @@ $V$から$U$への同型写像である.
 \end{proof}
 
 \begin{prop}
-  $V$, $W$を$\KK$-線形空間とし, $\varphi\colon V\to W$を$\KK$-線形写像とする.
+  $V$, $W$を$\KK$-線形空間とし,
+  $\varphi\colon V\to W$を$\KK$-線形写像とする.
   このとき, 以下は同値:
   \begin{enumerate}
-  \item $\varphi$は同型写像.
-  \item $\varphi$は全単射.
+  \item
+\label{prop:isom:bij:item:1}
+$\varphi$は同型写像.
+  \item
+\label{prop:isom:bij:item:2}
+$\varphi$は全単射.
   \end{enumerate}
 \end{prop}
-\begin{proof}\end{proof}
+\begin{proof}
+\paragraph{\ref{prop:isom:bij:item:1}$\implies$\ref{prop:isom:bij:item:2}}
+同型写像の定義から明らか.
+
+\paragraph{\ref{prop:isom:bij:item:2}$\implies$\ref{prop:isom:bij:item:1}}
+$\varphi\colon V\to W$を$\KK$-線形写像とし,
+全単射であるとする.
+このとき, $\varphi$の逆写像$\varphi^{-1}$は
+\cref{prop:invislinear}で見たように,
+$\KK$-線形写像である.
+また, 逆写像の定義から,
+$\varphi^{-1}\circ\varphi=\id_V$,
+$\varphi\circ\varphi^{-1}=\id_W$
+を満たしている.
+\end{proof}
 
 \begin{example}
    $m,n\in\NN$に対し以下は同値:
@@ -2628,6 +2665,7 @@ $(V,\plus ,\act,0_U)$が$\KK$-線形空間であるための条件で非自明�
     \end{enumerate}
   \end{enumerate}
 \end{lemma}
+\begin{proof}\end{proof}
 
 \begin{remark}
 $U$を$\KK$-線形空間とし,
@@ -2651,20 +2689,72 @@ $V\subset W\subset U$となっている.
 \end{example}
 
 \begin{example}
-  $a\in \KK^2\setminus\Set{\zzero_2}$とする.
-  このとき, $\Set{ta|t\in \KK}$は原点と$a$を通る直線である.
+  $\aaa\in \KK^2\setminus\Set{\zzero_2}$とする.
+  このとき, $\Set{t\aaa|t\in \KK}$は原点と$a$を通る直線である.
   これは, $\KK^2$の非自明な部分空間である.
 \end{example}
-\begin{proof}\end{proof}
+\begin{proof}
+$V=\Set{t\aaa|t\in \KK}$とする.
+
+$\zzero_2=0\aaa\in V$である.
+
+$t\aaa, t'\aaa\in V$とする.
+このとき, $t\aaa+t'\aaa=(t+t')\aaa\in V$である.
+
+$t\aaa\in V$, $\alpha\in \KK$とする.
+このとき, $\alpha (t\aaa)=(\alpha t)\aaa\in V$である.
+
+$\aaa=1\aaa\in V$であるが,
+仮定より, $\aaa\neq \zzero_2$であるので, $V\neq \Set{\zzero_2}$である.
+また. $\aaa$の第$i$成分を$a_i$とする.
+\begin{align*}
+\bbb=
+\begin{pmatrix}
+a_2\\-a_1
+\end{pmatrix}
+\end{align*}
+とおく.
+このとき, $\bbb$は$\aaa$と直交するベクトルであり,
+$t\aaa=\bbb$となる$t$は存在しない.
+実際, $\aaa$, $\bbb$を$2\times 1$行列だと思い,
+$1\times 1$行列$\xx$に関する方程式
+$\aaa \xx =\bbb$を考えると,
+その係数行列$\aaa$の階数は$1$であるが,
+拡大係数行列$(\aaa|\bbb)$の行列式は$a_1^2+a_2^2>0$であり正則であるから階数は$2$であるので, 解を持たないことがわかる.
+したがって, $\bbb\not\in V$であるから, $V\neq\KK^2$である.
+\end{proof}
 
 
 \begin{example}
+$n$を正の整数とする.
   \begin{align*}
     V=\Set{\begin{pmatrix}a_1\\\vdots\\a_n\\0\end{pmatrix}|a_1,\ldots,a_n\in\KK}
   \end{align*}
   は$\KK^{n+1}$の非自明な部分空間である.
 \end{example}
-\begin{proof}\end{proof}
+\begin{proof}
+$\zzero_{n+1}$の第$(n+1)$成分は$0$であるので, $\zzero_{n+1}\in V$である.
+
+$\aaa,\bbb\in V$とする.
+$\aaa$, $\bbb$の第$(n+1)$成分は$0$であるので,
+$\aaa+\bbb$の第$(n+1)$成分は$0+0=0$である.
+よって$\aaa+\bbb\in V$である.
+
+$\aaa\in V$,
+$\alpha\in \KK$とする.
+$\aaa$の第$(n+1)$成分は$0$であるので,
+$\alpha\aaa$の第$(n+1)$成分は$\alpha 0=0$である.
+よって$\alpha\aaa\in V$である.
+
+また,
+\begin{align*}
+\zzero_{n+1}\neq
+\begin{pmatrix}1\\\vdots\\1\\0\end{pmatrix}\in V
+\end{align*}
+であるので, $V\neq\Set{\zzero_{n+1}}$である.
+また, すべての成分が$1$である$\KK^{n+1}$の元$\aaa$は,
+$\aaa\not\in V$であるので, $V\neq \KK^{n+1}$である.
+\end{proof}
 
 \begin{example}
   \label{subsp:example:fiber}
@@ -2676,7 +2766,19 @@ $V\subset W\subset U$となっている.
   とおく. $\KKK$は$\KK^n$の部分空間である.
   (\Cref{subsp:nonexample:fiber}も見よ.)
 \end{example}
-\begin{proof}\end{proof}
+\begin{proof}
+$A\zzero_n=\zzero_m$であるので$\zzero_n\in \KKK$.
+
+$\aaa,\bbb\in\KKK$とする.
+$A\aaa=\zzero_m$, $A\bbb=\zzero_m$である.
+$A(\aaa+\bbb)=A\aaa+A\bbb=\zzero_m+\zzero_m=\zzero_m$であるので,
+$\aaa+\bbb\in \KKK$.
+
+$\aaa\in\KKK$, $\alpha\in\KK$とする.
+$A\aaa=\zzero_m$である.
+$A(\alpha\aaa)=\alpha A\aaa=\alpha\zzero_m=\zzero_m$であるので,
+$\alpha\aaa\in \KKK$.
+\end{proof}
 
 \begin{example}
   \label{subsp:example:cc}
@@ -2684,7 +2786,9 @@ $V\subset W\subset U$となっている.
   $\RR$は, $\CC$の部分$\RR$-線形空間である.
   (\Cref{subsp:nonexample:cc}も見よ.)
 \end{example}
-\begin{proof}\end{proof}
+\begin{proof}
+$\RR\subset\CC$であり, 同じ演算で$\RR$-線形空間である.
+\end{proof}
 
 
 \begin{example}
@@ -2809,6 +2913,21 @@ $n<m$なら$C^m$は$C^n$の部分空間である.
 \end{example}
 
 \begin{example}
+\label{prop:homisvecsp}
+  $V$, $W$を$\KK$-線形空間とする.
+  $V$から$W$への写像をすべて集めた集合
+  $W^V$は$\KK$線形空間であった.
+  \begin{align*}
+    \Hom_\KK(V,W) =\Set{f\colon V\to W\text{: $\KK$-線形写像} }
+  \end{align*}
+  とおく. これは$W^V$の部分空間.
+\end{example}
+\begin{proof}
+\Cref{prop:zeromapislinear,prop:sumislinear,prop:scalarprodislinear}
+からわかる.
+\end{proof}
+
+\begin{example}
   $V$を$\KK$-線形空間とする.
   $V$から$\KK$への写像をすべて集めた集合
   $\KK^V$は$\KK$線形空間であった.
@@ -2818,18 +2937,12 @@ $n<m$なら$C^m$は$C^n$の部分空間である.
   とおく. これは$\KK^V$の部分空間.
   $V^\ast$を$\KK$-線形空間$V$の\defit{双対空間}と呼ぶ.
 \end{example}
-\begin{proof}\end{proof}
+\begin{proof}
+$\KK$は通常の積と和で$\KK$-線形空間である.
+したがって, \Cref{prop:homisvecsp}より$V^\ast=\Hom_\KK(V,\KK)$は,
+$\KK^V$の部分空間である.
+\end{proof}
 
-\begin{example}
-  $V$, $W$を$\KK$-線形空間とする.
-  $V$から$W$への写像をすべて集めた集合
-  $W^V$は$\KK$線形空間であった.
-  \begin{align*}
-    \Hom_\KK(V,W) =\Set{f\colon V\to W\text{: $\KK$-線形写像} }
-  \end{align*}
-  とおく. これは$W^V$の部分空間.
-\end{example}
-\begin{proof}\end{proof}
 
 
 \subsection{線形写像から得られる部分空間}
@@ -2860,7 +2973,42 @@ $n<m$なら$C^m$は$C^n$の部分空間である.
   \item $\Img(\varphi)$は$W$の部分空間.
 \end{enumerate}
 \end{prop}
-\begin{proof}\end{proof}
+\begin{proof}
+$\varphi(0_V)=0_W$であるので,
+$0_V\in\Ker(\varphi)$.
+
+$v,v'\in \Ker(\varphi)$とする.
+このとき,
+$\varphi(v)=\varphi(v')=0_W$であるので,
+$\varphi(v\plus v')=\varphi(v)\pplus (v')=0_W\pplus 0_W=0_W$.
+よって, $v\plus v'\in\Ker(\varphi)$.
+
+$v\in \Ker(\varphi)$,
+$\alpha\in \KK$
+とする.
+このとき,
+$\varphi(v)=0_W$であるので,
+$\varphi(\alpha\act v)=\alpha\act \varphi(v)=\alpha\act 0_W=0_W$.
+よって, $\alpha\act v\in\Ker(\varphi)$.
+
+
+$\varphi(0_V)=0_W$であるので,
+$0_W\in\Img(\varphi)$.
+
+$w,w'\in \Img(\varphi)$とする.
+このとき,
+$w=\varphi(v)$, $w'=\varphi(v')$をみたす$v, v'\in V$がとれる.
+$w\pplus w'=\varphi(v)\pplus\varphi(v')=\varphi(v\plus v')$であるので,
+$w\pplus w'\in\Img(\varphi)$.
+
+$w\in \Img(\varphi)$,
+$\alpha\in\KK$とする.
+このとき,
+$w=\varphi(v)$をみたす$v\in V$がとれる.
+$\alpha\aact w=\alpha\aact\varphi(v)=\varphi(\alpha\act v)$であるので,
+$\alpha\aact w\in\Img(\varphi)$.
+
+\end{proof}
 
 \begin{definition}
   $(V,\plus,\act,0_V)$を$\KK$線形空間とし,
@@ -2883,9 +3031,33 @@ $n<m$なら$C^m$は$C^n$の部分空間である.
   は,
   $w_1,\ldots,w_r$を含む最小の$V$の部分空間である.
   また, 
-  $\Braket{w_1,\ldots,w_r}_{\KK}=\Set{a_1\act w_1\plus\cdots a_r\act w_r|a_i\in\KK}$である.
+  $\Braket{w_1,\ldots,w_r}_{\KK}=\Set{a_1\act w_1\plus\cdots\plus a_r\act w_r|a_i\in\KK}$である.
 \end{remark}
-\begin{proof}\end{proof}
+\begin{proof}
+$\Braket{w_1,\ldots,w_r}_{\KK}=\Set{a_1\act w_1\plus\cdots\plus a_r\act w_r|a_i\in\KK}$であることは,
+\begin{align*}
+\Braket{w_1,\ldots,w_r}_{\KK}
+&=\Img(\nu_{(w_1,\ldots,w_r)})\\
+&=\Set{\nu_{(w_1,\ldots,w_r)}(\aaa)|\aaa\in\KK^r}\\
+&=\Set{\nu_{(w_1,\ldots,w_r)}(\begin{pmatrix}a_1\\\vdots\\a_r\end{pmatrix})|\begin{pmatrix}a_1\\\vdots\\a_r\end{pmatrix}\in\KK^r}\\
+&=\Set{\nu_{(w_1,\ldots,w_r)}(\begin{pmatrix}a_1\\\vdots\\a_r\end{pmatrix})|a_i\in\KK}\\
+&=\Set{a_1\act w_1\plus \cdots \plus a_r\act w_r)|a_i\in\KK}
+\end{align*}
+から明らか.
+
+$\nu_{(w_1,\ldots,w_r)}(\ee^{(r)}_i)=w_i$であるので,
+$\Braket{w_1,\ldots,w_r}_{\KK}$は$w_i$を含む$V$の部分空間である.
+
+$V$の部分空間$U$が
+$w_1,\ldots,w_r\in U$を満たしているとする.
+このとき, $\Braket{w_1,\ldots,w_r}_{\KK}\subset U$となることを示す.
+$v\in \Braket{w_1,\ldots,w_r}_{\KK}$とする.
+このとき,
+$v=a_1\act w_1\plus \cdots \plus a_r\act w_r$を満たす$a_1,\ldots,a_r \in\KK$
+が取れる.
+$w_1,\ldots,w_r\in U$であるので,
+$v=a_1\act w_1\plus \cdots \plus a_r\act w_r\in U$である.
+\end{proof}
 
 \begin{example}
   $A\in \KK^{m\times n}$とし,
