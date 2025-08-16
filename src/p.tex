@@ -3007,7 +3007,6 @@ $\alpha\in\KK$とする.
 $w=\varphi(v)$をみたす$v\in V$がとれる.
 $\alpha\aact w=\alpha\aact\varphi(v)=\varphi(\alpha\act v)$であるので,
 $\alpha\aact w\in\Img(\varphi)$.
-
 \end{proof}
 
 \begin{definition}
@@ -3078,7 +3077,7 @@ $v=a_1\act w_1\plus \cdots \plus a_r\act w_r\in U$である.
   である.
   %これは, $\Set{\aaa_1,\ldots,\aaa_n}$を含む最小の部分空間である.
 \end{example}
-\begin{proof}\end{proof}
+%\begin{proof}\end{proof}
 
 \begin{example}
 $\KK$を体とし,  
@@ -3095,8 +3094,7 @@ $\KK$を体とし,
   \end{align*}
   である. 特に, $n=2$のときは,
   \begin{align*}
-    \Ker(\varphi)=
-    \Set{\begin{pmatrix}a&b\\c&-a\end{pmatrix}|a,b,c}
+    \Ker(\varphi)=\Set{\begin{pmatrix}a&b\\c&-a\end{pmatrix}|a,b,c}
   \end{align*}
   である.
 \end{example}
@@ -3122,7 +3120,54 @@ $\KK$を体とし,
     は, $V$の部分空間である.
   \end{enumerate}
 \end{prop}
-\begin{proof}\end{proof}
+\begin{proof}
+    \begin{align*}
+      V''=\Set{x\in V|\varphi(x)\in W'}
+    \end{align*}
+とおく.
+
+$\varphi(0_V)=0_W\in W'$であるので,
+$0_V\in V''$.
+
+$v,v'\in V''$とする.
+このとき,
+$\varphi(v),\varphi(v')\in W'$であるので,
+$\varphi(v\plus v')=\varphi(v)\pplus (v')\in W'$.
+よって, $v\plus v'\in V''$.
+
+$v\in V''$,
+$\alpha\in \KK$
+とする.
+このとき,
+$\varphi(v)\in W'$であるので,
+$\varphi(\alpha\act v)=\alpha\act \varphi(v)\in W'$.
+よって, $\alpha\act v\in V''$.
+
+    \begin{align*}
+      W''=\Set{\varphi(x)|x\in V'}
+    \end{align*}
+とする.
+
+$0_V\in V'$かつ
+$\varphi(0_V)=0_W$であるので,
+$0_W\in W''$.
+
+$w,w'\in W''$とする.
+このとき,
+$w=\varphi(v)$, $w'=\varphi(v')$をみたす$v, v'\in V'$がとれる.
+$w\pplus w'=\varphi(v)\pplus\varphi(v')=\varphi(v\plus v')$であり,
+$v\plus v'\in V'$であるので,
+$w\pplus w'\in W''$.
+
+$w\in \Img(\varphi)$,
+$\alpha\in\KK$とする.
+このとき,
+$w=\varphi(v)$をみたす$v\in V'$がとれる.
+$\alpha\aact w=\alpha\aact\varphi(v)=\varphi(\alpha\act v)$であり,
+$\alpha\act v\in V'$であるので,
+$\alpha\aact w\in W''$.
+\end{proof}
+
 \begin{remark}
   \Cref{subspace:prop:img:inverseimage}の
   $W'$として自明な部分空間$\Set{0_W}$を考えたものが,
@@ -3139,11 +3184,34 @@ $\KK$を体とし,
   $\varphi\colon V\to W$を線形写像とする.
   次は同値:
   \begin{enumerate}
-  \item $\varphi$は単射.
-  \item $\Ker(\varphi)=\Set{0_V}$
+  \item
+\label{prop:inj:ker:item:1}
+$\varphi$は単射.
+  \item
+\label{prop:inj:ker:item:2}
+  $\Ker(\varphi)=\Set{0_V}$
   \end{enumerate}
 \end{prop}
-\begin{proof}\end{proof}
+\begin{proof}
+\paragraph{\ref{prop:inj:ker:item:1}$\implies$\ref{prop:inj:ker:item:2}}
+$\varphi(0_V)=0_W$であるので$\Ker(\varphi)\supset \Set{0_V}$.
+また,
+$\varphi(v)=0_W$であるとすると,
+$\varphi(0_V)=0_W$であり,
+$\varphi$が単射であるので
+$v=0_V$である.
+したがって, $\Ker(\varphi)\subset\Set{0_V}$.
+
+\paragraph{\ref{prop:inj:ker:item:2}$\implies$\ref{prop:inj:ker:item:1}}
+$\Ker(\varphi)=\Set{0_V}$とする.
+$\varphi(v)=\varphi(v')$とすると,
+$\varphi(v)-\varphi(v')=0_W$である.
+$\varphi$が線形写像であるから,
+$\varphi(v-v')=0_W$であり,
+$v-v'\in \Ker(\varphi)$である.
+仮定から$v-v'=0_V$であるので,
+$v=v'$である.
+\end{proof}
 
 \begin{prop}
   $(V,\plus,\act,0_V)$,
@@ -3156,7 +3224,9 @@ $\KK$を体とし,
   \item $\Img(\varphi)=W$
   \end{enumerate}
 \end{prop}
-\begin{proof}\end{proof}
+\begin{proof}
+定義から明らか.
+\end{proof}
 
 \begin{prop}
   $(V,\plus,\act,0_V)$,
@@ -3169,7 +3239,10 @@ $\KK$を体とし,
   \item $\Ker(\varphi)=V$
   \end{enumerate}
 \end{prop}
-\begin{proof}\end{proof}
+\begin{proof}
+定義から明らか.
+\end{proof}
+
 
 \begin{prop}
   $(V,\plus,\act,0_V)$,
@@ -3182,7 +3255,10 @@ $\KK$を体とし,
   \item $\Img(\varphi)=\Set{0_W}$.
   \end{enumerate}
 \end{prop}
-\begin{proof}\end{proof}
+\begin{proof}
+定義から明らか.
+\end{proof}
+
 
 \begin{prop}
   $V$を$U$の部分空間とする.
@@ -3192,9 +3268,11 @@ $\KK$を体とし,
     {v}{v}
   \end{align*}
   は, 単射な線形写像.
-  特に, $V\simeq \Img(\iota)$.
+  特に, $V= \Img(\iota)$.
 \end{prop}
-\begin{proof}\end{proof}
+\begin{proof}
+定義から明らか.
+\end{proof}
 
 \subsection{部分空間から得られる部分空間}
 \label{sec:subspace:sub}
@@ -3211,14 +3289,37 @@ $\KK$を体とし,
   \end{align*}
   となっており, $V\cap W$も$\KK^3$の部分空間である.
 \end{example}
-\begin{proof}\end{proof}
+%\begin{proof}\end{proof}
 
 \begin{example}
   $U$を$\KK$-線形空間とする.
   $V, W$を$U$の部分空間とする.
   このとき, $V\cap W$は$U$の部分空間.
 \end{example}
-\begin{proof}\end{proof}
+\begin{proof}
+$0_U\in V$かつ$0_U\in W$であるので, $0_U\in W$.
+
+$x,x' \in V\cap W$とする.
+$x,x'\in V$であるので,
+$x\plus x' \in V$.
+また,
+$x,x'\in V'$であるので,
+$x\plus x' \in V'$,
+よって
+$x\plus x' \in V\cap V'$.
+
+
+$x \in V\cap W$,
+$\alpha \in \KK$
+とする.
+$x\in V$であるので,
+$\alpha\act x \in V$.
+また,
+$x\in V'$であるので,
+$\alpha\act x \in V'$.
+よって
+$\alpha\act x \in V\cap V'$.
+\end{proof}
 
 
 \begin{example}
@@ -3249,7 +3350,6 @@ $\KK$を体とし,
   \end{align*}
   となっており, $V\cup W$は$U$の部分空間ではない.
 \end{example}
-\begin{proof}\end{proof}
 
 \begin{example}
   $U$を$\KK$-線形空間とする.
@@ -3289,10 +3389,9 @@ $\KK$を体とし,
   \end{align*}
   となっており, $U$も$\KK^3$の部分空間である.
 \end{example}
-\begin{proof}\end{proof}
 
 \begin{example}
-  $(U,\plus ,\act,0_V)$を$\KK$-線形空間とする.
+  $(U,\plus ,\act,0_U)$を$\KK$-線形空間とする.
   $V, W$を$U$の部分空間とする.
   このとき,
   \begin{align*}
@@ -3302,7 +3401,23 @@ $\KK$を体とし,
   このとき, $V+W$は$U$の部分空間.
   $V+W$を$V$と$W$の\defit{和空間}と呼ぶことがある.
 \end{example}
-\begin{proof}\end{proof}
+\begin{proof}
+$0_U\in V$, $0_U\in W$であるので,
+$0_U=0_U+0_U\in W$.
+
+$v,v'\in V$,
+$w,w'\in W$とする.
+$v\plus w,v'\plus w'\in V+W$に対し,
+$(v\plus w)\plus(v'\plus w')=(v\plus w\plus v'\plus w')=(v\plus v'\plus w\plus w') \in V+W$.
+
+$v\in V$,
+$w\in W$,
+$\alpha\in\KK$とする.
+$v\plus w\in V+W$に対し,
+$\alpha\act (v\plus w)=\alpha\act v\plus \alpha\act  w \in V+W$.
+
+
+\end{proof}
 \begin{prop}
   $(U,\plus ,\act,0_V)$を$\KK$-線形空間とし,
   $V, W$を$U$の部分空間とする.
