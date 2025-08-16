@@ -3328,7 +3328,29 @@ $\alpha\act x \in V\cap V'$.
   $i\in I$に対し, $V_i$を$U$の部分空間とする.
   このとき, $\bigcap_{i\in I}V_i$は$U$の部分空間である.
 \end{example}
-\begin{proof}\end{proof}
+\begin{proof}
+すべての$i\in I$に対し
+$0_U\in V_i$であるので,
+$0_U\in \bigcap_{i\in I}V_i$.
+
+$x,x' \in \bigcap_{i\in I}V_i$とする.
+すべての$i\in I$に対し,
+$x,x'\in V_i$であるので,
+$x\plus x' \in V_i$.
+よって
+$x\plus x' \in \bigcap_{i\in I}V_i$.
+
+
+$x \in \bigcap_{i\in I}V_i$,
+$\alpha \in \KK$
+とする.
+すべての$i\in I$に対し,
+$x\in V_i$であるので,
+$\alpha\act x \in V_i$.
+よって
+$\alpha\act x \in \bigcap_{i\in I}V_i$.
+\end{proof}
+
 
 
 \begin{example}
@@ -3627,12 +3649,12 @@ $U$は$U=V_1\oplus V_2\oplus \cdots \oplus V_l$
   \end{align*}
   とおく.
   $\bbb\neq \zzero_m$なら,
+  $A\zzero_n=\zzero_m\neq \bbb$であり,
+  $\zzero_n\not\in \FFF_{\bbb}$であるため,
   $\FFF_{\bbb}$は$\KK^n$の部分空間ではない.
   $\bbb= \zzero_m$なら,
   \Cref{subsp:example:fiber}で挙げたものである.
 \end{example}
-\begin{proof}\end{proof}
-
 
 
 \begin{example}
@@ -3646,7 +3668,6 @@ $U$は$U=V_1\oplus V_2\oplus \cdots \oplus V_l$
 
   \Cref{subsp:example:cc}も見よ.
 \end{example}
-\begin{proof}\end{proof}
 
 \begin{example}
   $\RR_{>0}=\Set{x\in\RR|x>0}$について考える.
@@ -3665,7 +3686,6 @@ $U$は$U=V_1\oplus V_2\oplus \cdots \oplus V_l$
   つまり, $\RR_{>0}$の演算は$\RR$の演算をそのまま流用したものではないので,
   $\RR_{>0}$は$\RR$の部分空間ではない.
 \end{example}
-\begin{proof}\end{proof}
 
 \sectionX{章末問題}
 \begin{quiz}
