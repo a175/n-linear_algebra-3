@@ -3764,20 +3764,45 @@ $\KK^n$の\defit{標準基底}と呼ぶ.
   \end{enumerate}
   $\KK$上一次独立である
   組$(v_1,\ldots,v_r)$を\defit{一次独立系}と呼ぶこともある.
+  
   $(v_1,\ldots,v_r)$が$\KK$上一次独立でないとき,
   $(v_1,\ldots,v_r)$は$\KK$上\defit{一次従属}であるという.
 \end{definition}
-
+\begin{remark}
+$0$個のベクトルからなる列$()$, つまり, 空列について考える.
+このときは, $r=0$の場合であり, 考えるべき線形写像$\nu_{()}$は,
+$\KK^0$から$V$への写像である.
+$\KK^0$は$\zzero_0$のみからなる集合であり,
+線形写像は零ベクトルを零ベクトルにうつすから,
+$\nu_{()}(\zzero_0)=0_V$である.
+この写像は明らかに単射である.
+したがって,
+空列$()$は一次独立系であると約束する.
+\end{remark}
 \begin{prop}
   $(V,\plus,\act,0_V)$を$\KK$線形空間とし,
   $v_1,\ldots,v_r\in V$とする.
   このとき以下は同値:
   \begin{enumerate}
-  \item $(v_1,\ldots,v_r)$は$\KK$上一次独立.
-  \item $\alpha_1\act v_1\plus\cdots\plus \alpha_r\act v_r=0_V \implies \alpha_1=\cdots=\alpha_r=0$.
+  \item
+  \label{prop:linindep:inj:item:1}
+  $(v_1,\ldots,v_r)$は$\KK$上一次独立.
+  \item
+  \label{prop:linindep:inj:item:2}
+  $\alpha_1\act v_1\plus\cdots\plus \alpha_r\act v_r=0_V \implies \alpha_1=\cdots=\alpha_r=0$.
   \end{enumerate}
 \end{prop}
+\begin{proof}
+\paragraph{\ref{prop:linindep:inj:item:1}$\implies$\ref{prop:linindep:inj:item:2}}
+$\nu_{(v_1,\ldots,v_r)}$が単射であるので,
+$\nu_{(v_1,\ldots,v_r)}(\aaa)=0_V$となるのは$\aaa=\zzero_r$のときのみであることから,
+明らか.
 
+\paragraph{\ref{prop:linindep:inj:item:2}$\implies$\ref{prop:linindep:inj:item:1}}
+$\nu_{(v_1,\ldots,v_r)}(\aaa)=0_V$となるのは$\aaa=\zzero_r$のときのみであることから, $\Ker(\nu_{(v_1,\ldots,v_r)})=\Set{\zzero_r}$である.
+したがって, $\nu_{(v_1,\ldots,v_r)}$は単射である.
+
+\end{proof}
 \begin{remark}
   $D=(v_1,\ldots,v_r)$が一次独立であるとすると,
   $\nu_D$は単射線形写像であり,
@@ -3798,8 +3823,12 @@ $\KK^n$の\defit{標準基底}と呼ぶ.
   $v_1,\ldots,v_r\in V$とする.
   このとき以下は同値:
   \begin{enumerate}
-  \item $(v_1,\ldots,v_r)$は$\KK$上一次独立.
-  \item $\alpha_1\act w_1\plus\cdots\plus \alpha_r\act v_r=\alpha'_1\act v_1\plus\cdots\plus \alpha'_r\act v_r \implies \alpha_1=\alpha'_1,\ldots,\alpha_r=\alpha'_r$.
+  \item
+    \label{prop:linindep:coef:item:1}
+  $(v_1,\ldots,v_r)$は$\KK$上一次独立.
+  \item
+      \label{prop:linindep:coef:item:2}
+  $\alpha_1\act w_1\plus\cdots\plus \alpha_r\act v_r=\alpha'_1\act v_1\plus\cdots\plus \alpha'_r\act v_r \implies \alpha_1=\alpha'_1,\ldots,\alpha_r=\alpha'_r$.
   \end{enumerate}
 \end{prop}
 \begin{proof}
@@ -3818,12 +3847,13 @@ $v_1,\ldots,v_r$の線型結合を集めた集合であったので,
   $v_1,\ldots,v_r\in V$とする.
   このとき以下は同値:
   \begin{enumerate}
-  \item $(v_1,\ldots,v_r)$は$\KK$上一次従属.
+  \item
+  $(v_1,\ldots,v_r)$は$\KK$上一次従属.
   \item
   次を満たす
   $\alpha\in\KK\setminus\Set{0}$, $i\in\Set{1,\ldots,r}$が存在する:
   \begin{enumerate}
-  \item $\alpha\act v_i \in \Braket{v_1,\ldots,v_{i-1},v_{i+1},\ldots,v_{r}}$.
+  \item $\alpha\act v_i \in \Braket{v_1,\ldots,v_{i-1},v_{i+1},\ldots,v_{r}}_{\KK}$.
   \end{enumerate}
   \end{enumerate}
 \end{lemma}
