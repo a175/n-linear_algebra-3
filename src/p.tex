@@ -4721,8 +4721,54 @@ $\Phi$が単射であることは証明することができる.
 
 \sectionX{章末問題}
 \begin{quiz}
-  %\solvelater{quiz:1:1}
+\begin{align*}
+A=
+\begin{pmatrix}
+0&1&0&0&5&0&4\\
+0&0&1&0&6&0&3\\
+0&0&0&0&1&0&2\\
+0&0&0&0&0&1&1\\
+0&0&0&0&0&0&0\\
+\end{pmatrix}
+\end{align*}
+とし,
+\begin{align*}
+\shazo{\mu_A}{\RR^7}{\RR^5}
+{\xx}{A\xx}
+\end{align*}
+を考える.
+\begin{enumerate}
+\item $\Ker(\mu_A)$の基底を1組挙げよ.
+\item $\dim_\RR(\Ker(\mu_A))$を求めよ.
+\item $\Img(\mu_A)$の基底を1組挙げよ.
+\item $\dim_\RR(\Img(\mu_A))$を求めよ.
+\item $\dim_\RR(\Img(\mu_A))+\dim_\RR(\Ker(\mu_A))$を求めよ.
+\end{enumerate}
 \end{quiz}
+
+\begin{quiz}
+  $A\in\KK^{m\times n}$とし,
+  \begin{align*}
+    \shazo{\mu_A}{\KK^n}{\KK^m}
+    {x}{Ax}
+  \end{align*}
+  について考える.
+  $A$の階数を$r$とするとき以下を求めよ:
+  \begin{enumerate}
+  \item $\dim_\KK(\Ker(\mu_A))$を求めよ.
+  \item $\dim_\KK(\Img(\mu_A))$を求めよ.
+  \item $\dim_\KK(\Ker(\mu_A))+\dim_\KK(\Img(\mu_A))$を与えよ.
+  \end{enumerate}
+  ただし,
+  連立一次方程式の解の自由度に関する公式は用いてよい.
+  また,
+  被役(行)階段行列の行ベクトルから零ベクトルであるものを除いたものが,
+  一次独立であることや,
+  被役(列)階段行列の列ベクトルから零ベクトルであるものを除いたものが,
+  一次独立であること
+  も用いて良い.
+\end{quiz}
+
 
 \chapter{商空間}
 \label{chap:quotient}
@@ -5079,8 +5125,40 @@ $U=V\oplus W$であるので,
 
 \sectionX{章末問題}
 \begin{quiz}
-  %\solvelater{quiz:1:1}
+  $\CC$は$\RR$-線形空間であり,
+  \begin{align*}
+    \shazo{\nu}{\RR^2}{\CC}
+    {\begin{pmatrix}x\\y\end{pmatrix}}{x+y\sqrt{-1}}
+  \end{align*}
+  は同型写像であった.
+  $\theta\in \RR$とし,
+  $c=\cos(\theta)+\sin(\theta)\sqrt{-1}$とする.
+  このとき, 
+  \begin{align*}
+    \shazo{\varphi}{\CC}{\CC}
+    {z}{cz}
+  \end{align*}
+  とおく.
+  \begin{enumerate}
+  \item
+    $\aaa=\begin{pmatrix}x\\y\end{pmatrix}$ に対し,
+    $(\nu^{-1}\circ\varphi\circ\nu)(\aaa)$を求めよ.
+  \item
+    $(\nu^{-1}\circ\varphi\circ\nu)(\ee^{(2)}_1)$,
+    $(\nu^{-1}\circ\varphi\circ\nu)(\ee^{(2)}_2)$
+    を求めよ.
+  \item
+    次の条件を満たす
+    $A\in \RR^{2\times 2}$
+    を求めよ:
+    \begin{align*}
+      \aaa=\begin{pmatrix}x\\y\end{pmatrix}\in \RR^2
+      \implies
+      \nu(A\aaa)=\varphi(x+y\sqrt{-1}).
+    \end{align*}
+  \end{enumerate}
 \end{quiz}
+
 
 
 
